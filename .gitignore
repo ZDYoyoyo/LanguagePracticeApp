@@ -1,0 +1,36 @@
+# Gradle / build
+.gradle/
+build/
+**/build/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+*.hprof
+
+# 本機設定與機密 —— 絕對不要 commit
+local.properties
+secrets.properties
+*.keystore
+*.jks
+keystore.properties
+google-services.json
+client_secret*.json
+*.p12
+*.pem
+.env
+
+# 輸出檔
+*.apk
+*.aab
+*.ap_
+output-metadata.json
+
+# OS
+.DS_Store
+Thumbs.db

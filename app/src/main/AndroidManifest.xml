@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 下載題庫（以及之後的 Drive 同步、廣告）需要網路 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      allowBackup=false：關閉 Android 系統自動備份。
+      這樣「移除 App 即清除資料」才成立；跨裝置保留資料改由使用者自選的 Google Drive 同步。
+    -->
+    <application
+        android:name=".EnglishApp"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EnglishPractice">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

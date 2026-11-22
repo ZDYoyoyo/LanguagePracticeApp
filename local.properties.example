@@ -1,0 +1,18 @@
+# 複製成 local.properties（已被 .gitignore 排除）後填入。Android Studio 會自動寫入 sdk.dir。
+sdk.dir=/path/to/Android/sdk
+
+# ---- Google 登入（Credential Manager）用的「Web 應用程式」OAuth Client ID ----
+# 到 Google Cloud Console > API 和服務 > 憑證 建立。留空 = App 內 Google 登入按鈕會顯示「尚未設定」
+GOOGLE_WEB_CLIENT_ID=
+
+# ---- AdMob（正式 ID 只在 release 建置使用；debug 一律用 Google 官方測試 ID）----
+# 留空則 release 也會退回測試 ID，避免誤用
+ADMOB_APP_ID=
+ADMOB_INTERSTITIAL_ID=
+ADMOB_REWARDED_ID=
+
+# ---- Release 簽章（上架用）----
+RELEASE_STORE_FILE=
+RELEASE_STORE_PASSWORD=
+RELEASE_KEY_ALIAS=
+RELEASE_KEY_PASSWORD=
