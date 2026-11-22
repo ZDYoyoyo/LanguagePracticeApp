@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-11-22",
   "questions": [
     {
@@ -8,116 +8,249 @@
       "type": "vocabulary",
       "prompt": "Choose the word that means 「準時的」.",
       "word": "punctual",
-      "options": ["punctual", "patient", "polite", "practical"],
+      "options": [
+        "punctual",
+        "patient",
+        "polite",
+        "practical"
+      ],
       "answer": "punctual",
       "explanation": "punctual（adj.）準時的。例：She is always punctual for meetings.",
+      "optionNotes": {
+        "patient": "patient（adj.）有耐心的；（n.）病人",
+        "polite": "polite（adj.）有禮貌的",
+        "practical": "practical（adj.）實際的、實用的"
+      },
       "difficulty": 1,
-      "tags": ["daily-life", "work"]
+      "tags": [
+        "daily-life",
+        "work"
+      ]
     },
     {
       "id": "voc-0002",
       "type": "vocabulary",
       "prompt": "What does \"itinerary\" mean?",
       "word": "itinerary",
-      "options": ["旅行行程表", "護照", "行李箱", "登機門"],
+      "options": [
+        "旅行行程表",
+        "護照",
+        "行李箱",
+        "登機門"
+      ],
       "answer": "旅行行程表",
       "explanation": "itinerary（n.）旅行行程、路線規劃。例：Our itinerary includes three days in Kyoto.",
+      "optionNotes": {
+        "護照": "護照是 passport",
+        "行李箱": "行李箱是 suitcase / luggage",
+        "登機門": "登機門是 gate（boarding gate）"
+      },
       "difficulty": 2,
-      "tags": ["travel"]
+      "tags": [
+        "travel"
+      ]
     },
     {
       "id": "voc-0003",
       "type": "vocabulary",
       "prompt": "Choose the word that means 「截止日期」.",
       "word": "deadline",
-      "options": ["headline", "deadline", "timeline", "guideline"],
+      "options": [
+        "headline",
+        "deadline",
+        "timeline",
+        "guideline"
+      ],
       "answer": "deadline",
       "explanation": "deadline（n.）截止期限。headline 是標題、timeline 是時間軸、guideline 是指導方針。",
+      "optionNotes": {
+        "headline": "headline（n.）新聞標題",
+        "timeline": "timeline（n.）時間軸、時程表",
+        "guideline": "guideline（n.）指導方針、準則"
+      },
       "difficulty": 1,
-      "tags": ["work"]
+      "tags": [
+        "work"
+      ]
     },
     {
       "id": "voc-0004",
       "type": "vocabulary",
       "prompt": "What does \"reluctant\" mean?",
       "word": "reluctant",
-      "options": ["熱心的", "不情願的", "可靠的", "放鬆的"],
+      "options": [
+        "熱心的",
+        "不情願的",
+        "可靠的",
+        "放鬆的"
+      ],
       "answer": "不情願的",
       "explanation": "reluctant（adj.）不情願的、勉強的。常用 be reluctant to + V。例：He was reluctant to admit his mistake.",
+      "optionNotes": {
+        "熱心的": "熱心的是 enthusiastic / eager",
+        "可靠的": "可靠的是 reliable",
+        "放鬆的": "放鬆的是 relaxed"
+      },
       "difficulty": 2,
-      "tags": ["daily-life"]
+      "tags": [
+        "daily-life"
+      ]
     },
     {
       "id": "voc-0005",
       "type": "vocabulary",
       "prompt": "Which word means 「食材；原料」?",
       "word": "ingredient",
-      "options": ["ingredient", "instrument", "incident", "intention"],
+      "options": [
+        "ingredient",
+        "instrument",
+        "incident",
+        "intention"
+      ],
       "answer": "ingredient",
       "explanation": "ingredient（n.）（烹飪的）材料、成分。例：Mix all the ingredients in a bowl.",
+      "optionNotes": {
+        "instrument": "instrument（n.）樂器；儀器",
+        "incident": "incident（n.）事件、事故",
+        "intention": "intention（n.）意圖、打算"
+      },
       "difficulty": 1,
-      "tags": ["food"]
+      "tags": [
+        "food"
+      ]
     },
     {
       "id": "voc-0006",
       "type": "vocabulary",
       "prompt": "What does \"ubiquitous\" mean?",
       "word": "ubiquitous",
-      "options": ["罕見的", "無所不在的", "古老的", "模糊的"],
+      "options": [
+        "罕見的",
+        "無所不在的",
+        "古老的",
+        "模糊的"
+      ],
       "answer": "無所不在的",
       "explanation": "ubiquitous（adj.）無所不在的、隨處可見的。例：Smartphones have become ubiquitous.",
+      "optionNotes": {
+        "罕見的": "罕見的是 rare（正好是 ubiquitous 的反義）",
+        "古老的": "古老的是 ancient",
+        "模糊的": "模糊的是 vague / blurry"
+      },
       "difficulty": 3,
-      "tags": ["tech"]
+      "tags": [
+        "tech"
+      ]
     },
     {
       "id": "gra-0001",
       "type": "grammar",
       "prompt": "She ___ to the gym every morning.",
-      "options": ["go", "goes", "going", "gone"],
+      "options": [
+        "go",
+        "goes",
+        "going",
+        "gone"
+      ],
       "answer": "goes",
       "explanation": "主詞 She 是第三人稱單數，現在簡單式動詞要加 -s/-es：goes。",
+      "optionNotes": {
+        "go": "主詞是第三人稱單數 She，現在式動詞要加 -es",
+        "going": "going 是現在分詞，前面要有 be 動詞（is going）",
+        "gone": "gone 是過去分詞，要搭配 has（has gone）"
+      },
       "difficulty": 1,
-      "tags": ["daily-life"]
+      "tags": [
+        "daily-life"
+      ]
     },
     {
       "id": "gra-0002",
       "type": "grammar",
       "prompt": "If I ___ more time, I would travel around the world.",
-      "options": ["have", "had", "will have", "am having"],
+      "options": [
+        "have",
+        "had",
+        "will have",
+        "am having"
+      ],
       "answer": "had",
       "explanation": "與現在事實相反的假設語氣：If + 過去式, S + would + V。所以用 had。",
+      "optionNotes": {
+        "have": "與現在事實相反的假設，if 子句要用過去式，不能用現在式",
+        "will have": "if 子句不用 will",
+        "am having": "have 表示「擁有」時一般不用進行式"
+      },
       "difficulty": 2,
-      "tags": ["travel"]
+      "tags": [
+        "travel"
+      ]
     },
     {
       "id": "gra-0003",
       "type": "grammar",
       "prompt": "I have lived in Taipei ___ 2015.",
-      "options": ["for", "since", "from", "during"],
+      "options": [
+        "for",
+        "since",
+        "from",
+        "during"
+      ],
       "answer": "since",
       "explanation": "現在完成式搭配「時間起點」用 since；搭配「一段時間」用 for（for ten years）。",
+      "optionNotes": {
+        "for": "for 接「一段時間」，例如 for eight years",
+        "from": "from 2015 要搭配 to/until，例如 from 2015 to 2020",
+        "during": "during 接「一段期間」名詞，例如 during the summer"
+      },
       "difficulty": 1,
-      "tags": ["daily-life"]
+      "tags": [
+        "daily-life"
+      ]
     },
     {
       "id": "gra-0004",
       "type": "grammar",
       "prompt": "The report ___ by the manager before the meeting started.",
-      "options": ["was reviewed", "has reviewed", "had been reviewed", "reviews"],
+      "options": [
+        "was reviewed",
+        "has reviewed",
+        "had been reviewed",
+        "reviews"
+      ],
       "answer": "had been reviewed",
       "explanation": "報告「被」審閱 → 被動語態；又發生在「會議開始（過去）」之前 → 過去完成式被動：had been reviewed。",
+      "optionNotes": {
+        "was reviewed": "過去簡單式被動，但沒有表達「在會議開始之前就已完成」",
+        "has reviewed": "主動語態，而且報告不會自己審閱",
+        "reviews": "現在式主動，時態與語態都不對"
+      },
       "difficulty": 3,
-      "tags": ["work"]
+      "tags": [
+        "work"
+      ]
     },
     {
       "id": "gra-0005",
       "type": "grammar",
       "prompt": "Neither the teacher nor the students ___ ready.",
-      "options": ["was", "were", "is", "be"],
+      "options": [
+        "was",
+        "were",
+        "is",
+        "be"
+      ],
       "answer": "were",
       "explanation": "neither A nor B 當主詞時，動詞跟最靠近的 B（students，複數）一致，所以用 were。",
+      "optionNotes": {
+        "was": "動詞要跟較近的主詞 students（複數）一致",
+        "is": "時態與單複數都不對",
+        "be": "原形動詞不能直接當主要動詞"
+      },
       "difficulty": 2,
-      "tags": ["school"]
+      "tags": [
+        "school"
+      ]
     },
     {
       "id": "cloze-0001",
@@ -125,10 +258,14 @@
       "prompt": "Could you please turn ___ the lights when you leave? (關掉)",
       "options": [],
       "answer": "off",
-      "acceptedAnswers": ["off"],
+      "acceptedAnswers": [
+        "off"
+      ],
       "explanation": "turn off 關掉（電器）；turn on 打開。",
       "difficulty": 1,
-      "tags": ["daily-life"]
+      "tags": [
+        "daily-life"
+      ]
     },
     {
       "id": "cloze-0002",
@@ -136,10 +273,14 @@
       "prompt": "I'm looking forward ___ hearing from you.",
       "options": [],
       "answer": "to",
-      "acceptedAnswers": ["to"],
+      "acceptedAnswers": [
+        "to"
+      ],
       "explanation": "look forward to + V-ing：期待……。這裡的 to 是介系詞，後面接動名詞 hearing。",
       "difficulty": 2,
-      "tags": ["work"]
+      "tags": [
+        "work"
+      ]
     },
     {
       "id": "cloze-0003",
@@ -147,20 +288,37 @@
       "prompt": "Please fill in the past tense of \"buy\": Yesterday I ___ a new laptop.",
       "options": [],
       "answer": "bought",
-      "acceptedAnswers": ["bought"],
+      "acceptedAnswers": [
+        "bought"
+      ],
       "explanation": "buy 的過去式與過去分詞都是 bought（不規則動詞）。",
       "difficulty": 1,
-      "tags": ["tech", "daily-life"]
+      "tags": [
+        "tech",
+        "daily-life"
+      ]
     },
     {
       "id": "cloze-0004",
       "type": "cloze",
       "prompt": "The flight was delayed ___ to bad weather.",
-      "options": ["due", "because", "since", "owing"],
+      "options": [
+        "due",
+        "because",
+        "since",
+        "owing"
+      ],
       "answer": "due",
       "explanation": "due to + 名詞：由於……。because 後面要接子句或 because of + 名詞。owing to 也可以，但這裡已有 to，選 due 最常見。",
+      "optionNotes": {
+        "because": "because 後面要接子句；接名詞要用 because of",
+        "since": "since 當「因為」時後面接子句",
+        "owing": "owing to 也可以，但 due to 是最常見的搭配"
+      },
       "difficulty": 2,
-      "tags": ["travel"]
+      "tags": [
+        "travel"
+      ]
     },
     {
       "id": "cloze-0005",
@@ -168,50 +326,104 @@
       "prompt": "Can I have the ___, please? (餐廳結帳時說的「帳單」，美式)",
       "options": [],
       "answer": "check",
-      "acceptedAnswers": ["check", "bill"],
+      "acceptedAnswers": [
+        "check",
+        "bill"
+      ],
       "explanation": "美式英文說 check，英式英文說 bill，兩者都可以接受。",
       "difficulty": 1,
-      "tags": ["food", "travel"]
+      "tags": [
+        "food",
+        "travel"
+      ]
     },
     {
       "id": "mc-0001",
       "type": "multiple_choice",
       "prompt": "Which sentence is the most polite way to ask for help?",
-      "options": ["Help me.", "You must help me.", "Would you mind helping me?", "Help me now, please."],
+      "options": [
+        "Help me.",
+        "You must help me.",
+        "Would you mind helping me?",
+        "Help me now, please."
+      ],
       "answer": "Would you mind helping me?",
       "explanation": "Would you mind + V-ing? 是很禮貌的請求句型。回答「好」要說 Not at all.（不介意）。",
+      "optionNotes": {
+        "Help me.": "命令句，聽起來很直接、不禮貌",
+        "You must help me.": "must 是「必須」，帶有強迫意味",
+        "Help me now, please.": "雖然有 please，但 now 讓語氣很急促"
+      },
       "difficulty": 1,
-      "tags": ["daily-life"]
+      "tags": [
+        "daily-life"
+      ]
     },
     {
       "id": "mc-0002",
       "type": "multiple_choice",
       "prompt": "At the airport check-in counter, what does \"aisle seat\" mean?",
-      "options": ["靠窗座位", "靠走道座位", "中間座位", "商務艙座位"],
+      "options": [
+        "靠窗座位",
+        "靠走道座位",
+        "中間座位",
+        "商務艙座位"
+      ],
       "answer": "靠走道座位",
       "explanation": "aisle（發音 /aɪl/，s 不發音）走道。window seat 是靠窗、middle seat 是中間。",
+      "optionNotes": {
+        "靠窗座位": "靠窗座位是 window seat",
+        "中間座位": "中間座位是 middle seat",
+        "商務艙座位": "商務艙是 business class"
+      },
       "difficulty": 1,
-      "tags": ["travel"]
+      "tags": [
+        "travel"
+      ]
     },
     {
       "id": "mc-0003",
       "type": "multiple_choice",
       "prompt": "\"Let's touch base next week.\" What does the speaker want to do?",
-      "options": ["去打棒球", "下週再聯絡/討論一下", "取消會議", "參觀總部"],
+      "options": [
+        "去打棒球",
+        "下週再聯絡/討論一下",
+        "取消會議",
+        "參觀總部"
+      ],
       "answer": "下週再聯絡/討論一下",
       "explanation": "touch base（片語）簡短聯絡、交流近況，職場常用。",
+      "optionNotes": {
+        "去打棒球": "base 雖然是棒球的「壘」，但 touch base 是職場片語",
+        "取消會議": "取消會議是 cancel the meeting",
+        "參觀總部": "總部是 headquarters / HQ"
+      },
       "difficulty": 2,
-      "tags": ["work"]
+      "tags": [
+        "work"
+      ]
     },
     {
       "id": "mc-0004",
       "type": "multiple_choice",
       "prompt": "Which word is a synonym of \"enormous\"?",
-      "options": ["tiny", "huge", "ordinary", "fragile"],
+      "options": [
+        "tiny",
+        "huge",
+        "ordinary",
+        "fragile"
+      ],
       "answer": "huge",
       "explanation": "enormous ≈ huge ≈ massive（巨大的）。tiny 微小、ordinary 普通、fragile 易碎。",
+      "optionNotes": {
+        "tiny": "tiny（adj.）極小的，是 enormous 的反義",
+        "ordinary": "ordinary（adj.）普通的",
+        "fragile": "fragile（adj.）易碎的、脆弱的"
+      },
       "difficulty": 2,
-      "tags": ["school"]
+      "tags": [
+        "school"
+      ]
     }
   ]
 }

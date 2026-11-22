@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -27,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import io.github.zdyoyoyo.englishpractice.speech.rememberPronouncer
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
 import io.github.zdyoyoyo.englishpractice.ui.theme.WrongRed
 
@@ -38,6 +40,7 @@ fun WrongBookScreen(
     vm: WrongBookViewModel = viewModel(factory = WrongBookViewModel.Factory),
 ) {
     val items by vm.items.collectAsStateWithLifecycle()
+    val pronouncer = rememberPronouncer()
     Scaffold(topBar = {
         TopAppBar(
             title = { Text("錯題本（${items.size}）") },
@@ -62,6 +65,11 @@ fun WrongBookScreen(
                                 item.question?.let { Text("正解：${it.answer}", color = CorrectGreen) }
                                 Text("你的答案：${item.record.lastWrongAnswer}", color = WrongRed)
                                 Text("答錯 ${item.record.wrongCount} 次", style = MaterialTheme.typography.bodySmall)
+                            }
+                            item.question?.speakableText?.let { text ->
+                                IconButton(onClick = { pronouncer.speak(text) }) {
+                                    Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = "聽發音")
+                                }
                             }
                             IconButton(onClick = { vm.remove(item.record.questionId) }) {
                                 Icon(Icons.Filled.Delete, contentDescription = "移除")

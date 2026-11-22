@@ -40,6 +40,7 @@ object QuestionBankParser {
         q.options.isNotEmpty() && q.answer !in q.options -> "正解必須是選項之一"
         q.options.isNotEmpty() && q.options.toSet().size != q.options.size -> "選項重複"
         q.difficulty !in 1..3 -> "難度需為 1~3"
+        q.optionNotes.keys.any { it !in q.options } -> "optionNotes 的 key 必須是選項之一"
         else -> null
     }
 }

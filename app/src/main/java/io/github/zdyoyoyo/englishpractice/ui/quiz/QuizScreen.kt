@@ -21,6 +21,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -36,6 +37,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -43,6 +45,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
 import io.github.zdyoyoyo.englishpractice.data.model.Question
+import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
+import io.github.zdyoyoyo.englishpractice.speech.PronunciationPanel
+import io.github.zdyoyoyo.englishpractice.speech.rememberPronouncer
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
 import io.github.zdyoyoyo.englishpractice.ui.theme.WrongRed
 
@@ -91,6 +96,8 @@ fun QuizScreen(
 @Composable
 private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
     val q = s.current ?: return
+    val pronouncer = rememberPronouncer()
+    val context = LocalContext.current
     Column(
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -107,8 +114,11 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
         Text(q.prompt, style = MaterialTheme.typography.titleLarge)
 
         if (!s.revealed) {
-            TextButton(onClick = vm::onHint, enabled = !s.usedHint) {
-                Text(if (s.hintCredits > 0) "💡 提示（剩 ${s.hintCredits} 次）" else "💡 提示")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                TextButton(onClick = vm::onHint, enabled = !s.usedHint) {
+                    Text(if (s.hintCredits > 0) "💡 提示（剩 ${s.hintCredits} 次）" else "💡 提示")
+                }
+                TextButton(onClick = vm::onGiveUp) { Text("🏳️ 不會，看答案") }
             }
         }
         s.hintText?.let { Text("💡 $it", color = MaterialTheme.colorScheme.tertiary) }
@@ -122,7 +132,13 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
         }
 
         if (s.revealed) {
-            Feedback(s.lastCorrect, q)
+            Feedback(s, q)
+            q.speakableText?.let { PronunciationPanel(it, pronouncer) }
+            if (ContactAuthor.isConfigured) {
+                TextButton(onClick = { ContactAuthor.reportQuestion(context, q.id, q.prompt) }) {
+                    Text("這題有錯？回報給作者")
+                }
+            }
             Button(onClick = vm::onNext, modifier = Modifier.fillMaxWidth()) {
                 Text(if (s.isLast) "看結果" else "下一題")
             }
@@ -170,7 +186,8 @@ private fun TypingAnswer(s: QuizUiState, q: Question, vm: QuizViewModel) {
 }
 
 @Composable
-private fun Feedback(correct: Boolean, q: Question) {
+private fun Feedback(s: QuizUiState, q: Question) {
+    val correct = s.lastCorrect
     Card(
         colors = CardDefaults.cardColors(
             containerColor = (if (correct) CorrectGreen else WrongRed).copy(alpha = 0.12f),
@@ -179,11 +196,20 @@ private fun Feedback(correct: Boolean, q: Question) {
     ) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Text(
-                if (correct) "✅ 答對了！" else "❌ 答錯了，已加入錯題本",
+                when {
+                    correct -> "✅ 答對了！"
+                    s.gaveUp -> "🏳️ 正解是「${q.answer}」，已加入錯題本"
+                    else -> "❌ 答錯了，已加入錯題本"
+                },
                 style = MaterialTheme.typography.titleMedium,
                 color = if (correct) CorrectGreen else WrongRed,
             )
             if (q.explanation.isNotBlank()) Text(q.explanation)
+            s.wrongOptionNote?.let { note ->
+                HorizontalDivider()
+                Text("你選的「${s.selected}」", style = MaterialTheme.typography.titleSmall, color = WrongRed)
+                Text(note)
+            }
         }
     }
 }

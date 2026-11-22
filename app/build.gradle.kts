@@ -41,6 +41,7 @@ android {
         // 廣告的兒童相關設定（見 docs/children-and-ads.md）
         buildConfigField("boolean", "ADS_CHILD_DIRECTED", gradleProp("adsChildDirected", "false"))
         buildConfigField("String", "ADS_MAX_CONTENT_RATING", "\"${gradleProp("adsMaxContentRating", "G")}\"")
+        buildConfigField("String", "SUPPORT_EMAIL", "\"${gradleProp("supportEmail", "")}\"")
         buildConfigField("String", "PRIVACY_POLICY_URL", "\"${gradleProp("privacyPolicyUrl", "")}\"")
     }
 

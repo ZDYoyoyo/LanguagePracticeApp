@@ -144,6 +144,9 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
       "answer": "簡短的",               // 有選項時必須是選項之一
       "acceptedAnswers": [],            // 選填：輸入題可接受的其他寫法（不分大小寫）
       "explanation": "brief（adj.）簡短的。",
+      "optionNotes": {                  // 選填：錯誤選項的說明，答錯時顯示「你選的那個是什麼意思」
+        "勇敢的": "勇敢的是 brave"
+      },
       "difficulty": 1,                  // 1 初級、2 中級、3 進階
       "tags": ["work"]                  // 主題標籤，選題畫面會自動列出
     }
@@ -156,6 +159,9 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 2. **兩個檔案的 `version` 都 +1**（`questions.json` 與 `version.json` 要一致）。
 3. 跑 `./gradlew testDebugUnitTest` —— `QuestionBankParserTest` 會檢查格式、重複 id、正解是否在選項中、兩檔版本是否一致。
 4. commit 並 push 到 `main`。使用者下次開 App 會自動下載（只有版本變大才下載）。
+
+> 沒寫 `optionNotes` 時，若題庫裡剛好有以該選項為 `word` 的單字題，App 會自動借用那題的解析。
+> 單字題的 `word`（或英文正解）會出現「🔊 聽 / 🐢 慢速 / 🎤 跟著唸」發音練習。
 
 > 新的主題標籤要中文名稱的話，加到 `ui/practice/PracticeSetupScreen.kt` 的 `TagLabels`。
 > 若題庫格式有「不相容」的改動，提高 `version.json` 的 `minAppVersionCode`，舊版 App 就不會下載。
@@ -186,6 +192,13 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 
 已**主動移除** Credential Manager 帶入的 `USE_BIOMETRIC` / `USE_FINGERPRINT`（用不到）。
 不需要「精確鬧鐘」權限：提醒用 WorkManager，時間可能有幾分鐘誤差。
+發音練習**不需要麥克風權限**：朗讀用系統內建 TextToSpeech，「跟著唸」用系統的語音辨識畫面，App 只拿到辨識出的文字。
+`<queries>` 宣告了朗讀、語音辨識、寄信三種系統服務（Android 11+ 套件可見性要求，不是權限）。
+
+### 聯絡作者
+在 `gradle.properties` 設定 `supportEmail=你的信箱`。設定頁會出現「意見回饋」與寄信按鈕，答題後也會有「這題有錯？回報給作者」。
+寄信是開啟使用者自己的 Email App 並預填內容（含 App 版本、Android 版本、機型），使用者確認後自己按傳送。
+⚠️ 這個信箱會公開在 repo 與 App 中，建議用專門收回饋的信箱。
 
 ---
 

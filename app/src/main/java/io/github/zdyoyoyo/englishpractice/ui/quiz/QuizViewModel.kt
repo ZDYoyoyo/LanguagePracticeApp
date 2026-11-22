@@ -13,6 +13,7 @@ import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.domain.AnswerChecker
 import io.github.zdyoyoyo.englishpractice.domain.HintLogic
+import io.github.zdyoyoyo.englishpractice.domain.OptionExplainer
 import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
 import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
@@ -41,6 +42,10 @@ data class QuizUiState(
     val hiddenOptions: Set<String> = emptySet(),
     val hintText: String? = null,
     val showRewardOffer: Boolean = false,
+    /** 按了「放棄這題」 */
+    val gaveUp: Boolean = false,
+    /** 答錯時，對「你選的那個選項」的說明 */
+    val wrongOptionNote: String? = null,
     val rewardMessage: String? = null,
 ) {
     val current: Question? get() = questions.getOrNull(index)
@@ -108,15 +113,27 @@ class QuizViewModel(
         submit(s.typed)
     }
 
-    private fun submit(answer: String) {
+    /** 「不會，看答案」：直接揭曉，算答錯（收進錯題本、明天複習） */
+    fun onGiveUp() {
+        val s = _ui.value
+        if (s.revealed) return
+        _ui.update { it.copy(gaveUp = true, selected = null) }
+        submit(GIVE_UP_ANSWER, gaveUp = true)
+    }
+
+    private fun submit(answer: String, gaveUp: Boolean = false) {
         val q = _ui.value.current ?: return
-        val correct = AnswerChecker.isCorrect(q, answer)
+        val correct = !gaveUp && AnswerChecker.isCorrect(q, answer)
         val elapsed = c.clock.nowMillis() - questionShownAt
+        val note = if (!correct && !gaveUp && !q.isTypingQuestion) {
+            OptionExplainer.noteFor(q, answer, c.questionBank.questions)
+        } else null
         _ui.update {
             it.copy(
                 revealed = true,
                 lastCorrect = correct,
                 correctCount = it.correctCount + if (correct) 1 else 0,
+                wrongOptionNote = note,
             )
         }
         val usedHint = _ui.value.usedHint
@@ -157,6 +174,7 @@ class QuizViewModel(
                 it.copy(
                     index = it.index + 1, selected = null, typed = "", revealed = false,
                     usedHint = false, hiddenOptions = emptySet(), hintText = null, rewardMessage = null,
+                    gaveUp = false, wrongOptionNote = null,
                 )
             }
             questionShownAt = c.clock.nowMillis()
@@ -164,6 +182,8 @@ class QuizViewModel(
     }
 
     companion object {
+        const val GIVE_UP_ANSWER = "（放棄）"
+
         fun titleFor(mode: StudyMode) = when (mode) {
             StudyMode.WRONG_BOOK -> "錯題重做"
             StudyMode.REVIEW -> "今日複習"

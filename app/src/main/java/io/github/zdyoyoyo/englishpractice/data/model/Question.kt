@@ -29,12 +29,20 @@ data class Question(
     /** 輸入題可接受的其他寫法（不分大小寫） */
     val acceptedAnswers: List<String> = emptyList(),
     val explanation: String = "",
+    /** 選填：各個「錯誤選項」的說明，答錯時告訴使用者「你選的那個是什麼意思」。key 必須是選項之一 */
+    val optionNotes: Map<String, String> = emptyMap(),
     /** 1 = 初級, 2 = 中級, 3 = 進階 */
     val difficulty: Int = 1,
     val tags: List<String> = emptyList(),
 ) {
     val isTypingQuestion: Boolean get() = options.isEmpty()
+
+    /** 可以朗讀 / 練習發音的英文：單字題用 word，其他題目若正解是英文也可以 */
+    val speakableText: String?
+        get() = word?.takeIf { it.isNotBlank() } ?: answer.takeIf { it.isEnglishText() }
 }
+
+private fun String.isEnglishText(): Boolean = isNotBlank() && all { it.code < 128 } && any { it.isLetter() }
 
 @Serializable
 data class QuestionBank(

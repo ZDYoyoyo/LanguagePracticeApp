@@ -23,6 +23,20 @@
       allowBackup=false：關閉 Android 系統自動備份。
       這樣「移除 App 即清除資料」才成立；跨裝置保留資料改由使用者自選的 Google Drive 同步。
     -->
+    <!-- Android 11+ 套件可見性：宣告要用到的系統服務（朗讀、語音辨識、寄信），不是權限 -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.action.RECOGNIZE_SPEECH" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+    </queries>
+
     <application
         android:name=".EnglishApp"
         android:allowBackup="false"

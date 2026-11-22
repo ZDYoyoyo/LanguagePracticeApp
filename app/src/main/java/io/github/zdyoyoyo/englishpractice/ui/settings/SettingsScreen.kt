@@ -7,6 +7,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,12 +39,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.BuildConfig
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
+import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -58,6 +61,8 @@ fun SettingsScreen(
     val privacyRequired by vm.privacyOptionsRequired.collectAsStateWithLifecycle()
     val activity = LocalActivity.current
     val uriHandler = LocalUriHandler.current
+    val context = LocalContext.current
+    var feedbackError by remember { mutableStateOf(false) }
     var showTimePicker by remember { mutableStateOf(false) }
     var confirmClear by remember { mutableStateOf(false) }
 
@@ -114,6 +119,19 @@ fun SettingsScreen(
             Text("完成幾輪題目後偶爾會出現一次全螢幕廣告；作答途中不會出現。", style = MaterialTheme.typography.bodySmall)
             if (privacyRequired) {
                 OutlinedButton(onClick = { activity?.let { vm.showAdPrivacyOptions(it) } }) { Text("廣告隱私選項") }
+            }
+            HorizontalDivider()
+
+            SectionTitle("意見回饋")
+            if (ContactAuthor.isConfigured) {
+                Text("有建議、發現題目錯誤或 App 問題，歡迎來信：")
+                SelectionContainer { Text(ContactAuthor.email, color = MaterialTheme.colorScheme.primary) }
+                OutlinedButton(onClick = {
+                    if (!ContactAuthor.sendFeedback(context)) feedbackError = true
+                }) { Text("✉️ 寄信給作者") }
+                if (feedbackError) Text("找不到 Email App，請直接寄信到上面的信箱", style = MaterialTheme.typography.bodySmall)
+            } else {
+                Text("（作者尚未設定聯絡信箱）", style = MaterialTheme.typography.bodySmall)
             }
             HorizontalDivider()
 

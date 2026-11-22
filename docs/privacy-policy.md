@@ -45,6 +45,12 @@
 ### 5. 通知
 若你開啟「每日提醒」，App 會在本機排程通知。通知內容在你的手機上計算產生，不會傳送到任何伺服器。
 
+### 5-1. 發音練習
+「🔊 聽發音」使用手機內建的文字轉語音，在手機上產生語音。「🎤 跟著唸」會開啟手機系統的語音辨識服務（通常由 Google 提供），錄音由該服務處理、適用其隱私權政策；本 App 不會取得或保存錄音，只會收到辨識出的文字，用來和題目單字比對，比對完即丟棄。
+
+### 5-2. 聯絡作者
+「寄信給作者」會開啟你手機上的 Email App 並預填 App 版本、Android 版本與手機型號，你可以在寄出前修改或刪除。只有你按下傳送，我們才會收到你的 Email 地址與信件內容，僅用於回覆與改進 App，不會提供給第三方。
+
 ### 6. 如何刪除你的資料
 - **手機上的資料**：設定 → 「清除這支手機上的學習資料」，或直接**移除 App**。
 - **登出時**：可勾選「同時清除這支手機上的學習資料」。
@@ -99,6 +105,12 @@ In the EEA, UK and other applicable regions, a consent form is shown first; you 
 
 ### 5. Notifications
 If you enable daily reminders, notifications are scheduled locally. Their content is generated on your device and is not sent to any server.
+
+### 5-1. Pronunciation practice
+"🔊 Listen" uses your phone's built-in text-to-speech on the device. "🎤 Speak" opens your phone's system speech-recognition service (usually provided by Google), which processes the audio under its own privacy policy. The App never receives or stores audio; it only receives the recognized text, compares it with the target word, and discards it.
+
+### 5-2. Contacting the developer
+"Email the developer" opens your own email app with the App version, Android version and device model pre-filled; you can edit or remove them before sending. We only receive your email address and message if you choose to send it, and use them solely to reply and improve the App. We do not share them with third parties.
 
 ### 6. How to delete your data
 - **On your device**: Settings → "Clear learning data on this phone", or simply **uninstall the App**.
