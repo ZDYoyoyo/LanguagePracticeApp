@@ -11,6 +11,7 @@ import io.github.zdyoyoyo.englishpractice.AppContainer
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
 import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.domain.AnswerChecker
+import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
 import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
 import io.github.zdyoyoyo.englishpractice.ui.navigation.QuizRoute
@@ -72,6 +73,11 @@ class QuizViewModel(
         StudyMode.WRONG_BOOK -> c.study.activeWrongQuestionIds()
             .mapNotNull { c.questionBank.findById(it) }
             .take(QuestionSelector.DEFAULT_SESSION_SIZE)
+        StudyMode.REVIEW -> c.study.dueQuestionIds(limit = 20)
+            .mapNotNull { c.questionBank.findById(it) }
+        StudyMode.DAILY -> listOfNotNull(
+            DailyPicker.dailyQuestion(c.questionBank.questions, c.clock.today().toEpochDay())
+        )
         else -> QuestionSelector.select(c.questionBank.questions, route.tag, route.difficulty)
     }
 

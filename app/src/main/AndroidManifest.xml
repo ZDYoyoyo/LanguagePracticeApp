@@ -3,6 +3,8 @@
 
     <!-- 下載題庫（以及之後的 Drive 同步、廣告）需要網路 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Android 13+ 發通知需要使用者同意（每日提醒用，App 內開啟提醒時才會詢問） -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!--
       allowBackup=false：關閉 Android 系統自動備份。

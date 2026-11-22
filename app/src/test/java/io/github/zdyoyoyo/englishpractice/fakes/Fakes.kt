@@ -2,6 +2,10 @@ package io.github.zdyoyoyo.englishpractice.fakes
 
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptDao
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptEntity
+import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
+import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
+import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
+import io.github.zdyoyoyo.englishpractice.data.local.StudyDayEntity
 import io.github.zdyoyoyo.englishpractice.data.local.TransactionRunner
 import io.github.zdyoyoyo.englishpractice.data.local.WrongAnswerDao
 import io.github.zdyoyoyo.englishpractice.data.local.WrongAnswerEntity
@@ -66,3 +70,27 @@ fun question(
     id = id, type = type, prompt = "prompt $id", word = word, options = options, answer = answer,
     acceptedAnswers = accepted, explanation = "because", difficulty = difficulty, tags = tags,
 )
+
+class FakeReviewCardDao : ReviewCardDao {
+    val map = MutableStateFlow<Map<String, ReviewCardEntity>>(emptyMap())
+    override suspend fun get(questionId: String) = map.value[questionId]
+    override suspend fun upsert(card: ReviewCardEntity) { map.value = map.value + (card.questionId to card) }
+    override fun observeDueCount(today: Long): Flow<Int> = map.map { m -> m.values.count { it.dueEpochDay <= today } }
+    override suspend fun dueCount(today: Long) = map.value.values.count { it.dueEpochDay <= today }
+    override suspend fun getDue(today: Long, limit: Int) =
+        map.value.values.filter { it.dueEpochDay <= today }.sortedWith(compareBy({ it.dueEpochDay }, { it.questionId })).take(limit)
+    override suspend fun getAll() = map.value.values.toList()
+    override suspend fun upsertAll(items: List<ReviewCardEntity>) { items.forEach { upsert(it) } }
+    override suspend fun clear() { map.value = emptyMap() }
+}
+
+class FakeStudyDayDao : StudyDayDao {
+    val map = MutableStateFlow<Map<Long, StudyDayEntity>>(emptyMap())
+    override suspend fun get(epochDay: Long) = map.value[epochDay]
+    override suspend fun upsert(day: StudyDayEntity) { map.value = map.value + (day.epochDay to day) }
+    override fun observeDays(): Flow<List<Long>> = map.map { it.keys.toList() }
+    override suspend fun getDays() = map.value.keys.toList()
+    override suspend fun getAll() = map.value.values.toList()
+    override suspend fun upsertAll(items: List<StudyDayEntity>) { items.forEach { upsert(it) } }
+    override suspend fun clear() { map.value = emptyMap() }
+}

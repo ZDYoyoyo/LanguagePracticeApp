@@ -7,11 +7,17 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository.RefreshResult
+import io.github.zdyoyoyo.englishpractice.data.model.Question
+import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
+import io.github.zdyoyoyo.englishpractice.domain.StreakCalculator
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
+import io.github.zdyoyoyo.englishpractice.util.AppClock
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -20,6 +26,9 @@ data class HomeUiState(
     val questionCount: Int = 0,
     val wrongCount: Int = 0,
     val totalAttempts: Int = 0,
+    val dueCount: Int = 0,
+    val streak: StreakCalculator.Streak = StreakCalculator.Streak(0, 0, false),
+    val dailyWord: Question? = null,
     val bankMessage: String? = null,
 )
 
@@ -27,21 +36,33 @@ data class HomeUiState(
  * ViewModel：保存畫面狀態、處理畫面事件；螢幕旋轉時不會被重建。
  * 畫面只「觀察」uiState（StateFlow），資料變了畫面就自動更新。
  */
+@OptIn(ExperimentalCoroutinesApi::class)
 class HomeViewModel(
     private val bank: QuestionBankRepository,
     study: StudyRepository,
+    private val clock: AppClock,
 ) : ViewModel() {
 
     private val bankMessage = MutableStateFlow<String?>(null)
+    /** 「今天」也是狀態：App 跨過午夜回到首頁時重新計算 */
+    private val today = MutableStateFlow(clock.today().toEpochDay())
 
-    val uiState: StateFlow<HomeUiState> = combine(
-        bank.bank, study.activeWrongCount, study.totalAttempts, bankMessage,
-    ) { b, wrong, total, msg ->
+    private val dueCount = today.flatMapLatest { study.observeDueCount(it) }
+    private val streak = today.flatMapLatest { study.observeStreak(it) }
+
+    private val counts = combine(study.activeWrongCount, study.totalAttempts, dueCount, streak) { w, t, d, s ->
+        arrayOf<Any>(w, t, d, s)
+    }
+
+    val uiState: StateFlow<HomeUiState> = combine(bank.bank, counts, bankMessage, today) { b, c, msg, day ->
         HomeUiState(
             bankVersion = b?.version ?: 0,
             questionCount = b?.questions?.size ?: 0,
-            wrongCount = wrong,
-            totalAttempts = total,
+            wrongCount = c[0] as Int,
+            totalAttempts = c[1] as Int,
+            dueCount = c[2] as Int,
+            streak = c[3] as StreakCalculator.Streak,
+            dailyWord = b?.let { DailyPicker.dailyWord(it.questions, day) },
             bankMessage = msg,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), HomeUiState())
@@ -51,6 +72,10 @@ class HomeViewModel(
             bank.ensureLoaded()
             refreshBank()
         }
+    }
+
+    fun onResume() {
+        today.value = clock.today().toEpochDay()
     }
 
     fun refreshBank() {
@@ -68,7 +93,7 @@ class HomeViewModel(
         val Factory = viewModelFactory {
             initializer {
                 val c = appContainer()
-                HomeViewModel(c.questionBank, c.study)
+                HomeViewModel(c.questionBank, c.study, c.clock)
             }
         }
     }

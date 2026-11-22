@@ -33,3 +33,24 @@ data class WrongAnswerEntity(
     val mastered: Boolean = false,
     val updatedAt: Long,
 )
+
+/** SM-2 複習卡：每題一張，記錄下次該複習的日期 */
+@Serializable
+@Entity(tableName = "review_cards", indices = [Index("dueEpochDay")])
+data class ReviewCardEntity(
+    @PrimaryKey val questionId: String,
+    val repetitions: Int,
+    val intervalDays: Int,
+    val easeFactor: Double,
+    /** 下次複習日（LocalDate.toEpochDay()），<= 今天代表「今天該複習」 */
+    val dueEpochDay: Long,
+    val lastReviewedAt: Long,
+)
+
+/** 打卡紀錄：有作答的日子各一列 */
+@Serializable
+@Entity(tableName = "study_days")
+data class StudyDayEntity(
+    @PrimaryKey val epochDay: Long,
+    val answeredCount: Int,
+)

@@ -5,6 +5,8 @@ import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.fakes.DirectTx
 import io.github.zdyoyoyo.englishpractice.fakes.FakeAttemptDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeClock
+import io.github.zdyoyoyo.englishpractice.fakes.FakeReviewCardDao
+import io.github.zdyoyoyo.englishpractice.fakes.FakeStudyDayDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeWrongAnswerDao
 import io.github.zdyoyoyo.englishpractice.fakes.question
 import kotlinx.coroutines.flow.first
@@ -20,7 +22,10 @@ class WrongBookRecordingTest {
     private val attempts = FakeAttemptDao()
     private val wrongs = FakeWrongAnswerDao()
     private var changedAt = 0L
-    private val repo = StudyRepository(DirectTx, attempts, wrongs, clock, onLocalDataChanged = { changedAt = it })
+    private val repo = StudyRepository(
+        DirectTx, attempts, wrongs, FakeReviewCardDao(), FakeStudyDayDao(), clock,
+        onLocalDataChanged = { changedAt = it },
+    )
     private val q = question("q1")
 
     @Test fun `wrong answer is added to wrong book`() = runTest {

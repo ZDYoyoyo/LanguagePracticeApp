@@ -12,9 +12,20 @@ class AppPreferences(context: Context) {
         get() = sp.getLong(KEY_LAST_CHANGE, 0L)
         set(value) = sp.edit { putLong(KEY_LAST_CHANGE, value) }
 
+    var reminderEnabled: Boolean
+        get() = sp.getBoolean(KEY_REMINDER_ON, false)
+        set(value) = sp.edit { putBoolean(KEY_REMINDER_ON, value) }
+
+    /** 提醒時間（一天中的第幾分鐘），預設 20:00 */
+    var reminderMinuteOfDay: Int
+        get() = sp.getInt(KEY_REMINDER_MIN, 20 * 60)
+        set(value) = sp.edit { putInt(KEY_REMINDER_MIN, value) }
+
     fun clearAll() = sp.edit { clear() }
 
     companion object {
         private const val KEY_LAST_CHANGE = "last_local_change_at"
+        private const val KEY_REMINDER_ON = "reminder_enabled"
+        private const val KEY_REMINDER_MIN = "reminder_minute_of_day"
     }
 }

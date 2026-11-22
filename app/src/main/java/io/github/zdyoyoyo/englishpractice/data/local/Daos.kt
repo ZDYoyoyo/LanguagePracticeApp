@@ -55,3 +55,54 @@ interface WrongAnswerDao {
     @Query("DELETE FROM wrong_answers")
     suspend fun clear()
 }
+
+@Dao
+interface ReviewCardDao {
+    @Query("SELECT * FROM review_cards WHERE questionId = :questionId")
+    suspend fun get(questionId: String): ReviewCardEntity?
+
+    @Upsert
+    suspend fun upsert(card: ReviewCardEntity)
+
+    @Query("SELECT COUNT(*) FROM review_cards WHERE dueEpochDay <= :today")
+    fun observeDueCount(today: Long): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM review_cards WHERE dueEpochDay <= :today")
+    suspend fun dueCount(today: Long): Int
+
+    @Query("SELECT * FROM review_cards WHERE dueEpochDay <= :today ORDER BY dueEpochDay, questionId LIMIT :limit")
+    suspend fun getDue(today: Long, limit: Int): List<ReviewCardEntity>
+
+    @Query("SELECT * FROM review_cards")
+    suspend fun getAll(): List<ReviewCardEntity>
+
+    @Upsert
+    suspend fun upsertAll(items: List<ReviewCardEntity>)
+
+    @Query("DELETE FROM review_cards")
+    suspend fun clear()
+}
+
+@Dao
+interface StudyDayDao {
+    @Query("SELECT * FROM study_days WHERE epochDay = :epochDay")
+    suspend fun get(epochDay: Long): StudyDayEntity?
+
+    @Upsert
+    suspend fun upsert(day: StudyDayEntity)
+
+    @Query("SELECT epochDay FROM study_days")
+    fun observeDays(): Flow<List<Long>>
+
+    @Query("SELECT epochDay FROM study_days")
+    suspend fun getDays(): List<Long>
+
+    @Query("SELECT * FROM study_days")
+    suspend fun getAll(): List<StudyDayEntity>
+
+    @Upsert
+    suspend fun upsertAll(items: List<StudyDayEntity>)
+
+    @Query("DELETE FROM study_days")
+    suspend fun clear()
+}

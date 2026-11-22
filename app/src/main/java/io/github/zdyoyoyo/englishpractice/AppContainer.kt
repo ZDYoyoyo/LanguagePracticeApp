@@ -32,6 +32,8 @@ class AppContainer(context: Context) {
         tx = RoomTransactionRunner(database),
         attemptDao = database.attemptDao(),
         wrongDao = database.wrongAnswerDao(),
+        reviewDao = database.reviewCardDao(),
+        dayDao = database.studyDayDao(),
         clock = clock,
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
