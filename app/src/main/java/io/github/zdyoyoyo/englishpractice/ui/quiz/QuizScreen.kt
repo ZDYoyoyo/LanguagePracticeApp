@@ -14,6 +14,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -28,6 +29,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,6 +40,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
 import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
@@ -47,10 +50,27 @@ import io.github.zdyoyoyo.englishpractice.ui.theme.WrongRed
 @Composable
 fun QuizScreen(
     onBack: () -> Unit,
-    onFinished: (QuizViewModel) -> Unit = {},
+    /** 一輪結束時呼叫（參數是本輪題數），用來決定要不要顯示插頁廣告 */
+    onSessionFinished: (Int) -> Unit = {},
+    /** 使用者同意看獎勵廣告時呼叫；回傳 false 代表廣告還沒準備好 */
+    onWatchRewardedAd: (onReward: () -> Unit) -> Boolean = { false },
     vm: QuizViewModel = viewModel(factory = QuizViewModel.Factory),
 ) {
     val s by vm.ui.collectAsStateWithLifecycle()
+    if (s.showRewardOffer) {
+        AlertDialog(
+            onDismissRequest = vm::dismissRewardOffer,
+            title = { Text("提示次數用完了") },
+            text = { Text("要看一支短廣告，換 ${AdPolicy.HINTS_PER_REWARD} 次提示嗎？\n（完全自由選擇，不看也能繼續作答）") },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.dismissRewardOffer()
+                    if (!onWatchRewardedAd { vm.onRewardEarned() }) vm.onRewardUnavailable()
+                }) { Text("看廣告") }
+            },
+            dismissButton = { TextButton(onClick = vm::dismissRewardOffer) { Text("不用了") } },
+        )
+    }
     Scaffold(topBar = {
         TopAppBar(
             title = { Text(s.title) },
@@ -61,7 +81,7 @@ fun QuizScreen(
             when {
                 s.loading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
                 s.emptyMessage != null -> EmptyState(s.emptyMessage!!, onBack)
-                s.finished -> ResultSummary(s, onBack, onFinishedShown = { onFinished(vm) })
+                s.finished -> ResultSummary(s, onBack, onFinishedShown = { onSessionFinished(s.questions.size) })
                 else -> QuestionContent(s, vm)
             }
         }
@@ -86,10 +106,19 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
         }
         Text(q.prompt, style = MaterialTheme.typography.titleLarge)
 
+        if (!s.revealed) {
+            TextButton(onClick = vm::onHint, enabled = !s.usedHint) {
+                Text(if (s.hintCredits > 0) "💡 提示（剩 ${s.hintCredits} 次）" else "💡 提示")
+            }
+        }
+        s.hintText?.let { Text("💡 $it", color = MaterialTheme.colorScheme.tertiary) }
+        s.rewardMessage?.let { Text(it, color = MaterialTheme.colorScheme.secondary) }
+
         if (q.isTypingQuestion) {
             TypingAnswer(s, q, vm)
         } else {
-            q.options.forEach { option -> OptionButton(option, s, q, onClick = { vm.onOptionSelected(option) }) }
+            q.options.filter { it !in s.hiddenOptions || s.revealed }
+                .forEach { option -> OptionButton(option, s, q, onClick = { vm.onOptionSelected(option) }) }
         }
 
         if (s.revealed) {

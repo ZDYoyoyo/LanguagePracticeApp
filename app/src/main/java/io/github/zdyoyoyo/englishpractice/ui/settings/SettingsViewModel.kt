@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import io.github.zdyoyoyo.englishpractice.AppContainer
+import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.notify.ReminderScheduler
 import io.github.zdyoyoyo.englishpractice.sync.CloudStatus
 import io.github.zdyoyoyo.englishpractice.sync.SyncPolicy
@@ -34,6 +35,16 @@ class SettingsViewModel(
     )
     val ui: StateFlow<SettingsUiState> = _ui.asStateFlow()
     val cloud: StateFlow<CloudStatus> = c.cloudSync.status
+    val hintCredits: StateFlow<Int> = c.hints.credits
+    val rewardedReady: StateFlow<Boolean> = c.ads.rewardedReady
+    val privacyOptionsRequired: StateFlow<Boolean> = c.ads.privacyOptionsRequired
+
+    // ---- 廣告（選擇性）----
+    fun watchRewardedAd(activity: Activity) {
+        c.ads.showRewarded(activity) { c.hints.add(AdPolicy.HINTS_PER_REWARD) }
+    }
+
+    fun showAdPrivacyOptions(activity: Activity) = c.ads.showPrivacyOptions(activity)
 
     // ---- 每日提醒 ----
     fun setReminder(enabled: Boolean) {

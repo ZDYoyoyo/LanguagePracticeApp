@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- 下載題庫（以及之後的 Drive 同步、廣告）需要網路 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Android 13+ 發通知需要使用者同意（每日提醒用，App 內開啟提醒時才會詢問） -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Credential Manager 函式庫會帶入生物辨識權限（給密碼金鑰用），本 App 用不到 → 移除 -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" tools:node="remove" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" tools:node="remove" />
+
+    <!--
+      AdMob 函式庫會自動合併以下權限（不需手動宣告）：
+      - ACCESS_NETWORK_STATE：判斷網路狀態以載入廣告
+      - com.google.android.gms.permission.AD_ID：讀取廣告 ID（個人化廣告 / 成效統計）
+      若 App 主要對象是兒童（Designed for Families），必須移除 AD_ID，把下面這行取消註解：
+      <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" />
+    -->
 
     <!--
       allowBackup=false：關閉 Android 系統自動備份。
@@ -20,6 +33,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.EnglishPractice">
+
+        <!-- AdMob App ID：由 build.gradle.kts 依建置類型注入（debug 一律為測試 ID） -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
 
         <activity
             android:name=".MainActivity"

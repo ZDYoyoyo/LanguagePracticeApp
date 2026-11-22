@@ -2,6 +2,7 @@ package io.github.zdyoyoyo.englishpractice.ui.settings
 
 import android.Manifest
 import android.os.Build
+import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -37,9 +38,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import io.github.zdyoyoyo.englishpractice.BuildConfig
+import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -49,6 +53,11 @@ fun SettingsScreen(
 ) {
     val s by vm.ui.collectAsStateWithLifecycle()
     val cloud by vm.cloud.collectAsStateWithLifecycle()
+    val hints by vm.hintCredits.collectAsStateWithLifecycle()
+    val rewardedReady by vm.rewardedReady.collectAsStateWithLifecycle()
+    val privacyRequired by vm.privacyOptionsRequired.collectAsStateWithLifecycle()
+    val activity = LocalActivity.current
+    val uriHandler = LocalUriHandler.current
     var showTimePicker by remember { mutableStateOf(false) }
     var confirmClear by remember { mutableStateOf(false) }
 
@@ -96,10 +105,26 @@ fun SettingsScreen(
             TextButton(onClick = { showTimePicker = true }) { Text("更改提醒時間") }
             HorizontalDivider()
 
+            SectionTitle("提示與廣告")
+            Text("提示剩餘 $hints 次。做題時可用「提示」刪去錯誤選項。")
+            OutlinedButton(
+                onClick = { activity?.let { vm.watchRewardedAd(it) } },
+                enabled = rewardedReady,
+            ) { Text(if (rewardedReady) "看一支廣告換 ${AdPolicy.HINTS_PER_REWARD} 次提示（自由選擇）" else "廣告載入中…") }
+            Text("完成幾輪題目後偶爾會出現一次全螢幕廣告；作答途中不會出現。", style = MaterialTheme.typography.bodySmall)
+            if (privacyRequired) {
+                OutlinedButton(onClick = { activity?.let { vm.showAdPrivacyOptions(it) } }) { Text("廣告隱私選項") }
+            }
+            HorizontalDivider()
+
             SectionTitle("資料與隱私")
             Text("學習紀錄只存在這支手機（以及你登入後自己的 Google Drive）。移除 App 會一併刪除手機上的資料。",
                 style = MaterialTheme.typography.bodySmall)
             OutlinedButton(onClick = { confirmClear = true }) { Text("清除這支手機上的學習資料") }
+            if (BuildConfig.PRIVACY_POLICY_URL.isNotBlank()) {
+                TextButton(onClick = { uriHandler.openUri(BuildConfig.PRIVACY_POLICY_URL) }) { Text("隱私權政策") }
+            }
+            Text("版本 ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.bodySmall)
         }
     }
 

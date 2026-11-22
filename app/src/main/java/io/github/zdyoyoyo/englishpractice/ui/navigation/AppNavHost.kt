@@ -1,10 +1,13 @@
 package io.github.zdyoyoyo.englishpractice.ui.navigation
 
+import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import io.github.zdyoyoyo.englishpractice.EnglishApp
 import io.github.zdyoyoyo.englishpractice.MainActivity
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
 import io.github.zdyoyoyo.englishpractice.ui.home.HomeScreen
@@ -17,6 +20,10 @@ import io.github.zdyoyoyo.englishpractice.ui.wrongbook.WrongBookScreen
 @Composable
 fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {}) {
     val nav = rememberNavController()
+    val activity = LocalActivity.current
+    val ads = (LocalContext.current.applicationContext as EnglishApp).container.ads
+    // 完成一輪後「可能」顯示插頁廣告（頻率由 AdPolicy 控制）
+    val onSessionFinished: (Int) -> Unit = { count -> activity?.let { ads.onSessionCompleted(it, count) } }
 
     // 從通知點進來 → 直接開每日一題
     LaunchedEffect(pendingOpen) {
@@ -46,7 +53,11 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
             )
         }
         composable<QuizRoute> {
-            QuizScreen(onBack = { nav.popBackStack() })
+            QuizScreen(
+                onBack = { nav.popBackStack() },
+                onSessionFinished = onSessionFinished,
+                onWatchRewardedAd = { onReward -> activity?.let { ads.showRewarded(it, onReward) } ?: false },
+            )
         }
         composable<WrongBookRoute> {
             WrongBookScreen(
@@ -54,7 +65,7 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onRedo = { nav.navigate(QuizRoute(StudyMode.WRONG_BOOK.key)) },
             )
         }
-        composable<PkRoute> { PkScreen(onBack = { nav.popBackStack() }) }
+        composable<PkRoute> { PkScreen(onBack = { nav.popBackStack() }, onMatchFinished = onSessionFinished) }
         composable<SettingsRoute> { SettingsScreen(onBack = { nav.popBackStack() }) }
     }
 }

@@ -25,6 +25,8 @@ class MainActivity : ComponentActivity() {
             // 已登入 Google 的話，開 App 時在背景自動同步（不會跳出任何畫面）
             val container = (application as EnglishApp).container
             lifecycleScope.launch { container.cloudSync.autoSyncOnOpen() }
+            // 廣告：先取得同意（UMP），再初始化 AdMob
+            container.ads.gatherConsentAndInit(this)
         }
         setContent {
             EnglishPracticeTheme {

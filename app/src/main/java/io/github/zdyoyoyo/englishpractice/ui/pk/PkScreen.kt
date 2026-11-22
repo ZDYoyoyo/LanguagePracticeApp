@@ -25,6 +25,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,8 +40,15 @@ import io.github.zdyoyoyo.englishpractice.ui.theme.WrongRed
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PkScreen(onBack: () -> Unit, vm: PkViewModel = viewModel(factory = PkViewModel.Factory)) {
+fun PkScreen(
+    onBack: () -> Unit,
+    onMatchFinished: (Int) -> Unit = {},
+    vm: PkViewModel = viewModel(factory = PkViewModel.Factory),
+) {
     val s by vm.ui.collectAsStateWithLifecycle()
+    LaunchedEffect(s.phase) {
+        if (s.phase == PkPhase.FINISHED) onMatchFinished(s.questions.size)
+    }
     Scaffold(topBar = {
         TopAppBar(
             title = { Text("PK 對戰") },

@@ -34,6 +34,8 @@ class CloudSync(
     private val auth: GoogleAuthManager,
     private val sync: SyncManager,
     private val prefs: AppPreferences,
+    /** 從雲端還原或清除本機資料後通知（例如重新讀取提示次數） */
+    private val onLocalDataReplaced: () -> Unit = {},
 ) {
     private val _status = MutableStateFlow(
         CloudStatus(configured = auth.isConfigured, email = prefs.signedInEmail, lastSyncedAt = prefs.lastSyncedAt)
@@ -82,7 +84,10 @@ class CloudSync(
     suspend fun signOut(clearLocalData: Boolean) {
         runCatching { auth.signOut() }
         prefs.signedInEmail = null
-        if (clearLocalData) sync.clearLocal()
+        if (clearLocalData) {
+            sync.clearLocal()
+            onLocalDataReplaced()
+        }
         _status.update {
             it.copy(email = null, lastSyncedAt = prefs.lastSyncedAt,
                 message = if (clearLocalData) "已登出並清除這支手機上的學習資料" else "已登出")
@@ -91,6 +96,7 @@ class CloudSync(
 
     suspend fun clearLocalData() {
         sync.clearLocal()
+        onLocalDataReplaced()
         _status.update { it.copy(lastSyncedAt = 0, message = "已清除這支手機上的學習資料") }
     }
 
@@ -133,7 +139,10 @@ class CloudSync(
     private suspend fun runSync(token: String, force: SyncPolicy.Action?) = busy {
         when (val r = sync.sync(DriveAppDataClient(token), force)) {
             SyncOutcome.Uploaded -> "已備份到 Google Drive"
-            SyncOutcome.Downloaded -> "已從 Google Drive 還原進度"
+            SyncOutcome.Downloaded -> {
+                onLocalDataReplaced()
+                "已從 Google Drive 還原進度"
+            }
             SyncOutcome.NothingToDo -> "已是最新"
             is SyncOutcome.NeedsChoice -> {
                 _status.update { it.copy(choice = r) }

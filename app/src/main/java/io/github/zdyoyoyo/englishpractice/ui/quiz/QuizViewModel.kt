@@ -10,7 +10,9 @@ import androidx.navigation.toRoute
 import io.github.zdyoyoyo.englishpractice.AppContainer
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
 import io.github.zdyoyoyo.englishpractice.data.model.Question
+import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.domain.AnswerChecker
+import io.github.zdyoyoyo.englishpractice.domain.HintLogic
 import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
 import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
@@ -33,6 +35,13 @@ data class QuizUiState(
     val correctCount: Int = 0,
     val finished: Boolean = false,
     val emptyMessage: String? = null,
+    // ---- 提示（看獎勵廣告可換）----
+    val hintCredits: Int = 0,
+    val usedHint: Boolean = false,
+    val hiddenOptions: Set<String> = emptySet(),
+    val hintText: String? = null,
+    val showRewardOffer: Boolean = false,
+    val rewardMessage: String? = null,
 ) {
     val current: Question? get() = questions.getOrNull(index)
     val isLast: Boolean get() = index == questions.lastIndex
@@ -54,17 +63,19 @@ class QuizViewModel(
 
     init {
         viewModelScope.launch { start() }
+        viewModelScope.launch { c.hints.credits.collect { n -> _ui.update { it.copy(hintCredits = n) } } }
     }
 
     private suspend fun start() {
         c.questionBank.ensureLoaded()
         val questions = loadQuestions()
-        _ui.value = QuizUiState(
-            loading = false,
-            title = titleFor(mode),
-            questions = questions,
-            emptyMessage = if (questions.isEmpty()) emptyMessageFor(mode) else null,
-        )
+        _ui.update {
+            it.copy(
+                loading = false,
+                questions = questions,
+                emptyMessage = if (questions.isEmpty()) emptyMessageFor(mode) else null,
+            )
+        }
         questionShownAt = c.clock.nowMillis()
     }
 
@@ -108,15 +119,46 @@ class QuizViewModel(
                 correctCount = it.correctCount + if (correct) 1 else 0,
             )
         }
-        viewModelScope.launch { c.study.recordAnswer(q, answer, correct, elapsed, mode) }
+        val usedHint = _ui.value.usedHint
+        viewModelScope.launch { c.study.recordAnswer(q, answer, correct, elapsed, mode, usedHint) }
     }
+
+    /** 按「提示」：有次數就直接用；沒有就「詢問」要不要看廣告換（不強迫） */
+    fun onHint() {
+        val s = _ui.value
+        if (s.revealed || s.usedHint) return
+        if (c.hints.tryConsume()) applyHint() else _ui.update { it.copy(showRewardOffer = true) }
+    }
+
+    private fun applyHint() {
+        val q = _ui.value.current ?: return
+        _ui.update {
+            if (q.isTypingQuestion) it.copy(usedHint = true, hintText = HintLogic.typingHint(q))
+            else it.copy(usedHint = true, hiddenOptions = HintLogic.optionsToHide(q))
+        }
+    }
+
+    fun onRewardEarned() {
+        c.hints.add(AdPolicy.HINTS_PER_REWARD)
+        _ui.update { it.copy(showRewardOffer = false, rewardMessage = "獲得 ${AdPolicy.HINTS_PER_REWARD} 次提示！") }
+    }
+
+    fun onRewardUnavailable() =
+        _ui.update { it.copy(showRewardOffer = false, rewardMessage = "廣告還沒準備好，請稍後再試") }
+
+    fun dismissRewardOffer() = _ui.update { it.copy(showRewardOffer = false) }
 
     fun onNext() {
         val s = _ui.value
         if (s.isLast) {
             _ui.update { it.copy(finished = true) }
         } else {
-            _ui.update { it.copy(index = it.index + 1, selected = null, typed = "", revealed = false) }
+            _ui.update {
+                it.copy(
+                    index = it.index + 1, selected = null, typed = "", revealed = false,
+                    usedHint = false, hiddenOptions = emptySet(), hintText = null, rewardMessage = null,
+                )
+            }
             questionShownAt = c.clock.nowMillis()
         }
     }
