@@ -5,6 +5,7 @@ import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.fakes.DirectTx
 import io.github.zdyoyoyo.englishpractice.fakes.FakeAttemptDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeClock
+import io.github.zdyoyoyo.englishpractice.fakes.FakeFavoriteDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeReviewCardDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeStudyDayDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeWrongAnswerDao
@@ -20,7 +21,7 @@ class ReviewSchedulingTest {
     private val clock = FakeClock()
     private val cards = FakeReviewCardDao()
     private val days = FakeStudyDayDao()
-    private val repo = StudyRepository(DirectTx, FakeAttemptDao(), FakeWrongAnswerDao(), cards, days, clock)
+    private val repo = StudyRepository(DirectTx, FakeAttemptDao(), FakeWrongAnswerDao(), cards, days, FakeFavoriteDao(), clock)
     private val q = question("q1")
     private val today get() = clock.today().toEpochDay()
 

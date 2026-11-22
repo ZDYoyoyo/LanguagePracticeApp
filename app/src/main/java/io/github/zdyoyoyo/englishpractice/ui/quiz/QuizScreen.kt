@@ -14,6 +14,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.StarBorder
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
@@ -25,6 +27,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -49,6 +52,7 @@ import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
 import io.github.zdyoyoyo.englishpractice.speech.PronunciationPanel
 import io.github.zdyoyoyo.englishpractice.speech.rememberPronouncer
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
+import io.github.zdyoyoyo.englishpractice.ui.theme.FavoriteGold
 import io.github.zdyoyoyo.englishpractice.ui.theme.WrongRed
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,6 +84,17 @@ fun QuizScreen(
         TopAppBar(
             title = { Text(s.title) },
             navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "返回") } },
+            actions = {
+                if (s.current != null && !s.finished) {
+                    IconButton(onClick = vm::onToggleFavorite) {
+                        Icon(
+                            if (s.isCurrentFavorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
+                            contentDescription = if (s.isCurrentFavorite) "取消收藏" else "收藏",
+                            tint = if (s.isCurrentFavorite) FavoriteGold else LocalContentColor.current,
+                        )
+                    }
+                }
+            },
         )
     }) { padding ->
         Box(Modifier.padding(padding).fillMaxSize()) {
@@ -133,6 +148,13 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
 
         if (s.revealed) {
             Feedback(s, q)
+            if (s.lastCorrect) {
+                if (s.markedGuessed) {
+                    Text("⭐ 已加入收藏，明天會再出現在複習裡", color = MaterialTheme.colorScheme.secondary)
+                } else {
+                    TextButton(onClick = vm::onMarkGuessed) { Text("🎲 其實是猜的（加入收藏，明天再複習）") }
+                }
+            }
             q.speakableText?.let { PronunciationPanel(it, pronouncer) }
             if (ContactAuthor.isConfigured) {
                 TextButton(onClick = { ContactAuthor.reportQuestion(context, q.id, q.prompt) }) {

@@ -4,7 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
 import androidx.room.withTransaction
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [
@@ -12,8 +14,9 @@ import androidx.room.withTransaction
         WrongAnswerEntity::class,
         ReviewCardEntity::class,
         StudyDayEntity::class,
+        FavoriteEntity::class,
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -21,11 +24,24 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun wrongAnswerDao(): WrongAnswerDao
     abstract fun reviewCardDao(): ReviewCardDao
     abstract fun studyDayDao(): StudyDayDao
+    abstract fun favoriteDao(): FavoriteDao
 
     companion object {
         fun create(context: Context): AppDatabase =
-            // 上架前 schema 還會變動；正式上架後若要改資料表，請改用 Migration 而不是升版號就好
-            Room.databaseBuilder(context, AppDatabase::class.java, "english_practice.db").build()
+            Room.databaseBuilder(context, AppDatabase::class.java, "english_practice.db")
+                // 改資料表結構時：版本號 +1，並寫一個 Migration，已安裝的使用者資料才不會遺失
+                .addMigrations(MIGRATION_1_2)
+                .build()
+
+        const val CREATE_FAVORITES_SQL =
+            "CREATE TABLE IF NOT EXISTS `favorites` (`questionId` TEXT NOT NULL, `addedAt` INTEGER NOT NULL, PRIMARY KEY(`questionId`))"
+
+        /** v1 → v2：新增「收藏」資料表 */
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(CREATE_FAVORITES_SQL)
+            }
+        }
     }
 }
 

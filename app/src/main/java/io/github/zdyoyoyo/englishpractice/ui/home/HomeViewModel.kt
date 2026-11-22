@@ -29,6 +29,7 @@ data class HomeUiState(
     val dueCount: Int = 0,
     val streak: StreakCalculator.Streak = StreakCalculator.Streak(0, 0, false),
     val dailyWord: Question? = null,
+    val favoriteCount: Int = 0,
     val bankMessage: String? = null,
 )
 
@@ -50,8 +51,10 @@ class HomeViewModel(
     private val dueCount = today.flatMapLatest { study.observeDueCount(it) }
     private val streak = today.flatMapLatest { study.observeStreak(it) }
 
-    private val counts = combine(study.activeWrongCount, study.totalAttempts, dueCount, streak) { w, t, d, s ->
-        arrayOf<Any>(w, t, d, s)
+    private val counts = combine(
+        study.activeWrongCount, study.totalAttempts, dueCount, streak, study.favoriteCount,
+    ) { w, t, d, s, f ->
+        arrayOf<Any>(w, t, d, s, f)
     }
 
     val uiState: StateFlow<HomeUiState> = combine(bank.bank, counts, bankMessage, today) { b, c, msg, day ->
@@ -62,6 +65,7 @@ class HomeViewModel(
             totalAttempts = c[1] as Int,
             dueCount = c[2] as Int,
             streak = c[3] as StreakCalculator.Streak,
+            favoriteCount = c[4] as Int,
             dailyWord = b?.let { DailyPicker.dailyWord(it.questions, day) },
             bankMessage = msg,
         )

@@ -54,3 +54,11 @@ data class StudyDayEntity(
     @PrimaryKey val epochDay: Long,
     val answeredCount: Int,
 )
+
+/** 收藏：使用者想之後再看的題目（例如猜對的題目） */
+@Serializable
+@Entity(tableName = "favorites")
+data class FavoriteEntity(
+    @PrimaryKey val questionId: String,
+    val addedAt: Long,
+)

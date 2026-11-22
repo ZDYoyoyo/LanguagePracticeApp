@@ -2,6 +2,8 @@ package io.github.zdyoyoyo.englishpractice.fakes
 
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptDao
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptEntity
+import io.github.zdyoyoyo.englishpractice.data.local.FavoriteDao
+import io.github.zdyoyoyo.englishpractice.data.local.FavoriteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
 import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
@@ -92,5 +94,19 @@ class FakeStudyDayDao : StudyDayDao {
     override suspend fun getDays() = map.value.keys.toList()
     override suspend fun getAll() = map.value.values.toList()
     override suspend fun upsertAll(items: List<StudyDayEntity>) { items.forEach { upsert(it) } }
+    override suspend fun clear() { map.value = emptyMap() }
+}
+
+class FakeFavoriteDao : FavoriteDao {
+    val map = MutableStateFlow<Map<String, FavoriteEntity>>(emptyMap())
+    private fun sorted() = map.value.values.sortedByDescending { it.addedAt }
+    override fun observeAll(): Flow<List<FavoriteEntity>> = map.map { sorted() }
+    override fun observeCount(): Flow<Int> = map.map { it.size }
+    override fun observeIds(): Flow<List<String>> = map.map { m -> m.keys.toList() }
+    override suspend fun getAll() = sorted()
+    override suspend fun exists(questionId: String) = questionId in map.value
+    override suspend fun upsert(item: FavoriteEntity) { map.value = map.value + (item.questionId to item) }
+    override suspend fun upsertAll(items: List<FavoriteEntity>) { items.forEach { upsert(it) } }
+    override suspend fun delete(questionId: String) { map.value = map.value - questionId }
     override suspend fun clear() { map.value = emptyMap() }
 }

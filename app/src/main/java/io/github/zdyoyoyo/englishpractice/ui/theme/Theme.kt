@@ -24,6 +24,7 @@ private val Dark = darkColorScheme(
 
 val CorrectGreen = Color(0xFF2E7D32)
 val WrongRed = Color(0xFFC62828)
+val FavoriteGold = Color(0xFFF9A825)
 
 @Composable
 fun EnglishPracticeTheme(content: @Composable () -> Unit) {

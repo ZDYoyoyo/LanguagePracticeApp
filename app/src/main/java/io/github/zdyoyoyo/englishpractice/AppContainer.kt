@@ -41,6 +41,7 @@ class AppContainer(context: Context) {
         wrongDao = database.wrongAnswerDao(),
         reviewDao = database.reviewCardDao(),
         dayDao = database.studyDayDao(),
+        favoriteDao = database.favoriteDao(),
         clock = clock,
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )

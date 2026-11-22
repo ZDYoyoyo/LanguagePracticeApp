@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.EditNote
 import androidx.compose.material.icons.filled.EventRepeat
 import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Today
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -45,6 +46,7 @@ fun HomeScreen(
     onReview: () -> Unit,
     onDaily: () -> Unit,
     onWrongBook: () -> Unit,
+    onFavorites: () -> Unit,
     onPk: () -> Unit,
     onSettings: () -> Unit,
     vm: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
@@ -86,6 +88,11 @@ fun HomeScreen(
                 Icons.AutoMirrored.Filled.MenuBook, "錯題本",
                 if (state.wrongCount == 0) "目前沒有錯題" else "還有 ${state.wrongCount} 題待訂正",
                 onWrongBook,
+            )
+            HomeActionCard(
+                Icons.Filled.Star, "我的收藏",
+                if (state.favoriteCount == 0) "作答時按 ☆ 收藏想再看的題目" else "已收藏 ${state.favoriteCount} 題",
+                onFavorites,
             )
             HomeActionCard(Icons.Filled.SportsEsports, "PK 對戰", "和電腦對手比速度與正確率", onPk)
 

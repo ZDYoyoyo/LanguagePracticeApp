@@ -106,3 +106,33 @@ interface StudyDayDao {
     @Query("DELETE FROM study_days")
     suspend fun clear()
 }
+
+@Dao
+interface FavoriteDao {
+    @Query("SELECT * FROM favorites ORDER BY addedAt DESC")
+    fun observeAll(): Flow<List<FavoriteEntity>>
+
+    @Query("SELECT COUNT(*) FROM favorites")
+    fun observeCount(): Flow<Int>
+
+    @Query("SELECT questionId FROM favorites")
+    fun observeIds(): Flow<List<String>>
+
+    @Query("SELECT * FROM favorites ORDER BY addedAt DESC")
+    suspend fun getAll(): List<FavoriteEntity>
+
+    @Query("SELECT EXISTS(SELECT 1 FROM favorites WHERE questionId = :questionId)")
+    suspend fun exists(questionId: String): Boolean
+
+    @Upsert
+    suspend fun upsert(item: FavoriteEntity)
+
+    @Upsert
+    suspend fun upsertAll(items: List<FavoriteEntity>)
+
+    @Query("DELETE FROM favorites WHERE questionId = :questionId")
+    suspend fun delete(questionId: String)
+
+    @Query("DELETE FROM favorites")
+    suspend fun clear()
+}

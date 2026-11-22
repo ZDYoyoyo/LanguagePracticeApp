@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import io.github.zdyoyoyo.englishpractice.EnglishApp
 import io.github.zdyoyoyo.englishpractice.MainActivity
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
+import io.github.zdyoyoyo.englishpractice.ui.favorites.FavoritesScreen
 import io.github.zdyoyoyo.englishpractice.ui.home.HomeScreen
 import io.github.zdyoyoyo.englishpractice.ui.pk.PkScreen
 import io.github.zdyoyoyo.englishpractice.ui.practice.PracticeSetupScreen
@@ -40,6 +41,7 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onReview = { nav.navigate(QuizRoute(StudyMode.REVIEW.key)) },
                 onDaily = { nav.navigate(QuizRoute(StudyMode.DAILY.key)) },
                 onWrongBook = { nav.navigate(WrongBookRoute) },
+                onFavorites = { nav.navigate(FavoritesRoute) },
                 onPk = { nav.navigate(PkRoute) },
                 onSettings = { nav.navigate(SettingsRoute) },
             )
@@ -63,6 +65,12 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
             WrongBookScreen(
                 onBack = { nav.popBackStack() },
                 onRedo = { nav.navigate(QuizRoute(StudyMode.WRONG_BOOK.key)) },
+            )
+        }
+        composable<FavoritesRoute> {
+            FavoritesScreen(
+                onBack = { nav.popBackStack() },
+                onPractice = { nav.navigate(QuizRoute(StudyMode.FAVORITES.key)) },
             )
         }
         composable<PkRoute> { PkScreen(onBack = { nav.popBackStack() }, onMatchFinished = onSessionFinished) }

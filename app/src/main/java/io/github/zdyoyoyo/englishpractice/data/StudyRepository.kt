@@ -2,6 +2,8 @@ package io.github.zdyoyoyo.englishpractice.data
 
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptDao
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptEntity
+import io.github.zdyoyoyo.englishpractice.data.local.FavoriteDao
+import io.github.zdyoyoyo.englishpractice.data.local.FavoriteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
 import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
@@ -21,6 +23,7 @@ enum class StudyMode(val key: String) {
     PRACTICE("practice"),
     WRONG_BOOK("wrong"),
     REVIEW("review"),
+    FAVORITES("fav"),
     DAILY("daily"),
     PK("pk");
 
@@ -39,6 +42,7 @@ class StudyRepository(
     private val wrongDao: WrongAnswerDao,
     private val reviewDao: ReviewCardDao,
     private val dayDao: StudyDayDao,
+    private val favoriteDao: FavoriteDao,
     private val clock: AppClock,
     /** 本機資料有變動時呼叫（雲端同步判斷「誰比較新」會用到） */
     private val onLocalDataChanged: (Long) -> Unit = {},
@@ -46,6 +50,52 @@ class StudyRepository(
     val activeWrongAnswers: Flow<List<WrongAnswerEntity>> = wrongDao.observeActive()
     val activeWrongCount: Flow<Int> = wrongDao.observeActiveCount()
     val totalAttempts: Flow<Int> = attemptDao.observeTotal()
+    val favorites: Flow<List<FavoriteEntity>> = favoriteDao.observeAll()
+    val favoriteCount: Flow<Int> = favoriteDao.observeCount()
+    val favoriteIds: Flow<List<String>> = favoriteDao.observeIds()
+
+    suspend fun favoriteQuestionIds(): List<String> = favoriteDao.getAll().map { it.questionId }
+
+    suspend fun isFavorite(questionId: String): Boolean = favoriteDao.exists(questionId)
+
+    /** 切換收藏；回傳切換後是否為收藏 */
+    suspend fun toggleFavorite(questionId: String): Boolean {
+        val now = clock.nowMillis()
+        val nowFavorite = tx.run {
+            if (favoriteDao.exists(questionId)) {
+                favoriteDao.delete(questionId); false
+            } else {
+                favoriteDao.upsert(FavoriteEntity(questionId, now)); true
+            }
+        }
+        onLocalDataChanged(now)
+        return nowFavorite
+    }
+
+    /**
+     * 「其實是猜的」：答對但沒把握。
+     * - 加入收藏
+     * - 複習卡重新排到「明天」（重新開始累積間隔），不進錯題本
+     */
+    suspend fun markGuessed(questionId: String) {
+        val now = clock.nowMillis()
+        val today = clock.today().toEpochDay()
+        tx.run {
+            if (!favoriteDao.exists(questionId)) favoriteDao.upsert(FavoriteEntity(questionId, now))
+            val card = reviewDao.get(questionId)
+            reviewDao.upsert(
+                ReviewCardEntity(
+                    questionId = questionId,
+                    repetitions = 0,
+                    intervalDays = 1,
+                    easeFactor = card?.easeFactor ?: Sm2Scheduler.INITIAL_EASE,
+                    dueEpochDay = today + 1,
+                    lastReviewedAt = now,
+                )
+            )
+        }
+        onLocalDataChanged(now)
+    }
 
     fun observeDueCount(todayEpochDay: Long): Flow<Int> = reviewDao.observeDueCount(todayEpochDay)
 

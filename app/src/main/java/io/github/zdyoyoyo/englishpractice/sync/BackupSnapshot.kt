@@ -3,6 +3,8 @@ package io.github.zdyoyoyo.englishpractice.sync
 import io.github.zdyoyoyo.englishpractice.data.local.AppDatabase
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptDao
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptEntity
+import io.github.zdyoyoyo.englishpractice.data.local.FavoriteDao
+import io.github.zdyoyoyo.englishpractice.data.local.FavoriteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
 import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
@@ -28,8 +30,11 @@ data class BackupSnapshot(
     val reviewCards: List<ReviewCardEntity> = emptyList(),
     val studyDays: List<StudyDayEntity> = emptyList(),
     val hintCredits: Int = 0,
+    /** v2 新增；舊備份沒有這個欄位時視為空清單 */
+    val favorites: List<FavoriteEntity> = emptyList(),
 ) {
-    val isEmpty: Boolean get() = attempts.isEmpty() && wrongAnswers.isEmpty() && reviewCards.isEmpty() && studyDays.isEmpty()
+    val isEmpty: Boolean get() = attempts.isEmpty() && wrongAnswers.isEmpty() && reviewCards.isEmpty() &&
+        studyDays.isEmpty() && favorites.isEmpty()
 
     fun toJson(): String = json.encodeToString(serializer(), this)
 
@@ -46,9 +51,10 @@ class BackupSerializer(
     private val wrongDao: WrongAnswerDao,
     private val reviewDao: ReviewCardDao,
     private val dayDao: StudyDayDao,
+    private val favoriteDao: FavoriteDao,
 ) {
     constructor(db: AppDatabase, tx: TransactionRunner) :
-        this(tx, db.attemptDao(), db.wrongAnswerDao(), db.reviewCardDao(), db.studyDayDao())
+        this(tx, db.attemptDao(), db.wrongAnswerDao(), db.reviewCardDao(), db.studyDayDao(), db.favoriteDao())
 
     suspend fun export(exportedAt: Long, lastLocalChangeAt: Long, hintCredits: Int): BackupSnapshot = tx.run {
         BackupSnapshot(
@@ -59,6 +65,7 @@ class BackupSerializer(
             reviewCards = reviewDao.getAll(),
             studyDays = dayDao.getAll(),
             hintCredits = hintCredits,
+            favorites = favoriteDao.getAll(),
         )
     }
 
@@ -69,6 +76,7 @@ class BackupSerializer(
         wrongDao.upsertAll(snapshot.wrongAnswers)
         reviewDao.upsertAll(snapshot.reviewCards)
         dayDao.upsertAll(snapshot.studyDays)
+        favoriteDao.upsertAll(snapshot.favorites)
     }
 
     suspend fun clearAll() = tx.run { clearInternal() }
@@ -78,5 +86,6 @@ class BackupSerializer(
         wrongDao.clear()
         reviewDao.clear()
         dayDao.clear()
+        favoriteDao.clear()
     }
 }

@@ -3,7 +3,7 @@
 離線優先、零後端的英語學習 Android App。Kotlin + Jetpack Compose。
 
 - 題庫是放在靜態空間的 JSON（目前 GitHub raw，之後可換 Cloudflare Pages），有版本號，有更新才下載
-- 學習資料（作答、錯題、SM-2 複習排程、打卡）全部存在手機（Room），移除 App 即清除
+- 學習資料（作答、錯題、收藏、SM-2 複習排程、打卡）全部存在手機（Room），移除 App 即清除
 - 可選擇用 Google 登入，把進度備份到**使用者自己的** Google Drive App 專用資料夾
 - AdMob：做完一輪後偶爾的插頁廣告 + 使用者自選的獎勵廣告（換提示次數）
 
@@ -51,7 +51,7 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
   ui/                        ← 各畫面：home、practice、quiz、wrongbook、pk、settings
-app/src/test/                ← 單元測試（61 個）
+app/src/test/                ← 單元測試（71 個）
 ```
 
 ---
@@ -74,6 +74,7 @@ cp local.properties.example local.properties   # 填入 sdk.dir（Android Studio
 | 測試檔 | 驗證內容 |
 |---|---|
 | `Sm2SchedulerTest` / `ReviewSchedulingTest` | SM-2 間隔、EF 計算、提前練習不改排程、答錯重排、今天該複習幾題 |
+| `FavoritesTest` | 收藏切換、「其實是猜的」改排明天複習、**資料庫 Migration SQL 與 schema 一致** |
 | `WrongBookRecordingTest` | 答錯收錄、次數累加、錯題本答對才移出、再錯重新收錄 |
 | `QuestionBankParserTest` | 題庫格式驗證，**含 repo 裡真正的 questions.json** |
 | `QuestionBankRepositoryTest` | 版本比對、下載、快取、離線、壞檔不覆蓋 |
@@ -214,5 +215,5 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 - [ ] AdMob 正式 ID 填入 `local.properties`、設定內容分級、app-ads.txt
 - [ ] 隱私權政策填好聯絡資訊並公開、`privacyPolicyUrl` 指向它
 - [ ] Data safety、目標年齡、廣告 ID 宣告
-- [ ] Room schema 定版：上架後改資料表要寫 Migration（`app/schemas/` 保存各版 schema）
+- [ ] 改資料表時：`AppDatabase` 版本 +1 並寫 Migration（範例：`MIGRATION_1_2` 新增收藏表），`app/schemas/` 保存各版 schema
 - [ ] `versionCode` 每次上傳 +1

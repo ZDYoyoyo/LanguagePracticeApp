@@ -5,6 +5,7 @@ import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.fakes.DirectTx
 import io.github.zdyoyoyo.englishpractice.fakes.FakeAttemptDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeClock
+import io.github.zdyoyoyo.englishpractice.fakes.FakeFavoriteDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeReviewCardDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeStudyDayDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeWrongAnswerDao
@@ -23,7 +24,7 @@ class WrongBookRecordingTest {
     private val wrongs = FakeWrongAnswerDao()
     private var changedAt = 0L
     private val repo = StudyRepository(
-        DirectTx, attempts, wrongs, FakeReviewCardDao(), FakeStudyDayDao(), clock,
+        DirectTx, attempts, wrongs, FakeReviewCardDao(), FakeStudyDayDao(), FakeFavoriteDao(), clock,
         onLocalDataChanged = { changedAt = it },
     )
     private val q = question("q1")

@@ -46,10 +46,14 @@ data class QuizUiState(
     val gaveUp: Boolean = false,
     /** 答錯時，對「你選的那個選項」的說明 */
     val wrongOptionNote: String? = null,
+    // ---- 收藏 ----
+    val favoriteIds: Set<String> = emptySet(),
+    val markedGuessed: Boolean = false,
     val rewardMessage: String? = null,
 ) {
     val current: Question? get() = questions.getOrNull(index)
     val isLast: Boolean get() = index == questions.lastIndex
+    val isCurrentFavorite: Boolean get() = current?.id in favoriteIds
 }
 
 /** 一輪作答的流程：出題 → 作答 → 顯示對錯與解析 → 下一題 → 結算 */
@@ -69,6 +73,7 @@ class QuizViewModel(
     init {
         viewModelScope.launch { start() }
         viewModelScope.launch { c.hints.credits.collect { n -> _ui.update { it.copy(hintCredits = n) } } }
+        viewModelScope.launch { c.study.favoriteIds.collect { ids -> _ui.update { it.copy(favoriteIds = ids.toSet()) } } }
     }
 
     private suspend fun start() {
@@ -88,6 +93,10 @@ class QuizViewModel(
     private suspend fun loadQuestions(): List<Question> = when (mode) {
         StudyMode.WRONG_BOOK -> c.study.activeWrongQuestionIds()
             .mapNotNull { c.questionBank.findById(it) }
+            .take(QuestionSelector.DEFAULT_SESSION_SIZE)
+        StudyMode.FAVORITES -> c.study.favoriteQuestionIds()
+            .mapNotNull { c.questionBank.findById(it) }
+            .shuffled()
             .take(QuestionSelector.DEFAULT_SESSION_SIZE)
         StudyMode.REVIEW -> c.study.dueQuestionIds(limit = 20)
             .mapNotNull { c.questionBank.findById(it) }
@@ -111,6 +120,21 @@ class QuizViewModel(
         val s = _ui.value
         if (s.revealed || s.typed.isBlank()) return
         submit(s.typed)
+    }
+
+    /** ⭐ 收藏 / 取消收藏目前這題 */
+    fun onToggleFavorite() {
+        val q = _ui.value.current ?: return
+        viewModelScope.launch { c.study.toggleFavorite(q.id) }
+    }
+
+    /** 🎲 答對了但其實是猜的：加入收藏，明天再複習 */
+    fun onMarkGuessed() {
+        val s = _ui.value
+        val q = s.current ?: return
+        if (!s.revealed || !s.lastCorrect || s.markedGuessed) return
+        _ui.update { it.copy(markedGuessed = true) }
+        viewModelScope.launch { c.study.markGuessed(q.id) }
     }
 
     /** 「不會，看答案」：直接揭曉，算答錯（收進錯題本、明天複習） */
@@ -174,7 +198,7 @@ class QuizViewModel(
                 it.copy(
                     index = it.index + 1, selected = null, typed = "", revealed = false,
                     usedHint = false, hiddenOptions = emptySet(), hintText = null, rewardMessage = null,
-                    gaveUp = false, wrongOptionNote = null,
+                    gaveUp = false, wrongOptionNote = null, markedGuessed = false,
                 )
             }
             questionShownAt = c.clock.nowMillis()
@@ -187,6 +211,7 @@ class QuizViewModel(
         fun titleFor(mode: StudyMode) = when (mode) {
             StudyMode.WRONG_BOOK -> "錯題重做"
             StudyMode.REVIEW -> "今日複習"
+            StudyMode.FAVORITES -> "收藏練習"
             StudyMode.DAILY -> "每日一題"
             StudyMode.PK -> "PK 對戰"
             StudyMode.PRACTICE -> "做題"
@@ -195,6 +220,7 @@ class QuizViewModel(
         fun emptyMessageFor(mode: StudyMode) = when (mode) {
             StudyMode.WRONG_BOOK -> "錯題本是空的，太棒了！"
             StudyMode.REVIEW -> "今天沒有要複習的題目 🎉"
+            StudyMode.FAVORITES -> "還沒有收藏的題目。作答時按右上角 ☆ 就能收藏。"
             else -> "沒有符合條件的題目"
         }
 

@@ -7,6 +7,7 @@ import kotlinx.serialization.Serializable
 @Serializable object HomeRoute
 @Serializable object PracticeSetupRoute
 @Serializable object WrongBookRoute
+@Serializable object FavoritesRoute
 @Serializable object PkRoute
 @Serializable object SettingsRoute
 

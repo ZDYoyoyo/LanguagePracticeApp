@@ -5,6 +5,7 @@ import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.fakes.DirectTx
 import io.github.zdyoyoyo.englishpractice.fakes.FakeAttemptDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeClock
+import io.github.zdyoyoyo.englishpractice.fakes.FakeFavoriteDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeReviewCardDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeStudyDayDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeWrongAnswerDao
@@ -66,9 +67,10 @@ class SyncManagerTest {
         val wrongs = FakeWrongAnswerDao()
         val cards = FakeReviewCardDao()
         val days = FakeStudyDayDao()
+        val favs = FakeFavoriteDao()
         val state = FakeState()
-        val study = StudyRepository(DirectTx, attempts, wrongs, cards, days, clock, { state.lastLocalChangeAt = it })
-        val sync = SyncManager(BackupSerializer(DirectTx, attempts, wrongs, cards, days), state, clock)
+        val study = StudyRepository(DirectTx, attempts, wrongs, cards, days, favs, clock, { state.lastLocalChangeAt = it })
+        val sync = SyncManager(BackupSerializer(DirectTx, attempts, wrongs, cards, days, favs), state, clock)
     }
 
     private val clock = FakeClock()
@@ -78,6 +80,7 @@ class SyncManagerTest {
         val a = Phone()
         a.study.recordAnswer(question("q1"), "b", false, 1000, StudyMode.PRACTICE)
         a.state.hintCredits = 3
+        a.study.toggleFavorite("q7")
         assertEquals(SyncOutcome.Uploaded, a.sync.sync(cloud))
 
         val b = Phone()
@@ -86,6 +89,7 @@ class SyncManagerTest {
         assertEquals(listOf("q1"), b.study.activeWrongQuestionIds())
         assertTrue(b.cards.get("q1") != null)
         assertEquals(3, b.state.hintCredits)
+        assertEquals(listOf("q7"), b.study.favoriteQuestionIds())
         assertEquals(a.state.lastLocalChangeAt, b.state.lastLocalChangeAt)
     }
 
@@ -139,6 +143,8 @@ class SyncManagerTest {
     @Test fun `snapshot json round trip ignores unknown fields`() {
         val snap = BackupSnapshot(exportedAt = 1, lastLocalChangeAt = 2, hintCredits = 5)
         assertEquals(snap, BackupSnapshot.fromJson(snap.toJson()))
+        // 舊版備份（沒有 favorites 欄位）也要能讀
+        assertTrue(BackupSnapshot.fromJson("""{"exportedAt":1,"lastLocalChangeAt":2}""").favorites.isEmpty())
         val future = """{"formatVersion":2,"exportedAt":1,"lastLocalChangeAt":2,"newField":[1,2]}"""
         assertEquals(2L, BackupSnapshot.fromJson(future).lastLocalChangeAt)
     }
