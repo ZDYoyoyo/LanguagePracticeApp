@@ -6,6 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import io.github.zdyoyoyo.englishpractice.ui.navigation.AppNavHost
 import io.github.zdyoyoyo.englishpractice.ui.theme.EnglishPracticeTheme
 
@@ -18,7 +20,12 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        if (savedInstanceState == null) pendingOpen.value = intent?.getStringExtra(EXTRA_OPEN)
+        if (savedInstanceState == null) {
+            pendingOpen.value = intent?.getStringExtra(EXTRA_OPEN)
+            // 已登入 Google 的話，開 App 時在背景自動同步（不會跳出任何畫面）
+            val container = (application as EnglishApp).container
+            lifecycleScope.launch { container.cloudSync.autoSyncOnOpen() }
+        }
         setContent {
             EnglishPracticeTheme {
                 AppNavHost(

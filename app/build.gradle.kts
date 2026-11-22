@@ -29,6 +29,8 @@ android {
 
         val bankUrl = (project.findProperty("questionBankBaseUrl") as String?) ?: ""
         buildConfigField("String", "QUESTION_BANK_BASE_URL", "\"$bankUrl\"")
+        // Google 登入用的 Web Client ID：從 local.properties 讀取，不寫死在程式碼、不進版控
+        buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${localProp("GOOGLE_WEB_CLIENT_ID")}\"")
     }
 
     buildTypes {
@@ -80,6 +82,12 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.work.runtime.ktx)
+    // Google 登入（Credential Manager）+ Drive 授權（AuthorizationClient）
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services)
+    implementation(libs.googleid)
+    implementation(libs.play.services.auth)
+    implementation(libs.kotlinx.coroutines.play.services)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.junit)

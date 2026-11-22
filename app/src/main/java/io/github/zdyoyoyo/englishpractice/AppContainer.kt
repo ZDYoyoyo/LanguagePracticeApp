@@ -1,6 +1,7 @@
 package io.github.zdyoyoyo.englishpractice
 
 import android.content.Context
+import io.github.zdyoyoyo.englishpractice.auth.GoogleAuthManager
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.FileBankStore
 import io.github.zdyoyoyo.englishpractice.data.bank.HttpRemoteBankSource
@@ -8,6 +9,9 @@ import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository
 import io.github.zdyoyoyo.englishpractice.data.local.AppDatabase
 import io.github.zdyoyoyo.englishpractice.data.local.RoomTransactionRunner
 import io.github.zdyoyoyo.englishpractice.data.prefs.AppPreferences
+import io.github.zdyoyoyo.englishpractice.sync.BackupSerializer
+import io.github.zdyoyoyo.englishpractice.sync.CloudSync
+import io.github.zdyoyoyo.englishpractice.sync.SyncManager
 import io.github.zdyoyoyo.englishpractice.util.AppClock
 import io.github.zdyoyoyo.englishpractice.util.SystemClock
 
@@ -21,6 +25,7 @@ class AppContainer(context: Context) {
     val clock: AppClock = SystemClock
     val prefs = AppPreferences(appContext)
     val database = AppDatabase.create(appContext)
+    private val tx = RoomTransactionRunner(database)
 
     val questionBank = QuestionBankRepository(
         remote = HttpRemoteBankSource(BuildConfig.QUESTION_BANK_BASE_URL),
@@ -29,7 +34,7 @@ class AppContainer(context: Context) {
     )
 
     val study = StudyRepository(
-        tx = RoomTransactionRunner(database),
+        tx = tx,
         attemptDao = database.attemptDao(),
         wrongDao = database.wrongAnswerDao(),
         reviewDao = database.reviewCardDao(),
@@ -37,4 +42,8 @@ class AppContainer(context: Context) {
         clock = clock,
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
+
+    val auth = GoogleAuthManager(appContext, BuildConfig.GOOGLE_WEB_CLIENT_ID)
+    val syncManager = SyncManager(BackupSerializer(database, tx), prefs, clock)
+    val cloudSync = CloudSync(auth, syncManager, prefs)
 }

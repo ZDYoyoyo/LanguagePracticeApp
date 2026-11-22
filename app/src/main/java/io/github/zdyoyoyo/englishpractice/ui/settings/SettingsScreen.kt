@@ -3,6 +3,7 @@ package io.github.zdyoyoyo.englishpractice.ui.settings
 import android.Manifest
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +21,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -28,6 +30,7 @@ import androidx.compose.material3.TimePicker
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -45,7 +48,17 @@ fun SettingsScreen(
     vm: SettingsViewModel = viewModel(factory = SettingsViewModel.Factory),
 ) {
     val s by vm.ui.collectAsStateWithLifecycle()
+    val cloud by vm.cloud.collectAsStateWithLifecycle()
     var showTimePicker by remember { mutableStateOf(false) }
+    var confirmClear by remember { mutableStateOf(false) }
+
+    // Google Drive 授權同意畫面
+    val consentLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) {
+        vm.onConsentResult(it.data)
+    }
+    LaunchedEffect(cloud.consentIntent) {
+        cloud.consentIntent?.let { consentLauncher.launch(IntentSenderRequest.Builder(it).build()) }
+    }
 
     // Android 13+ 要先取得通知權限；使用者拒絕就不開啟提醒
     val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
@@ -62,6 +75,9 @@ fun SettingsScreen(
             Modifier.padding(padding).fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            AccountSection(cloud, vm)
+            HorizontalDivider()
+
             SectionTitle("每日提醒")
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.weight(1f)) {
@@ -79,7 +95,22 @@ fun SettingsScreen(
             }
             TextButton(onClick = { showTimePicker = true }) { Text("更改提醒時間") }
             HorizontalDivider()
+
+            SectionTitle("資料與隱私")
+            Text("學習紀錄只存在這支手機（以及你登入後自己的 Google Drive）。移除 App 會一併刪除手機上的資料。",
+                style = MaterialTheme.typography.bodySmall)
+            OutlinedButton(onClick = { confirmClear = true }) { Text("清除這支手機上的學習資料") }
         }
+    }
+
+    if (confirmClear) {
+        AlertDialog(
+            onDismissRequest = { confirmClear = false },
+            title = { Text("清除學習資料？") },
+            text = { Text("會刪除這支手機上的作答紀錄、錯題、複習排程與打卡紀錄，無法復原。（雲端備份不受影響）") },
+            confirmButton = { TextButton(onClick = { confirmClear = false; vm.clearLocalData() }) { Text("清除") } },
+            dismissButton = { TextButton(onClick = { confirmClear = false }) { Text("取消") } },
+        )
     }
 
     if (showTimePicker) {
