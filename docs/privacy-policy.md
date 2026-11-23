@@ -1,10 +1,10 @@
 # 隱私權政策（草稿）／ Privacy Policy (Draft)
 
-> ⚠️ 這是草稿，上架前請把 `[ ]` 內的資訊換成你的資料，並視需要請專業人士審閱。
-> This is a draft. Replace the bracketed placeholders and consider professional review before publishing.
+> 本政策適用於 Android App「英語練習」（English Practice）。
+> This policy applies to the Android app "English Practice".
 
-最後更新 / Last updated：[2026-11-22]
-開發者 / Developer：[你的名字或工作室名稱]
+最後更新 / Last updated：2026-11-23
+開發者 / Developer：ZDYoyoyo（個人開發者 / independent developer）
 聯絡信箱 / Contact：zhongtiandada@gmail.com
 
 ---
@@ -58,9 +58,7 @@
 - **撤銷 Google 授權**：前往 [Google 帳戶 → 第三方應用程式與服務](https://myaccount.google.com/connections) 移除本 App。
 
 ### 7. 兒童隱私
-[依你在 Play Console 設定的目標年齡擇一：]
-- [若目標年齡為 13 歲以上] 本 App 並非專為 13 歲以下兒童設計。
-- [若包含兒童] 對可能為兒童的使用者，我們會要求廣告服務以「兒童導向」方式處理（不顯示個人化廣告、限制廣告內容分級），且不會向兒童收集個人資料。
+本 App 的目標使用者為 13 歲以上，並非專為 13 歲以下兒童設計。廣告內容分級上限設定為「適合所有年齡（G）」。
 
 ### 8. 政策變更
 若本政策有變更，會更新本頁面並修改「最後更新」日期。
@@ -119,9 +117,7 @@ If you enable daily reminders, notifications are scheduled locally. Their conten
 - **Revoke Google access**: visit [Google Account → Third-party apps & services](https://myaccount.google.com/connections) and remove the App.
 
 ### 7. Children's privacy
-[Choose one based on your Play Console target audience:]
-- [If 13+] The App is not directed to children under 13.
-- [If children are included] For users who may be children, we request child-directed treatment from our ad provider (no personalized ads, restricted ad content rating) and we do not collect personal information from children.
+The App is intended for users aged 13 and over and is not directed to children under 13. The maximum ad content rating is set to "G" (suitable for all audiences).
 
 ### 8. Changes
 We will update this page and the "Last updated" date if this policy changes.
