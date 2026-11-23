@@ -1,7 +1,10 @@
 package io.github.zdyoyoyo.englishpractice.ui.settings
 
 import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
+import android.provider.Settings
 import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.IntentSenderRequest
@@ -47,6 +50,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.BuildConfig
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
+import io.github.zdyoyoyo.englishpractice.notify.ReminderNotifier
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -59,6 +63,8 @@ fun SettingsScreen(
     val hints by vm.hintCredits.collectAsStateWithLifecycle()
     val rewardedReady by vm.rewardedReady.collectAsStateWithLifecycle()
     val privacyRequired by vm.privacyOptionsRequired.collectAsStateWithLifecycle()
+    val adStatus by vm.adStatus.collectAsStateWithLifecycle()
+    var testResult by remember { mutableStateOf<String?>(null) }
     val activity = LocalActivity.current
     val uriHandler = LocalUriHandler.current
     val context = LocalContext.current
@@ -107,7 +113,27 @@ fun SettingsScreen(
                     }
                 })
             }
-            TextButton(onClick = { showTimePicker = true }) { Text("更改提醒時間") }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                TextButton(onClick = { showTimePicker = true }) { Text("更改提醒時間") }
+                TextButton(onClick = {
+                    testResult = if (ReminderNotifier.showTest(context)) "已送出測試通知，請下拉通知欄查看"
+                    else "無法發送通知：請允許本 App 的通知權限"
+                }) { Text("傳送測試通知") }
+            }
+            testResult?.let { Text(it, color = MaterialTheme.colorScheme.secondary) }
+            if (s.reminderEnabled && !ReminderNotifier.canNotify(context)) {
+                Text("⚠️ 通知權限沒有開啟，提醒不會出現", color = MaterialTheme.colorScheme.error)
+            }
+            Text(
+                "提醒可能會晚幾分鐘。小米、OPPO、vivo、華為等手機會限制背景提醒，收不到的話請在「App 資訊」把省電策略設為「無限制」並允許自啟動。",
+                style = MaterialTheme.typography.bodySmall,
+            )
+            TextButton(onClick = {
+                context.startActivity(
+                    Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null))
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+            }) { Text("開啟 App 資訊（省電設定）") }
             HorizontalDivider()
 
             SectionTitle("提示與廣告")
@@ -115,7 +141,9 @@ fun SettingsScreen(
             OutlinedButton(
                 onClick = { activity?.let { vm.watchRewardedAd(it) } },
                 enabled = rewardedReady,
-            ) { Text(if (rewardedReady) "看一支廣告換 ${AdPolicy.HINTS_PER_REWARD} 次提示（自由選擇）" else "廣告載入中…") }
+            ) { Text(if (rewardedReady) "看一支廣告換 ${AdPolicy.HINTS_PER_REWARD} 次提示（自由選擇）" else "廣告尚未就緒") }
+            Text("廣告狀態：$adStatus", style = MaterialTheme.typography.bodySmall)
+            if (!rewardedReady) TextButton(onClick = vm::retryAds) { Text("重新載入廣告") }
             Text("完成幾輪題目後偶爾會出現一次全螢幕廣告；作答途中不會出現。", style = MaterialTheme.typography.bodySmall)
             if (privacyRequired) {
                 OutlinedButton(onClick = { activity?.let { vm.showAdPrivacyOptions(it) } }) { Text("廣告隱私選項") }

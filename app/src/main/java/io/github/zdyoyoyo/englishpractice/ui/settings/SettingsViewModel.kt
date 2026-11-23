@@ -38,6 +38,9 @@ class SettingsViewModel(
     val hintCredits: StateFlow<Int> = c.hints.credits
     val rewardedReady: StateFlow<Boolean> = c.ads.rewardedReady
     val privacyOptionsRequired: StateFlow<Boolean> = c.ads.privacyOptionsRequired
+    val adStatus: StateFlow<String> = c.ads.status
+
+    fun retryAds() = c.ads.retryNow()
 
     // ---- 廣告（選擇性）----
     fun watchRewardedAd(activity: Activity) {

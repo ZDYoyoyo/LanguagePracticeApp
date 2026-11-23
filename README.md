@@ -46,7 +46,7 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
     StudyRepository.kt       ← 作答紀錄、錯題收錄、SM-2 更新、打卡（核心規則）
   domain/                    ← 純邏輯：Sm2Scheduler、StreakCalculator、DailyPicker、
                                PkEngine、AnswerChecker、QuestionSelector、HintLogic
-  notify/                    ← WorkManager 每日提醒
+  notify/                    ← 每日提醒（AlarmManager 系統鬧鐘 + 開機重排）
   auth/GoogleAuthManager.kt  ← Google 登入 + Drive 授權
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
@@ -207,13 +207,14 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 |---|---|---|
 | `INTERNET` | App | 下載題庫、Google Drive 同步、載入廣告 |
 | `POST_NOTIFICATIONS` | App | 每日提醒（Android 13+，使用者在設定開啟提醒時才會詢問） |
-| `ACCESS_NETWORK_STATE` | AdMob / WorkManager | 判斷網路狀態 |
+| `RECEIVE_BOOT_COMPLETED` | App | 手機重開機後重新排每日提醒（系統鬧鐘在重開機後會清空） |
+| `ACCESS_NETWORK_STATE` | AdMob | 判斷網路狀態 |
 | `com.google.android.gms.permission.AD_ID` | AdMob | 讀取廣告 ID（兒童導向 App 必須移除，見 docs） |
 | `ACCESS_ADSERVICES_AD_ID` / `_ATTRIBUTION` / `_TOPICS` | AdMob | Android Privacy Sandbox 廣告 API |
-| `WAKE_LOCK`、`FOREGROUND_SERVICE` | WorkManager | 讓排程工作（每日提醒）能可靠執行 |
+| `WAKE_LOCK`、`FOREGROUND_SERVICE` | AdMob（內含 WorkManager） | 廣告 SDK 的背景工作 |
 
 已**主動移除** Credential Manager 帶入的 `USE_BIOMETRIC` / `USE_FINGERPRINT`（用不到）。
-不需要「精確鬧鐘」權限：提醒用 WorkManager，時間可能有幾分鐘誤差。
+不需要「精確鬧鐘」權限：提醒用 `AlarmManager.setAndAllowWhileIdle`，可能晚幾分鐘；小米等手機需把省電策略設為「無限制」。設定頁有「傳送測試通知」可以檢查通知是否正常。
 發音練習**不需要麥克風權限**：朗讀用系統內建 TextToSpeech，「跟著唸」用系統的語音辨識畫面，App 只拿到辨識出的文字。
 `<queries>` 宣告了朗讀、語音辨識、寄信三種系統服務（Android 11+ 套件可見性要求，不是權限）。
 

@@ -12,5 +12,7 @@ class EnglishApp : Application() {
         super.onCreate()
         container = AppContainer(this)
         ReminderScheduler.createChannel(this)
+        // 每次啟動都確認一次提醒有排上（例如 App 被系統清掉後）
+        ReminderScheduler.rescheduleFromPrefs(this)
     }
 }

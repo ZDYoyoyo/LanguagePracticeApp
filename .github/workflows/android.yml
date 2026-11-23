@@ -36,13 +36,14 @@ jobs:
             echo "::warning::沒有設定 DEBUG_KEYSTORE_BASE64，APK 會用臨時金鑰簽章，無法覆蓋安裝舊版"
           fi
 
+      # 下載依賴偶爾會因網路暫時失敗，失敗時等 30 秒自動重試一次
       - name: Unit tests
-        run: ./gradlew testDebugUnitTest --no-daemon
+        run: ./gradlew testDebugUnitTest --no-daemon || (sleep 30 && ./gradlew testDebugUnitTest --no-daemon)
 
       - name: Build debug APK
         env:
           GOOGLE_WEB_CLIENT_ID: ${{ secrets.GOOGLE_WEB_CLIENT_ID }}
-        run: ./gradlew assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon || (sleep 30 && ./gradlew assembleDebug --no-daemon)
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
