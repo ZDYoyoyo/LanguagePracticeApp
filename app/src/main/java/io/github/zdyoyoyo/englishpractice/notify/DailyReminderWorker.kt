@@ -28,9 +28,10 @@ class DailyReminderWorker(context: Context, params: WorkerParameters) : Coroutin
         val due = c.study.dueCountNow()
         val streak = c.study.streakNow()
 
-        val title = word?.word?.let { "今日單字：$it" } ?: "每日一題時間到"
+        // 不在通知裡寫出單字：有些題目的答案就是那個單字，先看到就沒有練習效果了
+        val title = if (word != null) "今日單字和每日一題準備好了" else "每日一題時間到"
         val body = buildString {
-            append("點我做每日一題")
+            append("花一分鐘練習一下")
             if (due > 0) append("・有 $due 題該複習")
             if (streak.current > 0 && !streak.studiedToday) append("・別讓 ${streak.current} 天連續打卡中斷！")
         }

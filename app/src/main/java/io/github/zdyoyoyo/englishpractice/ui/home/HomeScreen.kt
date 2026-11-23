@@ -79,8 +79,8 @@ fun HomeScreen(
                 onReview,
             )
             HomeActionCard(
-                Icons.Filled.Today, "每日一題",
-                state.dailyWord?.word?.let { "今日單字：$it" } ?: "每天一題，養成習慣",
+                Icons.Filled.Today, "每日練習",
+                if (state.dailyWord != null) "今日單字 + 每日一題，共 2 題" else "每天一題，養成習慣",
                 onDaily,
             )
             HomeActionCard(Icons.Filled.EditNote, "開始做題", "依主題或難度選題", onPractice)

@@ -6,6 +6,9 @@ import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 
+/** 伺服器有回應但不是成功（例如 404 = 檔案還沒放上去） */
+class BankHttpException(val code: Int, path: String) : IOException("HTTP $code for $path")
+
 /** 下載來源（介面方便測試時換成假的） */
 fun interface RemoteBankSource {
     /** 下載 baseUrl + path 的文字內容 */
@@ -27,7 +30,7 @@ class HttpRemoteBankSource(private val baseUrl: String) : RemoteBankSource {
         conn.readTimeout = 15_000
         conn.useCaches = false
         try {
-            if (conn.responseCode !in 200..299) throw IOException("HTTP ${conn.responseCode} for $path")
+            if (conn.responseCode !in 200..299) throw BankHttpException(conn.responseCode, path)
             return conn.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
         } finally {
             conn.disconnect()

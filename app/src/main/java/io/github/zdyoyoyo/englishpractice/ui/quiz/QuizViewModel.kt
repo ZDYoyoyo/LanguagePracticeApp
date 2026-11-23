@@ -100,9 +100,7 @@ class QuizViewModel(
             .take(QuestionSelector.DEFAULT_SESSION_SIZE)
         StudyMode.REVIEW -> c.study.dueQuestionIds(limit = 20)
             .mapNotNull { c.questionBank.findById(it) }
-        StudyMode.DAILY -> listOfNotNull(
-            DailyPicker.dailyQuestion(c.questionBank.questions, c.clock.today().toEpochDay())
-        )
+        StudyMode.DAILY -> DailyPicker.dailySet(c.questionBank.questions, c.clock.today().toEpochDay())
         else -> QuestionSelector.select(c.questionBank.questions, route.tag, route.difficulty)
     }
 
@@ -212,7 +210,7 @@ class QuizViewModel(
             StudyMode.WRONG_BOOK -> "錯題重做"
             StudyMode.REVIEW -> "今日複習"
             StudyMode.FAVORITES -> "收藏練習"
-            StudyMode.DAILY -> "每日一題"
+            StudyMode.DAILY -> "每日練習"
             StudyMode.PK -> "PK 對戰"
             StudyMode.PRACTICE -> "做題"
         }

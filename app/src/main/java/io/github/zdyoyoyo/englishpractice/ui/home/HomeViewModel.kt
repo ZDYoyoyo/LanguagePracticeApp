@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
+import io.github.zdyoyoyo.englishpractice.data.bank.BankHttpException
 import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository.RefreshResult
 import io.github.zdyoyoyo.englishpractice.data.model.Question
@@ -88,7 +89,8 @@ class HomeViewModel(
                 is RefreshResult.Updated -> "題庫已更新到 v${r.version}（${r.questionCount} 題）"
                 is RefreshResult.UpToDate -> null
                 is RefreshResult.AppTooOld -> "有新題庫，但需要更新 App 才能使用"
-                is RefreshResult.Failed -> "目前離線，使用本機題庫"
+                is RefreshResult.Failed ->
+                    if (r.error is BankHttpException) "線上題庫尚未發布，使用 App 內建題庫" else "目前離線，使用本機題庫"
             }
         }
     }

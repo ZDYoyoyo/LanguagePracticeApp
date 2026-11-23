@@ -27,6 +27,17 @@ class DailyAndPkTest {
         assertTrue("30 天內應該會輪到多題", picks.size > 3)
     }
 
+    @Test fun `daily set is word first then a different question, same everywhere`() {
+        repeat(60) {
+            val day = 20_000L + it
+            val set = DailyPicker.dailySet(questions, day)
+            assertEquals(2, set.size)
+            assertEquals(DailyPicker.dailyWord(questions, day), set[0])
+            assertEquals(DailyPicker.dailyQuestion(questions, day), set[1])
+            assertTrue(set[0].id != set[1].id)
+        }
+    }
+
     @Test fun `daily word only picks questions with word`() {
         repeat(30) { assertNotNull(DailyPicker.dailyWord(questions, 20_000L + it)!!.word) }
         assertNull(DailyPicker.dailyWord(emptyList(), 1))
