@@ -11,6 +11,9 @@ ADMOB_APP_ID=
 ADMOB_INTERSTITIAL_ID=
 ADMOB_REWARDED_ID=
 
+# ---- 測試版共用簽章（選填；GitHub Actions 會從 Secrets 自動提供）----
+DEBUG_STORE_FILE=
+
 # ---- Release 簽章（上架用）----
 RELEASE_STORE_FILE=
 RELEASE_STORE_PASSWORD=

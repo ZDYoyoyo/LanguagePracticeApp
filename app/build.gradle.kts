@@ -30,8 +30,8 @@ android {
         applicationId = "io.github.zdyoyoyo.englishpractice"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
 
         val bankUrl = (project.findProperty("questionBankBaseUrl") as String?) ?: ""
         buildConfigField("String", "QUESTION_BANK_BASE_URL", "\"$bankUrl\"")
@@ -45,8 +45,19 @@ android {
         buildConfigField("String", "PRIVACY_POLICY_URL", "\"${gradleProp("privacyPolicyUrl", "")}\"")
     }
 
-    // Release 簽章：只從 local.properties / 環境變數讀取，keystore 檔不進版控
+    // 簽章設定：keystore 檔一律不進版控，路徑與密碼從 local.properties 或環境變數（GitHub Actions Secrets）讀取
     signingConfigs {
+        // 測試版共用金鑰：讓每次建置（不管在哪台電腦或 GitHub Actions）簽出來的 APK 都能覆蓋安裝，
+        // Google 登入也靠它的 SHA-1 辨識 App。沒有設定時退回 Android 預設的本機 debug 金鑰
+        create("sharedDebug") {
+            val path = localProp("DEBUG_STORE_FILE")
+            if (path.isNotEmpty()) {
+                storeFile = file(path)
+                storePassword = localProp("DEBUG_STORE_PASSWORD", "android")
+                keyAlias = localProp("DEBUG_KEY_ALIAS", "androiddebugkey")
+                keyPassword = localProp("DEBUG_KEY_PASSWORD", "android")
+            }
+        }
         create("release") {
             val storePath = localProp("RELEASE_STORE_FILE")
             if (storePath.isNotEmpty()) {
@@ -61,6 +72,7 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
+            if (localProp("DEBUG_STORE_FILE").isNotEmpty()) signingConfig = signingConfigs.getByName("sharedDebug")
             // debug 一律使用測試廣告，就算 local.properties 有填正式 ID 也不會用到
             manifestPlaceholders["admobAppId"] = admobTestAppId
             buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"$admobTestInterstitialId\"")

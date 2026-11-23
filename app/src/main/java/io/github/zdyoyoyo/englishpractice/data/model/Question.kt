@@ -21,6 +21,10 @@ data class Question(
     val id: String,
     val type: QuestionType,
     val prompt: String,
+    /** 選填：閱讀短文（多益 Part 6/7）或聽力對話稿（多益 Part 3） */
+    val passage: String? = null,
+    /** true = passage 是聽力對話：先用語音播放、作答後才顯示原文 */
+    val listening: Boolean = false,
     /** 單字題的目標單字（每日單字會用到），其他題型可省略 */
     val word: String? = null,
     /** 選項；空陣列代表「自行輸入答案」的填空題 */
@@ -39,7 +43,7 @@ data class Question(
 
     /** 可以朗讀 / 練習發音的英文：單字題用 word，其他題目若正解是英文也可以 */
     val speakableText: String?
-        get() = word?.takeIf { it.isNotBlank() } ?: answer.takeIf { it.isEnglishText() }
+        get() = if (listening) null else word?.takeIf { it.isNotBlank() } ?: answer.takeIf { it.isEnglishText() }
 }
 
 private fun String.isEnglishText(): Boolean = isNotBlank() && all { it.code < 128 } && any { it.isLetter() }

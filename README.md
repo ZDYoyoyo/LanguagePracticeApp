@@ -51,7 +51,7 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
   ui/                        ← 各畫面：home、practice、quiz、wrongbook、pk、settings
-app/src/test/                ← 單元測試（71 個）
+app/src/test/                ← 單元測試（75 個）
 ```
 
 ---
@@ -83,11 +83,28 @@ cp local.properties.example local.properties   # 填入 sdk.dir（Android Studio
 
 ---
 
+## 2.5 GitHub Actions 自動建置（手機也能拿到新版 APK）
+
+`.github/workflows/android.yml`：每次 push 都會跑測試並建置測試版 APK。
+- **main 更新時**：APK 會放到固定的 Release `debug-latest`，用手機打開
+  `https://github.com/ZDYoyoyo/LanguagePracticeApp/releases/tag/debug-latest` 下載 `EnglishPractice-debug.apk` 即可安裝。
+- 其他分支：到 Actions → 該次執行 → Artifacts 下載（zip）。
+
+需要的 Secrets（GitHub → repo → Settings → Secrets and variables → Actions → New repository secret）：
+
+| Secret | 內容 |
+|---|---|
+| `DEBUG_KEYSTORE_BASE64` | 測試版簽章金鑰的 base64 文字。固定金鑰才能「覆蓋安裝」並讓 Google 登入辨識 App |
+| `GOOGLE_WEB_CLIENT_ID` | Google 登入的 Web Client ID（見 3.1） |
+
+在自己電腦建置想用同一把測試金鑰：把 keystore 放在 repo 外，`local.properties` 設 `DEBUG_STORE_FILE=/path/to/debug.keystore`。
+
 ## 3. 機密設定（都放 `local.properties`，已被 .gitignore 排除）
 
 | 鍵 | 用途 |
 |---|---|
 | `GOOGLE_WEB_CLIENT_ID` | Google 登入用的 Web OAuth Client ID |
+| `DEBUG_STORE_FILE` | （選填）測試版共用簽章金鑰的路徑 |
 | `ADMOB_APP_ID` / `ADMOB_INTERSTITIAL_ID` / `ADMOB_REWARDED_ID` | 正式廣告 ID（**只有 release 建置會用**；debug 永遠是測試 ID） |
 | `RELEASE_STORE_FILE` / `..._PASSWORD` / `RELEASE_KEY_ALIAS` | 上架簽章 |
 
@@ -144,6 +161,8 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
       "options": ["簡短的", "勇敢的", "明亮的", "破碎的"],  // 空陣列 [] = 讓使用者自己輸入答案
       "answer": "簡短的",               // 有選項時必須是選項之一
       "acceptedAnswers": [],            // 選填：輸入題可接受的其他寫法（不分大小寫）
+      "passage": "（選填）閱讀短文或聽力對話稿，多題可共用同一段",
+      "listening": false,               // 選填：true = passage 是聽力對話（M: / W: 開頭會用不同聲音朗讀），作答後才顯示原文
       "explanation": "brief（adj.）簡短的。",
       "optionNotes": {                  // 選填：錯誤選項的說明，答錯時顯示「你選的那個是什麼意思」
         "勇敢的": "勇敢的是 brave"
@@ -165,7 +184,9 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 > 單字題的 `word`（或英文正解）會出現「🔊 聽 / 🐢 慢速 / 🎤 跟著唸」發音練習。
 
 > 新的主題標籤要中文名稱的話，加到 `ui/practice/PracticeSetupScreen.kt` 的 `TagLabels`。
-> 若題庫格式有「不相容」的改動，提高 `version.json` 的 `minAppVersionCode`，舊版 App 就不會下載。
+> 若題庫用到舊版 App 不支援的欄位（例如 v4 的 passage / listening 需要 versionCode 2），
+> 把 `version.json` 的 `minAppVersionCode` 設成對應的 versionCode，舊版 App 會提示更新而不會下載。
+> 新版 App 遇到不認得的題型只會略過那一題，不會讓整個題庫失效。
 
 ### 題庫放在哪裡
 - 目前：`gradle.properties` 的 `questionBankBaseUrl` 指向
