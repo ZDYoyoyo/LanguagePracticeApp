@@ -30,8 +30,9 @@ android {
         applicationId = "io.github.zdyoyoyo.englishpractice"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.2.0"
+        // Play 每次上傳都要更大的 versionCode：CI 會用 VERSION_CODE（執行次數）自動遞增，本機建置用預設值
+        versionCode = localProp("VERSION_CODE", "2").toInt()
+        versionName = "0.3.0"
 
         val bankUrl = (project.findProperty("questionBankBaseUrl") as String?) ?: ""
         buildConfigField("String", "QUESTION_BANK_BASE_URL", "\"$bankUrl\"")

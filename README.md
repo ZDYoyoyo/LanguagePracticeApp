@@ -96,6 +96,10 @@ cp local.properties.example local.properties   # 填入 sdk.dir（Android Studio
 |---|---|
 | `DEBUG_KEYSTORE_BASE64` | 測試版簽章金鑰的 base64 文字。固定金鑰才能「覆蓋安裝」並讓 Google 登入辨識 App |
 | `GOOGLE_WEB_CLIENT_ID` | Google 登入的 Web Client ID（見 3.1） |
+| `RELEASE_KEYSTORE_BASE64`、`RELEASE_STORE_PASSWORD`、`RELEASE_KEY_ALIAS`、`RELEASE_KEY_PASSWORD` | 上架用上傳金鑰。設定後 main 更新會產生 `app-release.aab`（Artifacts）和 `EnglishPractice-release-test.apk`（Releases） |
+| `ADMOB_APP_ID`、`ADMOB_INTERSTITIAL_ID`、`ADMOB_REWARDED_ID` | 正式廣告 ID（正式上架前設定） |
+
+versionCode 由 CI 依執行次數自動遞增（`VERSION_CODE`），不用手動改。
 
 在自己電腦建置想用同一把測試金鑰：把 keystore 放在 repo 外，`local.properties` 設 `DEBUG_STORE_FILE=/path/to/debug.keystore`。
 
@@ -226,6 +230,8 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 ---
 
 ## 6. 隱私與上架文件
+- **[上架步驟清單（從零到正式上架）](docs/release-checklist.md)**
+- [商店資訊文案與素材](docs/play-store-listing.md)
 - [隱私權政策草稿（繁中＋英文）](docs/privacy-policy.md)
 - [Play「資料安全性」表單填寫指引](docs/play-data-safety.md)
 - [兒童政策與 AdMob 設定注意事項](docs/children-and-ads.md)
