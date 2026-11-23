@@ -5,7 +5,7 @@
 
 最後更新 / Last updated：[2026-11-22]
 開發者 / Developer：[你的名字或工作室名稱]
-聯絡信箱 / Contact：[your-contact@example.com]
+聯絡信箱 / Contact：zhongtiandada@gmail.com
 
 ---
 
@@ -66,7 +66,7 @@
 若本政策有變更，會更新本頁面並修改「最後更新」日期。
 
 ### 9. 聯絡我們
-如有任何問題，請來信：[your-contact@example.com]
+如有任何問題，請來信：zhongtiandada@gmail.com
 
 ---
 
@@ -127,4 +127,4 @@ If you enable daily reminders, notifications are scheduled locally. Their conten
 We will update this page and the "Last updated" date if this policy changes.
 
 ### 9. Contact
-Questions? Email [your-contact@example.com].
+Questions? Email zhongtiandada@gmail.com.
