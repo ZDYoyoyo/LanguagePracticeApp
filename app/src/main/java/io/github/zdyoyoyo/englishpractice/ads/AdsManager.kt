@@ -168,7 +168,11 @@ class AdsManager(
                 override fun onAdFailedToLoad(error: LoadAdError) {
                     rewarded = null
                     _rewardedReady.value = false
-                    _status.value = "廣告載入失敗（錯誤 ${error.code}：${describe(error.code)}），稍後自動重試"
+                    // 附上 SDK 的原始訊息，方便排查（例如 Internal error 背後的實際原因）
+                    _status.value = "廣告載入失敗（錯誤 ${error.code}：${describe(error.code)}）\n" +
+                        "詳細：${error.message} [${error.domain}]" +
+                        (error.cause?.let { " / ${it.message}" } ?: "") +
+                        "\n稍後自動重試（第 ${rewardedRetries + 1} 次）"
                     Log.d(TAG, "Rewarded failed: ${error.code} ${error.message}")
                     handler.postDelayed(::loadRewarded, retryDelayMs(rewardedRetries++))
                 }
@@ -192,7 +196,7 @@ class AdsManager(
         AdRequest.ERROR_CODE_NETWORK_ERROR -> "網路錯誤，若有使用擋廣告的 DNS / App 請暫時關閉"
         AdRequest.ERROR_CODE_NO_FILL -> "目前沒有可顯示的廣告"
         AdRequest.ERROR_CODE_INVALID_REQUEST -> "廣告設定有誤"
-        AdRequest.ERROR_CODE_INTERNAL_ERROR -> "內部錯誤"
+        AdRequest.ERROR_CODE_INTERNAL_ERROR -> "內部錯誤，常見原因：擋廣告的 DNS／App、Android System WebView 或 Google Play 服務需要更新"
         AdRequest.ERROR_CODE_APP_ID_MISSING -> "缺少 App ID"
         else -> "其他錯誤"
     }
