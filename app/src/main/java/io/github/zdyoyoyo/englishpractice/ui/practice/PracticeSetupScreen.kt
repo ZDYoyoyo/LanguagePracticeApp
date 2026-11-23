@@ -50,7 +50,7 @@ fun PracticeSetupScreen(
             Text("主題", style = MaterialTheme.typography.titleMedium)
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 FilterChip(selected = tag == null, onClick = { tag = null }, label = { Text("全部") })
-                tags.forEach { t ->
+                TagLabels.sort(tags).forEach { t ->
                     FilterChip(selected = tag == t, onClick = { tag = t }, label = { Text(TagLabels.label(t)) })
                 }
             }
@@ -72,8 +72,14 @@ fun PracticeSetupScreen(
 /** 主題標籤的中文顯示名稱；題庫出現新標籤時直接顯示英文 */
 object TagLabels {
     private val map = mapOf(
-        "daily-life" to "日常生活", "travel" to "旅遊", "work" to "職場",
-        "food" to "飲食", "school" to "校園", "tech" to "科技",
+        "toeic" to "多益", "work" to "職場", "office" to "辦公室", "business" to "商業",
+        "finance" to "財務", "hr" to "人資", "marketing" to "行銷",
+        "daily-life" to "日常生活", "travel" to "旅遊", "food" to "飲食", "school" to "校園", "tech" to "科技",
     )
+    private val order = map.keys.toList()
     fun label(tag: String) = map[tag] ?: tag
+    /** 依上面的順序排列（多益排第一），未知標籤排最後 */
+    fun sort(tags: List<String>) = tags.sortedBy { order.indexOf(it).let { i -> if (i < 0) Int.MAX_VALUE else i } }
 }
+
+

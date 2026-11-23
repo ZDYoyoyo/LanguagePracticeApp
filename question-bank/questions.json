@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": 2,
-  "updatedAt": "2026-11-22",
+  "version": 3,
+  "updatedAt": "2026-11-23",
   "questions": [
     {
       "id": "voc-0001",
@@ -423,6 +423,3352 @@
       "difficulty": 2,
       "tags": [
         "school"
+      ]
+    },
+    {
+      "id": "toeic-voc-001",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「議程」.",
+      "word": "agenda",
+      "options": [
+        "agenda",
+        "agency",
+        "agent",
+        "aggregate"
+      ],
+      "answer": "agenda",
+      "explanation": "agenda（n.）議程。例：Please review the agenda before the meeting.",
+      "optionNotes": {
+        "agency": "agency：代理機構",
+        "agent": "agent：代理人",
+        "aggregate": "aggregate：總計"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-002",
+      "type": "vocabulary",
+      "prompt": "What does \"invoice\" mean?",
+      "word": "invoice",
+      "options": [
+        "發票；請款單",
+        "收據",
+        "庫存",
+        "估價單"
+      ],
+      "answer": "發票；請款單",
+      "explanation": "invoice（n.）發票；請款單。例：The invoice must be paid within 30 days.",
+      "optionNotes": {
+        "收據": "「收據」的英文是 receipt",
+        "庫存": "「庫存」的英文是 inventory",
+        "估價單": "「估價單」的英文是 estimate"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-003",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「（費用）核銷、償還」.",
+      "word": "reimburse",
+      "options": [
+        "reinforce",
+        "remit",
+        "reimburse",
+        "recruit"
+      ],
+      "answer": "reimburse",
+      "explanation": "reimburse（v.）（費用）核銷、償還。例：The company will reimburse your travel expenses.",
+      "optionNotes": {
+        "reinforce": "reinforce：加強",
+        "remit": "remit：匯款",
+        "recruit": "recruit：招募"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-004",
+      "type": "vocabulary",
+      "prompt": "What does \"negotiate\" mean?",
+      "word": "negotiate",
+      "options": [
+        "協商；談判",
+        "忽視",
+        "導航",
+        "提名"
+      ],
+      "answer": "協商；談判",
+      "explanation": "negotiate（v.）協商；談判。例：We need to negotiate the terms of the contract.",
+      "optionNotes": {
+        "導航": "「導航」的英文是 navigate",
+        "提名": "「提名」的英文是 nominate",
+        "忽視": "「忽視」的英文是 neglect"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-005",
+      "type": "vocabulary",
+      "prompt": "What does \"candidate\" mean?",
+      "word": "candidate",
+      "options": [
+        "客戶",
+        "主管",
+        "候選人；應徵者",
+        "同事"
+      ],
+      "answer": "候選人；應徵者",
+      "explanation": "candidate（n.）候選人；應徵者。例：We interviewed five candidates for the position.",
+      "optionNotes": {
+        "同事": "「同事」的英文是 colleague",
+        "客戶": "「客戶」的英文是 client",
+        "主管": "「主管」的英文是 supervisor"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-006",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「庫存；存貨清單」.",
+      "word": "inventory",
+      "options": [
+        "invention",
+        "inventory",
+        "invoice",
+        "investment"
+      ],
+      "answer": "inventory",
+      "explanation": "inventory（n.）庫存；存貨清單。例：We need to check our inventory before placing an order.",
+      "optionNotes": {
+        "invention": "invention：發明",
+        "investment": "investment：投資",
+        "invoice": "invoice：發票"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-007",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「延期」.",
+      "word": "postpone",
+      "options": [
+        "promote",
+        "postpone",
+        "propose",
+        "proceed"
+      ],
+      "answer": "postpone",
+      "explanation": "postpone（v.）延期。例：The meeting has been postponed until Friday.",
+      "optionNotes": {
+        "propose": "propose：提議",
+        "promote": "promote：升職；促銷",
+        "proceed": "proceed：繼續進行"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-008",
+      "type": "vocabulary",
+      "prompt": "What does \"revenue\" mean?",
+      "word": "revenue",
+      "options": [
+        "收入；營收",
+        "場地",
+        "評論；審查",
+        "支出"
+      ],
+      "answer": "收入；營收",
+      "explanation": "revenue（n.）收入；營收。例：The company's revenue increased by 10% this year.",
+      "optionNotes": {
+        "支出": "「支出」的英文是 expense",
+        "評論；審查": "「評論；審查」的英文是 review",
+        "場地": "「場地」的英文是 venue"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-009",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「場地；舉辦地點」.",
+      "word": "venue",
+      "options": [
+        "revenue",
+        "avenue",
+        "menu",
+        "venue"
+      ],
+      "answer": "venue",
+      "explanation": "venue（n.）場地；舉辦地點。例：The venue for the conference has been changed.",
+      "optionNotes": {
+        "revenue": "revenue：營收",
+        "avenue": "avenue：大道",
+        "menu": "menu：菜單"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-010",
+      "type": "vocabulary",
+      "prompt": "What does \"subsidiary\" mean?",
+      "word": "subsidiary",
+      "options": [
+        "供應商",
+        "子公司",
+        "總部",
+        "補助金"
+      ],
+      "answer": "子公司",
+      "explanation": "subsidiary（n.）子公司。例：The firm opened a subsidiary in Singapore.",
+      "optionNotes": {
+        "補助金": "「補助金」的英文是 subsidy",
+        "供應商": "「供應商」的英文是 supplier",
+        "總部": "「總部」的英文是 headquarters"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-011",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「每季的」.",
+      "word": "quarterly",
+      "options": [
+        "annual",
+        "quarterly",
+        "monthly",
+        "quantity"
+      ],
+      "answer": "quarterly",
+      "explanation": "quarterly（adj.）每季的。例：The quarterly report will be released next week.",
+      "optionNotes": {
+        "annual": "annual：每年的",
+        "monthly": "monthly：每月的",
+        "quantity": "quantity：數量"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-012",
+      "type": "vocabulary",
+      "prompt": "What does \"merger\" mean?",
+      "word": "merger",
+      "options": [
+        "經理",
+        "利潤；邊緣",
+        "（公司）合併",
+        "措施"
+      ],
+      "answer": "（公司）合併",
+      "explanation": "merger（n.）（公司）合併。例：The merger of the two banks was announced yesterday.",
+      "optionNotes": {
+        "利潤；邊緣": "「利潤；邊緣」的英文是 margin",
+        "經理": "「經理」的英文是 manager",
+        "措施": "「措施」的英文是 measure"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-013",
+      "type": "vocabulary",
+      "prompt": "What does \"shipment\" mean?",
+      "word": "shipment",
+      "options": [
+        "和解；結算",
+        "聲明；對帳單",
+        "運送的貨物；出貨",
+        "設備"
+      ],
+      "answer": "運送的貨物；出貨",
+      "explanation": "shipment（n.）運送的貨物；出貨。例：The shipment is expected to arrive on Monday.",
+      "optionNotes": {
+        "設備": "「設備」的英文是 equipment",
+        "聲明；對帳單": "「聲明；對帳單」的英文是 statement",
+        "和解；結算": "「和解；結算」的英文是 settlement"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-014",
+      "type": "vocabulary",
+      "prompt": "What does \"warranty\" mean?",
+      "word": "warranty",
+      "options": [
+        "折扣",
+        "收據",
+        "退款",
+        "保固"
+      ],
+      "answer": "保固",
+      "explanation": "warranty（n.）保固。例：The laptop comes with a two-year warranty.",
+      "optionNotes": {
+        "退款": "「退款」的英文是 refund",
+        "折扣": "「折扣」的英文是 discount",
+        "收據": "「收據」的英文是 receipt"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-015",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「宣傳小冊子」.",
+      "word": "brochure",
+      "options": [
+        "broker",
+        "budget",
+        "bronze",
+        "brochure"
+      ],
+      "answer": "brochure",
+      "explanation": "brochure（n.）宣傳小冊子。例：Please take a brochure at the front desk.",
+      "optionNotes": {
+        "broker": "broker：經紀人",
+        "bronze": "bronze：青銅",
+        "budget": "budget：預算"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-voc-016",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「通勤」.",
+      "word": "commute",
+      "options": [
+        "commute",
+        "communicate",
+        "compute",
+        "commit"
+      ],
+      "answer": "commute",
+      "explanation": "commute（v.）通勤。例：She commutes to work by train.",
+      "optionNotes": {
+        "compute": "compute：計算",
+        "commit": "commit：承諾；犯下",
+        "communicate": "communicate：溝通"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-017",
+      "type": "vocabulary",
+      "prompt": "What does \"tenant\" mean?",
+      "word": "tenant",
+      "options": [
+        "人才",
+        "房客；承租人",
+        "房東",
+        "任期"
+      ],
+      "answer": "房客；承租人",
+      "explanation": "tenant（n.）房客；承租人。例：The tenant signed a one-year lease.",
+      "optionNotes": {
+        "房東": "「房東」的英文是 landlord",
+        "任期": "「任期」的英文是 tenure",
+        "人才": "「人才」的英文是 talent"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-018",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「租約」.",
+      "word": "lease",
+      "options": [
+        "release",
+        "lecture",
+        "lease",
+        "loan"
+      ],
+      "answer": "lease",
+      "explanation": "lease（n.）租約。例：We signed a five-year lease for the office.",
+      "optionNotes": {
+        "release": "release：發布；釋放",
+        "lecture": "lecture：講座",
+        "loan": "loan：貸款"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-019",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「到期；失效」.",
+      "word": "expire",
+      "options": [
+        "export",
+        "explore",
+        "expand",
+        "expire"
+      ],
+      "answer": "expire",
+      "explanation": "expire（v.）到期；失效。例：Your membership will expire at the end of the month.",
+      "optionNotes": {
+        "expand": "expand：擴張",
+        "export": "export：出口",
+        "explore": "explore：探索"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-020",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「委派（任務）」.",
+      "word": "delegate",
+      "options": [
+        "deliver",
+        "delete",
+        "delegate",
+        "debate"
+      ],
+      "answer": "delegate",
+      "explanation": "delegate（v.）委派（任務）。例：A good manager knows how to delegate tasks.",
+      "optionNotes": {
+        "delete": "delete：刪除",
+        "deliver": "deliver：遞送",
+        "debate": "debate：辯論"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-021",
+      "type": "vocabulary",
+      "prompt": "What does \"implement\" mean?",
+      "word": "implement",
+      "options": [
+        "實施；執行",
+        "使印象深刻",
+        "改善",
+        "進口"
+      ],
+      "answer": "實施；執行",
+      "explanation": "implement（v.）實施；執行。例：The new policy will be implemented next month.",
+      "optionNotes": {
+        "使印象深刻": "「使印象深刻」的英文是 impress",
+        "進口": "「進口」的英文是 import",
+        "改善": "「改善」的英文是 improve"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-022",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「遵守（comply with）」.",
+      "word": "comply",
+      "options": [
+        "complain",
+        "comply",
+        "complete",
+        "compile"
+      ],
+      "answer": "comply",
+      "explanation": "comply（v.）遵守（comply with）。例：All employees must comply with the safety rules.",
+      "optionNotes": {
+        "complain": "complain：抱怨",
+        "compile": "compile：彙編",
+        "complete": "complete：完成"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-023",
+      "type": "vocabulary",
+      "prompt": "What does \"tentative\" mean?",
+      "word": "tentative",
+      "options": [
+        "緊張的",
+        "永久的",
+        "暫定的",
+        "專心的"
+      ],
+      "answer": "暫定的",
+      "explanation": "tentative（adj.）暫定的。例：This is only a tentative schedule.",
+      "optionNotes": {
+        "專心的": "「專心的」的英文是 attentive",
+        "緊張的": "「緊張的」的英文是 tense",
+        "永久的": "「永久的」的英文是 permanent"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-024",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「強制的；必須的」.",
+      "word": "mandatory",
+      "options": [
+        "optional",
+        "monetary",
+        "momentary",
+        "mandatory"
+      ],
+      "answer": "mandatory",
+      "explanation": "mandatory（adj.）強制的；必須的。例：Attendance at the training is mandatory.",
+      "optionNotes": {
+        "optional": "optional：選擇性的",
+        "monetary": "monetary：金錢的",
+        "momentary": "momentary：短暫的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-025",
+      "type": "vocabulary",
+      "prompt": "What does \"vacancy\" mean?",
+      "word": "vacancy",
+      "options": [
+        "假期",
+        "多樣性",
+        "疫苗",
+        "職缺；空房"
+      ],
+      "answer": "職缺；空房",
+      "explanation": "vacancy（n.）職缺；空房。例：There is a vacancy in the marketing department.",
+      "optionNotes": {
+        "假期": "「假期」的英文是 vacation",
+        "疫苗": "「疫苗」的英文是 vaccine",
+        "多樣性": "「多樣性」的英文是 variety"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-026",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「申請人；應徵者」.",
+      "word": "applicant",
+      "options": [
+        "application",
+        "appliance",
+        "appointment",
+        "applicant"
+      ],
+      "answer": "applicant",
+      "explanation": "applicant（n.）申請人；應徵者。例：Each applicant must submit a résumé.",
+      "optionNotes": {
+        "appliance": "appliance：家電",
+        "application": "application：申請；應用程式",
+        "appointment": "appointment：預約；任命"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-027",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「家用電器」.",
+      "word": "appliance",
+      "options": [
+        "applicant",
+        "alliance",
+        "compliance",
+        "appliance"
+      ],
+      "answer": "appliance",
+      "explanation": "appliance（n.）家用電器。例：The store sells kitchen appliances.",
+      "optionNotes": {
+        "applicant": "applicant：應徵者",
+        "alliance": "alliance：聯盟",
+        "compliance": "compliance：遵守"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-028",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「接待處；歡迎會」.",
+      "word": "reception",
+      "options": [
+        "recipe",
+        "recession",
+        "receipt",
+        "reception"
+      ],
+      "answer": "reception",
+      "explanation": "reception（n.）接待處；歡迎會。例：Please wait at the reception desk.",
+      "optionNotes": {
+        "receipt": "receipt：收據",
+        "recipe": "recipe：食譜",
+        "recession": "recession：經濟衰退"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-029",
+      "type": "vocabulary",
+      "prompt": "What does \"receipt\" mean?",
+      "word": "receipt",
+      "options": [
+        "接待處",
+        "收據",
+        "食譜",
+        "收件人"
+      ],
+      "answer": "收據",
+      "explanation": "receipt（n.）收據。例：Please keep your receipt for returns.",
+      "optionNotes": {
+        "食譜": "「食譜」的英文是 recipe",
+        "接待處": "「接待處」的英文是 reception",
+        "收件人": "「收件人」的英文是 recipient"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-030",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「收件人；接受者」.",
+      "word": "recipient",
+      "options": [
+        "resident",
+        "recipient",
+        "sender",
+        "receipt"
+      ],
+      "answer": "recipient",
+      "explanation": "recipient（n.）收件人；接受者。例：Check the recipient's address before sending.",
+      "optionNotes": {
+        "sender": "sender：寄件人",
+        "receipt": "receipt：收據",
+        "resident": "resident：居民"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-031",
+      "type": "vocabulary",
+      "prompt": "What does \"attachment\" mean?",
+      "word": "attachment",
+      "options": [
+        "出席",
+        "成就",
+        "預約",
+        "（電子郵件的）附件"
+      ],
+      "answer": "（電子郵件的）附件",
+      "explanation": "attachment（n.）（電子郵件的）附件。例：Please see the attachment for details.",
+      "optionNotes": {
+        "出席": "「出席」的英文是 attendance",
+        "成就": "「成就」的英文是 achievement",
+        "預約": "「預約」的英文是 appointment"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-032",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「機密的」.",
+      "word": "confidential",
+      "options": [
+        "conventional",
+        "confident",
+        "confirmed",
+        "confidential"
+      ],
+      "answer": "confidential",
+      "explanation": "confidential（adj.）機密的。例：This document is strictly confidential.",
+      "optionNotes": {
+        "confident": "confident：有自信的",
+        "confirmed": "confirmed：已確認的",
+        "conventional": "conventional：傳統的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-033",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「關於」.",
+      "word": "regarding",
+      "options": [
+        "regardless",
+        "regarding",
+        "according",
+        "despite"
+      ],
+      "answer": "regarding",
+      "explanation": "regarding（prep.）關於。例：I am writing regarding your recent order.",
+      "optionNotes": {
+        "regardless": "regardless：不管（regardless of）",
+        "despite": "despite：儘管",
+        "according": "according：依照（according to）"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-034",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「隨函附上」.",
+      "word": "enclose",
+      "options": [
+        "encourage",
+        "enforce",
+        "enclose",
+        "enhance"
+      ],
+      "answer": "enclose",
+      "explanation": "enclose（v.）隨函附上。例：I have enclosed a copy of my résumé.",
+      "optionNotes": {
+        "enforce": "enforce：執行；強制",
+        "enhance": "enhance：提升",
+        "encourage": "encourage：鼓勵"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-035",
+      "type": "vocabulary",
+      "prompt": "What does \"transaction\" mean?",
+      "word": "transaction",
+      "options": [
+        "過渡；轉變",
+        "翻譯",
+        "交通運輸",
+        "交易"
+      ],
+      "answer": "交易",
+      "explanation": "transaction（n.）交易。例：All transactions are recorded automatically.",
+      "optionNotes": {
+        "翻譯": "「翻譯」的英文是 translation",
+        "過渡；轉變": "「過渡；轉變」的英文是 transition",
+        "交通運輸": "「交通運輸」的英文是 transportation"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-036",
+      "type": "vocabulary",
+      "prompt": "What does \"budget\" mean?",
+      "word": "budget",
+      "options": [
+        "餘額；平衡",
+        "預算",
+        "水桶",
+        "公告"
+      ],
+      "answer": "預算",
+      "explanation": "budget（n.）預算。例：We are running over budget on this project.",
+      "optionNotes": {
+        "公告": "「公告」的英文是 bulletin",
+        "水桶": "「水桶」的英文是 bucket",
+        "餘額；平衡": "「餘額；平衡」的英文是 balance"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-037",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「有利潤的；賺錢的」.",
+      "word": "profitable",
+      "options": [
+        "profitable",
+        "portable",
+        "predictable",
+        "preferable"
+      ],
+      "answer": "profitable",
+      "explanation": "profitable（adj.）有利潤的；賺錢的。例：The new product line has been very profitable.",
+      "optionNotes": {
+        "portable": "portable：可攜帶的",
+        "predictable": "predictable：可預測的",
+        "preferable": "preferable：較好的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-038",
+      "type": "vocabulary",
+      "prompt": "What does \"audit\" mean?",
+      "word": "audit",
+      "options": [
+        "審計；查帳",
+        "觀眾",
+        "成人",
+        "拍賣"
+      ],
+      "answer": "審計；查帳",
+      "explanation": "audit（n.）審計；查帳。例：The annual audit will begin next week.",
+      "optionNotes": {
+        "觀眾": "「觀眾」的英文是 audience",
+        "拍賣": "「拍賣」的英文是 auction",
+        "成人": "「成人」的英文是 adult"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-039",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「資產」.",
+      "word": "asset",
+      "options": [
+        "assent",
+        "access",
+        "liability",
+        "asset"
+      ],
+      "answer": "asset",
+      "explanation": "asset（n.）資產。例：Our employees are our greatest asset.",
+      "optionNotes": {
+        "liability": "liability：負債",
+        "access": "access：存取；進入",
+        "assent": "assent：同意"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-040",
+      "type": "vocabulary",
+      "prompt": "What does \"estimate\" mean?",
+      "word": "estimate",
+      "options": [
+        "估計；估價",
+        "地產",
+        "消除",
+        "尊重"
+      ],
+      "answer": "估計；估價",
+      "explanation": "estimate（n.）估計；估價。例：The contractor gave us an estimate of $5,000.",
+      "optionNotes": {
+        "地產": "「地產」的英文是 estate",
+        "尊重": "「尊重」的英文是 esteem",
+        "消除": "「消除」的英文是 eliminate"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-041",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「供應商」.",
+      "word": "supplier",
+      "options": [
+        "supervisor",
+        "surplus",
+        "consumer",
+        "supplier"
+      ],
+      "answer": "supplier",
+      "explanation": "supplier（n.）供應商。例：We are looking for a new supplier of paper.",
+      "optionNotes": {
+        "supervisor": "supervisor：主管",
+        "consumer": "consumer：消費者",
+        "surplus": "surplus：過剩"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-042",
+      "type": "vocabulary",
+      "prompt": "What does \"promotion\" mean?",
+      "word": "promotion",
+      "options": [
+        "動作；動議",
+        "職位",
+        "升職；促銷活動",
+        "發音"
+      ],
+      "answer": "升職；促銷活動",
+      "explanation": "promotion（n.）升職；促銷活動。例：She received a promotion last month.",
+      "optionNotes": {
+        "動作；動議": "「動作；動議」的英文是 motion",
+        "職位": "「職位」的英文是 position",
+        "發音": "「發音」的英文是 pronunciation"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-043",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「搬遷；調到別處」.",
+      "word": "relocate",
+      "options": [
+        "relocate",
+        "allocate",
+        "renovate",
+        "rotate"
+      ],
+      "answer": "relocate",
+      "explanation": "relocate（v.）搬遷；調到別處。例：The company will relocate its headquarters to Taichung.",
+      "optionNotes": {
+        "allocate": "allocate：分配",
+        "renovate": "renovate：翻新",
+        "rotate": "rotate：輪調；旋轉"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-044",
+      "type": "vocabulary",
+      "prompt": "What does \"renovate\" mean?",
+      "word": "renovate",
+      "options": [
+        "搬遷",
+        "管制",
+        "創新",
+        "翻新；整修"
+      ],
+      "answer": "翻新；整修",
+      "explanation": "renovate（v.）翻新；整修。例：The hotel lobby is being renovated.",
+      "optionNotes": {
+        "搬遷": "「搬遷」的英文是 relocate",
+        "創新": "「創新」的英文是 innovate",
+        "管制": "「管制」的英文是 regulate"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-voc-045",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「容納；提供住宿」.",
+      "word": "accommodate",
+      "options": [
+        "accelerate",
+        "accompany",
+        "accommodate",
+        "accumulate"
+      ],
+      "answer": "accommodate",
+      "explanation": "accommodate（v.）容納；提供住宿。例：The hall can accommodate up to 300 people.",
+      "optionNotes": {
+        "accumulate": "accumulate：累積",
+        "accompany": "accompany：陪同",
+        "accelerate": "accelerate：加速"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-voc-046",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「免費贈送的」.",
+      "word": "complimentary",
+      "options": [
+        "competitive",
+        "complicated",
+        "complimentary",
+        "complementary"
+      ],
+      "answer": "complimentary",
+      "explanation": "complimentary（adj.）免費贈送的。例：Guests receive a complimentary breakfast.",
+      "optionNotes": {
+        "complementary": "complementary：互補的（拼字只差一個字母！）",
+        "complicated": "complicated：複雜的",
+        "competitive": "competitive：有競爭力的"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-voc-047",
+      "type": "vocabulary",
+      "prompt": "What does \"reservation\" mean?",
+      "word": "reservation",
+      "options": [
+        "預訂",
+        "保存",
+        "觀察",
+        "註冊；登記"
+      ],
+      "answer": "預訂",
+      "explanation": "reservation（n.）預訂。例：I'd like to make a reservation for two.",
+      "optionNotes": {
+        "保存": "「保存」的英文是 preservation",
+        "觀察": "「觀察」的英文是 observation",
+        "註冊；登記": "「註冊；登記」的英文是 registration"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel",
+        "food"
+      ]
+    },
+    {
+      "id": "toeic-voc-048",
+      "type": "vocabulary",
+      "prompt": "What does \"depart\" mean?",
+      "word": "depart",
+      "options": [
+        "部門",
+        "押金；存款",
+        "出發；離開",
+        "抵達"
+      ],
+      "answer": "出發；離開",
+      "explanation": "depart（v.）出發；離開。例：The train departs at 9:15.",
+      "optionNotes": {
+        "部門": "「部門」的英文是 department",
+        "押金；存款": "「押金；存款」的英文是 deposit",
+        "抵達": "「抵達」的英文是 arrive"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-voc-049",
+      "type": "vocabulary",
+      "prompt": "What does \"boarding pass\" mean?",
+      "word": "boarding pass",
+      "options": [
+        "行李提領處",
+        "護照",
+        "海關",
+        "登機證"
+      ],
+      "answer": "登機證",
+      "explanation": "boarding pass（n.）登機證。例：Please show your boarding pass at the gate.",
+      "optionNotes": {
+        "護照": "「護照」的英文是 passport",
+        "行李提領處": "「行李提領處」的英文是 baggage claim",
+        "海關": "「海關」的英文是 customs"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-voc-050",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「紀念品」.",
+      "word": "souvenir",
+      "options": [
+        "supervisor",
+        "survey",
+        "souvenir",
+        "survivor"
+      ],
+      "answer": "souvenir",
+      "explanation": "souvenir（n.）紀念品。例：We bought some souvenirs at the airport.",
+      "optionNotes": {
+        "survey": "survey：問卷調查",
+        "supervisor": "supervisor：主管",
+        "survivor": "survivor：倖存者"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-voc-051",
+      "type": "vocabulary",
+      "prompt": "What does \"refund\" mean?",
+      "word": "refund",
+      "options": [
+        "拒絕",
+        "退款",
+        "改革",
+        "資金"
+      ],
+      "answer": "退款",
+      "explanation": "refund（n.）退款。例：You can get a full refund within 7 days.",
+      "optionNotes": {
+        "拒絕": "「拒絕」的英文是 refuse",
+        "改革": "「改革」的英文是 reform",
+        "資金": "「資金」的英文是 fund"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-voc-052",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「問卷調查」.",
+      "word": "survey",
+      "options": [
+        "survey",
+        "service",
+        "surface",
+        "surgery"
+      ],
+      "answer": "survey",
+      "explanation": "survey（n.）問卷調查。例：Please complete this short customer survey.",
+      "optionNotes": {
+        "surgery": "surgery：手術",
+        "surface": "surface：表面",
+        "service": "service：服務"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-voc-053",
+      "type": "vocabulary",
+      "prompt": "What does \"launch\" mean?",
+      "word": "launch",
+      "options": [
+        "推出（新產品）；發射",
+        "休息室",
+        "午餐",
+        "洗衣"
+      ],
+      "answer": "推出（新產品）；發射",
+      "explanation": "launch（v.）推出（新產品）；發射。例：The company will launch a new smartphone in May.",
+      "optionNotes": {
+        "洗衣": "「洗衣」的英文是 laundry",
+        "休息室": "「休息室」的英文是 lounge",
+        "午餐": "「午餐」的英文是 lunch"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-voc-054",
+      "type": "vocabulary",
+      "prompt": "What does \"competitor\" mean?",
+      "word": "competitor",
+      "options": [
+        "顧客",
+        "合作夥伴",
+        "競爭對手",
+        "通勤者"
+      ],
+      "answer": "競爭對手",
+      "explanation": "competitor（n.）競爭對手。例：Our prices are lower than our competitors'.",
+      "optionNotes": {
+        "合作夥伴": "「合作夥伴」的英文是 partner",
+        "顧客": "「顧客」的英文是 customer",
+        "通勤者": "「通勤者」的英文是 commuter"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-voc-055",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「可行的」.",
+      "word": "feasible",
+      "options": [
+        "flexible",
+        "fearful",
+        "feasible",
+        "festive"
+      ],
+      "answer": "feasible",
+      "explanation": "feasible（adj.）可行的。例：Is this plan financially feasible?",
+      "optionNotes": {
+        "flexible": "flexible：有彈性的",
+        "festive": "festive：節慶的",
+        "fearful": "fearful：害怕的"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-056",
+      "type": "vocabulary",
+      "prompt": "What does \"preliminary\" mean?",
+      "word": "preliminary",
+      "options": [
+        "文學的",
+        "自願的",
+        "初步的",
+        "暫時的"
+      ],
+      "answer": "初步的",
+      "explanation": "preliminary（adj.）初步的。例：The preliminary results look promising.",
+      "optionNotes": {
+        "暫時的": "「暫時的」的英文是 temporary",
+        "自願的": "「自願的」的英文是 voluntary",
+        "文學的": "「文學的」的英文是 literary"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-voc-057",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「扣除」.",
+      "word": "deduct",
+      "options": [
+        "conduct",
+        "deduct",
+        "detect",
+        "deduce"
+      ],
+      "answer": "deduct",
+      "explanation": "deduct（v.）扣除。例：Taxes are deducted from your salary.",
+      "optionNotes": {
+        "deduce": "deduce：推論",
+        "conduct": "conduct：進行；指揮",
+        "detect": "detect：偵測"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-voc-058",
+      "type": "vocabulary",
+      "prompt": "What does \"overtime\" mean?",
+      "word": "overtime",
+      "options": [
+        "加班",
+        "海外",
+        "概要",
+        "忽略；俯瞰"
+      ],
+      "answer": "加班",
+      "explanation": "overtime（n.）加班。例：We worked overtime to finish the project.",
+      "optionNotes": {
+        "概要": "「概要」的英文是 overview",
+        "忽略；俯瞰": "「忽略；俯瞰」的英文是 overlook",
+        "海外": "「海外」的英文是 overseas"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-voc-059",
+      "type": "vocabulary",
+      "prompt": "What does \"payroll\" mean?",
+      "word": "payroll",
+      "options": [
+        "薪資名冊；薪資發放",
+        "註冊；入學",
+        "作品集；投資組合",
+        "巡邏"
+      ],
+      "answer": "薪資名冊；薪資發放",
+      "explanation": "payroll（n.）薪資名冊；薪資發放。例：The payroll department handles salaries.",
+      "optionNotes": {
+        "巡邏": "「巡邏」的英文是 patrol",
+        "註冊；入學": "「註冊；入學」的英文是 enrollment",
+        "作品集；投資組合": "「作品集；投資組合」的英文是 portfolio"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-060",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「全體員工；人事部門」.",
+      "word": "personnel",
+      "options": [
+        "personnel",
+        "personal",
+        "passenger",
+        "personality"
+      ],
+      "answer": "personnel",
+      "explanation": "personnel（n.）全體員工；人事部門。例：All personnel must wear ID badges.",
+      "optionNotes": {
+        "personal": "personal：個人的",
+        "personality": "personality：個性",
+        "passenger": "passenger：乘客"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-voc-061",
+      "type": "vocabulary",
+      "prompt": "What does \"maintenance\" mean?",
+      "word": "maintenance",
+      "options": [
+        "出席",
+        "維修；保養",
+        "外表",
+        "入口"
+      ],
+      "answer": "維修；保養",
+      "explanation": "maintenance（n.）維修；保養。例：The elevator is closed for maintenance.",
+      "optionNotes": {
+        "出席": "「出席」的英文是 attendance",
+        "入口": "「入口」的英文是 entrance",
+        "外表": "「外表」的英文是 appearance"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-voc-062",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「波動」.",
+      "word": "fluctuate",
+      "options": [
+        "fluctuate",
+        "flourish",
+        "fabricate",
+        "facilitate"
+      ],
+      "answer": "fluctuate",
+      "explanation": "fluctuate（v.）波動。例：Fuel prices fluctuate from week to week.",
+      "optionNotes": {
+        "flourish": "flourish：蓬勃發展",
+        "fabricate": "fabricate：捏造",
+        "facilitate": "facilitate：促進"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-gra-001",
+      "type": "grammar",
+      "prompt": "The manager asked all staff to submit their reports ___ Friday.",
+      "options": [
+        "until",
+        "at",
+        "in",
+        "by"
+      ],
+      "answer": "by",
+      "explanation": "by + 時間點 = 「在…之前（完成）」，用於期限。",
+      "optionNotes": {
+        "until": "until 表示動作「持續到」某時，例如 wait until Friday；繳交是一次性動作，要用 by",
+        "at": "at 用於時刻，例如 at 5 p.m.",
+        "in": "in 用於月份、年份，例如 in May"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-002",
+      "type": "grammar",
+      "prompt": "Ms. Chen is responsible ___ training new employees.",
+      "options": [
+        "with",
+        "to",
+        "for",
+        "of"
+      ],
+      "answer": "for",
+      "explanation": "be responsible for + 名詞 / V-ing：負責…",
+      "optionNotes": {
+        "of": "沒有 be responsible of 的用法，是常見錯誤",
+        "to": "be responsible to + 人 = 向某人負責（例如向主管報告），後面不接工作內容",
+        "with": "沒有 be responsible with 這個搭配"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-003",
+      "type": "grammar",
+      "prompt": "The new software is ___ than the old version.",
+      "options": [
+        "efficienter",
+        "efficient",
+        "more efficient",
+        "most efficient"
+      ],
+      "answer": "more efficient",
+      "explanation": "有 than 要用比較級；efficient 是多音節形容詞，比較級用 more efficient。",
+      "optionNotes": {
+        "efficienter": "多音節形容詞不加 -er",
+        "most efficient": "最高級要搭配 the，且不能和 than 連用",
+        "efficient": "有 than 必須用比較級"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "tech",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-004",
+      "type": "grammar",
+      "prompt": "Please contact our customer service team if you have ___ questions.",
+      "options": [
+        "little",
+        "any",
+        "much",
+        "every"
+      ],
+      "answer": "any",
+      "explanation": "條件句、疑問句中常用 any + 複數名詞：有任何問題。",
+      "optionNotes": {
+        "much": "much 接不可數名詞，questions 是可數複數",
+        "every": "every 接單數名詞（every question）",
+        "little": "little 接不可數名詞，且表示「幾乎沒有」"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-005",
+      "type": "grammar",
+      "prompt": "The conference room ___ for the training session tomorrow.",
+      "options": [
+        "reserve",
+        "is reserving",
+        "has reserved",
+        "has been reserved"
+      ],
+      "answer": "has been reserved",
+      "explanation": "會議室是「被」預訂 → 被動語態；已完成的狀態用現在完成式被動 has been reserved。",
+      "optionNotes": {
+        "has reserved": "主動語態，會議室不會自己預訂東西",
+        "is reserving": "主動進行式，語態錯誤",
+        "reserve": "主詞是單數 room，而且語態錯誤"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-006",
+      "type": "grammar",
+      "prompt": "___ the heavy rain, the outdoor event was not canceled.",
+      "options": [
+        "Because",
+        "However",
+        "Despite",
+        "Although"
+      ],
+      "answer": "Despite",
+      "explanation": "Despite + 名詞：儘管…（後面接名詞片語 the heavy rain）。",
+      "optionNotes": {
+        "Although": "Although 後面要接完整子句，例如 Although it rained heavily",
+        "Because": "語意相反（因為下雨所以沒取消不合理），且 because 後面接子句",
+        "However": "However 是副詞，不能直接接名詞片語"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-007",
+      "type": "grammar",
+      "prompt": "Mr. Lee has worked at the company ___ more than ten years.",
+      "options": [
+        "while",
+        "for",
+        "during",
+        "since"
+      ],
+      "answer": "for",
+      "explanation": "現在完成式 + for + 一段時間（more than ten years）。",
+      "optionNotes": {
+        "since": "since 接「時間起點」，例如 since 2015",
+        "during": "during 接「某段期間的名稱」，例如 during the summer",
+        "while": "while 是連接詞，後面接子句"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-008",
+      "type": "grammar",
+      "prompt": "All visitors are required ___ at the front desk.",
+      "options": [
+        "signed in",
+        "signing in",
+        "sign in",
+        "to sign in"
+      ],
+      "answer": "to sign in",
+      "explanation": "be required to + 原形動詞：被要求做…",
+      "optionNotes": {
+        "signing in": "require 的被動用法後面接不定詞 to V，不接 V-ing",
+        "sign in": "少了 to",
+        "signed in": "過去分詞不能接在 be required 後面"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-009",
+      "type": "grammar",
+      "prompt": "The report must be ___ before it is sent to the client.",
+      "options": [
+        "carefully review",
+        "careful reviewed",
+        "carefully reviewed",
+        "careful review"
+      ],
+      "answer": "carefully reviewed",
+      "explanation": "must be + 過去分詞（被動）；修飾動詞用副詞 carefully。",
+      "optionNotes": {
+        "careful reviewed": "修飾動詞（reviewed）要用副詞 carefully，不是形容詞",
+        "carefully review": "be 後面要接過去分詞 reviewed（被動）",
+        "careful review": "be + 形容詞 + 名詞，語意變成「報告是一個仔細的審查」，不合理"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-010",
+      "type": "grammar",
+      "prompt": "We look forward to ___ with you again.",
+      "options": [
+        "worked",
+        "be working",
+        "working",
+        "work"
+      ],
+      "answer": "working",
+      "explanation": "look forward to 的 to 是介系詞，後面接動名詞 V-ing。",
+      "optionNotes": {
+        "work": "to 在這裡是介系詞不是不定詞，不能接原形動詞",
+        "worked": "介系詞後面不能接過去式",
+        "be working": "介系詞後面不接 be 動詞原形"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-011",
+      "type": "grammar",
+      "prompt": "The shipment was delayed, ___ caused problems for our customers.",
+      "options": [
+        "it",
+        "that",
+        "what",
+        "which"
+      ],
+      "answer": "which",
+      "explanation": "逗號後的非限定關係子句用 which，可以指「前面整件事」（出貨延遲這件事）。",
+      "optionNotes": {
+        "that": "that 不能用在逗號後的非限定關係子句",
+        "what": "what = the thing that，不能修飾前面的內容",
+        "it": "用 it 會變成兩個句子中間沒有連接詞（run-on sentence）"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-012",
+      "type": "grammar",
+      "prompt": "If the package ___ by Monday, please let me know.",
+      "options": [
+        "did not arrived",
+        "not arrive",
+        "does not arrive",
+        "will not arrive"
+      ],
+      "answer": "does not arrive",
+      "explanation": "表示條件的 if 子句用現在式代替未來式。",
+      "optionNotes": {
+        "will not arrive": "條件子句不用 will 表示未來",
+        "not arrive": "缺少助動詞 does",
+        "did not arrived": "did 後面要接原形動詞，而且時態也不對"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-013",
+      "type": "grammar",
+      "prompt": "The hotel offers a free shuttle service ___ the airport and the city center.",
+      "options": [
+        "through",
+        "from",
+        "among",
+        "between"
+      ],
+      "answer": "between",
+      "explanation": "between A and B：在 A 與 B 之間。",
+      "optionNotes": {
+        "among": "among 用於三者以上之間",
+        "from": "from 要搭配 to（from A to B）",
+        "through": "through 是「穿過」，不搭配 and"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-gra-014",
+      "type": "grammar",
+      "prompt": "Ms. Park is the person ___ you should speak to about the refund.",
+      "options": [
+        "whom",
+        "whose",
+        "which",
+        "where"
+      ],
+      "answer": "whom",
+      "explanation": "先行詞是人（the person），在子句中當 to 的受詞 → whom（口語也可用 who 或省略）。",
+      "optionNotes": {
+        "which": "which 用來指事物，不能指人",
+        "whose": "whose 表示所有格，後面要接名詞",
+        "where": "where 指地點"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-gra-015",
+      "type": "grammar",
+      "prompt": "Applicants should have ___ experience in sales.",
+      "options": [
+        "extensive",
+        "extension",
+        "extensively",
+        "extend"
+      ],
+      "answer": "extensive",
+      "explanation": "修飾名詞 experience 要用形容詞：extensive 豐富的、廣泛的。",
+      "optionNotes": {
+        "extensively": "副詞不能修飾名詞",
+        "extend": "動詞「延長」，不能放在名詞前修飾",
+        "extension": "名詞「延長；分機」，放這裡語意不通"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-gra-016",
+      "type": "grammar",
+      "prompt": "The company has decided to ___ its operations to Asia.",
+      "options": [
+        "expanding",
+        "expand",
+        "expansive",
+        "expansion"
+      ],
+      "answer": "expand",
+      "explanation": "decide to + 原形動詞：expand 擴展。",
+      "optionNotes": {
+        "expansion": "名詞，to 後面要接動詞原形",
+        "expansive": "形容詞「廣闊的」",
+        "expanding": "to 在這裡是不定詞，不接 V-ing"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-017",
+      "type": "grammar",
+      "prompt": "Profits rose ___ in the third quarter.",
+      "options": [
+        "significantly",
+        "significance",
+        "signify",
+        "significant"
+      ],
+      "answer": "significantly",
+      "explanation": "修飾動詞 rose 要用副詞：significantly 顯著地。",
+      "optionNotes": {
+        "significant": "形容詞不能修飾動詞",
+        "significance": "名詞「重要性」",
+        "signify": "動詞「表示」"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-gra-018",
+      "type": "grammar",
+      "prompt": "Please make sure the door is locked ___ you leave the office.",
+      "options": [
+        "before",
+        "between",
+        "despite",
+        "during"
+      ],
+      "answer": "before",
+      "explanation": "before + 子句：在…之前。",
+      "optionNotes": {
+        "during": "during 後面接名詞，不接子句",
+        "despite": "despite 表示讓步「儘管」，且後接名詞",
+        "between": "between 要搭配 A and B"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-019",
+      "type": "grammar",
+      "prompt": "By the time the manager arrived, the meeting ___.",
+      "options": [
+        "has already started",
+        "already starts",
+        "will start",
+        "had already started"
+      ],
+      "answer": "had already started",
+      "explanation": "By the time + 過去式，主要子句用過去完成式：在經理到之前會議「已經」開始。",
+      "optionNotes": {
+        "has already started": "現在完成式不能搭配過去的時間點 arrived",
+        "already starts": "現在式與過去的情境不符",
+        "will start": "未來式與過去情境矛盾"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-020",
+      "type": "grammar",
+      "prompt": "The training session will be held ___ the second floor.",
+      "options": [
+        "to",
+        "at",
+        "on",
+        "in"
+      ],
+      "answer": "on",
+      "explanation": "樓層用 on：on the second floor。",
+      "optionNotes": {
+        "in": "in 用於建築物或房間內部，如 in the building",
+        "at": "at 用於地點的點，如 at the reception",
+        "to": "to 表示方向，不用於「在某層」"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-021",
+      "type": "grammar",
+      "prompt": "Each of the employees ___ received a new laptop.",
+      "options": [
+        "are",
+        "has",
+        "having",
+        "have"
+      ],
+      "answer": "has",
+      "explanation": "Each of + 複數名詞 當主詞時，動詞用單數 → has。",
+      "optionNotes": {
+        "have": "主詞是 each（單數），不是 employees",
+        "are": "are 是複數 be 動詞，而且 are received 語意不對",
+        "having": "句子缺少主要動詞"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-022",
+      "type": "grammar",
+      "prompt": "The CEO, along with her assistants, ___ expected to attend.",
+      "options": [
+        "are",
+        "be",
+        "is",
+        "were"
+      ],
+      "answer": "is",
+      "explanation": "along with / as well as 插入的部分不影響主詞，主詞是 The CEO（單數）。",
+      "optionNotes": {
+        "are": "動詞要跟主詞 The CEO 一致，不是 assistants",
+        "were": "複數且時態不符",
+        "be": "缺少變化的原形動詞不能當主要動詞"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-023",
+      "type": "grammar",
+      "prompt": "The flight was canceled ___ the storm.",
+      "options": [
+        "because",
+        "so",
+        "because of",
+        "although"
+      ],
+      "answer": "because of",
+      "explanation": "because of + 名詞片語：因為…",
+      "optionNotes": {
+        "because": "because 後面要接子句（because there was a storm）",
+        "although": "although 表示「雖然」，語意不符且後接子句",
+        "so": "so 表示結果，後面接子句"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-gra-024",
+      "type": "grammar",
+      "prompt": "Not only ___ the project on time, but she also stayed under budget.",
+      "options": [
+        "she did finish",
+        "she finished",
+        "did she finish",
+        "finished she"
+      ],
+      "answer": "did she finish",
+      "explanation": "Not only 放句首時要倒裝：Not only + 助動詞 + 主詞 + 動詞。",
+      "optionNotes": {
+        "she finished": "Not only 在句首時需要倒裝",
+        "she did finish": "助動詞要放在主詞前面",
+        "finished she": "一般動詞不能直接倒裝，要借助 did"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-025",
+      "type": "grammar",
+      "prompt": "Mr. Kim requested that the documents ___ to him by noon.",
+      "options": [
+        "were sent",
+        "sending",
+        "be sent",
+        "are sent"
+      ],
+      "answer": "be sent",
+      "explanation": "request / suggest / insist that + 主詞 + (should) + 原形動詞（假設語氣）；文件是被寄 → be sent。",
+      "optionNotes": {
+        "are sent": "request that 後面要用原形動詞",
+        "were sent": "request that 後面要用原形動詞",
+        "sending": "缺少 be，且語態錯誤"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-026",
+      "type": "grammar",
+      "prompt": "The new policy applies to ___ full-time and part-time employees.",
+      "options": [
+        "either",
+        "all",
+        "both",
+        "neither"
+      ],
+      "answer": "both",
+      "explanation": "both A and B：A 和 B 兩者都。",
+      "optionNotes": {
+        "either": "either 要搭配 or",
+        "neither": "neither 要搭配 nor",
+        "all": "all 不搭配 and 的雙項結構"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-gra-027",
+      "type": "grammar",
+      "prompt": "Customers can pay ___ by credit card or in cash.",
+      "options": [
+        "either",
+        "whether",
+        "neither",
+        "both"
+      ],
+      "answer": "either",
+      "explanation": "either A or B：A 或 B 擇一。",
+      "optionNotes": {
+        "both": "both 要搭配 and",
+        "neither": "neither 要搭配 nor，且語意變成兩種都不行",
+        "whether": "whether A or B 用來引導子句（是否），不用在這裡"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-gra-028",
+      "type": "grammar",
+      "prompt": "The marketing team is ___ busy to take on another project right now.",
+      "options": [
+        "too",
+        "very",
+        "so",
+        "enough"
+      ],
+      "answer": "too",
+      "explanation": "too + 形容詞 + to V：太…而不能…",
+      "optionNotes": {
+        "so": "so 要搭配 that 子句（so busy that…）",
+        "very": "very 不能搭配 to V 表示「以致於不能」",
+        "enough": "enough 放在形容詞後面（busy enough），而且語意相反"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-gra-029",
+      "type": "grammar",
+      "prompt": "This is the ___ proposal we have received so far.",
+      "options": [
+        "detailedest",
+        "more detailed",
+        "most detailed",
+        "detailed"
+      ],
+      "answer": "most detailed",
+      "explanation": "the + 最高級 + 名詞 + so far：到目前為止最…",
+      "optionNotes": {
+        "more detailed": "比較級要搭配 than",
+        "detailed": "有 the 和 so far 表示最高級",
+        "detailedest": "多音節形容詞不加 -est"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-030",
+      "type": "grammar",
+      "prompt": "Mr. Garcia ___ in the sales department since 2019.",
+      "options": [
+        "works",
+        "worked",
+        "has worked",
+        "is working"
+      ],
+      "answer": "has worked",
+      "explanation": "since + 過去時間點，主要子句用現在完成式。",
+      "optionNotes": {
+        "works": "現在簡單式不能搭配 since",
+        "worked": "過去式表示已結束，和 since 不合",
+        "is working": "現在進行式不搭配 since 表示持續"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-gra-031",
+      "type": "grammar",
+      "prompt": "Would you mind ___ the meeting minutes to everyone?",
+      "options": [
+        "to send",
+        "sending",
+        "sent",
+        "send"
+      ],
+      "answer": "sending",
+      "explanation": "Would you mind + V-ing：可以請你…嗎？",
+      "optionNotes": {
+        "to send": "mind 後面接動名詞，不接不定詞",
+        "send": "mind 後面接動名詞",
+        "sent": "mind 後面接動名詞"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-032",
+      "type": "grammar",
+      "prompt": "The seminar was so ___ that many people fell asleep.",
+      "options": [
+        "bored",
+        "bore",
+        "boredom",
+        "boring"
+      ],
+      "answer": "boring",
+      "explanation": "-ing 形容詞描述「讓人有某種感覺的事物」：研討會令人無聊 → boring。",
+      "optionNotes": {
+        "bored": "-ed 形容詞描述「人」的感受，例如 The people were bored",
+        "bore": "動詞或名詞「無聊的人／事」",
+        "boredom": "名詞「無聊」"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-033",
+      "type": "grammar",
+      "prompt": "The staff were ___ about the new bonus system.",
+      "options": [
+        "excite",
+        "excited",
+        "exciting",
+        "excitement"
+      ],
+      "answer": "excited",
+      "explanation": "描述「人」的感受用 -ed 形容詞：員工感到興奮 → excited。",
+      "optionNotes": {
+        "exciting": "-ing 形容詞描述「令人興奮的事物」",
+        "excite": "動詞",
+        "excitement": "名詞"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-gra-034",
+      "type": "grammar",
+      "prompt": "___ you need any assistance, please do not hesitate to contact me.",
+      "options": [
+        "Could",
+        "Had",
+        "Should",
+        "Would"
+      ],
+      "answer": "Should",
+      "explanation": "Should you need… = If you should need…（條件句倒裝，正式書信常用）。",
+      "optionNotes": {
+        "Would": "would 不能用在這種條件倒裝",
+        "Could": "Could you… 是請求句型，與後面的 please 句子不連貫",
+        "Had": "Had 倒裝用於「與過去事實相反」，後面要接過去分詞"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-035",
+      "type": "grammar",
+      "prompt": "The products ___ in this factory are exported to Europe.",
+      "options": [
+        "manufacturing",
+        "manufactured",
+        "manufacture",
+        "are manufactured"
+      ],
+      "answer": "manufactured",
+      "explanation": "過去分詞片語修飾名詞（= which are manufactured）：在這間工廠「被製造」的產品。",
+      "optionNotes": {
+        "manufacturing": "現在分詞表示主動，產品不會自己製造",
+        "manufacture": "原形動詞不能修飾名詞",
+        "are manufactured": "句子會有兩個主要動詞（are manufactured / are exported）"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-036",
+      "type": "grammar",
+      "prompt": "Please return the signed contract ___ the enclosed envelope.",
+      "options": [
+        "at",
+        "by",
+        "in",
+        "on"
+      ],
+      "answer": "in",
+      "explanation": "放在信封「裡」→ in the envelope。",
+      "optionNotes": {
+        "at": "at 表示地點的點，不表示「在…裡面」",
+        "on": "on 表示「在表面上」",
+        "by": "by 表示方式，如 by mail，不接 the enclosed envelope"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-037",
+      "type": "grammar",
+      "prompt": "We are pleased to announce the opening of ___ new branch in Kaohsiung.",
+      "options": [
+        "us",
+        "our",
+        "ours",
+        "we"
+      ],
+      "answer": "our",
+      "explanation": "名詞 branch 前面用所有格形容詞 our。",
+      "optionNotes": {
+        "us": "受格不能修飾名詞",
+        "ours": "所有格代名詞單獨使用，後面不接名詞",
+        "we": "主格不能修飾名詞"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-038",
+      "type": "grammar",
+      "prompt": "Ms. Wang will be out of the office ___ next Monday.",
+      "options": [
+        "for",
+        "until",
+        "by",
+        "since"
+      ],
+      "answer": "until",
+      "explanation": "不在辦公室是「持續的狀態」，持續到下週一 → until。",
+      "optionNotes": {
+        "by": "by 用於「在期限前完成」的動作",
+        "since": "since 接過去的起點",
+        "for": "for 接一段時間，不接時間點"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-gra-039",
+      "type": "grammar",
+      "prompt": "Sales have increased ___ 15 percent compared to last year.",
+      "options": [
+        "by",
+        "with",
+        "at",
+        "to"
+      ],
+      "answer": "by",
+      "explanation": "increase by + 數量 = 增加了多少；increase to = 增加到多少。",
+      "optionNotes": {
+        "to": "increase to 15 percent 是「增加到 15%」，語意不同",
+        "at": "increase 不搭配 at 表示幅度",
+        "with": "increase 不搭配 with 表示幅度"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-gra-040",
+      "type": "grammar",
+      "prompt": "The board will ___ the proposal at next week's meeting.",
+      "options": [
+        "discussion",
+        "discussing",
+        "discuss",
+        "discuss about"
+      ],
+      "answer": "discuss",
+      "explanation": "discuss 是及物動詞，直接接受詞，不加 about。",
+      "optionNotes": {
+        "discuss about": "discuss 後面不加 about（常見錯誤）",
+        "discussing": "will 後面接原形動詞",
+        "discussion": "名詞，will 後面要接動詞"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-041",
+      "type": "grammar",
+      "prompt": "The museum is ___ located near the train station.",
+      "options": [
+        "conveniences",
+        "convenience",
+        "conveniently",
+        "convenient"
+      ],
+      "answer": "conveniently",
+      "explanation": "修飾過去分詞 located 用副詞：conveniently 方便地。",
+      "optionNotes": {
+        "convenient": "形容詞不能修飾分詞 located",
+        "convenience": "名詞",
+        "conveniences": "名詞複數"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-gra-042",
+      "type": "grammar",
+      "prompt": "It is important that every employee ___ the safety guidelines.",
+      "options": [
+        "followed",
+        "follows",
+        "follow",
+        "following"
+      ],
+      "answer": "follow",
+      "explanation": "It is important / essential that + 主詞 + (should) + 原形動詞（多益常考的假設語氣）。",
+      "optionNotes": {
+        "follows": "這個句型要用原形動詞（美式口語偶爾會聽到 follows，但考試要選原形）",
+        "followed": "這個句型要用原形動詞",
+        "following": "子句缺少主要動詞"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-043",
+      "type": "grammar",
+      "prompt": "The keynote speaker ___ at 10 a.m. tomorrow.",
+      "options": [
+        "schedules speaking",
+        "scheduled to speak",
+        "is scheduling to speak",
+        "is scheduled to speak"
+      ],
+      "answer": "is scheduled to speak",
+      "explanation": "be scheduled to + V：預定要…（行程是被安排的 → 被動）。",
+      "optionNotes": {
+        "scheduled to speak": "缺少 be 動詞，句子沒有主要動詞",
+        "is scheduling to speak": "主動進行式語意錯誤：講者不是在安排行程",
+        "schedules speaking": "語意與用法都不對"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-gra-044",
+      "type": "grammar",
+      "prompt": "I would have attended the workshop if I ___ about it earlier.",
+      "options": [
+        "have known",
+        "had known",
+        "knew",
+        "would know"
+      ],
+      "answer": "had known",
+      "explanation": "與過去事實相反的假設：If + had + p.p., S + would have + p.p.",
+      "optionNotes": {
+        "knew": "knew 用於與「現在」事實相反",
+        "have known": "if 子句要用過去完成式",
+        "would know": "if 子句不用 would"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-gra-045",
+      "type": "grammar",
+      "prompt": "Mr. Brown is one of ___ experienced engineers in the company.",
+      "options": [
+        "the most",
+        "the more",
+        "more",
+        "most"
+      ],
+      "answer": "the most",
+      "explanation": "one of the + 最高級 + 複數名詞：最…的其中之一。",
+      "optionNotes": {
+        "most": "最高級前面要加 the",
+        "more": "比較級要搭配 than",
+        "the more": "the more… the more… 是另一個句型"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "tech"
+      ]
+    },
+    {
+      "id": "toeic-cloze-001",
+      "type": "cloze",
+      "prompt": "Please fill ___ this form and return it to the front desk. (填寫)",
+      "options": [],
+      "answer": "out",
+      "acceptedAnswers": [
+        "out",
+        "in"
+      ],
+      "explanation": "fill out / fill in a form 都是「填寫表格」。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-cloze-002",
+      "type": "cloze",
+      "prompt": "The meeting has been called ___ because the manager is sick. (取消)",
+      "options": [],
+      "answer": "off",
+      "acceptedAnswers": [
+        "off"
+      ],
+      "explanation": "call off = cancel 取消。",
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-cloze-003",
+      "type": "cloze",
+      "prompt": "Could you look ___ this report before the meeting? (過目、檢查一遍)",
+      "options": [],
+      "answer": "over",
+      "acceptedAnswers": [
+        "over",
+        "through"
+      ],
+      "explanation": "look over / look through：快速檢查、瀏覽一遍。",
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-cloze-004",
+      "type": "cloze",
+      "prompt": "We need to come ___ with a new marketing plan. (想出)",
+      "options": [],
+      "answer": "up",
+      "acceptedAnswers": [
+        "up"
+      ],
+      "explanation": "come up with：想出（點子、計畫）。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-cloze-005",
+      "type": "cloze",
+      "prompt": "The plane will take ___ in ten minutes. (起飛)",
+      "options": [],
+      "answer": "off",
+      "acceptedAnswers": [
+        "off"
+      ],
+      "explanation": "take off：（飛機）起飛；land 是降落。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-cloze-006",
+      "type": "cloze",
+      "prompt": "Please hold ___ while I transfer your call. (電話中「請稍候」)",
+      "options": [],
+      "answer": "on",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "explanation": "hold on：（電話中）請稍等。也可以說 Please hold.",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-cloze-007",
+      "type": "cloze",
+      "prompt": "I'm afraid we have run ___ of paper. (用完)",
+      "options": [],
+      "answer": "out",
+      "acceptedAnswers": [
+        "out"
+      ],
+      "explanation": "run out of：用完、耗盡。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-cloze-008",
+      "type": "cloze",
+      "prompt": "Past tense of \"lead\": She ___ the team to success last year.",
+      "options": [],
+      "answer": "led",
+      "acceptedAnswers": [
+        "led"
+      ],
+      "explanation": "lead 的過去式與過去分詞都是 led（不是 leaded）。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-cloze-009",
+      "type": "cloze",
+      "prompt": "Plural of \"analysis\": We compared several ___.",
+      "options": [],
+      "answer": "analyses",
+      "acceptedAnswers": [
+        "analyses"
+      ],
+      "explanation": "analysis → analyses（-is 結尾的名詞複數改成 -es，例如 crisis → crises）。",
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-cloze-010",
+      "type": "cloze",
+      "prompt": "Noun form of \"apply\" (申請書): Please submit your ___ by Friday.",
+      "options": [],
+      "answer": "application",
+      "acceptedAnswers": [
+        "application"
+      ],
+      "explanation": "apply（v.）申請 → application（n.）申請書；applicant 是「申請人」。",
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-cloze-011",
+      "type": "cloze",
+      "prompt": "Adjective form of \"respond\" (反應快的): Our support team is very ___.",
+      "options": [],
+      "answer": "responsive",
+      "acceptedAnswers": [
+        "responsive"
+      ],
+      "explanation": "respond（v.）→ responsive（adj.）反應迅速的；response（n.）回應。",
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-cloze-012",
+      "type": "cloze",
+      "prompt": "Opposite of \"increase\": Sales began to ___ in March. (減少)",
+      "options": [],
+      "answer": "decrease",
+      "acceptedAnswers": [
+        "decrease",
+        "decline",
+        "drop",
+        "fall"
+      ],
+      "explanation": "decrease / decline / drop / fall 都可以表示「下降、減少」。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-cloze-013",
+      "type": "cloze",
+      "prompt": "She was ___ to manager last month. (升職，用被動語態)",
+      "options": [],
+      "answer": "promoted",
+      "acceptedAnswers": [
+        "promoted"
+      ],
+      "explanation": "be promoted to + 職位：被升職為…",
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-cloze-014",
+      "type": "cloze",
+      "prompt": "Please ___ me know if you have any questions. (讓我知道)",
+      "options": [],
+      "answer": "let",
+      "acceptedAnswers": [
+        "let"
+      ],
+      "explanation": "let me know：讓我知道（let + 受詞 + 原形動詞）。",
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-cloze-015",
+      "type": "cloze",
+      "prompt": "Thank you for your ___. We will reply within 24 hours. (詢問，美式拼法)",
+      "options": [],
+      "answer": "inquiry",
+      "acceptedAnswers": [
+        "inquiry",
+        "enquiry"
+      ],
+      "explanation": "inquiry（美式）/ enquiry（英式）：詢問。",
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-001",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"When does the meeting start?\"",
+      "options": [
+        "In the conference room.",
+        "Yes, it started.",
+        "Mr. Lee will lead it.",
+        "At 3 o'clock."
+      ],
+      "answer": "At 3 o'clock.",
+      "explanation": "When 問「時間」，要回答時間。多益 Part 2 常考：先聽清楚開頭的疑問詞。",
+      "optionNotes": {
+        "In the conference room.": "這是回答 Where（地點）",
+        "Mr. Lee will lead it.": "這是回答 Who（人）",
+        "Yes, it started.": "When 問句不能用 Yes/No 回答"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-002",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"Who is in charge of the new project?\"",
+      "options": [
+        "It's on the fifth floor.",
+        "Yes, it's new.",
+        "Ms. Lin from marketing.",
+        "Next Monday."
+      ],
+      "answer": "Ms. Lin from marketing.",
+      "explanation": "Who 問「人」，回答人名或職位。",
+      "optionNotes": {
+        "Next Monday.": "這是回答 When",
+        "It's on the fifth floor.": "這是回答 Where",
+        "Yes, it's new.": "Who 問句不能用 Yes/No 回答，而且重複 new 是陷阱"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-003",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"Why was the shipment delayed?\"",
+      "options": [
+        "To the warehouse.",
+        "Because of the storm.",
+        "By truck.",
+        "Tomorrow morning."
+      ],
+      "answer": "Because of the storm.",
+      "explanation": "Why 問「原因」，常用 Because / Due to 回答。",
+      "optionNotes": {
+        "By truck.": "這是回答 How（方式）",
+        "Tomorrow morning.": "這是回答 When",
+        "To the warehouse.": "這是回答 Where"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-mc-004",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"Would you like me to send the file now?\"",
+      "options": [
+        "He sent it last week.",
+        "No, I don't like files.",
+        "Yes, that would be great.",
+        "At the post office."
+      ],
+      "answer": "Yes, that would be great.",
+      "explanation": "Would you like me to…? 是「要我幫你…嗎？」的提議，接受時說 Yes, that would be great / Yes, please。",
+      "optionNotes": {
+        "No, I don't like files.": "把提議誤解成問「喜不喜歡」",
+        "At the post office.": "答非所問（地點）",
+        "He sent it last week.": "主詞換成 He，且重複 send 是常見陷阱"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-005",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"How long will the renovation take?\"",
+      "options": [
+        "By the contractor.",
+        "About three weeks.",
+        "It's a long hallway.",
+        "Since last year."
+      ],
+      "answer": "About three weeks.",
+      "explanation": "How long 問「多久」，回答一段時間。",
+      "optionNotes": {
+        "It's a long hallway.": "用 long 製造聯想的陷阱",
+        "Since last year.": "since 表示起點，不是回答需要多久",
+        "By the contractor.": "回答由誰做"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-006",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"Haven't you finished the report yet?\"",
+      "options": [
+        "The report is long.",
+        "Yes, I haven't.",
+        "I'm almost done.",
+        "It's in the drawer."
+      ],
+      "answer": "I'm almost done.",
+      "explanation": "否定疑問句：直接說明實際狀況最自然。",
+      "optionNotes": {
+        "Yes, I haven't.": "Yes 後面要接肯定（Yes, I have.），Yes + haven't 自相矛盾",
+        "The report is long.": "只重複 report，沒有回答有沒有完成",
+        "It's in the drawer.": "回答地點，答非所問"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-007",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"Can we reschedule our meeting?\"",
+      "options": [
+        "It's in the schedule book.",
+        "Sure, how about Thursday?",
+        "The schedule is on the wall.",
+        "No, I've never been there."
+      ],
+      "answer": "Sure, how about Thursday?",
+      "explanation": "reschedule 改期 → 同意並提出新時間。",
+      "optionNotes": {
+        "It's in the schedule book.": "重複 schedule 的聲音陷阱",
+        "No, I've never been there.": "答非所問",
+        "The schedule is on the wall.": "重複 schedule 的聲音陷阱"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-008",
+      "type": "multiple_choice",
+      "prompt": "Choose the best response: \"Do you know where the conference room is?\"",
+      "options": [
+        "Twelve people.",
+        "About the budget.",
+        "At 2 p.m.",
+        "It's at the end of the hall."
+      ],
+      "answer": "It's at the end of the hall.",
+      "explanation": "Do you know where…? 實際上是問地點，直接回答位置。",
+      "optionNotes": {
+        "At 2 p.m.": "回答時間",
+        "About the budget.": "回答會議主題",
+        "Twelve people.": "回答人數"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-009",
+      "type": "multiple_choice",
+      "prompt": "\"We're on a tight budget.\" What does this mean?",
+      "options": [
+        "預算很充足",
+        "預算已經確定",
+        "預算被取消了",
+        "預算很緊、很有限"
+      ],
+      "answer": "預算很緊、很有限",
+      "explanation": "tight budget：預算吃緊。相反是 a generous budget。",
+      "optionNotes": {
+        "預算很充足": "充足是 generous / ample budget",
+        "預算已經確定": "確定是 finalized budget",
+        "預算被取消了": "取消是 the budget was cut / canceled"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "finance"
+      ]
+    },
+    {
+      "id": "toeic-mc-010",
+      "type": "multiple_choice",
+      "prompt": "\"Let's call it a day.\" What does this mean?",
+      "options": [
+        "把今天訂為紀念日",
+        "明天再打電話",
+        "打電話給某人",
+        "今天就到這裡，收工吧"
+      ],
+      "answer": "今天就到這裡，收工吧",
+      "explanation": "call it a day：今天的工作到此為止。",
+      "optionNotes": {
+        "打電話給某人": "call 在這裡不是打電話",
+        "把今天訂為紀念日": "字面直翻的陷阱",
+        "明天再打電話": "與 call 的字面意思混淆"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-011",
+      "type": "multiple_choice",
+      "prompt": "\"Could you give me a ballpark figure?\" What is the speaker asking for?",
+      "options": [
+        "棒球比賽的分數",
+        "精確的統計數據",
+        "球場的位置",
+        "一個大概的數字（估計）"
+      ],
+      "answer": "一個大概的數字（估計）",
+      "explanation": "ballpark figure：大概的估計值，例如報價前先問大概多少錢。",
+      "optionNotes": {
+        "棒球比賽的分數": "ballpark 原意是棒球場，但這是慣用語",
+        "精確的統計數據": "剛好相反，ballpark 是「大概」",
+        "球場的位置": "字面直翻的陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-mc-012",
+      "type": "multiple_choice",
+      "prompt": "\"The project is behind schedule.\" What does this mean?",
+      "options": [
+        "進度落後",
+        "照計畫進行",
+        "已經取消",
+        "進度超前"
+      ],
+      "answer": "進度落後",
+      "explanation": "behind schedule：落後進度；ahead of schedule：超前；on schedule：準時。",
+      "optionNotes": {
+        "進度超前": "超前是 ahead of schedule",
+        "已經取消": "取消是 canceled / called off",
+        "照計畫進行": "照計畫是 on schedule / on track"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-013",
+      "type": "multiple_choice",
+      "prompt": "\"I'll get back to you by Friday.\" What does the speaker mean?",
+      "options": [
+        "週五前會回覆你",
+        "週五會回到辦公室",
+        "週五前要離開",
+        "週五要把東西還你"
+      ],
+      "answer": "週五前會回覆你",
+      "explanation": "get back to someone：之後再回覆某人。",
+      "optionNotes": {
+        "週五會回到辦公室": "回到辦公室是 be back in the office",
+        "週五要把東西還你": "還東西是 give it back to you",
+        "週五前要離開": "與 get back 的意思相反"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-014",
+      "type": "multiple_choice",
+      "prompt": "\"Please keep me in the loop.\" What does this mean?",
+      "options": [
+        "有進展請隨時讓我知道",
+        "請把我留在會議室",
+        "請一直打電話給我",
+        "請幫我保密"
+      ],
+      "answer": "有進展請隨時讓我知道",
+      "explanation": "keep someone in the loop：讓某人持續掌握最新資訊。",
+      "optionNotes": {
+        "請把我留在會議室": "字面直翻的陷阱",
+        "請幫我保密": "保密是 keep it confidential / between us",
+        "請一直打電話給我": "不是指打電話"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-015",
+      "type": "multiple_choice",
+      "prompt": "\"We can't afford to cut corners on safety.\" What does \"cut corners\" mean?",
+      "options": [
+        "偷工減料、草率行事",
+        "準時完成",
+        "在轉角轉彎",
+        "削減部門"
+      ],
+      "answer": "偷工減料、草率行事",
+      "explanation": "cut corners：為了省時省錢而走捷徑、降低品質。",
+      "optionNotes": {
+        "在轉角轉彎": "字面直翻的陷阱",
+        "削減部門": "削減是 cut a department / downsize",
+        "準時完成": "準時完成是 finish on time"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-mc-016",
+      "type": "multiple_choice",
+      "prompt": "\"I'm swamped with work this week.\" What does this mean?",
+      "options": [
+        "剛換了新工作",
+        "工作很輕鬆",
+        "工作多到忙不過來",
+        "在沼澤附近工作"
+      ],
+      "answer": "工作多到忙不過來",
+      "explanation": "be swamped with：被（工作）淹沒，非常忙。",
+      "optionNotes": {
+        "工作很輕鬆": "意思相反",
+        "在沼澤附近工作": "swamp 原意是沼澤，但這是比喻",
+        "剛換了新工作": "與 swamped 無關"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ]
+    },
+    {
+      "id": "toeic-mc-017",
+      "type": "multiple_choice",
+      "prompt": "Which closing is most appropriate for a formal business email?",
+      "options": [
+        "Bye bye,",
+        "Best regards,",
+        "Love,",
+        "See ya,"
+      ],
+      "answer": "Best regards,",
+      "explanation": "正式商業書信常用 Best regards, / Kind regards, / Sincerely,。",
+      "optionNotes": {
+        "See ya,": "太口語，只適合朋友",
+        "Love,": "用於家人或很親近的朋友",
+        "Bye bye,": "太口語、不正式"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-018",
+      "type": "multiple_choice",
+      "prompt": "Which is the most polite way to decline an invitation?",
+      "options": [
+        "Maybe, whatever.",
+        "I don't want to go.",
+        "Thank you for inviting me, but I'm afraid I can't make it.",
+        "No, I won't come."
+      ],
+      "answer": "Thank you for inviting me, but I'm afraid I can't make it.",
+      "explanation": "先感謝，再用 I'm afraid… 委婉拒絕；can't make it = 沒辦法到。",
+      "optionNotes": {
+        "No, I won't come.": "太直接，聽起來不禮貌",
+        "I don't want to go.": "直接說不想去，很失禮",
+        "Maybe, whatever.": "敷衍、不尊重"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toeic-mc-019",
+      "type": "multiple_choice",
+      "prompt": "\"The printer is out of order.\" What does this mean?",
+      "options": [
+        "印表機故障了",
+        "印表機沒紙了",
+        "印表機已經訂購了",
+        "印表機順序亂了"
+      ],
+      "answer": "印表機故障了",
+      "explanation": "out of order：故障、無法使用。",
+      "optionNotes": {
+        "印表機順序亂了": "字面直翻的陷阱",
+        "印表機沒紙了": "沒紙是 out of paper",
+        "印表機已經訂購了": "order 也有「訂購」的意思，是陷阱"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ]
+    },
+    {
+      "id": "toeic-mc-020",
+      "type": "multiple_choice",
+      "prompt": "In a job ad, what does \"benefits package\" mean?",
+      "options": [
+        "包裹運費",
+        "獎學金",
+        "公司利潤",
+        "員工福利（保險、休假等）"
+      ],
+      "answer": "員工福利（保險、休假等）",
+      "explanation": "benefits package：薪水以外的福利，例如保險、年假、退休金。",
+      "optionNotes": {
+        "包裹運費": "package 在這裡是「一整套」",
+        "公司利潤": "利潤是 profit",
+        "獎學金": "獎學金是 scholarship"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-mc-021",
+      "type": "multiple_choice",
+      "prompt": "\"Flight 207 is now boarding at Gate 12.\" What should passengers of Flight 207 do?",
+      "options": [
+        "到 12 號登機門登機",
+        "去 207 號櫃檯報到",
+        "等待航班取消通知",
+        "到行李轉盤領行李"
+      ],
+      "answer": "到 12 號登機門登機",
+      "explanation": "boarding：正在登機；Gate 12：12 號登機門。",
+      "optionNotes": {
+        "到行李轉盤領行李": "領行李是 baggage claim",
+        "等待航班取消通知": "廣播沒有提到取消",
+        "去 207 號櫃檯報到": "207 是航班號碼，不是櫃檯"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ]
+    },
+    {
+      "id": "toeic-mc-022",
+      "type": "multiple_choice",
+      "prompt": "\"Please RSVP by June 5.\" What should you do?",
+      "options": [
+        "6 月 5 日前預約座位",
+        "6 月 5 日準時抵達",
+        "6 月 5 日前回覆是否出席",
+        "6 月 5 日前付款"
+      ],
+      "answer": "6 月 5 日前回覆是否出席",
+      "explanation": "RSVP 來自法文 répondez s'il vous plaît，意思是「請回覆（是否出席）」。",
+      "optionNotes": {
+        "6 月 5 日前預約座位": "訂位是 make a reservation",
+        "6 月 5 日前付款": "付款是 make a payment",
+        "6 月 5 日準時抵達": "RSVP 與抵達時間無關"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ]
+    },
+    {
+      "id": "toeic-mc-023",
+      "type": "multiple_choice",
+      "prompt": "\"This offer is valid until the end of the month.\" What does this mean?",
+      "options": [
+        "這個提議被拒絕了",
+        "優惠有效期到月底",
+        "月底才開始優惠",
+        "價格月底會上漲"
+      ],
+      "answer": "優惠有效期到月底",
+      "explanation": "valid until：有效期到…",
+      "optionNotes": {
+        "月底才開始優惠": "開始是 starts at",
+        "這個提議被拒絕了": "offer 在這裡是「優惠」，不是提議",
+        "價格月底會上漲": "沒有提到價格變化"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ]
+    },
+    {
+      "id": "toeic-mc-024",
+      "type": "multiple_choice",
+      "prompt": "\"Mr. Tanaka is on leave this week.\" What does this mean?",
+      "options": [
+        "他已經離職了",
+        "他這週請假",
+        "他搬到新辦公室",
+        "他正在開會"
+      ],
+      "answer": "他這週請假",
+      "explanation": "on leave：休假中；leave 當名詞是「休假」，例如 sick leave（病假）。",
+      "optionNotes": {
+        "他已經離職了": "離職是 has left the company",
+        "他正在開會": "開會是 in a meeting",
+        "他搬到新辦公室": "與 leave 無關"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ]
+    },
+    {
+      "id": "toeic-mc-025",
+      "type": "multiple_choice",
+      "prompt": "\"We need to meet the deadline.\" What does \"meet\" mean here?",
+      "options": [
+        "趕上、達成",
+        "認識",
+        "延後",
+        "見面"
+      ],
+      "answer": "趕上、達成",
+      "explanation": "meet the deadline：趕上截止期限；meet 也可以是 meet requirements（符合要求）。",
+      "optionNotes": {
+        "見面": "meet 最常見的意思，但這裡是「達成」",
+        "認識": "認識新朋友才是這個意思",
+        "延後": "延後是 extend / postpone the deadline"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
       ]
     }
   ]
