@@ -37,6 +37,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -49,6 +52,7 @@ import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
 import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
+import io.github.zdyoyoyo.englishpractice.speech.Pronouncer
 import io.github.zdyoyoyo.englishpractice.speech.PronunciationPanel
 import io.github.zdyoyoyo.englishpractice.speech.rememberPronouncer
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
@@ -113,6 +117,8 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
     val q = s.current ?: return
     val pronouncer = rememberPronouncer()
     val context = LocalContext.current
+    // 換題時停止上一題還在播放的語音
+    androidx.compose.runtime.LaunchedEffect(q.id) { pronouncer.stop() }
     Column(
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -126,6 +132,7 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
             AssistChip(onClick = {}, label = { Text(q.type.label) })
             AssistChip(onClick = {}, label = { Text(Difficulty.label(q.difficulty)) })
         }
+        q.passage?.let { PassageCard(q, it, revealed = s.revealed, pronouncer = pronouncer) }
         Text(q.prompt, style = MaterialTheme.typography.titleLarge)
 
         if (!s.revealed) {
@@ -163,6 +170,29 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
             }
             Button(onClick = vm::onNext, modifier = Modifier.fillMaxWidth()) {
                 Text(if (s.isLast) "看結果" else "下一題")
+            }
+        }
+    }
+}
+
+/** 閱讀短文 / 聽力對話。聽力題在作答前隱藏原文（可以按「顯示原文」偷看） */
+@Composable
+private fun PassageCard(q: Question, passage: String, revealed: Boolean, pronouncer: Pronouncer) {
+    var showText by remember(q.id) { mutableStateOf(false) }
+    var ttsMissing by remember(q.id) { mutableStateOf(false) }
+    Card(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            if (q.listening) {
+                Text("🎧 聽力題：先聽對話再作答", style = MaterialTheme.typography.titleSmall)
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(passage) }) { Text("🔊 播放") }
+                    OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(passage, slow = true) }) { Text("🐢 慢速") }
+                    if (!revealed && !showText) TextButton(onClick = { showText = true }) { Text("顯示原文") }
+                }
+                if (ttsMissing) Text("這支手機沒有英文語音，請到系統設定安裝「文字轉語音」英文語音資料", color = WrongRed)
+                if (revealed || showText) Text(passage, style = MaterialTheme.typography.bodyMedium)
+            } else {
+                Text(passage, style = MaterialTheme.typography.bodyMedium)
             }
         }
     }

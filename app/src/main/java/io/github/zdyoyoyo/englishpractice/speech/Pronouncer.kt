@@ -33,6 +33,25 @@ class Pronouncer(context: Context) : TextToSpeech.OnInitListener {
         return true
     }
 
+    /**
+     * 播放聽力對話：每行開頭的 M: / W: 代表男聲 / 女聲，用不同音高區分（標籤本身不唸出來）。
+     * @return false 代表手機沒有英文語音引擎
+     */
+    fun speakDialogue(script: String, slow: Boolean = false): Boolean {
+        if (!isReady) return false
+        tts.setSpeechRate(if (slow) 0.7f else 0.95f)
+        tts.stop()
+        DialogueScript.parse(script).forEachIndexed { i, line ->
+            tts.setPitch(line.pitch)
+            tts.speak(line.text, TextToSpeech.QUEUE_ADD, null, "line$i")
+            tts.playSilentUtterance(350, TextToSpeech.QUEUE_ADD, "pause$i")
+        }
+        tts.setPitch(1.0f)
+        return true
+    }
+
+    fun stop() = tts.stop()
+
     fun shutdown() {
         tts.stop()
         tts.shutdown()
