@@ -55,6 +55,17 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="${admobAppId}" />
 
+        <!-- 分享成績卡圖片給其他 App（不需要儲存權限） -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <!-- 每日提醒：鬧鐘響起、開機、改時間、App 更新後重新排程 -->
         <receiver
             android:name=".notify.ReminderReceiver"
