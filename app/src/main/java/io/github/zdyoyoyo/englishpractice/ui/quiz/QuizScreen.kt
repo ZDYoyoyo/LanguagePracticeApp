@@ -39,6 +39,13 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.clip
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
@@ -76,7 +83,7 @@ fun QuizScreen(
     val s by vm.ui.collectAsStateWithLifecycle()
     var confirmSubmit by remember { mutableStateOf(false) }
     if (confirmSubmit) {
-        val answered = s.mockAnswers.size
+        val answered = s.answers.size
         AlertDialog(
             onDismissRequest = { confirmSubmit = false },
             title = { Text("確定交卷？") },
@@ -119,7 +126,25 @@ fun QuizScreen(
         },
         // 「下一題」固定在畫面底部：長篇閱讀或解析很長時也不用一直往下滑
         bottomBar = {
-            if (s.revealed && !s.finished && s.current != null) {
+            if (s.isMock && !s.finished && s.current != null) {
+                Surface(tonalElevation = 3.dp) {
+                    Row(
+                        Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        OutlinedButton(onClick = { vm.goToQuestion(s.index - 1) }, enabled = s.index > 0, modifier = Modifier.weight(1f)) {
+                            Text("上一題")
+                        }
+                        Text("${s.answers.size}/${s.questions.size} 已答", style = MaterialTheme.typography.bodySmall)
+                        if (s.isLast) {
+                            Button(onClick = { confirmSubmit = true }, modifier = Modifier.weight(1f)) { Text("交卷") }
+                        } else {
+                            Button(onClick = { vm.goToQuestion(s.index + 1) }, modifier = Modifier.weight(1f)) { Text("下一題") }
+                        }
+                    }
+                }
+            } else if (s.revealed && !s.finished && s.current != null) {
                 Surface(tonalElevation = 3.dp) {
                     Button(
                         onClick = vm::onNext,
@@ -164,6 +189,7 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
             progress = { (s.index + 1f) / s.questions.size },
             modifier = Modifier.fillMaxWidth(),
         )
+        if (s.isMock) QuestionPalette(s, onPick = vm::goToQuestion)
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
             Text("${s.index + 1} / ${s.questions.size}")
             AssistChip(onClick = {}, label = { Text(q.type.label) })
@@ -173,7 +199,8 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
         Text(q.prompt, style = MaterialTheme.typography.titleLarge)
 
         if (s.isMock) {
-            TextButton(onClick = vm::onGiveUp) { Text("⏭ 跳過這題（算錯）") }
+            Text("選了可以再改；交卷前都能用下方按鈕或題號回到任一題。", style = MaterialTheme.typography.bodySmall)
+            TextButton(onClick = vm::onGiveUp) { Text("⏭ 先跳過，稍後再答") }
         } else if (!s.revealed) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 TextButton(onClick = vm::onHint, enabled = !s.usedHint) {
@@ -274,6 +301,7 @@ private fun PassageCard(q: Question, passage: String, revealed: Boolean, pronoun
 @Composable
 private fun OptionButton(option: String, s: QuizUiState, q: Question, onClick: () -> Unit) {
     val color: Color? = when {
+        s.isMock -> if (s.answers[q.id] == option) MaterialTheme.colorScheme.primary else null
         !s.revealed -> null
         option == q.answer -> CorrectGreen
         option == s.selected -> WrongRed
@@ -281,7 +309,7 @@ private fun OptionButton(option: String, s: QuizUiState, q: Question, onClick: (
     }
     OutlinedButton(
         onClick = onClick,
-        enabled = !s.revealed || color != null,
+        enabled = s.isMock || !s.revealed || color != null,
         modifier = Modifier.fillMaxWidth(),
         border = color?.let { BorderStroke(2.dp, it) } ?: BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
     ) {
@@ -382,13 +410,9 @@ private fun ResultSummary(
             HorizontalDivider()
             Text("這輪答錯的題目（已收進錯題本）", style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.fillMaxWidth())
+            Text("點題目可以展開完整題目與詳解", style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth())
             s.wrongInSession.forEach { q ->
-                Card(Modifier.fillMaxWidth()) {
-                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text(q.prompt, style = MaterialTheme.typography.bodyMedium)
-                        Text("正解：${q.answer}", color = CorrectGreen, style = MaterialTheme.typography.bodyMedium)
-                    }
-                }
+                ReviewQuestionCard(number = s.questions.indexOfFirst { it.id == q.id } + 1, q = q, mine = s.answers[q.id], correct = false)
             }
         }
     }
@@ -446,25 +470,114 @@ private fun MockResultSummary(
             style = MaterialTheme.typography.bodySmall,
         )
         Button(onClick = { showReview = !showReview }, modifier = Modifier.fillMaxWidth()) {
-            Text(if (showReview) "收起詳解" else "看詳解（答錯 ${s.wrongInSession.size} 題）")
+            Text(if (showReview) "收起詳解" else "看每一題詳解（答錯 ${s.wrongInSession.size} 題）")
         }
         OutlinedButton(onClick = onPlayAgain, modifier = Modifier.fillMaxWidth()) { Text("再考一次") }
         OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth()) { Text("返回") }
 
         if (showReview) {
             HorizontalDivider()
+            Text("點題目可以展開完整題目與詳解", style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth())
+            val wrongIds = s.wrongInSession.map { it.id }.toSet()
             s.questions.forEachIndexed { i, q ->
-                val mine = s.mockAnswers[q.id]
-                val correct = mine != null && q.id !in s.wrongInSession.map { it.id }
-                Card(Modifier.fillMaxWidth()) {
-                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text("${i + 1}. ${if (correct) "✅" else "❌"} ${q.prompt}", style = MaterialTheme.typography.bodyMedium)
-                        if (!correct) {
-                            Text("你的答案：${mine ?: "（未作答）"}", color = WrongRed, style = MaterialTheme.typography.bodySmall)
-                            Text("正解：${q.answer}", color = CorrectGreen, style = MaterialTheme.typography.bodySmall)
-                            if (q.explanation.isNotBlank()) Text(q.explanation, style = MaterialTheme.typography.bodySmall)
+                ReviewQuestionCard(number = i + 1, q = q, mine = s.answers[q.id], correct = q.id !in wrongIds)
+            }
+        }
+    }
+}
+
+
+/** 模擬考題號列：已答的題號是實心，目前這題有框線，點了直接跳過去 */
+@Composable
+private fun QuestionPalette(s: QuizUiState, onPick: (Int) -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
+        horizontalArrangement = Arrangement.spacedBy(6.dp),
+    ) {
+        s.questions.forEachIndexed { i, q ->
+            val answered = q.id in s.answers
+            val current = i == s.index
+            Box(
+                Modifier
+                    .size(34.dp)
+                    .clip(CircleShape)
+                    .background(if (answered) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant)
+                    .border(if (current) 2.dp else 0.dp, MaterialTheme.colorScheme.tertiary, CircleShape)
+                    .clickable { onPick(i) },
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    "${i + 1}",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = if (answered) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
+    }
+}
+
+/**
+ * 詳解卡：收合時只顯示題號、對錯和題目；點開後顯示完整原題（短文 / 聽力稿）、
+ * 所有選項（正解綠色、你選錯的紅色）、解析、選錯那個選項的說明、生字與中文翻譯。
+ */
+@Composable
+fun ReviewQuestionCard(number: Int, q: Question, mine: String?, correct: Boolean) {
+    var expanded by remember(q.id) { mutableStateOf(false) }
+    var showTranslation by remember(q.id) { mutableStateOf(false) }
+    Card(onClick = { expanded = !expanded }, modifier = Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Row(verticalAlignment = Alignment.Top) {
+                Text("$number. ${if (correct) "✅" else "❌"} ", style = MaterialTheme.typography.bodyMedium)
+                Text(q.prompt, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
+                Text(if (expanded) "▲" else "▼", style = MaterialTheme.typography.labelSmall)
+            }
+            if (!expanded && !correct) {
+                Text("你的答案：${mine ?: "（未作答）"}", color = WrongRed, style = MaterialTheme.typography.bodySmall)
+                Text("正解：${q.answer}", color = CorrectGreen, style = MaterialTheme.typography.bodySmall)
+            }
+            if (expanded) {
+                q.passage?.let { passage ->
+                    Surface(color = MaterialTheme.colorScheme.surfaceVariant, shape = MaterialTheme.shapes.small) {
+                        Column(Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                            if (q.listening) Text("🎧 聽力原文", style = MaterialTheme.typography.labelMedium)
+                            SelectionContainer { Text(passage, style = MaterialTheme.typography.bodySmall) }
                         }
                     }
+                }
+                if (q.isTypingQuestion) {
+                    Text("你的答案：${mine ?: "（未作答）"}", color = if (correct) CorrectGreen else WrongRed, style = MaterialTheme.typography.bodyMedium)
+                    Text("正解：${q.answer}", color = CorrectGreen, style = MaterialTheme.typography.bodyMedium)
+                } else {
+                    q.options.forEach { opt ->
+                        val isAnswer = opt == q.answer
+                        val isMine = opt == mine
+                        Text(
+                            (if (isAnswer) "✔ " else if (isMine) "✘ " else "・ ") + opt + (if (isMine) "（你的答案）" else ""),
+                            color = when {
+                                isAnswer -> CorrectGreen
+                                isMine -> WrongRed
+                                else -> MaterialTheme.colorScheme.onSurface
+                            },
+                            style = MaterialTheme.typography.bodyMedium,
+                        )
+                    }
+                    if (mine == null) Text("（這題未作答）", color = WrongRed, style = MaterialTheme.typography.bodySmall)
+                }
+                if (q.explanation.isNotBlank()) {
+                    HorizontalDivider()
+                    Text("💡 ${q.explanation}", style = MaterialTheme.typography.bodyMedium)
+                }
+                if (!correct && mine != null) {
+                    q.optionNotes[mine]?.let { Text("你選的「$mine」：$it", color = WrongRed, style = MaterialTheme.typography.bodySmall) }
+                }
+                if (q.glossary.isNotEmpty()) {
+                    Text("📖 生字：" + q.glossary.entries.joinToString("、") { "${it.key} ${it.value}" }, style = MaterialTheme.typography.bodySmall)
+                }
+                if (!q.passageTranslation.isNullOrBlank()) {
+                    TextButton(onClick = { showTranslation = !showTranslation }) {
+                        Text(if (showTranslation) "收起翻譯" else "🈶 中文翻譯")
+                    }
+                    if (showTranslation) Text(q.passageTranslation, style = MaterialTheme.typography.bodySmall)
                 }
             }
         }
