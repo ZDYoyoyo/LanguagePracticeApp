@@ -111,6 +111,24 @@ class SmartSelectionAndStatsTest {
         assertTrue(s.byCategory.none { it.totalQuestions == 0 })
     }
 
+    @Test fun `weakness analysis by skill`() {
+        val bank = listOf(
+            question("p1").copy(skills = listOf("preposition")), question("p2").copy(skills = listOf("preposition")),
+            question("t1").copy(skills = listOf("tense")),
+            question("r1").copy(skills = listOf("relative")),
+        )
+        fun a(id: String, ok: Boolean) = AttemptEntity(0, id, ok, 0, 0, "p")
+        val attempts = listOf(a("p1", false), a("p1", false), a("p2", true), // 介系詞 1/3
+            a("t1", true), a("t1", true), a("t1", false),                    // 時態 2/3
+            a("r1", false))                                                  // 關係詞只做 1 次 → 不列入
+        val s = StatsCalculator.summarize(bank, attempts, emptyList(), emptyList(), 1)
+        assertEquals(listOf("preposition", "tense"), s.weakestSkills().map { it.skill })
+        // 篩選考點
+        val f = QuestionSelector.Filter(skills = setOf("preposition"))
+        assertEquals(setOf("p1", "p2"), QuestionSelector.filter(bank, f).map { it.id }.toSet())
+        assertEquals(f, QuestionSelector.Filter.decode(null, null, null, f.encodeSkills()))
+    }
+
     @Test fun `question stats from attempts`() {
         val st = QuestionStats.from(listOf(
             AttemptEntity(1, "a", true, 10, 0, "p"), AttemptEntity(2, "a", false, 20, 0, "p"),

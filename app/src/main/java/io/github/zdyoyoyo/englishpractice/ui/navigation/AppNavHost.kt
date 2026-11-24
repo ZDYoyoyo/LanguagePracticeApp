@@ -61,7 +61,7 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                         QuizRoute(
                             StudyMode.PRACTICE.key,
                             o.filter.encodeTags(), o.filter.encodeDifficulties(), o.filter.encodeCategories(),
-                            o.count, o.preferNew,
+                            o.filter.encodeSkills(), o.count, o.preferNew,
                         )
                     )
                 },
@@ -93,7 +93,12 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onStart = { n -> nav.navigate(QuizRoute(StudyMode.MOCK.key, count = n)) },
             )
         }
-        composable<StatsRoute> { StatsScreen(onBack = { nav.popBackStack() }) }
+        composable<StatsRoute> {
+            StatsScreen(
+                onBack = { nav.popBackStack() },
+                onPracticeSkill = { skill -> nav.navigate(QuizRoute(StudyMode.PRACTICE.key, skills = skill, count = 10)) },
+            )
+        }
         composable<WordListRoute> { WordListScreen(onBack = { nav.popBackStack() }) }
         composable<SettingsRoute> { SettingsScreen(onBack = { nav.popBackStack() }) }
     }

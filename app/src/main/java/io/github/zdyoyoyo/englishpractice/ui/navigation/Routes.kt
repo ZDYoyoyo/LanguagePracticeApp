@@ -22,6 +22,8 @@ data class QuizRoute(
     val difficulties: String? = null,
     /** QuestionCategory.key 清單 */
     val categories: String? = null,
+    /** 考點清單（錯題分析的「練這個」） */
+    val skills: String? = null,
     val count: Int = 10,
     /** 優先出沒做過 / 常錯的題目 */
     val preferNew: Boolean = true,

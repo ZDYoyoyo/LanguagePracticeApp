@@ -37,6 +37,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
 import io.github.zdyoyoyo.englishpractice.domain.QuestionCategory
 import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
+import io.github.zdyoyoyo.englishpractice.domain.SkillLabels
 
 /** 選題設定 */
 data class PracticeOptions(
@@ -57,12 +58,14 @@ fun PracticeSetupScreen(
     var selectedTags by rememberSaveable { mutableStateOf(listOf<String>()) }
     var selectedDifficulties by rememberSaveable { mutableStateOf(listOf<Int>()) }
     var selectedCategories by rememberSaveable { mutableStateOf(listOf<String>()) }
+    var selectedSkills by rememberSaveable { mutableStateOf(listOf<String>()) }
     var count by rememberSaveable { mutableIntStateOf(QuestionSelector.DEFAULT_SESSION_SIZE) }
     var preferNew by rememberSaveable { mutableStateOf(true) }
     val filter = QuestionSelector.Filter(
         tags = selectedTags.toSet(),
         difficulties = selectedDifficulties.toSet(),
         categories = selectedCategories.mapNotNull { QuestionCategory.fromKey(it) }.toSet(),
+        skills = selectedSkills.toSet(),
     )
     val matching = vm.countMatching(filter)
 
@@ -96,6 +99,12 @@ fun PracticeSetupScreen(
                 options = QuestionCategory.entries.map { it.key to it.label },
                 selected = selectedCategories,
                 onChange = { selectedCategories = it },
+            )
+            Text("文法考點", style = MaterialTheme.typography.titleMedium)
+            MultiChips(
+                options = SkillLabels.inGroup(SkillLabels.Group.GRAMMAR).map { it.key to it.label },
+                selected = selectedSkills,
+                onChange = { selectedSkills = it },
             )
             Text("主題", style = MaterialTheme.typography.titleMedium)
             MultiChips(
