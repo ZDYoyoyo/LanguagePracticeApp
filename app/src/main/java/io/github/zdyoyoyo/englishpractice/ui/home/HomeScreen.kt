@@ -18,6 +18,8 @@ import androidx.compose.material.icons.filled.EventRepeat
 import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.Translate
+import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Today
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -47,6 +49,8 @@ fun HomeScreen(
     onDaily: () -> Unit,
     onWrongBook: () -> Unit,
     onFavorites: () -> Unit,
+    onStats: () -> Unit,
+    onWords: () -> Unit,
     onPk: () -> Unit,
     onSettings: () -> Unit,
     vm: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
@@ -95,6 +99,10 @@ fun HomeScreen(
                 onFavorites,
             )
             HomeActionCard(Icons.Filled.SportsEsports, "PK 對戰", "和電腦對手比速度與正確率", onPk)
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                SmallActionCard(Icons.Filled.Translate, "單字庫", onWords, Modifier.weight(1f))
+                SmallActionCard(Icons.Filled.BarChart, "學習統計", onStats, Modifier.weight(1f))
+            }
 
             Text(
                 "題庫 v${state.bankVersion}・共 ${state.questionCount} 題・累計作答 ${state.totalAttempts} 次",
@@ -124,6 +132,17 @@ private fun StreakCard(state: HomeUiState) {
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
+        }
+    }
+}
+
+@Composable
+private fun SmallActionCard(icon: ImageVector, title: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    ElevatedCard(onClick = onClick, modifier = modifier) {
+        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Icon(icon, contentDescription = null)
+            Spacer(Modifier.size(12.dp))
+            Text(title, style = MaterialTheme.typography.titleMedium)
         }
     }
 }

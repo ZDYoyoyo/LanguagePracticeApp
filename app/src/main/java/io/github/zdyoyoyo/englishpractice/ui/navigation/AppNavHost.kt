@@ -16,6 +16,8 @@ import io.github.zdyoyoyo.englishpractice.ui.pk.PkScreen
 import io.github.zdyoyoyo.englishpractice.ui.practice.PracticeSetupScreen
 import io.github.zdyoyoyo.englishpractice.ui.quiz.QuizScreen
 import io.github.zdyoyoyo.englishpractice.ui.settings.SettingsScreen
+import io.github.zdyoyoyo.englishpractice.ui.stats.StatsScreen
+import io.github.zdyoyoyo.englishpractice.ui.words.WordListScreen
 import io.github.zdyoyoyo.englishpractice.ui.wrongbook.WrongBookScreen
 
 @Composable
@@ -42,6 +44,8 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onDaily = { nav.navigate(QuizRoute(StudyMode.DAILY.key)) },
                 onWrongBook = { nav.navigate(WrongBookRoute) },
                 onFavorites = { nav.navigate(FavoritesRoute) },
+                onStats = { nav.navigate(StatsRoute) },
+                onWords = { nav.navigate(WordListRoute) },
                 onPk = { nav.navigate(PkRoute) },
                 onSettings = { nav.navigate(SettingsRoute) },
             )
@@ -49,8 +53,10 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
         composable<PracticeSetupRoute> {
             PracticeSetupScreen(
                 onBack = { nav.popBackStack() },
-                onStart = { tag, difficulty ->
-                    nav.navigate(QuizRoute(StudyMode.PRACTICE.key, tag, difficulty))
+                onStart = { o ->
+                    nav.navigate(
+                        QuizRoute(StudyMode.PRACTICE.key, o.tag, o.difficulty, o.category?.key, o.count, o.preferNew)
+                    )
                 },
             )
         }
@@ -74,6 +80,8 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
             )
         }
         composable<PkRoute> { PkScreen(onBack = { nav.popBackStack() }, onMatchFinished = onSessionFinished) }
+        composable<StatsRoute> { StatsScreen(onBack = { nav.popBackStack() }) }
+        composable<WordListRoute> { WordListScreen(onBack = { nav.popBackStack() }) }
         composable<SettingsRoute> { SettingsScreen(onBack = { nav.popBackStack() }) }
     }
 }

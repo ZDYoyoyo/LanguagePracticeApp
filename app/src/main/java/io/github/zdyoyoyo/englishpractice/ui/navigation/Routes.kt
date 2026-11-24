@@ -10,10 +10,17 @@ import kotlinx.serialization.Serializable
 @Serializable object FavoritesRoute
 @Serializable object PkRoute
 @Serializable object SettingsRoute
+@Serializable object StatsRoute
+@Serializable object WordListRoute
 
 @Serializable
 data class QuizRoute(
     val mode: String,
     val tag: String? = null,
     val difficulty: Int? = null,
+    /** QuestionCategory.key，null = 全部題型 */
+    val category: String? = null,
+    val count: Int = 10,
+    /** 優先出沒做過 / 常錯的題目 */
+    val preferNew: Boolean = true,
 )

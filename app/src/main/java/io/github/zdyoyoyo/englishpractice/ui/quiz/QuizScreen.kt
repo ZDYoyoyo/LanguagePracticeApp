@@ -33,6 +33,8 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.material3.Surface
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -84,28 +86,46 @@ fun QuizScreen(
             dismissButton = { TextButton(onClick = vm::dismissRewardOffer) { Text("不用了") } },
         )
     }
-    Scaffold(topBar = {
-        TopAppBar(
-            title = { Text(s.title) },
-            navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "返回") } },
-            actions = {
-                if (s.current != null && !s.finished) {
-                    IconButton(onClick = vm::onToggleFavorite) {
-                        Icon(
-                            if (s.isCurrentFavorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
-                            contentDescription = if (s.isCurrentFavorite) "取消收藏" else "收藏",
-                            tint = if (s.isCurrentFavorite) FavoriteGold else LocalContentColor.current,
-                        )
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(s.title) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "返回") } },
+                actions = {
+                    if (s.current != null && !s.finished) {
+                        IconButton(onClick = vm::onToggleFavorite) {
+                            Icon(
+                                if (s.isCurrentFavorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
+                                contentDescription = if (s.isCurrentFavorite) "取消收藏" else "收藏",
+                                tint = if (s.isCurrentFavorite) FavoriteGold else LocalContentColor.current,
+                            )
+                        }
                     }
+                },
+            )
+        },
+        // 「下一題」固定在畫面底部：長篇閱讀或解析很長時也不用一直往下滑
+        bottomBar = {
+            if (s.revealed && !s.finished && s.current != null) {
+                Surface(tonalElevation = 3.dp) {
+                    Button(
+                        onClick = vm::onNext,
+                        modifier = Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp),
+                    ) { Text(if (s.isLast) "看結果" else "下一題") }
                 }
-            },
-        )
-    }) { padding ->
+            }
+        },
+    ) { padding ->
         Box(Modifier.padding(padding).fillMaxSize()) {
             when {
                 s.loading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
                 s.emptyMessage != null -> EmptyState(s.emptyMessage!!, onBack)
-                s.finished -> ResultSummary(s, onBack, onFinishedShown = { onSessionFinished(s.questions.size) })
+                s.finished -> ResultSummary(
+                    s, vm.canPlayAgain, onBack,
+                    onRetryWrong = vm::onRetryWrong,
+                    onPlayAgain = vm::onPlayAgain,
+                    onFinishedShown = { onSessionFinished(s.questions.size) },
+                )
                 else -> QuestionContent(s, vm)
             }
         }
@@ -167,9 +187,6 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
                 TextButton(onClick = { ContactAuthor.reportQuestion(context, q.id, q.prompt) }) {
                     Text("這題有錯？回報給作者")
                 }
-            }
-            Button(onClick = vm::onNext, modifier = Modifier.fillMaxWidth()) {
-                Text(if (s.isLast) "看結果" else "下一題")
             }
         }
     }
@@ -267,16 +284,56 @@ private fun Feedback(s: QuizUiState, q: Question) {
 }
 
 @Composable
-private fun ResultSummary(s: QuizUiState, onBack: () -> Unit, onFinishedShown: () -> Unit) {
-    androidx.compose.runtime.LaunchedEffect(Unit) { onFinishedShown() }
+private fun ResultSummary(
+    s: QuizUiState,
+    canPlayAgain: Boolean,
+    onBack: () -> Unit,
+    onRetryWrong: () -> Unit,
+    onPlayAgain: () -> Unit,
+    onFinishedShown: () -> Unit,
+) {
+    // key = 題目清單：重做 / 再來一輪後的新結算也會通知（廣告頻率由 AdPolicy 控制）
+    androidx.compose.runtime.LaunchedEffect(s.questions) { onFinishedShown() }
+    val total = s.questions.size
+    val percent = if (total == 0) 0 else s.correctCount * 100 / total
     Column(
-        Modifier.fillMaxSize().padding(24.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
+        Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text("本輪完成！", style = MaterialTheme.typography.headlineMedium)
-        Text("答對 ${s.correctCount} / ${s.questions.size}", style = MaterialTheme.typography.titleLarge)
-        Button(onClick = onBack) { Text("返回") }
+        Text(
+            when {
+                percent == 100 -> "🏆 全對！"
+                percent >= 70 -> "👍 表現不錯！"
+                else -> "💪 再接再厲！"
+            },
+            style = MaterialTheme.typography.headlineMedium,
+        )
+        Text("答對 ${s.correctCount} / $total（$percent%）", style = MaterialTheme.typography.titleLarge)
+
+        if (s.wrongInSession.isNotEmpty()) {
+            Button(onClick = onRetryWrong, modifier = Modifier.fillMaxWidth()) {
+                Text("重做這輪答錯的 ${s.wrongInSession.size} 題")
+            }
+        }
+        if (canPlayAgain) {
+            OutlinedButton(onClick = onPlayAgain, modifier = Modifier.fillMaxWidth()) { Text("再來一輪") }
+        }
+        OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth()) { Text("返回") }
+
+        if (s.wrongInSession.isNotEmpty()) {
+            HorizontalDivider()
+            Text("這輪答錯的題目（已收進錯題本）", style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.fillMaxWidth())
+            s.wrongInSession.forEach { q ->
+                Card(Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text(q.prompt, style = MaterialTheme.typography.bodyMedium)
+                        Text("正解：${q.answer}", color = CorrectGreen, style = MaterialTheme.typography.bodyMedium)
+                    }
+                }
+            }
+        }
     }
 }
 
