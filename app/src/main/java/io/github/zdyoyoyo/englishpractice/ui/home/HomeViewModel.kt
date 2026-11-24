@@ -27,6 +27,7 @@ data class HomeUiState(
     val questionCount: Int = 0,
     val wrongCount: Int = 0,
     val totalAttempts: Int = 0,
+    val distinctAnswered: Int = 0,
     val dueCount: Int = 0,
     val streak: StreakCalculator.Streak = StreakCalculator.Streak(0, 0, false),
     val dailyWord: Question? = null,
@@ -58,12 +59,13 @@ class HomeViewModel(
         arrayOf<Any>(w, t, d, s, f)
     }
 
-    val uiState: StateFlow<HomeUiState> = combine(bank.bank, counts, bankMessage, today) { b, c, msg, day ->
+    val uiState: StateFlow<HomeUiState> = combine(bank.bank, counts, bankMessage, today, study.distinctAnswered) { b, c, msg, day, distinct ->
         HomeUiState(
             bankVersion = b?.version ?: 0,
             questionCount = b?.questions?.size ?: 0,
             wrongCount = c[0] as Int,
             totalAttempts = c[1] as Int,
+            distinctAnswered = distinct,
             dueCount = c[2] as Int,
             streak = c[3] as StreakCalculator.Streak,
             favoriteCount = c[4] as Int,

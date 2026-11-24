@@ -16,6 +16,10 @@ interface AttemptDao {
     @Query("SELECT COUNT(*) FROM attempts")
     fun observeTotal(): Flow<Int>
 
+    /** 做過幾道「不同的」題目 */
+    @Query("SELECT COUNT(DISTINCT questionId) FROM attempts")
+    fun observeDistinctQuestions(): Flow<Int>
+
     @Query("SELECT * FROM attempts ORDER BY answeredAt")
     suspend fun getAll(): List<AttemptEntity>
 

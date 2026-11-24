@@ -105,7 +105,7 @@ fun HomeScreen(
             }
 
             Text(
-                "題庫 v${state.bankVersion}・共 ${state.questionCount} 題・累計作答 ${state.totalAttempts} 次",
+                "題庫 v${state.bankVersion}・共 ${state.questionCount} 題・已做過 ${state.distinctAnswered} 題・累計作答 ${state.totalAttempts} 次",
                 style = MaterialTheme.typography.bodySmall,
             )
         }
