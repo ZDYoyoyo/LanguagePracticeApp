@@ -29,4 +29,14 @@ object StreakCalculator {
         }
         return Streak(current, longest, studiedToday)
     }
+
+    /**
+     * 連勝保護：如果「只漏了昨天」（前天有打卡、昨天沒有），回傳昨天的 epochDay，可以用一次保護補回來。
+     * 其他情況（沒漏、或漏了兩天以上）回傳 null。
+     */
+    fun repairableDay(studyDays: Collection<Long>, today: Long): Long? {
+        val days = studyDays.toHashSet()
+        val yesterday = today - 1
+        return if (yesterday !in days && (yesterday - 1) in days) yesterday else null
+    }
 }

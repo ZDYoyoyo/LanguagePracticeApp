@@ -31,6 +31,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.foundation.layout.Box
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -51,11 +57,15 @@ fun HomeScreen(
     onFavorites: () -> Unit,
     onStats: () -> Unit,
     onWords: () -> Unit,
+    onMock: () -> Unit,
+    /** 看獎勵廣告；回傳 false = 廣告還沒準備好 */
+    onWatchAdForFreeze: (onReward: () -> Unit) -> Boolean,
     onPk: () -> Unit,
     onSettings: () -> Unit,
     vm: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
 ) {
     val state by vm.uiState.collectAsStateWithLifecycle()
+    val freezeMessage by vm.freezeMessage.collectAsStateWithLifecycle()
     LifecycleResumeEffect(Unit) {
         vm.onResume()
         onPauseOrDispose { }
@@ -74,7 +84,12 @@ fun HomeScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StreakCard(state)
+            StreakCard(
+                state,
+                freezeMessage = freezeMessage,
+                onUseFreeze = vm::useFreeze,
+                onWatchAd = { if (!onWatchAdForFreeze { vm.onFreezeAdRewarded() }) vm.onAdUnavailable() },
+            )
             state.bankMessage?.let { Text(it, color = MaterialTheme.colorScheme.secondary) }
 
             HomeActionCard(
@@ -86,6 +101,11 @@ fun HomeScreen(
                 Icons.Filled.Today, "每日練習",
                 if (state.dailyWord != null) "今日單字 + 每日一題，共 2 題" else "每天一題，養成習慣",
                 onDaily,
+            )
+            HomeActionCard(
+                Icons.Filled.Quiz, "多益模擬考",
+                state.progress.latestMockScore?.let { "上次預估 $it 分・再考一次看看進步多少" } ?: "限時作答，算出你的預估多益分數",
+                onMock,
             )
             HomeActionCard(Icons.Filled.EditNote, "開始做題", "依主題或難度選題", onPractice)
             HomeActionCard(
@@ -113,25 +133,57 @@ fun HomeScreen(
 }
 
 @Composable
-private fun StreakCard(state: HomeUiState) {
+private fun StreakCard(
+    state: HomeUiState,
+    freezeMessage: String?,
+    onUseFreeze: () -> Unit,
+    onWatchAd: () -> Unit,
+) {
+    val p = state.progress
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
         modifier = Modifier.fillMaxWidth(),
     ) {
-        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("🔥", style = MaterialTheme.typography.displaySmall)
-            Spacer(Modifier.size(12.dp))
-            Column {
-                Text("連續打卡 ${state.streak.current} 天", style = MaterialTheme.typography.titleLarge)
-                Text(
-                    when {
-                        state.streak.studiedToday -> "今天已打卡 ✅（最長紀錄 ${state.streak.longest} 天）"
-                        state.streak.current > 0 -> "今天還沒打卡，做一題就能延續！"
-                        else -> "今天做一題就開始打卡"
-                    },
-                    style = MaterialTheme.typography.bodyMedium,
-                )
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                // 每日目標進度圈，中間是火焰
+                Box(contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator(
+                        progress = { (p.answeredToday.toFloat() / p.goal).coerceIn(0f, 1f) },
+                        modifier = Modifier.size(64.dp),
+                        strokeWidth = 6.dp,
+                        trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                    )
+                    Text(if (p.goalReached) "🏆" else "🔥", style = MaterialTheme.typography.headlineSmall)
+                }
+                Spacer(Modifier.size(16.dp))
+                Column {
+                    Text("連續打卡 ${state.streak.current} 天", style = MaterialTheme.typography.titleLarge)
+                    Text(
+                        if (p.goalReached) "今日目標達成 ✅ ${p.answeredToday}/${p.goal} 題"
+                        else "今日目標 ${p.answeredToday}/${p.goal} 題",
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                    Text(
+                        when {
+                            state.streak.studiedToday -> "今天已打卡（最長紀錄 ${state.streak.longest} 天）"
+                            state.streak.current > 0 -> "今天還沒打卡，做一題就能延續！"
+                            else -> "今天做一題就開始打卡"
+                        },
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                }
             }
+            if (p.repairableDay != null) {
+                HorizontalDivider()
+                Text("😢 昨天漏打卡了，連勝中斷。可以用「連勝保護」補回昨天。", style = MaterialTheme.typography.bodyMedium)
+                if (p.freezes > 0) {
+                    Button(onClick = onUseFreeze) { Text("🛡️ 使用連勝保護（剩 ${p.freezes} 次）") }
+                } else {
+                    OutlinedButton(onClick = onWatchAd) { Text("🎬 看一支廣告補回昨天") }
+                }
+            }
+            freezeMessage?.let { Text(it, color = MaterialTheme.colorScheme.secondary) }
         }
     }
 }

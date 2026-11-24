@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.BankHttpException
 import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository
@@ -32,8 +33,21 @@ data class HomeUiState(
     val streak: StreakCalculator.Streak = StreakCalculator.Streak(0, 0, false),
     val dailyWord: Question? = null,
     val favoriteCount: Int = 0,
+    val progress: DailyProgress = DailyProgress(),
     val bankMessage: String? = null,
 )
+
+/** 每日目標 / 連勝保護 / 模擬考 摘要 */
+data class DailyProgress(
+    val goal: Int = 10,
+    val answeredToday: Int = 0,
+    val freezes: Int = 0,
+    /** 不為 null：昨天漏打卡，可以用連勝保護補回 */
+    val repairableDay: Long? = null,
+    val latestMockScore: Int? = null,
+) {
+    val goalReached: Boolean get() = answeredToday >= goal
+}
 
 /**
  * ViewModel：保存畫面狀態、處理畫面事件；螢幕旋轉時不會被重建。
@@ -43,6 +57,7 @@ data class HomeUiState(
 class HomeViewModel(
     private val bank: QuestionBankRepository,
     study: StudyRepository,
+    private val progressRepo: ProgressRepository,
     private val clock: AppClock,
 ) : ViewModel() {
 
@@ -59,7 +74,20 @@ class HomeViewModel(
         arrayOf<Any>(w, t, d, s, f)
     }
 
-    val uiState: StateFlow<HomeUiState> = combine(bank.bank, counts, bankMessage, today, study.distinctAnswered) { b, c, msg, day, distinct ->
+    private val progress = combine(
+        progressRepo.dailyGoal,
+        today.flatMapLatest { progressRepo.observeAnsweredOn(it) },
+        progressRepo.freezes,
+        today.flatMapLatest { progressRepo.observeRepairableDay(it) },
+        progressRepo.observeMockResults(1),
+    ) { goal, answered, freezes, repairable, mocks ->
+        DailyProgress(goal, answered, freezes, repairable, mocks.firstOrNull()?.estimatedScore)
+    }
+
+    private val extras = combine(study.distinctAnswered, progress) { d, p -> d to p }
+
+    val uiState: StateFlow<HomeUiState> = combine(bank.bank, counts, bankMessage, today, extras) { b, c, msg, day, ex ->
+        val (distinct, prog) = ex
         HomeUiState(
             bankVersion = b?.version ?: 0,
             questionCount = b?.questions?.size ?: 0,
@@ -69,6 +97,7 @@ class HomeViewModel(
             dueCount = c[2] as Int,
             streak = c[3] as StreakCalculator.Streak,
             favoriteCount = c[4] as Int,
+            progress = prog,
             dailyWord = b?.let { DailyPicker.dailyWord(it.questions, day) },
             bankMessage = msg,
         )
@@ -79,6 +108,26 @@ class HomeViewModel(
             bank.ensureLoaded()
             refreshBank()
         }
+    }
+
+    private val _freezeMessage = MutableStateFlow<String?>(null)
+    val freezeMessage: StateFlow<String?> = _freezeMessage
+
+    /** 使用一次連勝保護補回昨天 */
+    fun useFreeze() {
+        viewModelScope.launch {
+            _freezeMessage.value = if (progressRepo.useFreeze()) "🛡️ 已補回昨天的打卡，連勝繼續！" else "無法使用連勝保護"
+        }
+    }
+
+    /** 看完獎勵廣告：取得一次保護並立刻使用 */
+    fun onFreezeAdRewarded() {
+        progressRepo.addFreeze()
+        useFreeze()
+    }
+
+    fun onAdUnavailable() {
+        _freezeMessage.value = "廣告還沒準備好，請稍後再試"
     }
 
     fun onResume() {
@@ -101,7 +150,7 @@ class HomeViewModel(
         val Factory = viewModelFactory {
             initializer {
                 val c = appContainer()
-                HomeViewModel(c.questionBank, c.study, c.clock)
+                HomeViewModel(c.questionBank, c.study, c.progress, c.clock)
             }
         }
     }

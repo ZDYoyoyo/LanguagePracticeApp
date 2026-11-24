@@ -35,6 +35,8 @@ import androidx.compose.material3.TimePicker
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
+import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
+import androidx.compose.material3.FilterChip
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -64,6 +66,8 @@ fun SettingsScreen(
     val rewardedReady by vm.rewardedReady.collectAsStateWithLifecycle()
     val privacyRequired by vm.privacyOptionsRequired.collectAsStateWithLifecycle()
     val adStatus by vm.adStatus.collectAsStateWithLifecycle()
+    val dailyGoal by vm.dailyGoal.collectAsStateWithLifecycle()
+    val freezes by vm.freezes.collectAsStateWithLifecycle()
     var testResult by remember { mutableStateOf<String?>(null) }
     val activity = LocalActivity.current
     val uriHandler = LocalUriHandler.current
@@ -96,6 +100,28 @@ fun SettingsScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             AccountSection(cloud, vm)
+            HorizontalDivider()
+
+            SectionTitle("每日目標與連勝保護")
+            Text("每天要做幾題？首頁會顯示進度圈。")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                ProgressRepository.GOAL_OPTIONS.forEach { g ->
+                    FilterChip(selected = dailyGoal == g, onClick = { vm.setDailyGoal(g) }, label = { Text("$g 題") })
+                }
+            }
+            Text("🛡️ 連勝保護：${freezes} / ${ProgressRepository.MAX_FREEZES} 次。漏打卡一天時，可以在首頁用它補回來。")
+            OutlinedButton(
+                onClick = { activity?.let { vm.watchAdForFreeze(it) } },
+                enabled = rewardedReady && freezes < ProgressRepository.MAX_FREEZES,
+            ) {
+                Text(
+                    when {
+                        freezes >= ProgressRepository.MAX_FREEZES -> "連勝保護已存滿"
+                        rewardedReady -> "看一支廣告存一次連勝保護"
+                        else -> "廣告尚未就緒"
+                    }
+                )
+            }
             HorizontalDivider()
 
             SectionTitle("每日提醒")

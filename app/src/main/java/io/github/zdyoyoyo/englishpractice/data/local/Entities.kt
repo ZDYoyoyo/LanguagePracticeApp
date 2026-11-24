@@ -62,3 +62,18 @@ data class FavoriteEntity(
     @PrimaryKey val questionId: String,
     val addedAt: Long,
 )
+
+/** 模擬考成績 */
+@Serializable
+@Entity(tableName = "mock_results", indices = [Index("takenAt")])
+data class MockResultEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val takenAt: Long,
+    val totalQuestions: Int,
+    val listeningCorrect: Int,
+    val listeningTotal: Int,
+    val readingCorrect: Int,
+    val readingTotal: Int,
+    val estimatedScore: Int,
+    val durationMs: Long,
+)

@@ -10,6 +10,8 @@ interface SyncState {
     var lastLocalChangeAt: Long
     var lastSyncedAt: Long
     var hintCredits: Int
+    /** 連勝保護（可補回漏掉的一天）剩餘次數 */
+    var streakFreezes: Int
 }
 
 sealed interface SyncOutcome {
@@ -33,7 +35,7 @@ class SyncManager(
      */
     suspend fun sync(store: RemoteBackupStore, force: SyncPolicy.Action? = null): SyncOutcome = mutex.withLock {
         try {
-            val local = backup.export(clock.nowMillis(), state.lastLocalChangeAt, state.hintCredits)
+            val local = backup.export(clock.nowMillis(), state.lastLocalChangeAt, state.hintCredits, state.streakFreezes)
             val remote = store.read()?.let { BackupSnapshot.fromJson(it) }
             val action = force ?: SyncPolicy.decide(
                 localChangedAt = state.lastLocalChangeAt,
@@ -52,6 +54,7 @@ class SyncManager(
                     if (remote == null) return@withLock SyncOutcome.NothingToDo
                     backup.restore(remote)
                     state.hintCredits = remote.hintCredits
+                    state.streakFreezes = remote.streakFreezes
                     state.lastLocalChangeAt = remote.lastLocalChangeAt
                     state.lastSyncedAt = clock.nowMillis()
                     SyncOutcome.Downloaded
@@ -81,5 +84,6 @@ class SyncManager(
         state.lastLocalChangeAt = 0L
         state.lastSyncedAt = 0L
         state.hintCredits = 0
+        state.streakFreezes = 0
     }
 }

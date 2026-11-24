@@ -4,6 +4,8 @@ import io.github.zdyoyoyo.englishpractice.data.local.AttemptDao
 import io.github.zdyoyoyo.englishpractice.data.local.AttemptEntity
 import io.github.zdyoyoyo.englishpractice.data.local.FavoriteDao
 import io.github.zdyoyoyo.englishpractice.data.local.FavoriteEntity
+import io.github.zdyoyoyo.englishpractice.data.local.MockResultDao
+import io.github.zdyoyoyo.englishpractice.data.local.MockResultEntity
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
 import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
@@ -92,6 +94,7 @@ class FakeStudyDayDao : StudyDayDao {
     override suspend fun get(epochDay: Long) = map.value[epochDay]
     override suspend fun upsert(day: StudyDayEntity) { map.value = map.value + (day.epochDay to day) }
     override fun observeDays(): Flow<List<Long>> = map.map { it.keys.toList() }
+    override fun observeDay(epochDay: Long): Flow<StudyDayEntity?> = map.map { it[epochDay] }
     override suspend fun getDays() = map.value.keys.toList()
     override suspend fun getAll() = map.value.values.toList()
     override suspend fun upsertAll(items: List<StudyDayEntity>) { items.forEach { upsert(it) } }
@@ -110,4 +113,17 @@ class FakeFavoriteDao : FavoriteDao {
     override suspend fun upsertAll(items: List<FavoriteEntity>) { items.forEach { upsert(it) } }
     override suspend fun delete(questionId: String) { map.value = map.value - questionId }
     override suspend fun clear() { map.value = emptyMap() }
+}
+
+class FakeMockResultDao : MockResultDao {
+    val items = MutableStateFlow<List<MockResultEntity>>(emptyList())
+    override suspend fun insert(result: MockResultEntity): Long {
+        val id = items.value.size + 1L
+        items.value = items.value + result.copy(id = id)
+        return id
+    }
+    override fun observeRecent(limit: Int): Flow<List<MockResultEntity>> = items.map { it.sortedByDescending { r -> r.takenAt }.take(limit) }
+    override suspend fun getAll() = items.value
+    override suspend fun insertAll(items: List<MockResultEntity>) { this.items.value = this.items.value + items }
+    override suspend fun clear() { items.value = emptyList() }
 }

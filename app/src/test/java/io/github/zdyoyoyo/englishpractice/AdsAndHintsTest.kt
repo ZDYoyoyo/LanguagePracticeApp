@@ -38,6 +38,7 @@ class AdsAndHintsTest {
             override var lastLocalChangeAt = 0L
             override var lastSyncedAt = 0L
             override var hintCredits = 0
+            override var streakFreezes = 0
         }
         val wallet = HintWallet(state) { 42L }
         assertFalse(wallet.tryConsume())

@@ -64,7 +64,7 @@ object StatsCalculator {
             answeredQuestions = byQuestion.keys.count { it in bankIds },
             totalQuestions = bank.size,
             matureQuestions = cards.count { it.intervalDays >= MATURE_INTERVAL_DAYS && it.questionId in bankIds },
-            studyDays = days.size,
+            studyDays = days.count { it.answeredCount > 0 }, // 連勝保護補的日子（0 題）不算學習天數
             streak = StreakCalculator.compute(days.map { it.epochDay }, todayEpochDay),
             byCategory = byCategory,
             last7Days = (6 downTo 0).map { back ->

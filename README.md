@@ -51,7 +51,7 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
   ui/                        ← 各畫面：home、practice、quiz、wrongbook、favorites、pk、stats、words、settings
-app/src/test/                ← 單元測試（82 個）
+app/src/test/                ← 單元測試（91 個）
 ```
 
 ---
@@ -79,6 +79,7 @@ cp local.properties.example local.properties   # 填入 sdk.dir（Android Studio
 | `QuestionBankParserTest` | 題庫格式驗證，**含 repo 裡真正的 questions.json** |
 | `QuestionBankRepositoryTest` | 版本比對、下載、快取、離線、壞檔不覆蓋 |
 | `SmartSelectionAndStatsTest` | 聰明選題（沒做過→常錯→已會）、同篇閱讀／聽力不拆開、題型篩選、學習統計 |
+| `MockAndGoalTest` | 模擬考組卷（聽力在前、比例、不拆短文）、預估分數與誤差區間、連勝保護補打卡 |
 | `SyncTest` | 兩支模擬手機的備份 / 還原、較新為準、首次同步詢問 |
 | `StreakCalculatorTest`、`DailyAndPkTest`、`AdsAndHintsTest` | 打卡、每日一題、PK 計分、廣告頻率 |
 
@@ -246,5 +247,5 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 - [ ] AdMob 正式 ID 填入 `local.properties`、設定內容分級、app-ads.txt
 - [ ] 隱私權政策填好聯絡資訊並公開、`privacyPolicyUrl` 指向它
 - [ ] Data safety、目標年齡、廣告 ID 宣告
-- [ ] 改資料表時：`AppDatabase` 版本 +1 並寫 Migration（範例：`MIGRATION_1_2` 新增收藏表），`app/schemas/` 保存各版 schema
+- [ ] 改資料表時：`AppDatabase` 版本 +1 並寫 Migration（範例：`MIGRATION_1_2` 收藏、`MIGRATION_2_3` 模擬考成績），`app/schemas/` 保存各版 schema
 - [ ] `versionCode` 每次上傳 +1
