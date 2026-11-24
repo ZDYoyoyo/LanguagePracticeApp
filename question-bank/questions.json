@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": 6,
+  "version": 7,
   "updatedAt": "2026-11-24",
   "questions": [
     {
@@ -4327,6 +4327,14 @@
       "id": "toeic-read-001",
       "type": "multiple_choice",
       "passage": "To: All Staff\nFrom: Karen Wu, Office Manager\nSubject: Elevator Maintenance\n\nPlease be advised that the main elevator will be closed for maintenance from Monday, June 10, to Wednesday, June 12. During this time, staff may use the freight elevator at the back of the building. We apologize for any inconvenience and thank you for your patience.",
+      "glossary": {
+        "be advised that": "特此通知",
+        "maintenance": "維修；保養",
+        "freight elevator": "貨梯",
+        "inconvenience": "不便",
+        "patience": "耐心"
+      },
+      "passageTranslation": "收件人：全體員工\n寄件人：辦公室經理 Karen Wu\n主旨：電梯維修\n\n特此通知，主電梯將於 6 月 10 日（週一）至 6 月 12 日（週三）進行維修而暫停使用。這段期間，員工可以使用大樓後方的貨梯。造成不便敬請見諒，感謝大家的耐心。",
       "prompt": "What is the purpose of the email?",
       "options": [
         "To invite staff to a meeting",
@@ -4351,6 +4359,14 @@
       "id": "toeic-read-002",
       "type": "multiple_choice",
       "passage": "To: All Staff\nFrom: Karen Wu, Office Manager\nSubject: Elevator Maintenance\n\nPlease be advised that the main elevator will be closed for maintenance from Monday, June 10, to Wednesday, June 12. During this time, staff may use the freight elevator at the back of the building. We apologize for any inconvenience and thank you for your patience.",
+      "glossary": {
+        "be advised that": "特此通知",
+        "maintenance": "維修；保養",
+        "freight elevator": "貨梯",
+        "inconvenience": "不便",
+        "patience": "耐心"
+      },
+      "passageTranslation": "收件人：全體員工\n寄件人：辦公室經理 Karen Wu\n主旨：電梯維修\n\n特此通知，主電梯將於 6 月 10 日（週一）至 6 月 12 日（週三）進行維修而暫停使用。這段期間，員工可以使用大樓後方的貨梯。造成不便敬請見諒，感謝大家的耐心。",
       "prompt": "For how many days will the main elevator be closed?",
       "options": [
         "Two weeks",
@@ -4375,6 +4391,14 @@
       "id": "toeic-read-003",
       "type": "multiple_choice",
       "passage": "To: All Staff\nFrom: Karen Wu, Office Manager\nSubject: Elevator Maintenance\n\nPlease be advised that the main elevator will be closed for maintenance from Monday, June 10, to Wednesday, June 12. During this time, staff may use the freight elevator at the back of the building. We apologize for any inconvenience and thank you for your patience.",
+      "glossary": {
+        "be advised that": "特此通知",
+        "maintenance": "維修；保養",
+        "freight elevator": "貨梯",
+        "inconvenience": "不便",
+        "patience": "耐心"
+      },
+      "passageTranslation": "收件人：全體員工\n寄件人：辦公室經理 Karen Wu\n主旨：電梯維修\n\n特此通知，主電梯將於 6 月 10 日（週一）至 6 月 12 日（週三）進行維修而暫停使用。這段期間，員工可以使用大樓後方的貨梯。造成不便敬請見諒，感謝大家的耐心。",
       "prompt": "What are staff members asked to use instead?",
       "options": [
         "The main entrance",
@@ -4399,6 +4423,14 @@
       "id": "toeic-read-004",
       "type": "multiple_choice",
       "passage": "GRAND OPENING — Bella Café\n\nCelebrate with us on Saturday, May 4! The first 50 customers will receive a free pastry with any drink purchase. Show this flyer to get 20% off your order all week. Open daily 7 a.m.–8 p.m. at 125 River Road.",
+      "glossary": {
+        "grand opening": "盛大開幕",
+        "pastry": "糕點",
+        "purchase": "購買",
+        "flyer": "傳單",
+        "daily": "每天"
+      },
+      "passageTranslation": "盛大開幕 — Bella 咖啡館\n\n5 月 4 日（週六）一起來慶祝！前 50 位顧客購買任何飲品即送糕點一份。整週出示這張傳單，消費享八折。每天營業時間早上 7 點到晚上 8 點，地址：River 路 125 號。",
       "prompt": "What will the first 50 customers receive?",
       "options": [
         "A free pastry with a drink purchase",
@@ -4424,6 +4456,14 @@
       "id": "toeic-read-005",
       "type": "multiple_choice",
       "passage": "GRAND OPENING — Bella Café\n\nCelebrate with us on Saturday, May 4! The first 50 customers will receive a free pastry with any drink purchase. Show this flyer to get 20% off your order all week. Open daily 7 a.m.–8 p.m. at 125 River Road.",
+      "glossary": {
+        "grand opening": "盛大開幕",
+        "pastry": "糕點",
+        "purchase": "購買",
+        "flyer": "傳單",
+        "daily": "每天"
+      },
+      "passageTranslation": "盛大開幕 — Bella 咖啡館\n\n5 月 4 日（週六）一起來慶祝！前 50 位顧客購買任何飲品即送糕點一份。整週出示這張傳單，消費享八折。每天營業時間早上 7 點到晚上 8 點，地址：River 路 125 號。",
       "prompt": "How can customers get a discount?",
       "options": [
         "By showing the flyer",
@@ -4449,6 +4489,14 @@
       "id": "toeic-read-006",
       "type": "multiple_choice",
       "passage": "GRAND OPENING — Bella Café\n\nCelebrate with us on Saturday, May 4! The first 50 customers will receive a free pastry with any drink purchase. Show this flyer to get 20% off your order all week. Open daily 7 a.m.–8 p.m. at 125 River Road.",
+      "glossary": {
+        "grand opening": "盛大開幕",
+        "pastry": "糕點",
+        "purchase": "購買",
+        "flyer": "傳單",
+        "daily": "每天"
+      },
+      "passageTranslation": "盛大開幕 — Bella 咖啡館\n\n5 月 4 日（週六）一起來慶祝！前 50 位顧客購買任何飲品即送糕點一份。整週出示這張傳單，消費享八折。每天營業時間早上 7 點到晚上 8 點，地址：River 路 125 號。",
       "prompt": "What is NOT mentioned about the café?",
       "options": [
         "Its opening date",
@@ -4474,6 +4522,15 @@
       "id": "toeic-read-007",
       "type": "multiple_choice",
       "passage": "Sales Associate Wanted\n\nMorgan Electronics is looking for a full-time sales associate for our downtown store. Applicants should have at least two years of retail experience and be available to work weekends. Fluency in English and Mandarin is preferred. To apply, send your résumé to jobs@morganelec.com by March 31.",
+      "glossary": {
+        "sales associate": "銷售人員；店員",
+        "full-time": "全職的",
+        "retail": "零售",
+        "be available to": "可以（某時間）做…",
+        "fluency": "流利程度",
+        "preferred": "優先考慮的；加分的"
+      },
+      "passageTranslation": "徵求銷售人員\n\nMorgan 電子正在為市中心門市招募一名全職銷售人員。應徵者應具備至少兩年零售經驗，且週末可以上班。能流利使用英文和中文者優先。應徵方式：請於 3 月 31 日前將履歷寄到 jobs@morganelec.com。",
       "prompt": "What is a requirement for the position?",
       "options": [
         "A driver's license",
@@ -4498,6 +4555,15 @@
       "id": "toeic-read-008",
       "type": "multiple_choice",
       "passage": "Sales Associate Wanted\n\nMorgan Electronics is looking for a full-time sales associate for our downtown store. Applicants should have at least two years of retail experience and be available to work weekends. Fluency in English and Mandarin is preferred. To apply, send your résumé to jobs@morganelec.com by March 31.",
+      "glossary": {
+        "sales associate": "銷售人員；店員",
+        "full-time": "全職的",
+        "retail": "零售",
+        "be available to": "可以（某時間）做…",
+        "fluency": "流利程度",
+        "preferred": "優先考慮的；加分的"
+      },
+      "passageTranslation": "徵求銷售人員\n\nMorgan 電子正在為市中心門市招募一名全職銷售人員。應徵者應具備至少兩年零售經驗，且週末可以上班。能流利使用英文和中文者優先。應徵方式：請於 3 月 31 日前將履歷寄到 jobs@morganelec.com。",
       "prompt": "What is described as preferred but not required?",
       "options": [
         "Having retail experience",
@@ -4522,6 +4588,15 @@
       "id": "toeic-read-009",
       "type": "multiple_choice",
       "passage": "Sales Associate Wanted\n\nMorgan Electronics is looking for a full-time sales associate for our downtown store. Applicants should have at least two years of retail experience and be available to work weekends. Fluency in English and Mandarin is preferred. To apply, send your résumé to jobs@morganelec.com by March 31.",
+      "glossary": {
+        "sales associate": "銷售人員；店員",
+        "full-time": "全職的",
+        "retail": "零售",
+        "be available to": "可以（某時間）做…",
+        "fluency": "流利程度",
+        "preferred": "優先考慮的；加分的"
+      },
+      "passageTranslation": "徵求銷售人員\n\nMorgan 電子正在為市中心門市招募一名全職銷售人員。應徵者應具備至少兩年零售經驗，且週末可以上班。能流利使用英文和中文者優先。應徵方式：請於 3 月 31 日前將履歷寄到 jobs@morganelec.com。",
       "prompt": "How should people apply for the job?",
       "options": [
         "In person",
@@ -4546,6 +4621,14 @@
       "id": "toeic-read-010",
       "type": "multiple_choice",
       "passage": "Tom Hayes (9:02 a.m.): Hi Lisa, my train is delayed about 30 minutes. Can you start the client meeting without me?\nLisa Park (9:04 a.m.): No problem. I'll go over the budget first.\nTom Hayes (9:05 a.m.): Thanks. I'll bring the printed contracts when I arrive.",
+      "glossary": {
+        "delayed": "延誤的",
+        "client": "客戶",
+        "go over": "檢視；說明一遍",
+        "printed": "印出來的",
+        "contract": "合約"
+      },
+      "passageTranslation": "Tom Hayes（上午 9:02）：嗨 Lisa，我的火車誤點大約 30 分鐘。你可以先開始客戶會議嗎？\nLisa Park（上午 9:04）：沒問題，我先報告預算。\nTom Hayes（上午 9:05）：謝謝。我到的時候會帶印好的合約。",
       "prompt": "Why will Tom be late?",
       "options": [
         "He is printing documents",
@@ -4570,6 +4653,14 @@
       "id": "toeic-read-011",
       "type": "multiple_choice",
       "passage": "Tom Hayes (9:02 a.m.): Hi Lisa, my train is delayed about 30 minutes. Can you start the client meeting without me?\nLisa Park (9:04 a.m.): No problem. I'll go over the budget first.\nTom Hayes (9:05 a.m.): Thanks. I'll bring the printed contracts when I arrive.",
+      "glossary": {
+        "delayed": "延誤的",
+        "client": "客戶",
+        "go over": "檢視；說明一遍",
+        "printed": "印出來的",
+        "contract": "合約"
+      },
+      "passageTranslation": "Tom Hayes（上午 9:02）：嗨 Lisa，我的火車誤點大約 30 分鐘。你可以先開始客戶會議嗎？\nLisa Park（上午 9:04）：沒問題，我先報告預算。\nTom Hayes（上午 9:05）：謝謝。我到的時候會帶印好的合約。",
       "prompt": "At 9:04 a.m., what does Lisa mean when she writes, \"No problem\"?",
       "options": [
         "The contracts are ready",
@@ -4594,6 +4685,14 @@
       "id": "toeic-read-012",
       "type": "multiple_choice",
       "passage": "Tom Hayes (9:02 a.m.): Hi Lisa, my train is delayed about 30 minutes. Can you start the client meeting without me?\nLisa Park (9:04 a.m.): No problem. I'll go over the budget first.\nTom Hayes (9:05 a.m.): Thanks. I'll bring the printed contracts when I arrive.",
+      "glossary": {
+        "delayed": "延誤的",
+        "client": "客戶",
+        "go over": "檢視；說明一遍",
+        "printed": "印出來的",
+        "contract": "合約"
+      },
+      "passageTranslation": "Tom Hayes（上午 9:02）：嗨 Lisa，我的火車誤點大約 30 分鐘。你可以先開始客戶會議嗎？\nLisa Park（上午 9:04）：沒問題，我先報告預算。\nTom Hayes（上午 9:05）：謝謝。我到的時候會帶印好的合約。",
       "prompt": "What will Tom bring to the meeting?",
       "options": [
         "Coffee for the client",
@@ -4618,6 +4717,15 @@
       "id": "toeic-read-013",
       "type": "multiple_choice",
       "passage": "Return Policy\n\nItems may be returned within 30 days of purchase with the original receipt. Refunds will be issued to the original method of payment. Sale items can be exchanged but not refunded. Opened software cannot be returned.",
+      "glossary": {
+        "return policy": "退貨政策",
+        "original receipt": "原始收據",
+        "refund": "退款",
+        "method of payment": "付款方式",
+        "sale item": "特價商品",
+        "exchange": "換貨"
+      },
+      "passageTranslation": "退貨政策\n\n商品可於購買後 30 天內憑原始收據退貨。退款會退回原本的付款方式。特價商品可以換貨，但不能退款。已拆封的軟體不接受退貨。",
       "prompt": "What is required to return an item?",
       "options": [
         "A manager's approval",
@@ -4642,6 +4750,15 @@
       "id": "toeic-read-014",
       "type": "multiple_choice",
       "passage": "Return Policy\n\nItems may be returned within 30 days of purchase with the original receipt. Refunds will be issued to the original method of payment. Sale items can be exchanged but not refunded. Opened software cannot be returned.",
+      "glossary": {
+        "return policy": "退貨政策",
+        "original receipt": "原始收據",
+        "refund": "退款",
+        "method of payment": "付款方式",
+        "sale item": "特價商品",
+        "exchange": "換貨"
+      },
+      "passageTranslation": "退貨政策\n\n商品可於購買後 30 天內憑原始收據退貨。退款會退回原本的付款方式。特價商品可以換貨，但不能退款。已拆封的軟體不接受退貨。",
       "prompt": "What is true about sale items?",
       "options": [
         "They are refunded in cash",
@@ -4666,6 +4783,15 @@
       "id": "toeic-read-015",
       "type": "multiple_choice",
       "passage": "Return Policy\n\nItems may be returned within 30 days of purchase with the original receipt. Refunds will be issued to the original method of payment. Sale items can be exchanged but not refunded. Opened software cannot be returned.",
+      "glossary": {
+        "return policy": "退貨政策",
+        "original receipt": "原始收據",
+        "refund": "退款",
+        "method of payment": "付款方式",
+        "sale item": "特價商品",
+        "exchange": "換貨"
+      },
+      "passageTranslation": "退貨政策\n\n商品可於購買後 30 天內憑原始收據退貨。退款會退回原本的付款方式。特價商品可以換貨，但不能退款。已拆封的軟體不接受退貨。",
       "prompt": "Which item can NOT be returned?",
       "options": [
         "A shirt bought last week with a receipt",
@@ -4690,6 +4816,14 @@
       "id": "toeic-text-001",
       "type": "grammar",
       "passage": "Dear Mr. Patel,\n\nThank you for your order of 200 office chairs. Unfortunately, the item is currently out of stock. We expect to receive a new ___(1)___ from our factory next week. ___(2)___, we will ship your order as soon as it arrives. If you would prefer to cancel, please let us know and we will issue a full ___(3)___.\n\nSincerely,\nAnna Lopez, Customer Service",
+      "glossary": {
+        "out of stock": "缺貨",
+        "shipment": "一批貨",
+        "as soon as": "一…就…",
+        "issue a refund": "辦理退款",
+        "prefer": "比較想要"
+      },
+      "passageTranslation": "Patel 先生您好：\n\n感謝您訂購 200 張辦公椅。很抱歉，該商品目前缺貨。我們預計下週會從工廠收到一批新貨（shipment）。因此（Therefore），貨一到我們就會立刻寄出您的訂單。如果您想取消訂單，請告訴我們，我們會辦理全額退款（refund）。\n\n客服部 Anna Lopez 敬上",
       "prompt": "Choose the best answer for blank (1).",
       "options": [
         "shipped",
@@ -4714,6 +4848,14 @@
       "id": "toeic-text-002",
       "type": "grammar",
       "passage": "Dear Mr. Patel,\n\nThank you for your order of 200 office chairs. Unfortunately, the item is currently out of stock. We expect to receive a new ___(1)___ from our factory next week. ___(2)___, we will ship your order as soon as it arrives. If you would prefer to cancel, please let us know and we will issue a full ___(3)___.\n\nSincerely,\nAnna Lopez, Customer Service",
+      "glossary": {
+        "out of stock": "缺貨",
+        "shipment": "一批貨",
+        "as soon as": "一…就…",
+        "issue a refund": "辦理退款",
+        "prefer": "比較想要"
+      },
+      "passageTranslation": "Patel 先生您好：\n\n感謝您訂購 200 張辦公椅。很抱歉，該商品目前缺貨。我們預計下週會從工廠收到一批新貨（shipment）。因此（Therefore），貨一到我們就會立刻寄出您的訂單。如果您想取消訂單，請告訴我們，我們會辦理全額退款（refund）。\n\n客服部 Anna Lopez 敬上",
       "prompt": "Choose the best answer for blank (2).",
       "options": [
         "Instead",
@@ -4738,6 +4880,14 @@
       "id": "toeic-text-003",
       "type": "grammar",
       "passage": "Dear Mr. Patel,\n\nThank you for your order of 200 office chairs. Unfortunately, the item is currently out of stock. We expect to receive a new ___(1)___ from our factory next week. ___(2)___, we will ship your order as soon as it arrives. If you would prefer to cancel, please let us know and we will issue a full ___(3)___.\n\nSincerely,\nAnna Lopez, Customer Service",
+      "glossary": {
+        "out of stock": "缺貨",
+        "shipment": "一批貨",
+        "as soon as": "一…就…",
+        "issue a refund": "辦理退款",
+        "prefer": "比較想要"
+      },
+      "passageTranslation": "Patel 先生您好：\n\n感謝您訂購 200 張辦公椅。很抱歉，該商品目前缺貨。我們預計下週會從工廠收到一批新貨（shipment）。因此（Therefore），貨一到我們就會立刻寄出您的訂單。如果您想取消訂單，請告訴我們，我們會辦理全額退款（refund）。\n\n客服部 Anna Lopez 敬上",
       "prompt": "Choose the best answer for blank (3).",
       "options": [
         "refundable",
@@ -4762,6 +4912,14 @@
       "id": "toeic-text-004",
       "type": "grammar",
       "passage": "To: All Employees\n\nStarting next month, the company will ___(1)___ a new expense reporting system. All employees are required to attend a short training session. Sessions will be held ___(2)___ Tuesday and Thursday afternoons. Please sign up with Human Resources by Friday. ___(3)___",
+      "glossary": {
+        "expense report": "費用報銷單",
+        "be required to": "被要求…",
+        "training session": "培訓課程",
+        "sign up": "報名",
+        "Human Resources": "人資部"
+      },
+      "passageTranslation": "致全體員工：\n\n從下個月開始，公司將導入（introduce）新的費用報銷系統。所有員工都必須參加一堂簡短的培訓課程。課程在（on）每週二和週四下午舉行。請於週五前向人資部報名。每場名額有限。",
       "prompt": "Choose the best answer for blank (1).",
       "options": [
         "introduction",
@@ -4786,6 +4944,14 @@
       "id": "toeic-text-005",
       "type": "grammar",
       "passage": "To: All Employees\n\nStarting next month, the company will ___(1)___ a new expense reporting system. All employees are required to attend a short training session. Sessions will be held ___(2)___ Tuesday and Thursday afternoons. Please sign up with Human Resources by Friday. ___(3)___",
+      "glossary": {
+        "expense report": "費用報銷單",
+        "be required to": "被要求…",
+        "training session": "培訓課程",
+        "sign up": "報名",
+        "Human Resources": "人資部"
+      },
+      "passageTranslation": "致全體員工：\n\n從下個月開始，公司將導入（introduce）新的費用報銷系統。所有員工都必須參加一堂簡短的培訓課程。課程在（on）每週二和週四下午舉行。請於週五前向人資部報名。每場名額有限。",
       "prompt": "Choose the best answer for blank (2).",
       "options": [
         "on",
@@ -4810,6 +4976,14 @@
       "id": "toeic-text-006",
       "type": "multiple_choice",
       "passage": "To: All Employees\n\nStarting next month, the company will ___(1)___ a new expense reporting system. All employees are required to attend a short training session. Sessions will be held ___(2)___ Tuesday and Thursday afternoons. Please sign up with Human Resources by Friday. ___(3)___",
+      "glossary": {
+        "expense report": "費用報銷單",
+        "be required to": "被要求…",
+        "training session": "培訓課程",
+        "sign up": "報名",
+        "Human Resources": "人資部"
+      },
+      "passageTranslation": "致全體員工：\n\n從下個月開始，公司將導入（introduce）新的費用報銷系統。所有員工都必須參加一堂簡短的培訓課程。課程在（on）每週二和週四下午舉行。請於週五前向人資部報名。每場名額有限。",
       "prompt": "Choose the best sentence for blank (3).",
       "options": [
         "Our sales increased last year.",
@@ -4834,6 +5008,14 @@
       "id": "toeic-text-007",
       "type": "grammar",
       "passage": "Riverside Library will be closed on Monday, July 1, for a national holiday. Books due on that day may be returned ___(1)___ penalty on Tuesday. Our online catalog will remain ___(2)___ throughout the holiday.",
+      "glossary": {
+        "national holiday": "國定假日",
+        "due": "到期的",
+        "penalty": "罰款",
+        "catalog": "目錄",
+        "throughout": "在整個…期間"
+      },
+      "passageTranslation": "Riverside 圖書館將於 7 月 1 日（週一）國定假日休館。當天到期的書可以在週二歸還，不會（without）被罰款。線上館藏目錄在假日期間仍可正常使用（available）。",
       "prompt": "Choose the best answer for blank (1).",
       "options": [
         "without",
@@ -4859,6 +5041,14 @@
       "id": "toeic-text-008",
       "type": "grammar",
       "passage": "Riverside Library will be closed on Monday, July 1, for a national holiday. Books due on that day may be returned ___(1)___ penalty on Tuesday. Our online catalog will remain ___(2)___ throughout the holiday.",
+      "glossary": {
+        "national holiday": "國定假日",
+        "due": "到期的",
+        "penalty": "罰款",
+        "catalog": "目錄",
+        "throughout": "在整個…期間"
+      },
+      "passageTranslation": "Riverside 圖書館將於 7 月 1 日（週一）國定假日休館。當天到期的書可以在週二歸還，不會（without）被罰款。線上館藏目錄在假日期間仍可正常使用（available）。",
       "prompt": "Choose the best answer for blank (2).",
       "options": [
         "avail",
@@ -4884,6 +5074,15 @@
       "id": "toeic-listen-001",
       "type": "multiple_choice",
       "passage": "W: Hi, I'd like to check in. I have a reservation under the name Chen.\nM: Welcome, Ms. Chen. I see you've booked a single room for three nights.\nW: That's right. Is breakfast included?\nM: Yes, breakfast is served from 6:30 to 10 a.m. on the second floor.",
+      "glossary": {
+        "check in": "辦理入住",
+        "reservation": "預訂",
+        "under the name": "以…的名字",
+        "single room": "單人房",
+        "included": "包含在內的",
+        "serve": "供應（餐點）"
+      },
+      "passageTranslation": "女：你好，我要辦理入住。我有用 Chen 這個名字訂房。\n男：歡迎，Chen 小姐。我看到您訂了單人房，住三晚。\n女：沒錯。有含早餐嗎？\n男：有的，早餐在二樓供應，時間是早上 6:30 到 10 點。",
       "listening": true,
       "prompt": "Where most likely are the speakers?",
       "options": [
@@ -4909,6 +5108,15 @@
       "id": "toeic-listen-002",
       "type": "multiple_choice",
       "passage": "W: Hi, I'd like to check in. I have a reservation under the name Chen.\nM: Welcome, Ms. Chen. I see you've booked a single room for three nights.\nW: That's right. Is breakfast included?\nM: Yes, breakfast is served from 6:30 to 10 a.m. on the second floor.",
+      "glossary": {
+        "check in": "辦理入住",
+        "reservation": "預訂",
+        "under the name": "以…的名字",
+        "single room": "單人房",
+        "included": "包含在內的",
+        "serve": "供應（餐點）"
+      },
+      "passageTranslation": "女：你好，我要辦理入住。我有用 Chen 這個名字訂房。\n男：歡迎，Chen 小姐。我看到您訂了單人房，住三晚。\n女：沒錯。有含早餐嗎？\n男：有的，早餐在二樓供應，時間是早上 6:30 到 10 點。",
       "listening": true,
       "prompt": "How many nights will the woman stay?",
       "options": [
@@ -4934,6 +5142,15 @@
       "id": "toeic-listen-003",
       "type": "multiple_choice",
       "passage": "W: Hi, I'd like to check in. I have a reservation under the name Chen.\nM: Welcome, Ms. Chen. I see you've booked a single room for three nights.\nW: That's right. Is breakfast included?\nM: Yes, breakfast is served from 6:30 to 10 a.m. on the second floor.",
+      "glossary": {
+        "check in": "辦理入住",
+        "reservation": "預訂",
+        "under the name": "以…的名字",
+        "single room": "單人房",
+        "included": "包含在內的",
+        "serve": "供應（餐點）"
+      },
+      "passageTranslation": "女：你好，我要辦理入住。我有用 Chen 這個名字訂房。\n男：歡迎，Chen 小姐。我看到您訂了單人房，住三晚。\n女：沒錯。有含早餐嗎？\n男：有的，早餐在二樓供應，時間是早上 6:30 到 10 點。",
       "listening": true,
       "prompt": "Where is breakfast served?",
       "options": [
@@ -4959,6 +5176,13 @@
       "id": "toeic-listen-004",
       "type": "multiple_choice",
       "passage": "M: Jenny, did you finish the sales presentation for tomorrow?\nW: Almost. I just need to add the figures from last quarter.\nM: I can send you those this afternoon.\nW: Great, thanks. Then I'll be ready for the 9 o'clock meeting.",
+      "glossary": {
+        "presentation": "簡報",
+        "figures": "數據",
+        "quarter": "季度",
+        "Almost.": "快好了。"
+      },
+      "passageTranslation": "男：Jenny，明天的業務簡報做好了嗎？\n女：快好了，我只需要加上上一季的數據。\n男：我今天下午可以把數據寄給你。\n女：太好了，謝謝。這樣我就能準備好參加 9 點的會議了。",
       "listening": true,
       "prompt": "What is the woman working on?",
       "options": [
@@ -4984,6 +5208,13 @@
       "id": "toeic-listen-005",
       "type": "multiple_choice",
       "passage": "M: Jenny, did you finish the sales presentation for tomorrow?\nW: Almost. I just need to add the figures from last quarter.\nM: I can send you those this afternoon.\nW: Great, thanks. Then I'll be ready for the 9 o'clock meeting.",
+      "glossary": {
+        "presentation": "簡報",
+        "figures": "數據",
+        "quarter": "季度",
+        "Almost.": "快好了。"
+      },
+      "passageTranslation": "男：Jenny，明天的業務簡報做好了嗎？\n女：快好了，我只需要加上上一季的數據。\n男：我今天下午可以把數據寄給你。\n女：太好了，謝謝。這樣我就能準備好參加 9 點的會議了。",
       "listening": true,
       "prompt": "What does the man offer to do?",
       "options": [
@@ -5009,6 +5240,13 @@
       "id": "toeic-listen-006",
       "type": "multiple_choice",
       "passage": "M: Jenny, did you finish the sales presentation for tomorrow?\nW: Almost. I just need to add the figures from last quarter.\nM: I can send you those this afternoon.\nW: Great, thanks. Then I'll be ready for the 9 o'clock meeting.",
+      "glossary": {
+        "presentation": "簡報",
+        "figures": "數據",
+        "quarter": "季度",
+        "Almost.": "快好了。"
+      },
+      "passageTranslation": "男：Jenny，明天的業務簡報做好了嗎？\n女：快好了，我只需要加上上一季的數據。\n男：我今天下午可以把數據寄給你。\n女：太好了，謝謝。這樣我就能準備好參加 9 點的會議了。",
       "listening": true,
       "prompt": "When is the meeting?",
       "options": [
@@ -5034,6 +5272,14 @@
       "id": "toeic-listen-007",
       "type": "multiple_choice",
       "passage": "W: Excuse me, I bought this printer here last week, but it keeps jamming.\nM: I'm sorry to hear that. Do you have your receipt?\nW: Yes, here it is.\nM: Thank you. Since it's still under warranty, we can replace it for you right away.",
+      "glossary": {
+        "jam": "卡紙；卡住",
+        "receipt": "收據",
+        "under warranty": "在保固期內",
+        "replace": "更換",
+        "right away": "馬上"
+      },
+      "passageTranslation": "女：不好意思，我上週在這裡買了這台印表機，但它一直卡紙。\n男：很抱歉聽到這個狀況。您有帶收據嗎？\n女：有，在這裡。\n男：謝謝。因為還在保固期內，我們可以馬上幫您換一台。",
       "listening": true,
       "prompt": "What is the woman's problem?",
       "options": [
@@ -5059,6 +5305,14 @@
       "id": "toeic-listen-008",
       "type": "multiple_choice",
       "passage": "W: Excuse me, I bought this printer here last week, but it keeps jamming.\nM: I'm sorry to hear that. Do you have your receipt?\nW: Yes, here it is.\nM: Thank you. Since it's still under warranty, we can replace it for you right away.",
+      "glossary": {
+        "jam": "卡紙；卡住",
+        "receipt": "收據",
+        "under warranty": "在保固期內",
+        "replace": "更換",
+        "right away": "馬上"
+      },
+      "passageTranslation": "女：不好意思，我上週在這裡買了這台印表機，但它一直卡紙。\n男：很抱歉聽到這個狀況。您有帶收據嗎？\n女：有，在這裡。\n男：謝謝。因為還在保固期內，我們可以馬上幫您換一台。",
       "listening": true,
       "prompt": "What does the man ask for?",
       "options": [
@@ -5084,6 +5338,14 @@
       "id": "toeic-listen-009",
       "type": "multiple_choice",
       "passage": "W: Excuse me, I bought this printer here last week, but it keeps jamming.\nM: I'm sorry to hear that. Do you have your receipt?\nW: Yes, here it is.\nM: Thank you. Since it's still under warranty, we can replace it for you right away.",
+      "glossary": {
+        "jam": "卡紙；卡住",
+        "receipt": "收據",
+        "under warranty": "在保固期內",
+        "replace": "更換",
+        "right away": "馬上"
+      },
+      "passageTranslation": "女：不好意思，我上週在這裡買了這台印表機，但它一直卡紙。\n男：很抱歉聽到這個狀況。您有帶收據嗎？\n女：有，在這裡。\n男：謝謝。因為還在保固期內，我們可以馬上幫您換一台。",
       "listening": true,
       "prompt": "What will the man most likely do next?",
       "options": [
@@ -5109,6 +5371,10 @@
       "id": "toeic-listen-010",
       "type": "multiple_choice",
       "passage": "W: Where should I put these boxes?",
+      "glossary": {
+        "put": "放"
+      },
+      "passageTranslation": "女：這些箱子要放哪裡？\n（正解：請放到儲藏室。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -5134,6 +5400,10 @@
       "id": "toeic-listen-011",
       "type": "multiple_choice",
       "passage": "M: Have you met our new sales manager?",
+      "glossary": {
+        "sales manager": "業務經理"
+      },
+      "passageTranslation": "男：你見過我們的新業務經理了嗎？\n（正解：見過了，在昨天的會議上。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -5159,6 +5429,11 @@
       "id": "toeic-listen-012",
       "type": "multiple_choice",
       "passage": "W: How often do you travel for work?",
+      "glossary": {
+        "how often": "多常",
+        "travel for work": "出差"
+      },
+      "passageTranslation": "女：你多常出差？\n（正解：大約一個月兩次。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -5184,6 +5459,11 @@
       "id": "toeic-listen-013",
       "type": "multiple_choice",
       "passage": "M: Why don't we take a short break?",
+      "glossary": {
+        "Why don't we…?": "我們何不…？（提議）",
+        "take a break": "休息一下"
+      },
+      "passageTranslation": "男：我們要不要休息一下？\n（正解：好主意，我需要喝杯咖啡。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -5209,6 +5489,10 @@
       "id": "toeic-listen-014",
       "type": "multiple_choice",
       "passage": "W: Is the report due today or tomorrow?",
+      "glossary": {
+        "due": "到期的；該交的"
+      },
+      "passageTranslation": "女：報告是今天要交還是明天？\n（正解：明天要交。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -5234,6 +5518,11 @@
       "id": "toeic-listen-015",
       "type": "multiple_choice",
       "passage": "M: Who's going to pick up the clients from the airport?",
+      "glossary": {
+        "pick up": "接（人）",
+        "client": "客戶"
+      },
+      "passageTranslation": "男：誰要去機場接客戶？\n（正解：王先生會去。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6017,6 +6306,10 @@
       "id": "toeic-listen-016",
       "type": "multiple_choice",
       "passage": "W: When will the new office open?",
+      "glossary": {
+        "open": "開幕；開放"
+      },
+      "passageTranslation": "女：新辦公室什麼時候啟用？\n（正解：下個月初。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6042,6 +6335,11 @@
       "id": "toeic-listen-017",
       "type": "multiple_choice",
       "passage": "M: Should I print the agenda or email it?",
+      "glossary": {
+        "agenda": "議程",
+        "print": "列印"
+      },
+      "passageTranslation": "男：議程要印出來還是用 email 寄？\n（正解：請用 email 寄。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6067,6 +6365,11 @@
       "id": "toeic-listen-018",
       "type": "multiple_choice",
       "passage": "W: Who approved the budget?",
+      "glossary": {
+        "approve": "核准",
+        "budget": "預算"
+      },
+      "passageTranslation": "女：預算是誰核准的？\n（正解：財務長核准的。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6092,6 +6395,10 @@
       "id": "toeic-listen-019",
       "type": "multiple_choice",
       "passage": "M: You've worked here for a long time, haven't you?",
+      "glossary": {
+        "haven't you?": "不是嗎？（附加問句）"
+      },
+      "passageTranslation": "男：你在這裡工作很久了，對吧？\n（正解：對，快十年了。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6117,6 +6424,11 @@
       "id": "toeic-listen-020",
       "type": "multiple_choice",
       "passage": "W: Could you show me how to use the copier?",
+      "glossary": {
+        "show someone how to": "教某人怎麼…",
+        "copier": "影印機"
+      },
+      "passageTranslation": "女：你可以教我怎麼用影印機嗎？\n（正解：當然，很簡單。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6142,6 +6454,10 @@
       "id": "toeic-listen-021",
       "type": "multiple_choice",
       "passage": "M: What time does the store close tonight?",
+      "glossary": {
+        "close": "關門（打烊）"
+      },
+      "passageTranslation": "男：店今晚幾點打烊？\n（正解：九點。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -6167,6 +6483,14 @@
       "id": "toeic-listen-022",
       "type": "multiple_choice",
       "passage": "W: Hello, I'd like to book a table for six people on Friday evening.\nM: Certainly. What time would you like?\nW: Around seven, if possible. It's for a colleague's farewell dinner.\nM: I'm sorry, we're fully booked at seven. Would eight o'clock work?\nW: Yes, that's fine.",
+      "glossary": {
+        "book a table": "訂位",
+        "certainly": "當然",
+        "farewell dinner": "歡送餐會",
+        "fully booked": "客滿",
+        "work": "（時間）可以、方便"
+      },
+      "passageTranslation": "女：你好，我想訂週五晚上六個人的位子。\n男：好的，您想要幾點？\n女：可以的話七點左右。是同事的歡送餐會。\n男：抱歉，七點已經客滿了。八點可以嗎？\n女：可以，沒問題。",
       "listening": true,
       "prompt": "Why is the woman calling?",
       "options": [
@@ -6192,6 +6516,14 @@
       "id": "toeic-listen-023",
       "type": "multiple_choice",
       "passage": "W: Hello, I'd like to book a table for six people on Friday evening.\nM: Certainly. What time would you like?\nW: Around seven, if possible. It's for a colleague's farewell dinner.\nM: I'm sorry, we're fully booked at seven. Would eight o'clock work?\nW: Yes, that's fine.",
+      "glossary": {
+        "book a table": "訂位",
+        "certainly": "當然",
+        "farewell dinner": "歡送餐會",
+        "fully booked": "客滿",
+        "work": "（時間）可以、方便"
+      },
+      "passageTranslation": "女：你好，我想訂週五晚上六個人的位子。\n男：好的，您想要幾點？\n女：可以的話七點左右。是同事的歡送餐會。\n男：抱歉，七點已經客滿了。八點可以嗎？\n女：可以，沒問題。",
       "listening": true,
       "prompt": "What is the occasion?",
       "options": [
@@ -6217,6 +6549,14 @@
       "id": "toeic-listen-024",
       "type": "multiple_choice",
       "passage": "W: Hello, I'd like to book a table for six people on Friday evening.\nM: Certainly. What time would you like?\nW: Around seven, if possible. It's for a colleague's farewell dinner.\nM: I'm sorry, we're fully booked at seven. Would eight o'clock work?\nW: Yes, that's fine.",
+      "glossary": {
+        "book a table": "訂位",
+        "certainly": "當然",
+        "farewell dinner": "歡送餐會",
+        "fully booked": "客滿",
+        "work": "（時間）可以、方便"
+      },
+      "passageTranslation": "女：你好，我想訂週五晚上六個人的位子。\n男：好的，您想要幾點？\n女：可以的話七點左右。是同事的歡送餐會。\n男：抱歉，七點已經客滿了。八點可以嗎？\n女：可以，沒問題。",
       "listening": true,
       "prompt": "What time will the woman's group most likely arrive?",
       "options": [
@@ -6242,6 +6582,15 @@
       "id": "toeic-listen-025",
       "type": "multiple_choice",
       "passage": "M: Hi, this is Kevin from IT. You reported that you can't log in to your email?\nW: Yes, it says my password has expired.\nM: I see. I'll reset it now and send a temporary password to your phone.\nW: Thanks. Do I need to change it after I log in?\nM: Yes, please create a new one within 24 hours.",
+      "glossary": {
+        "IT": "資訊部",
+        "log in": "登入",
+        "expired": "過期的",
+        "reset": "重設",
+        "temporary": "暫時的",
+        "within": "在…之內"
+      },
+      "passageTranslation": "男：嗨，我是資訊部的 Kevin。你回報說沒辦法登入 email？\n女：對，它說我的密碼過期了。\n男：了解。我現在幫你重設，然後把臨時密碼傳到你的手機。\n女：謝謝。登入後需要改密碼嗎？\n男：要，請在 24 小時內設定新密碼。",
       "listening": true,
       "prompt": "What is the woman's problem?",
       "options": [
@@ -6268,6 +6617,15 @@
       "id": "toeic-listen-026",
       "type": "multiple_choice",
       "passage": "M: Hi, this is Kevin from IT. You reported that you can't log in to your email?\nW: Yes, it says my password has expired.\nM: I see. I'll reset it now and send a temporary password to your phone.\nW: Thanks. Do I need to change it after I log in?\nM: Yes, please create a new one within 24 hours.",
+      "glossary": {
+        "IT": "資訊部",
+        "log in": "登入",
+        "expired": "過期的",
+        "reset": "重設",
+        "temporary": "暫時的",
+        "within": "在…之內"
+      },
+      "passageTranslation": "男：嗨，我是資訊部的 Kevin。你回報說沒辦法登入 email？\n女：對，它說我的密碼過期了。\n男：了解。我現在幫你重設，然後把臨時密碼傳到你的手機。\n女：謝謝。登入後需要改密碼嗎？\n男：要，請在 24 小時內設定新密碼。",
       "listening": true,
       "prompt": "How will the man send the temporary password?",
       "options": [
@@ -6294,6 +6652,15 @@
       "id": "toeic-listen-027",
       "type": "multiple_choice",
       "passage": "M: Hi, this is Kevin from IT. You reported that you can't log in to your email?\nW: Yes, it says my password has expired.\nM: I see. I'll reset it now and send a temporary password to your phone.\nW: Thanks. Do I need to change it after I log in?\nM: Yes, please create a new one within 24 hours.",
+      "glossary": {
+        "IT": "資訊部",
+        "log in": "登入",
+        "expired": "過期的",
+        "reset": "重設",
+        "temporary": "暫時的",
+        "within": "在…之內"
+      },
+      "passageTranslation": "男：嗨，我是資訊部的 Kevin。你回報說沒辦法登入 email？\n女：對，它說我的密碼過期了。\n男：了解。我現在幫你重設，然後把臨時密碼傳到你的手機。\n女：謝謝。登入後需要改密碼嗎？\n男：要，請在 24 小時內設定新密碼。",
       "listening": true,
       "prompt": "What does the man ask the woman to do?",
       "options": [
@@ -6320,6 +6687,15 @@
       "id": "toeic-read-016",
       "type": "multiple_choice",
       "passage": "Notice to All Tenants\n\nThe building's parking garage will be repainted next weekend, on Saturday and Sunday. Vehicles must be moved out of the garage by 8 p.m. on Friday. Tenants may park free of charge at the City Center Garage on Main Street during this time; simply show your building ID at the entrance. We expect the garage to reopen on Monday morning.\n\nBuilding Management",
+      "glossary": {
+        "tenant": "房客；承租戶",
+        "parking garage": "停車場",
+        "repaint": "重新油漆",
+        "vehicle": "車輛",
+        "free of charge": "免費",
+        "reopen": "重新開放"
+      },
+      "passageTranslation": "致全體住戶\n\n本大樓停車場將於下週末（週六、週日）重新油漆。所有車輛必須在週五晚上 8 點前移出停車場。這段期間，住戶可以免費停在 Main 街的市中心停車場，只要在入口出示大樓識別證即可。停車場預計週一早上重新開放。\n\n大樓管理處",
       "prompt": "What is the notice mainly about?",
       "options": [
         "A change in building management",
@@ -6344,6 +6720,15 @@
       "id": "toeic-read-017",
       "type": "multiple_choice",
       "passage": "Notice to All Tenants\n\nThe building's parking garage will be repainted next weekend, on Saturday and Sunday. Vehicles must be moved out of the garage by 8 p.m. on Friday. Tenants may park free of charge at the City Center Garage on Main Street during this time; simply show your building ID at the entrance. We expect the garage to reopen on Monday morning.\n\nBuilding Management",
+      "glossary": {
+        "tenant": "房客；承租戶",
+        "parking garage": "停車場",
+        "repaint": "重新油漆",
+        "vehicle": "車輛",
+        "free of charge": "免費",
+        "reopen": "重新開放"
+      },
+      "passageTranslation": "致全體住戶\n\n本大樓停車場將於下週末（週六、週日）重新油漆。所有車輛必須在週五晚上 8 點前移出停車場。這段期間，住戶可以免費停在 Main 街的市中心停車場，只要在入口出示大樓識別證即可。停車場預計週一早上重新開放。\n\n大樓管理處",
       "prompt": "What must tenants do by Friday evening?",
       "options": [
         "Paint their offices",
@@ -6368,6 +6753,15 @@
       "id": "toeic-read-018",
       "type": "multiple_choice",
       "passage": "Notice to All Tenants\n\nThe building's parking garage will be repainted next weekend, on Saturday and Sunday. Vehicles must be moved out of the garage by 8 p.m. on Friday. Tenants may park free of charge at the City Center Garage on Main Street during this time; simply show your building ID at the entrance. We expect the garage to reopen on Monday morning.\n\nBuilding Management",
+      "glossary": {
+        "tenant": "房客；承租戶",
+        "parking garage": "停車場",
+        "repaint": "重新油漆",
+        "vehicle": "車輛",
+        "free of charge": "免費",
+        "reopen": "重新開放"
+      },
+      "passageTranslation": "致全體住戶\n\n本大樓停車場將於下週末（週六、週日）重新油漆。所有車輛必須在週五晚上 8 點前移出停車場。這段期間，住戶可以免費停在 Main 街的市中心停車場，只要在入口出示大樓識別證即可。停車場預計週一早上重新開放。\n\n大樓管理處",
       "prompt": "How can tenants park for free at the City Center Garage?",
       "options": [
         "By registering online",
@@ -6392,6 +6786,16 @@
       "id": "toeic-text-009",
       "type": "grammar",
       "passage": "Dear Customers,\n\nWe are excited to announce that our online store has been ___(1)___ redesigned. You can now track your orders in real time and save your favorite items. ___(2)___ celebrate the launch, all orders over $50 will receive free shipping until the end of the month. ___(3)___\n\nThe Sunny Home Team",
+      "glossary": {
+        "announce": "宣布",
+        "redesign": "重新設計",
+        "track": "追蹤",
+        "in real time": "即時",
+        "celebrate": "慶祝",
+        "launch": "推出；上線",
+        "free shipping": "免運費"
+      },
+      "passageTranslation": "親愛的顧客：\n\n很高興宣布，我們的網路商店已經全面（completely）改版。現在您可以即時追蹤訂單，也能收藏喜歡的商品。為了（To）慶祝上線，月底前所有滿 50 美元的訂單都免運費。希望您喜歡全新的購物體驗。\n\nSunny Home 團隊",
       "prompt": "Choose the best answer for blank (1).",
       "options": [
         "completely",
@@ -6416,6 +6820,16 @@
       "id": "toeic-text-010",
       "type": "grammar",
       "passage": "Dear Customers,\n\nWe are excited to announce that our online store has been ___(1)___ redesigned. You can now track your orders in real time and save your favorite items. ___(2)___ celebrate the launch, all orders over $50 will receive free shipping until the end of the month. ___(3)___\n\nThe Sunny Home Team",
+      "glossary": {
+        "announce": "宣布",
+        "redesign": "重新設計",
+        "track": "追蹤",
+        "in real time": "即時",
+        "celebrate": "慶祝",
+        "launch": "推出；上線",
+        "free shipping": "免運費"
+      },
+      "passageTranslation": "親愛的顧客：\n\n很高興宣布，我們的網路商店已經全面（completely）改版。現在您可以即時追蹤訂單，也能收藏喜歡的商品。為了（To）慶祝上線，月底前所有滿 50 美元的訂單都免運費。希望您喜歡全新的購物體驗。\n\nSunny Home 團隊",
       "prompt": "Choose the best answer for blank (2).",
       "options": [
         "With",
@@ -6440,6 +6854,16 @@
       "id": "toeic-text-011",
       "type": "multiple_choice",
       "passage": "Dear Customers,\n\nWe are excited to announce that our online store has been ___(1)___ redesigned. You can now track your orders in real time and save your favorite items. ___(2)___ celebrate the launch, all orders over $50 will receive free shipping until the end of the month. ___(3)___\n\nThe Sunny Home Team",
+      "glossary": {
+        "announce": "宣布",
+        "redesign": "重新設計",
+        "track": "追蹤",
+        "in real time": "即時",
+        "celebrate": "慶祝",
+        "launch": "推出；上線",
+        "free shipping": "免運費"
+      },
+      "passageTranslation": "親愛的顧客：\n\n很高興宣布，我們的網路商店已經全面（completely）改版。現在您可以即時追蹤訂單，也能收藏喜歡的商品。為了（To）慶祝上線，月底前所有滿 50 美元的訂單都免運費。希望您喜歡全新的購物體驗。\n\nSunny Home 團隊",
       "prompt": "Choose the best sentence for blank (3).",
       "options": [
         "Our store was founded in 1985.",
@@ -7010,6 +7434,14 @@
       "id": "toeic-listen-028",
       "type": "multiple_choice",
       "passage": "W: Hi Mark, the printer on our floor is out of toner again.\nM: I ordered more yesterday, but the supplier said it won't arrive until Thursday.\nW: Hmm, I need to print the training handouts for tomorrow morning.\nM: You could use the printer in the marketing department on the third floor.",
+      "glossary": {
+        "floor": "樓層",
+        "out of toner": "碳粉用完",
+        "supplier": "供應商",
+        "not … until": "直到…才",
+        "handout": "講義"
+      },
+      "passageTranslation": "女：嗨 Mark，我們這層的印表機又沒碳粉了。\n男：我昨天訂了，但供應商說要到週四才會送到。\n女：嗯，我需要印明天早上培訓用的講義。\n男：你可以用三樓行銷部的印表機。",
       "listening": true,
       "prompt": "What problem does the woman mention?",
       "options": [
@@ -7035,6 +7467,14 @@
       "id": "toeic-listen-029",
       "type": "multiple_choice",
       "passage": "W: Hi Mark, the printer on our floor is out of toner again.\nM: I ordered more yesterday, but the supplier said it won't arrive until Thursday.\nW: Hmm, I need to print the training handouts for tomorrow morning.\nM: You could use the printer in the marketing department on the third floor.",
+      "glossary": {
+        "floor": "樓層",
+        "out of toner": "碳粉用完",
+        "supplier": "供應商",
+        "not … until": "直到…才",
+        "handout": "講義"
+      },
+      "passageTranslation": "女：嗨 Mark，我們這層的印表機又沒碳粉了。\n男：我昨天訂了，但供應商說要到週四才會送到。\n女：嗯，我需要印明天早上培訓用的講義。\n男：你可以用三樓行銷部的印表機。",
       "listening": true,
       "prompt": "When will the order arrive?",
       "options": [
@@ -7060,6 +7500,14 @@
       "id": "toeic-listen-030",
       "type": "multiple_choice",
       "passage": "W: Hi Mark, the printer on our floor is out of toner again.\nM: I ordered more yesterday, but the supplier said it won't arrive until Thursday.\nW: Hmm, I need to print the training handouts for tomorrow morning.\nM: You could use the printer in the marketing department on the third floor.",
+      "glossary": {
+        "floor": "樓層",
+        "out of toner": "碳粉用完",
+        "supplier": "供應商",
+        "not … until": "直到…才",
+        "handout": "講義"
+      },
+      "passageTranslation": "女：嗨 Mark，我們這層的印表機又沒碳粉了。\n男：我昨天訂了，但供應商說要到週四才會送到。\n女：嗯，我需要印明天早上培訓用的講義。\n男：你可以用三樓行銷部的印表機。",
       "listening": true,
       "prompt": "What does the man suggest?",
       "options": [
@@ -7085,6 +7533,15 @@
       "id": "toeic-listen-031",
       "type": "multiple_choice",
       "passage": "M: Hello, this is David Lee from Brightway Consulting. I'm calling about your application for the analyst position.\nW: Oh, thank you for calling!\nM: We'd like to invite you for an interview next Tuesday at 10 a.m. Are you available?\nW: I have a class on Tuesday morning. Would the afternoon be possible?\nM: Sure, how about 2 p.m.?\nW: That works perfectly.",
+      "glossary": {
+        "consulting": "顧問（公司）",
+        "application": "應徵；申請",
+        "analyst": "分析師",
+        "position": "職位",
+        "available": "有空的",
+        "work perfectly": "完全沒問題"
+      },
+      "passageTranslation": "男：您好，我是 Brightway 顧問公司的 David Lee，打來是關於您應徵分析師職位的事。\n女：喔，謝謝您打來！\n男：我們想邀請您下週二早上 10 點來面試，您有空嗎？\n女：我週二早上有課，可以改下午嗎？\n男：當然，下午 2 點如何？\n女：完全沒問題。",
       "listening": true,
       "prompt": "Why is the man calling?",
       "options": [
@@ -7110,6 +7567,15 @@
       "id": "toeic-listen-032",
       "type": "multiple_choice",
       "passage": "M: Hello, this is David Lee from Brightway Consulting. I'm calling about your application for the analyst position.\nW: Oh, thank you for calling!\nM: We'd like to invite you for an interview next Tuesday at 10 a.m. Are you available?\nW: I have a class on Tuesday morning. Would the afternoon be possible?\nM: Sure, how about 2 p.m.?\nW: That works perfectly.",
+      "glossary": {
+        "consulting": "顧問（公司）",
+        "application": "應徵；申請",
+        "analyst": "分析師",
+        "position": "職位",
+        "available": "有空的",
+        "work perfectly": "完全沒問題"
+      },
+      "passageTranslation": "男：您好，我是 Brightway 顧問公司的 David Lee，打來是關於您應徵分析師職位的事。\n女：喔，謝謝您打來！\n男：我們想邀請您下週二早上 10 點來面試，您有空嗎？\n女：我週二早上有課，可以改下午嗎？\n男：當然，下午 2 點如何？\n女：完全沒問題。",
       "listening": true,
       "prompt": "Why can't the woman come in the morning?",
       "options": [
@@ -7135,6 +7601,15 @@
       "id": "toeic-listen-033",
       "type": "multiple_choice",
       "passage": "M: Hello, this is David Lee from Brightway Consulting. I'm calling about your application for the analyst position.\nW: Oh, thank you for calling!\nM: We'd like to invite you for an interview next Tuesday at 10 a.m. Are you available?\nW: I have a class on Tuesday morning. Would the afternoon be possible?\nM: Sure, how about 2 p.m.?\nW: That works perfectly.",
+      "glossary": {
+        "consulting": "顧問（公司）",
+        "application": "應徵；申請",
+        "analyst": "分析師",
+        "position": "職位",
+        "available": "有空的",
+        "work perfectly": "完全沒問題"
+      },
+      "passageTranslation": "男：您好，我是 Brightway 顧問公司的 David Lee，打來是關於您應徵分析師職位的事。\n女：喔，謝謝您打來！\n男：我們想邀請您下週二早上 10 點來面試，您有空嗎？\n女：我週二早上有課，可以改下午嗎？\n男：當然，下午 2 點如何？\n女：完全沒問題。",
       "listening": true,
       "prompt": "When will the interview most likely take place?",
       "options": [
@@ -7160,6 +7635,13 @@
       "id": "toeic-listen-034",
       "type": "multiple_choice",
       "passage": "W: Excuse me, how do I get to the convention center from here?\nM: It's about a fifteen-minute walk, or you can take the free shuttle bus. It leaves from the front entrance every twenty minutes.\nW: Great. When does the next one leave?\nM: In about five minutes, so you'd better hurry.",
+      "glossary": {
+        "convention center": "會議展覽中心",
+        "shuttle bus": "接駁車",
+        "front entrance": "正門",
+        "had better": "最好…"
+      },
+      "passageTranslation": "女：不好意思，請問從這裡怎麼去會展中心？\n男：走路大約 15 分鐘，或者可以搭免費接駁車，每 20 分鐘從正門發車。\n女：太好了，下一班什麼時候開？\n男：大約 5 分鐘後，所以您最好快一點。",
       "listening": true,
       "prompt": "Where does the woman want to go?",
       "options": [
@@ -7185,6 +7667,13 @@
       "id": "toeic-listen-035",
       "type": "multiple_choice",
       "passage": "W: Excuse me, how do I get to the convention center from here?\nM: It's about a fifteen-minute walk, or you can take the free shuttle bus. It leaves from the front entrance every twenty minutes.\nW: Great. When does the next one leave?\nM: In about five minutes, so you'd better hurry.",
+      "glossary": {
+        "convention center": "會議展覽中心",
+        "shuttle bus": "接駁車",
+        "front entrance": "正門",
+        "had better": "最好…"
+      },
+      "passageTranslation": "女：不好意思，請問從這裡怎麼去會展中心？\n男：走路大約 15 分鐘，或者可以搭免費接駁車，每 20 分鐘從正門發車。\n女：太好了，下一班什麼時候開？\n男：大約 5 分鐘後，所以您最好快一點。",
       "listening": true,
       "prompt": "How often does the shuttle bus leave?",
       "options": [
@@ -7210,6 +7699,13 @@
       "id": "toeic-listen-036",
       "type": "multiple_choice",
       "passage": "W: Excuse me, how do I get to the convention center from here?\nM: It's about a fifteen-minute walk, or you can take the free shuttle bus. It leaves from the front entrance every twenty minutes.\nW: Great. When does the next one leave?\nM: In about five minutes, so you'd better hurry.",
+      "glossary": {
+        "convention center": "會議展覽中心",
+        "shuttle bus": "接駁車",
+        "front entrance": "正門",
+        "had better": "最好…"
+      },
+      "passageTranslation": "女：不好意思，請問從這裡怎麼去會展中心？\n男：走路大約 15 分鐘，或者可以搭免費接駁車，每 20 分鐘從正門發車。\n女：太好了，下一班什麼時候開？\n男：大約 5 分鐘後，所以您最好快一點。",
       "listening": true,
       "prompt": "What does the man suggest the woman do?",
       "options": [
@@ -7235,6 +7731,14 @@
       "id": "toeic-listen-037",
       "type": "multiple_choice",
       "passage": "M: Did you see the sales report for last month?\nW: Yes. Online sales went up by twenty percent, but sales in our stores dropped.\nM: Maybe we should move some of our advertising budget to online ads.\nW: Good idea. Let's bring it up at Friday's meeting.",
+      "glossary": {
+        "sales report": "銷售報告",
+        "go up": "上升",
+        "drop": "下降",
+        "advertising budget": "廣告預算",
+        "bring up": "提出（討論）"
+      },
+      "passageTranslation": "男：你看了上個月的銷售報告嗎？\n女：看了。網路銷售成長了 20%，但實體店的銷售下滑了。\n男：也許我們該把一部分廣告預算移到網路廣告。\n女：好主意，週五開會時提出來討論吧。",
       "listening": true,
       "prompt": "What are the speakers mainly discussing?",
       "options": [
@@ -7260,6 +7764,14 @@
       "id": "toeic-listen-038",
       "type": "multiple_choice",
       "passage": "M: Did you see the sales report for last month?\nW: Yes. Online sales went up by twenty percent, but sales in our stores dropped.\nM: Maybe we should move some of our advertising budget to online ads.\nW: Good idea. Let's bring it up at Friday's meeting.",
+      "glossary": {
+        "sales report": "銷售報告",
+        "go up": "上升",
+        "drop": "下降",
+        "advertising budget": "廣告預算",
+        "bring up": "提出（討論）"
+      },
+      "passageTranslation": "男：你看了上個月的銷售報告嗎？\n女：看了。網路銷售成長了 20%，但實體店的銷售下滑了。\n男：也許我們該把一部分廣告預算移到網路廣告。\n女：好主意，週五開會時提出來討論吧。",
       "listening": true,
       "prompt": "What happened to online sales?",
       "options": [
@@ -7285,6 +7797,14 @@
       "id": "toeic-listen-039",
       "type": "multiple_choice",
       "passage": "M: Did you see the sales report for last month?\nW: Yes. Online sales went up by twenty percent, but sales in our stores dropped.\nM: Maybe we should move some of our advertising budget to online ads.\nW: Good idea. Let's bring it up at Friday's meeting.",
+      "glossary": {
+        "sales report": "銷售報告",
+        "go up": "上升",
+        "drop": "下降",
+        "advertising budget": "廣告預算",
+        "bring up": "提出（討論）"
+      },
+      "passageTranslation": "男：你看了上個月的銷售報告嗎？\n女：看了。網路銷售成長了 20%，但實體店的銷售下滑了。\n男：也許我們該把一部分廣告預算移到網路廣告。\n女：好主意，週五開會時提出來討論吧。",
       "listening": true,
       "prompt": "What will the speakers do on Friday?",
       "options": [
@@ -7310,6 +7830,13 @@
       "id": "toeic-listen-040",
       "type": "multiple_choice",
       "passage": "W: Excuse me, I ordered the vegetable pasta, but this has chicken in it.\nM: I'm so sorry about that. I'll bring you the correct dish right away.\nW: Thank you. I'm in a bit of a hurry, though. I have a meeting at one.\nM: I understand. I'll ask the kitchen to make it first, and your drink will be on the house.",
+      "glossary": {
+        "order": "點（餐）",
+        "dish": "一道菜",
+        "in a hurry": "趕時間",
+        "on the house": "店家招待；免費"
+      },
+      "passageTranslation": "女：不好意思，我點的是蔬菜義大利麵，但這盤有雞肉。\n男：非常抱歉，我馬上幫您送正確的餐點過來。\n女：謝謝。不過我有點趕時間，一點要開會。\n男：了解，我會請廚房優先做您的餐，而且您的飲料由本店招待。",
       "listening": true,
       "prompt": "Where most likely are the speakers?",
       "options": [
@@ -7335,6 +7862,13 @@
       "id": "toeic-listen-041",
       "type": "multiple_choice",
       "passage": "W: Excuse me, I ordered the vegetable pasta, but this has chicken in it.\nM: I'm so sorry about that. I'll bring you the correct dish right away.\nW: Thank you. I'm in a bit of a hurry, though. I have a meeting at one.\nM: I understand. I'll ask the kitchen to make it first, and your drink will be on the house.",
+      "glossary": {
+        "order": "點（餐）",
+        "dish": "一道菜",
+        "in a hurry": "趕時間",
+        "on the house": "店家招待；免費"
+      },
+      "passageTranslation": "女：不好意思，我點的是蔬菜義大利麵，但這盤有雞肉。\n男：非常抱歉，我馬上幫您送正確的餐點過來。\n女：謝謝。不過我有點趕時間，一點要開會。\n男：了解，我會請廚房優先做您的餐，而且您的飲料由本店招待。",
       "listening": true,
       "prompt": "What is the woman's problem?",
       "options": [
@@ -7360,6 +7894,13 @@
       "id": "toeic-listen-042",
       "type": "multiple_choice",
       "passage": "W: Excuse me, I ordered the vegetable pasta, but this has chicken in it.\nM: I'm so sorry about that. I'll bring you the correct dish right away.\nW: Thank you. I'm in a bit of a hurry, though. I have a meeting at one.\nM: I understand. I'll ask the kitchen to make it first, and your drink will be on the house.",
+      "glossary": {
+        "order": "點（餐）",
+        "dish": "一道菜",
+        "in a hurry": "趕時間",
+        "on the house": "店家招待；免費"
+      },
+      "passageTranslation": "女：不好意思，我點的是蔬菜義大利麵，但這盤有雞肉。\n男：非常抱歉，我馬上幫您送正確的餐點過來。\n女：謝謝。不過我有點趕時間，一點要開會。\n男：了解，我會請廚房優先做您的餐，而且您的飲料由本店招待。",
       "listening": true,
       "prompt": "What does the man offer?",
       "options": [
@@ -7385,6 +7926,15 @@
       "id": "toeic-listen-043",
       "type": "multiple_choice",
       "passage": "W: Hello, this message is for Mr. Kim. This is Sarah from Green Dental Clinic. I'm calling to remind you of your appointment tomorrow at 3:30 p.m. Please arrive ten minutes early to fill out some forms. If you need to reschedule, call us at 555-0182. Thank you.",
+      "glossary": {
+        "dental clinic": "牙醫診所",
+        "remind": "提醒",
+        "appointment": "預約；約診",
+        "fill out": "填寫",
+        "form": "表格",
+        "reschedule": "改期"
+      },
+      "passageTranslation": "女：您好，這是給 Kim 先生的留言。我是 Green 牙醫診所的 Sarah，打來提醒您明天下午 3:30 的約診。請提早十分鐘到，填寫一些表格。如果需要改時間，請撥 555-0182。謝謝。",
       "listening": true,
       "prompt": "Who most likely is the speaker?",
       "options": [
@@ -7410,6 +7960,15 @@
       "id": "toeic-listen-044",
       "type": "multiple_choice",
       "passage": "W: Hello, this message is for Mr. Kim. This is Sarah from Green Dental Clinic. I'm calling to remind you of your appointment tomorrow at 3:30 p.m. Please arrive ten minutes early to fill out some forms. If you need to reschedule, call us at 555-0182. Thank you.",
+      "glossary": {
+        "dental clinic": "牙醫診所",
+        "remind": "提醒",
+        "appointment": "預約；約診",
+        "fill out": "填寫",
+        "form": "表格",
+        "reschedule": "改期"
+      },
+      "passageTranslation": "女：您好，這是給 Kim 先生的留言。我是 Green 牙醫診所的 Sarah，打來提醒您明天下午 3:30 的約診。請提早十分鐘到，填寫一些表格。如果需要改時間，請撥 555-0182。謝謝。",
       "listening": true,
       "prompt": "What is the listener asked to do?",
       "options": [
@@ -7435,6 +7994,15 @@
       "id": "toeic-listen-045",
       "type": "multiple_choice",
       "passage": "W: Hello, this message is for Mr. Kim. This is Sarah from Green Dental Clinic. I'm calling to remind you of your appointment tomorrow at 3:30 p.m. Please arrive ten minutes early to fill out some forms. If you need to reschedule, call us at 555-0182. Thank you.",
+      "glossary": {
+        "dental clinic": "牙醫診所",
+        "remind": "提醒",
+        "appointment": "預約；約診",
+        "fill out": "填寫",
+        "form": "表格",
+        "reschedule": "改期"
+      },
+      "passageTranslation": "女：您好，這是給 Kim 先生的留言。我是 Green 牙醫診所的 Sarah，打來提醒您明天下午 3:30 的約診。請提早十分鐘到，填寫一些表格。如果需要改時間，請撥 555-0182。謝謝。",
       "listening": true,
       "prompt": "Why might the listener call the number in the message?",
       "options": [
@@ -7460,6 +8028,16 @@
       "id": "toeic-listen-046",
       "type": "multiple_choice",
       "passage": "M: Attention, passengers on Flight 382 to Tokyo. Due to heavy fog, the departure has been delayed by approximately two hours. The new departure time is 5:45 p.m. Passengers may collect a meal voucher at the service desk near Gate 15. We apologize for the inconvenience.",
+      "glossary": {
+        "attention": "請注意",
+        "due to": "由於",
+        "heavy fog": "濃霧",
+        "departure": "起飛；出發",
+        "approximately": "大約",
+        "meal voucher": "餐券",
+        "service desk": "服務台"
+      },
+      "passageTranslation": "男：搭乘 382 班機前往東京的旅客請注意。由於濃霧，起飛時間延誤約兩小時，新的起飛時間是下午 5:45。旅客可以到 15 號登機門旁的服務台領取餐券。造成不便，敬請見諒。",
       "listening": true,
       "prompt": "Why is the flight delayed?",
       "options": [
@@ -7485,6 +8063,16 @@
       "id": "toeic-listen-047",
       "type": "multiple_choice",
       "passage": "M: Attention, passengers on Flight 382 to Tokyo. Due to heavy fog, the departure has been delayed by approximately two hours. The new departure time is 5:45 p.m. Passengers may collect a meal voucher at the service desk near Gate 15. We apologize for the inconvenience.",
+      "glossary": {
+        "attention": "請注意",
+        "due to": "由於",
+        "heavy fog": "濃霧",
+        "departure": "起飛；出發",
+        "approximately": "大約",
+        "meal voucher": "餐券",
+        "service desk": "服務台"
+      },
+      "passageTranslation": "男：搭乘 382 班機前往東京的旅客請注意。由於濃霧，起飛時間延誤約兩小時，新的起飛時間是下午 5:45。旅客可以到 15 號登機門旁的服務台領取餐券。造成不便，敬請見諒。",
       "listening": true,
       "prompt": "What is the new departure time?",
       "options": [
@@ -7510,6 +8098,16 @@
       "id": "toeic-listen-048",
       "type": "multiple_choice",
       "passage": "M: Attention, passengers on Flight 382 to Tokyo. Due to heavy fog, the departure has been delayed by approximately two hours. The new departure time is 5:45 p.m. Passengers may collect a meal voucher at the service desk near Gate 15. We apologize for the inconvenience.",
+      "glossary": {
+        "attention": "請注意",
+        "due to": "由於",
+        "heavy fog": "濃霧",
+        "departure": "起飛；出發",
+        "approximately": "大約",
+        "meal voucher": "餐券",
+        "service desk": "服務台"
+      },
+      "passageTranslation": "男：搭乘 382 班機前往東京的旅客請注意。由於濃霧，起飛時間延誤約兩小時，新的起飛時間是下午 5:45。旅客可以到 15 號登機門旁的服務台領取餐券。造成不便，敬請見諒。",
       "listening": true,
       "prompt": "What can passengers get at the service desk?",
       "options": [
@@ -7535,6 +8133,16 @@
       "id": "toeic-listen-049",
       "type": "multiple_choice",
       "passage": "W: Good morning, everyone. Before we start, I'd like to welcome Daniel Chen, who joins our sales team today. Daniel worked in retail for six years before coming here. He'll be sitting next to the reception area this week while his office is being set up. Please stop by and introduce yourselves.",
+      "glossary": {
+        "welcome": "歡迎",
+        "join": "加入",
+        "retail": "零售業",
+        "reception area": "接待區",
+        "set up": "布置；設置",
+        "stop by": "順道過去",
+        "introduce yourself": "自我介紹"
+      },
+      "passageTranslation": "女：大家早安。開始之前，我想歡迎今天加入業務團隊的 Daniel Chen。Daniel 來這裡之前在零售業工作了六年。這週他的辦公室還在布置，所以他會先坐在接待區旁邊。請大家過去跟他打個招呼、自我介紹。",
       "listening": true,
       "prompt": "What is the purpose of the talk?",
       "options": [
@@ -7560,6 +8168,16 @@
       "id": "toeic-listen-050",
       "type": "multiple_choice",
       "passage": "W: Good morning, everyone. Before we start, I'd like to welcome Daniel Chen, who joins our sales team today. Daniel worked in retail for six years before coming here. He'll be sitting next to the reception area this week while his office is being set up. Please stop by and introduce yourselves.",
+      "glossary": {
+        "welcome": "歡迎",
+        "join": "加入",
+        "retail": "零售業",
+        "reception area": "接待區",
+        "set up": "布置；設置",
+        "stop by": "順道過去",
+        "introduce yourself": "自我介紹"
+      },
+      "passageTranslation": "女：大家早安。開始之前，我想歡迎今天加入業務團隊的 Daniel Chen。Daniel 來這裡之前在零售業工作了六年。這週他的辦公室還在布置，所以他會先坐在接待區旁邊。請大家過去跟他打個招呼、自我介紹。",
       "listening": true,
       "prompt": "What does the speaker say about Daniel?",
       "options": [
@@ -7585,6 +8203,16 @@
       "id": "toeic-listen-051",
       "type": "multiple_choice",
       "passage": "W: Good morning, everyone. Before we start, I'd like to welcome Daniel Chen, who joins our sales team today. Daniel worked in retail for six years before coming here. He'll be sitting next to the reception area this week while his office is being set up. Please stop by and introduce yourselves.",
+      "glossary": {
+        "welcome": "歡迎",
+        "join": "加入",
+        "retail": "零售業",
+        "reception area": "接待區",
+        "set up": "布置；設置",
+        "stop by": "順道過去",
+        "introduce yourself": "自我介紹"
+      },
+      "passageTranslation": "女：大家早安。開始之前，我想歡迎今天加入業務團隊的 Daniel Chen。Daniel 來這裡之前在零售業工作了六年。這週他的辦公室還在布置，所以他會先坐在接待區旁邊。請大家過去跟他打個招呼、自我介紹。",
       "listening": true,
       "prompt": "Why will Daniel sit near the reception area this week?",
       "options": [
@@ -7610,6 +8238,11 @@
       "id": "toeic-listen-052",
       "type": "multiple_choice",
       "passage": "M: Where's the nearest post office?",
+      "glossary": {
+        "nearest": "最近的",
+        "post office": "郵局"
+      },
+      "passageTranslation": "男：最近的郵局在哪裡？\n（正解：離這裡兩個街區。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7635,6 +8268,11 @@
       "id": "toeic-listen-053",
       "type": "multiple_choice",
       "passage": "W: Why was the meeting moved to Thursday?",
+      "glossary": {
+        "move": "（時間）挪到",
+        "out of town": "出城；出差不在"
+      },
+      "passageTranslation": "女：會議為什麼改到週四？\n（正解：經理在那之前都出差不在。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7660,6 +8298,11 @@
       "id": "toeic-listen-054",
       "type": "multiple_choice",
       "passage": "M: How much does the shipping cost?",
+      "glossary": {
+        "shipping": "運費；運送",
+        "cost": "花費"
+      },
+      "passageTranslation": "男：運費多少？\n（正解：訂單滿 50 美元免運。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7685,6 +8328,10 @@
       "id": "toeic-listen-055",
       "type": "multiple_choice",
       "passage": "W: Would you like tea or coffee?",
+      "glossary": {
+        "Would you like…?": "你想要…嗎？"
+      },
+      "passageTranslation": "女：你要喝茶還是咖啡？\n（正解：咖啡，謝謝。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7710,6 +8357,11 @@
       "id": "toeic-listen-056",
       "type": "multiple_choice",
       "passage": "M: Isn't the report due tomorrow?",
+      "glossary": {
+        "Isn't…?": "…不是嗎？（否定疑問）",
+        "due": "到期的"
+      },
+      "passageTranslation": "男：報告不是明天要交嗎？\n（正解：不是，下週一才要交。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7735,6 +8387,11 @@
       "id": "toeic-listen-057",
       "type": "multiple_choice",
       "passage": "W: Who should I give these forms to?",
+      "glossary": {
+        "form": "表格",
+        "leave": "留下；放著"
+      },
+      "passageTranslation": "女：這些表格要交給誰？\n（正解：放我桌上就好。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7760,6 +8417,10 @@
       "id": "toeic-listen-058",
       "type": "multiple_choice",
       "passage": "M: When did you start working here?",
+      "glossary": {
+        "start working": "開始工作"
+      },
+      "passageTranslation": "男：你什麼時候開始在這裡工作的？\n（正解：大約三年前。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7785,6 +8446,11 @@
       "id": "toeic-listen-059",
       "type": "multiple_choice",
       "passage": "W: Have you finished reading the contract?",
+      "glossary": {
+        "contract": "合約",
+        "Not yet.": "還沒。"
+      },
+      "passageTranslation": "女：你看完合約了嗎？\n（正解：還沒，我今天下午會看完。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7810,6 +8476,11 @@
       "id": "toeic-listen-060",
       "type": "multiple_choice",
       "passage": "M: Why don't you take tomorrow off?",
+      "glossary": {
+        "take … off": "請（某天）假",
+        "Why don't you…?": "你何不…？（建議）"
+      },
+      "passageTranslation": "男：你明天何不請一天假？\n（正解：好主意，謝謝。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7835,6 +8506,10 @@
       "id": "toeic-listen-061",
       "type": "multiple_choice",
       "passage": "W: Which bus goes to City Hall?",
+      "glossary": {
+        "City Hall": "市政府"
+      },
+      "passageTranslation": "女：哪一班公車到市政府？\n（正解：12 號。）",
       "listening": true,
       "prompt": "Choose the best response.",
       "options": [
@@ -7860,6 +8535,14 @@
       "id": "toeic-read-019",
       "type": "multiple_choice",
       "passage": "From: Linda Gomez\nTo: Project Team\nSubject: Change of Meeting Room\n\nHi all,\n\nThis Thursday's project meeting will be held in Room 402 instead of Room 210, because Room 210 is being used for job interviews. The time has not changed: 2:00–3:30 p.m. Please bring the latest version of your progress report. Coffee and snacks will be provided.\n\nThanks,\nLinda",
+      "glossary": {
+        "instead of": "而不是；取代",
+        "interview": "面試",
+        "latest version": "最新版本",
+        "progress report": "進度報告",
+        "provide": "提供"
+      },
+      "passageTranslation": "寄件人：Linda Gomez\n收件人：專案團隊\n主旨：會議室變更\n\n大家好：\n\n本週四的專案會議改在 402 室舉行，不在 210 室，因為 210 室要用來面試。時間不變：下午 2:00–3:30。請帶最新版本的進度報告。現場會提供咖啡和點心。\n\n謝謝，\nLinda",
       "prompt": "Why was the meeting room changed?",
       "options": [
         "The original room is being used for interviews",
@@ -7884,6 +8567,14 @@
       "id": "toeic-read-020",
       "type": "multiple_choice",
       "passage": "From: Linda Gomez\nTo: Project Team\nSubject: Change of Meeting Room\n\nHi all,\n\nThis Thursday's project meeting will be held in Room 402 instead of Room 210, because Room 210 is being used for job interviews. The time has not changed: 2:00–3:30 p.m. Please bring the latest version of your progress report. Coffee and snacks will be provided.\n\nThanks,\nLinda",
+      "glossary": {
+        "instead of": "而不是；取代",
+        "interview": "面試",
+        "latest version": "最新版本",
+        "progress report": "進度報告",
+        "provide": "提供"
+      },
+      "passageTranslation": "寄件人：Linda Gomez\n收件人：專案團隊\n主旨：會議室變更\n\n大家好：\n\n本週四的專案會議改在 402 室舉行，不在 210 室，因為 210 室要用來面試。時間不變：下午 2:00–3:30。請帶最新版本的進度報告。現場會提供咖啡和點心。\n\n謝謝，\nLinda",
       "prompt": "What should attendees bring?",
       "options": [
         "Their latest progress report",
@@ -7908,6 +8599,14 @@
       "id": "toeic-read-021",
       "type": "multiple_choice",
       "passage": "From: Linda Gomez\nTo: Project Team\nSubject: Change of Meeting Room\n\nHi all,\n\nThis Thursday's project meeting will be held in Room 402 instead of Room 210, because Room 210 is being used for job interviews. The time has not changed: 2:00–3:30 p.m. Please bring the latest version of your progress report. Coffee and snacks will be provided.\n\nThanks,\nLinda",
+      "glossary": {
+        "instead of": "而不是；取代",
+        "interview": "面試",
+        "latest version": "最新版本",
+        "progress report": "進度報告",
+        "provide": "提供"
+      },
+      "passageTranslation": "寄件人：Linda Gomez\n收件人：專案團隊\n主旨：會議室變更\n\n大家好：\n\n本週四的專案會議改在 402 室舉行，不在 210 室，因為 210 室要用來面試。時間不變：下午 2:00–3:30。請帶最新版本的進度報告。現場會提供咖啡和點心。\n\n謝謝，\nLinda",
       "prompt": "What is indicated about the meeting?",
       "options": [
         "It will start at 2:00 p.m.",
@@ -7932,6 +8631,15 @@
       "id": "toeic-read-022",
       "type": "multiple_choice",
       "passage": "★★★★☆ Great blender, but loud\nReviewed by Tom R.\n\nI bought the PowerMix 500 two months ago, and I use it almost every morning to make smoothies. It's easy to clean and very powerful. My only complaint is the noise — it's loud enough to wake up my roommate. Customer service was helpful when I asked about the warranty, which covers two years. Overall, I'd recommend it.",
+      "glossary": {
+        "blender": "果汁機",
+        "loud": "大聲的",
+        "smoothie": "果昔",
+        "complaint": "抱怨；不滿",
+        "warranty": "保固",
+        "recommend": "推薦"
+      },
+      "passageTranslation": "★★★★☆ 很棒的果汁機，但很吵\n評論者：Tom R.\n\n我兩個月前買了 PowerMix 500，幾乎每天早上都用它打果昔。它很好清洗，而且馬力很強。唯一的缺點是噪音，大聲到會吵醒我的室友。我詢問保固時客服很幫忙，保固期是兩年。整體來說，我推薦這台。",
       "prompt": "How often does Tom use the blender?",
       "options": [
         "Twice a month",
@@ -7956,6 +8664,15 @@
       "id": "toeic-read-023",
       "type": "multiple_choice",
       "passage": "★★★★☆ Great blender, but loud\nReviewed by Tom R.\n\nI bought the PowerMix 500 two months ago, and I use it almost every morning to make smoothies. It's easy to clean and very powerful. My only complaint is the noise — it's loud enough to wake up my roommate. Customer service was helpful when I asked about the warranty, which covers two years. Overall, I'd recommend it.",
+      "glossary": {
+        "blender": "果汁機",
+        "loud": "大聲的",
+        "smoothie": "果昔",
+        "complaint": "抱怨；不滿",
+        "warranty": "保固",
+        "recommend": "推薦"
+      },
+      "passageTranslation": "★★★★☆ 很棒的果汁機，但很吵\n評論者：Tom R.\n\n我兩個月前買了 PowerMix 500，幾乎每天早上都用它打果昔。它很好清洗，而且馬力很強。唯一的缺點是噪音，大聲到會吵醒我的室友。我詢問保固時客服很幫忙，保固期是兩年。整體來說，我推薦這台。",
       "prompt": "What does Tom dislike about the product?",
       "options": [
         "It is hard to clean",
@@ -7980,6 +8697,15 @@
       "id": "toeic-read-024",
       "type": "multiple_choice",
       "passage": "★★★★☆ Great blender, but loud\nReviewed by Tom R.\n\nI bought the PowerMix 500 two months ago, and I use it almost every morning to make smoothies. It's easy to clean and very powerful. My only complaint is the noise — it's loud enough to wake up my roommate. Customer service was helpful when I asked about the warranty, which covers two years. Overall, I'd recommend it.",
+      "glossary": {
+        "blender": "果汁機",
+        "loud": "大聲的",
+        "smoothie": "果昔",
+        "complaint": "抱怨；不滿",
+        "warranty": "保固",
+        "recommend": "推薦"
+      },
+      "passageTranslation": "★★★★☆ 很棒的果汁機，但很吵\n評論者：Tom R.\n\n我兩個月前買了 PowerMix 500，幾乎每天早上都用它打果昔。它很好清洗，而且馬力很強。唯一的缺點是噪音，大聲到會吵醒我的室友。我詢問保固時客服很幫忙，保固期是兩年。整體來說，我推薦這台。",
       "prompt": "How long is the warranty?",
       "options": [
         "One year",
@@ -8004,6 +8730,15 @@
       "id": "toeic-read-025",
       "type": "multiple_choice",
       "passage": "Free Workshop: Writing Effective Business Emails\n\nDate: Wednesday, April 17\nTime: 6:00–8:00 p.m.\nPlace: Downtown Public Library, Room B\n\nLearn how to write clear, polite and professional emails. Space is limited to 25 participants. Register online at www.dtlibrary.org/events by April 12. Participants should bring a laptop or tablet.",
+      "glossary": {
+        "workshop": "工作坊",
+        "effective": "有效的",
+        "professional": "專業的",
+        "participant": "參加者",
+        "register": "報名",
+        "limited": "有限的"
+      },
+      "passageTranslation": "免費工作坊：撰寫有效的商業 email\n\n日期：4 月 17 日（週三）\n時間：晚上 6:00–8:00\n地點：市中心公共圖書館 B 室\n\n學習如何寫出清楚、有禮貌又專業的 email。名額限 25 人。請在 4 月 12 日前到 www.dtlibrary.org/events 線上報名。參加者請自備筆電或平板。",
       "prompt": "What is the workshop about?",
       "options": [
         "Learning a new language",
@@ -8028,6 +8763,15 @@
       "id": "toeic-read-026",
       "type": "multiple_choice",
       "passage": "Free Workshop: Writing Effective Business Emails\n\nDate: Wednesday, April 17\nTime: 6:00–8:00 p.m.\nPlace: Downtown Public Library, Room B\n\nLearn how to write clear, polite and professional emails. Space is limited to 25 participants. Register online at www.dtlibrary.org/events by April 12. Participants should bring a laptop or tablet.",
+      "glossary": {
+        "workshop": "工作坊",
+        "effective": "有效的",
+        "professional": "專業的",
+        "participant": "參加者",
+        "register": "報名",
+        "limited": "有限的"
+      },
+      "passageTranslation": "免費工作坊：撰寫有效的商業 email\n\n日期：4 月 17 日（週三）\n時間：晚上 6:00–8:00\n地點：市中心公共圖書館 B 室\n\n學習如何寫出清楚、有禮貌又專業的 email。名額限 25 人。請在 4 月 12 日前到 www.dtlibrary.org/events 線上報名。參加者請自備筆電或平板。",
       "prompt": "What is the registration deadline?",
       "options": [
         "April 6",
@@ -8052,6 +8796,15 @@
       "id": "toeic-read-027",
       "type": "multiple_choice",
       "passage": "Free Workshop: Writing Effective Business Emails\n\nDate: Wednesday, April 17\nTime: 6:00–8:00 p.m.\nPlace: Downtown Public Library, Room B\n\nLearn how to write clear, polite and professional emails. Space is limited to 25 participants. Register online at www.dtlibrary.org/events by April 12. Participants should bring a laptop or tablet.",
+      "glossary": {
+        "workshop": "工作坊",
+        "effective": "有效的",
+        "professional": "專業的",
+        "participant": "參加者",
+        "register": "報名",
+        "limited": "有限的"
+      },
+      "passageTranslation": "免費工作坊：撰寫有效的商業 email\n\n日期：4 月 17 日（週三）\n時間：晚上 6:00–8:00\n地點：市中心公共圖書館 B 室\n\n學習如何寫出清楚、有禮貌又專業的 email。名額限 25 人。請在 4 月 12 日前到 www.dtlibrary.org/events 線上報名。參加者請自備筆電或平板。",
       "prompt": "What should participants bring?",
       "options": [
         "A printed résumé",
@@ -8076,6 +8829,15 @@
       "id": "toeic-read-028",
       "type": "multiple_choice",
       "passage": "Dear Valued Customer,\n\nStarting June 1, the monthly fee for our Basic Internet plan will increase from $30 to $35 due to rising network costs. Customers who sign a one-year contract before May 31 will keep the current price for twelve months. To sign up, visit any of our stores or call 0800-555-123.\n\nSkyNet Communications",
+      "glossary": {
+        "valued customer": "尊貴的顧客",
+        "monthly fee": "月費",
+        "increase": "調漲",
+        "due to": "由於",
+        "rising": "上漲的",
+        "sign a contract": "簽約"
+      },
+      "passageTranslation": "親愛的顧客您好：\n\n由於網路成本上漲，從 6 月 1 日起，基本上網方案的月費將從 30 美元調漲到 35 美元。在 5 月 31 日前簽訂一年合約的顧客，可以在 12 個月內維持目前的價格。辦理方式：請到任一門市或撥打 0800-555-123。\n\nSkyNet 通訊",
       "prompt": "What is the main purpose of the letter?",
       "options": [
         "To confirm a payment",
@@ -8100,6 +8862,15 @@
       "id": "toeic-read-029",
       "type": "multiple_choice",
       "passage": "Dear Valued Customer,\n\nStarting June 1, the monthly fee for our Basic Internet plan will increase from $30 to $35 due to rising network costs. Customers who sign a one-year contract before May 31 will keep the current price for twelve months. To sign up, visit any of our stores or call 0800-555-123.\n\nSkyNet Communications",
+      "glossary": {
+        "valued customer": "尊貴的顧客",
+        "monthly fee": "月費",
+        "increase": "調漲",
+        "due to": "由於",
+        "rising": "上漲的",
+        "sign a contract": "簽約"
+      },
+      "passageTranslation": "親愛的顧客您好：\n\n由於網路成本上漲，從 6 月 1 日起，基本上網方案的月費將從 30 美元調漲到 35 美元。在 5 月 31 日前簽訂一年合約的顧客，可以在 12 個月內維持目前的價格。辦理方式：請到任一門市或撥打 0800-555-123。\n\nSkyNet 通訊",
       "prompt": "How much will the Basic plan cost per month after June 1?",
       "options": [
         "$30",
@@ -8124,6 +8895,15 @@
       "id": "toeic-read-030",
       "type": "multiple_choice",
       "passage": "Dear Valued Customer,\n\nStarting June 1, the monthly fee for our Basic Internet plan will increase from $30 to $35 due to rising network costs. Customers who sign a one-year contract before May 31 will keep the current price for twelve months. To sign up, visit any of our stores or call 0800-555-123.\n\nSkyNet Communications",
+      "glossary": {
+        "valued customer": "尊貴的顧客",
+        "monthly fee": "月費",
+        "increase": "調漲",
+        "due to": "由於",
+        "rising": "上漲的",
+        "sign a contract": "簽約"
+      },
+      "passageTranslation": "親愛的顧客您好：\n\n由於網路成本上漲，從 6 月 1 日起，基本上網方案的月費將從 30 美元調漲到 35 美元。在 5 月 31 日前簽訂一年合約的顧客，可以在 12 個月內維持目前的價格。辦理方式：請到任一門市或撥打 0800-555-123。\n\nSkyNet 通訊",
       "prompt": "How can customers keep the current price?",
       "options": [
         "By signing a one-year contract before May 31",
@@ -8148,6 +8928,15 @@
       "id": "toeic-text-012",
       "type": "grammar",
       "passage": "To all staff,\n\nPlease note that the office will be ___(1)___ on Friday afternoon so that the carpets can be cleaned. Employees are encouraged to work from home that afternoon. ___(2)___, please make sure your desks are clear of papers by noon. We ___(3)___ your cooperation.\n\nFacilities Department",
+      "glossary": {
+        "please note that": "請注意",
+        "carpet": "地毯",
+        "encourage": "鼓勵",
+        "work from home": "在家工作",
+        "clear of": "清空…",
+        "cooperation": "配合"
+      },
+      "passageTranslation": "致全體員工：\n\n請注意，週五下午辦公室將關閉（closed），以便清洗地毯。鼓勵大家當天下午在家工作。此外（In addition），請在中午前把桌上的文件清空。感謝（appreciate）大家的配合。\n\n總務部",
       "prompt": "Choose the best answer for blank (1).",
       "options": [
         "close",
@@ -8172,6 +8961,15 @@
       "id": "toeic-text-013",
       "type": "multiple_choice",
       "passage": "To all staff,\n\nPlease note that the office will be ___(1)___ on Friday afternoon so that the carpets can be cleaned. Employees are encouraged to work from home that afternoon. ___(2)___, please make sure your desks are clear of papers by noon. We ___(3)___ your cooperation.\n\nFacilities Department",
+      "glossary": {
+        "please note that": "請注意",
+        "carpet": "地毯",
+        "encourage": "鼓勵",
+        "work from home": "在家工作",
+        "clear of": "清空…",
+        "cooperation": "配合"
+      },
+      "passageTranslation": "致全體員工：\n\n請注意，週五下午辦公室將關閉（closed），以便清洗地毯。鼓勵大家當天下午在家工作。此外（In addition），請在中午前把桌上的文件清空。感謝（appreciate）大家的配合。\n\n總務部",
       "prompt": "Choose the best answer for blank (2).",
       "options": [
         "However",
@@ -8196,6 +8994,15 @@
       "id": "toeic-text-014",
       "type": "grammar",
       "passage": "To all staff,\n\nPlease note that the office will be ___(1)___ on Friday afternoon so that the carpets can be cleaned. Employees are encouraged to work from home that afternoon. ___(2)___, please make sure your desks are clear of papers by noon. We ___(3)___ your cooperation.\n\nFacilities Department",
+      "glossary": {
+        "please note that": "請注意",
+        "carpet": "地毯",
+        "encourage": "鼓勵",
+        "work from home": "在家工作",
+        "clear of": "清空…",
+        "cooperation": "配合"
+      },
+      "passageTranslation": "致全體員工：\n\n請注意，週五下午辦公室將關閉（closed），以便清洗地毯。鼓勵大家當天下午在家工作。此外（In addition），請在中午前把桌上的文件清空。感謝（appreciate）大家的配合。\n\n總務部",
       "prompt": "Choose the best answer for blank (3).",
       "options": [
         "appreciatively",
@@ -8220,6 +9027,15 @@
       "id": "toeic-text-015",
       "type": "grammar",
       "passage": "Dear Ms. Moore,\n\nThank you for applying for the position of graphic designer at Lumen Studio. We were very impressed ___(1)___ your portfolio, and we would like to invite you to a second interview with our creative director. ___(2)___ Please reply to this email with the times that ___(3)___ you best.\n\nBest regards,\nKevin Hall, HR Manager",
+      "glossary": {
+        "apply for": "應徵",
+        "graphic designer": "平面設計師",
+        "be impressed with": "對…印象深刻",
+        "portfolio": "作品集",
+        "creative director": "創意總監",
+        "suit": "適合"
+      },
+      "passageTranslation": "Moore 小姐您好：\n\n感謝您應徵 Lumen 工作室的平面設計師職位。我們對（with）您的作品集印象非常深刻，想邀請您與我們的創意總監進行第二次面試。面試大約需要一小時。請回覆這封 email，告訴我們您最方便（suit）的時間。\n\n人資經理 Kevin Hall 敬上",
       "prompt": "Choose the best answer for blank (1).",
       "options": [
         "on",
@@ -8244,6 +9060,15 @@
       "id": "toeic-text-016",
       "type": "multiple_choice",
       "passage": "Dear Ms. Moore,\n\nThank you for applying for the position of graphic designer at Lumen Studio. We were very impressed ___(1)___ your portfolio, and we would like to invite you to a second interview with our creative director. ___(2)___ Please reply to this email with the times that ___(3)___ you best.\n\nBest regards,\nKevin Hall, HR Manager",
+      "glossary": {
+        "apply for": "應徵",
+        "graphic designer": "平面設計師",
+        "be impressed with": "對…印象深刻",
+        "portfolio": "作品集",
+        "creative director": "創意總監",
+        "suit": "適合"
+      },
+      "passageTranslation": "Moore 小姐您好：\n\n感謝您應徵 Lumen 工作室的平面設計師職位。我們對（with）您的作品集印象非常深刻，想邀請您與我們的創意總監進行第二次面試。面試大約需要一小時。請回覆這封 email，告訴我們您最方便（suit）的時間。\n\n人資經理 Kevin Hall 敬上",
       "prompt": "Choose the best sentence for blank (2).",
       "options": [
         "Your order has been shipped.",
@@ -8268,6 +9093,15 @@
       "id": "toeic-text-017",
       "type": "grammar",
       "passage": "Dear Ms. Moore,\n\nThank you for applying for the position of graphic designer at Lumen Studio. We were very impressed ___(1)___ your portfolio, and we would like to invite you to a second interview with our creative director. ___(2)___ Please reply to this email with the times that ___(3)___ you best.\n\nBest regards,\nKevin Hall, HR Manager",
+      "glossary": {
+        "apply for": "應徵",
+        "graphic designer": "平面設計師",
+        "be impressed with": "對…印象深刻",
+        "portfolio": "作品集",
+        "creative director": "創意總監",
+        "suit": "適合"
+      },
+      "passageTranslation": "Moore 小姐您好：\n\n感謝您應徵 Lumen 工作室的平面設計師職位。我們對（with）您的作品集印象非常深刻，想邀請您與我們的創意總監進行第二次面試。面試大約需要一小時。請回覆這封 email，告訴我們您最方便（suit）的時間。\n\n人資經理 Kevin Hall 敬上",
       "prompt": "Choose the best answer for blank (3).",
       "options": [
         "suits",

@@ -66,8 +66,25 @@ class SmartSelectionAndStatsTest {
 
     @Test fun `filter by category`() {
         val all = listOf(listening("l1", "M: a"), reading("r1", "x"), question("g1"))
-        val picked = QuestionSelector.selectSmart(all, QuestionSelector.Filter(category = QuestionCategory.LISTENING), 10, emptyMap())
+        val picked = QuestionSelector.selectSmart(all, QuestionSelector.Filter(categories = setOf(QuestionCategory.LISTENING)), 10, emptyMap())
         assertEquals(listOf("l1"), picked.map { it.id })
+    }
+
+    @Test fun `multi select filter is OR within a field and AND across fields`() {
+        val all = listOf(
+            question("a", tags = listOf("travel"), difficulty = 1),
+            question("b", tags = listOf("work"), difficulty = 2),
+            question("c", tags = listOf("food"), difficulty = 1),
+            listening("d", "M: x").copy(tags = listOf("travel")),
+        )
+        val f = QuestionSelector.Filter(tags = setOf("travel", "work"), difficulties = setOf(1, 2))
+        assertEquals(setOf("a", "b", "d"), QuestionSelector.filter(all, f).map { it.id }.toSet())
+        val f2 = f.copy(categories = setOf(QuestionCategory.LISTENING))
+        assertEquals(listOf("d"), QuestionSelector.filter(all, f2).map { it.id })
+        // 編碼成路由字串再解回來要一樣
+        val round = QuestionSelector.Filter.decode(f2.encodeTags(), f2.encodeDifficulties(), f2.encodeCategories())
+        assertEquals(f2, round)
+        assertEquals(QuestionSelector.Filter(), QuestionSelector.Filter.decode(null, null, null))
     }
 
     @Test fun `stats summary`() {

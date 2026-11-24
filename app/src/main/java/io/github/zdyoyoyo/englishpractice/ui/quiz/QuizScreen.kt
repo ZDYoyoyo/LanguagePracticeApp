@@ -13,6 +13,8 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.StarBorder
@@ -192,11 +194,19 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
     }
 }
 
-/** 閱讀短文 / 聽力對話。聽力題在作答前隱藏原文（可以按「顯示原文」偷看） */
+/**
+ * 閱讀短文 / 聽力對話。
+ * - 聽力題在作答前隱藏原文（可以按「顯示原文」偷看）
+ * - 原文可長按選取，用手機內建的「翻譯」查任何字
+ * - 「生字」列出重點單字（可隨時打開）；「中文翻譯」作答後才能看
+ */
 @Composable
 private fun PassageCard(q: Question, passage: String, revealed: Boolean, pronouncer: Pronouncer) {
     var showText by remember(q.id) { mutableStateOf(false) }
     var ttsMissing by remember(q.id) { mutableStateOf(false) }
+    var showGlossary by remember(q.id) { mutableStateOf(false) }
+    var showTranslation by remember(q.id) { mutableStateOf(false) }
+    val textVisible = !q.listening || revealed || showText
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             if (q.listening) {
@@ -204,12 +214,41 @@ private fun PassageCard(q: Question, passage: String, revealed: Boolean, pronoun
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(passage) }) { Text("🔊 播放") }
                     OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(passage, slow = true) }) { Text("🐢 慢速") }
-                    if (!revealed && !showText) TextButton(onClick = { showText = true }) { Text("顯示原文") }
+                    if (!textVisible) TextButton(onClick = { showText = true }) { Text("顯示原文") }
                 }
                 if (ttsMissing) Text("這支手機沒有英文語音，請到系統設定安裝「文字轉語音」英文語音資料", color = WrongRed)
-                if (revealed || showText) Text(passage, style = MaterialTheme.typography.bodyMedium)
-            } else {
-                Text(passage, style = MaterialTheme.typography.bodyMedium)
+            }
+            if (textVisible) {
+                // SelectionContainer：長按可以選取文字 → 複製 / 用手機的「翻譯」查單字
+                SelectionContainer { Text(passage, style = MaterialTheme.typography.bodyMedium) }
+                Text("💡 長按文字可選取，用手機的「翻譯」查任何單字", style = MaterialTheme.typography.labelSmall)
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                if (q.glossary.isNotEmpty()) {
+                    TextButton(onClick = { showGlossary = !showGlossary }) {
+                        Text(if (showGlossary) "收起生字" else "📖 生字（${q.glossary.size}）")
+                    }
+                }
+                if (revealed && !q.passageTranslation.isNullOrBlank()) {
+                    TextButton(onClick = { showTranslation = !showTranslation }) {
+                        Text(if (showTranslation) "收起翻譯" else "🈶 中文翻譯")
+                    }
+                }
+            }
+            if (showGlossary) {
+                q.glossary.forEach { (word, meaning) ->
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(word, style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(0.45f))
+                        Text(meaning, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(0.45f))
+                        IconButton(onClick = { pronouncer.speak(word.replace("…", "")) }, modifier = Modifier.weight(0.1f)) {
+                            Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = "聽 $word")
+                        }
+                    }
+                }
+            }
+            if (showTranslation && revealed) {
+                HorizontalDivider()
+                SelectionContainer { Text(q.passageTranslation.orEmpty(), style = MaterialTheme.typography.bodyMedium) }
             }
         }
     }

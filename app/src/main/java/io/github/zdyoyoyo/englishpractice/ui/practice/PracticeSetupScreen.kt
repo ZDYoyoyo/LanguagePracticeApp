@@ -40,9 +40,7 @@ import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 
 /** 選題設定 */
 data class PracticeOptions(
-    val tag: String?,
-    val difficulty: Int?,
-    val category: QuestionCategory?,
+    val filter: QuestionSelector.Filter,
     val count: Int,
     val preferNew: Boolean,
 )
@@ -55,13 +53,18 @@ fun PracticeSetupScreen(
     vm: PracticeSetupViewModel = viewModel(factory = PracticeSetupViewModel.Factory),
 ) {
     val tags by vm.tags.collectAsStateWithLifecycle()
-    var tag by rememberSaveable { mutableStateOf<String?>(null) }
-    var difficulty by rememberSaveable { mutableStateOf<Int?>(null) }
-    var categoryKey by rememberSaveable { mutableStateOf<String?>(null) }
+    // 複選：用 ArrayList 存，rememberSaveable 才能在旋轉螢幕後保留
+    var selectedTags by rememberSaveable { mutableStateOf(listOf<String>()) }
+    var selectedDifficulties by rememberSaveable { mutableStateOf(listOf<Int>()) }
+    var selectedCategories by rememberSaveable { mutableStateOf(listOf<String>()) }
     var count by rememberSaveable { mutableIntStateOf(QuestionSelector.DEFAULT_SESSION_SIZE) }
     var preferNew by rememberSaveable { mutableStateOf(true) }
-    val category = QuestionCategory.fromKey(categoryKey)
-    val matching = vm.countMatching(QuestionSelector.Filter(tag, difficulty, category))
+    val filter = QuestionSelector.Filter(
+        tags = selectedTags.toSet(),
+        difficulties = selectedDifficulties.toSet(),
+        categories = selectedCategories.mapNotNull { QuestionCategory.fromKey(it) }.toSet(),
+    )
+    val matching = vm.countMatching(filter)
 
     Scaffold(
         topBar = {
@@ -75,7 +78,7 @@ fun PracticeSetupScreen(
                 Column(Modifier.navigationBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp)) {
                     Text("符合條件：$matching 題・本輪最多 ${minOf(count, matching)} 題", style = MaterialTheme.typography.bodyMedium)
                     Button(
-                        onClick = { onStart(PracticeOptions(tag, difficulty, category, count, preferNew)) },
+                        onClick = { onStart(PracticeOptions(filter, count, preferNew)) },
                         enabled = matching > 0,
                         modifier = Modifier.fillMaxWidth(),
                     ) { Text("開始") }
@@ -87,27 +90,25 @@ fun PracticeSetupScreen(
             Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            Text("可以複選；不選 = 全部。", style = MaterialTheme.typography.bodySmall)
             Text("題型", style = MaterialTheme.typography.titleMedium)
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = category == null, onClick = { categoryKey = null }, label = { Text("全部") })
-                QuestionCategory.entries.forEach { c ->
-                    FilterChip(selected = category == c, onClick = { categoryKey = c.key }, label = { Text(c.label) })
-                }
-            }
+            MultiChips(
+                options = QuestionCategory.entries.map { it.key to it.label },
+                selected = selectedCategories,
+                onChange = { selectedCategories = it },
+            )
             Text("主題", style = MaterialTheme.typography.titleMedium)
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = tag == null, onClick = { tag = null }, label = { Text("全部") })
-                TagLabels.sort(tags).forEach { t ->
-                    FilterChip(selected = tag == t, onClick = { tag = t }, label = { Text(TagLabels.label(t)) })
-                }
-            }
+            MultiChips(
+                options = TagLabels.sort(tags).map { it to TagLabels.label(it) },
+                selected = selectedTags,
+                onChange = { selectedTags = it },
+            )
             Text("難度", style = MaterialTheme.typography.titleMedium)
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = difficulty == null, onClick = { difficulty = null }, label = { Text("全部") })
-                (1..3).forEach { d ->
-                    FilterChip(selected = difficulty == d, onClick = { difficulty = d }, label = { Text(Difficulty.label(d)) })
-                }
-            }
+            MultiChips(
+                options = (1..3).map { it to Difficulty.label(it) },
+                selected = selectedDifficulties,
+                onChange = { selectedDifficulties = it },
+            )
             Text("每輪題數", style = MaterialTheme.typography.titleMedium)
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 QuestionSelector.SESSION_SIZES.forEach { n ->
@@ -122,6 +123,23 @@ fun PracticeSetupScreen(
                 Switch(checked = preferNew, onCheckedChange = { preferNew = it })
             }
             Text("同一篇閱讀或聽力的題目會排在一起出現。", style = MaterialTheme.typography.bodySmall)
+        }
+    }
+}
+
+/** 一排可複選的 chip，第一顆「全部」= 清空選擇 */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun <T> MultiChips(options: List<Pair<T, String>>, selected: List<T>, onChange: (List<T>) -> Unit) {
+    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        FilterChip(selected = selected.isEmpty(), onClick = { onChange(emptyList()) }, label = { Text("全部") })
+        options.forEach { (value, label) ->
+            val isOn = value in selected
+            FilterChip(
+                selected = isOn,
+                onClick = { onChange(if (isOn) selected - value else selected + value) },
+                label = { Text(label) },
+            )
         }
     }
 }

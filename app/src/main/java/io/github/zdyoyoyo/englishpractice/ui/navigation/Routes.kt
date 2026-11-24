@@ -16,10 +16,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class QuizRoute(
     val mode: String,
-    val tag: String? = null,
-    val difficulty: Int? = null,
-    /** QuestionCategory.key，null = 全部題型 */
-    val category: String? = null,
+    /** 以下三個篩選都可複選，用逗號分隔；null = 全部 */
+    val tags: String? = null,
+    val difficulties: String? = null,
+    /** QuestionCategory.key 清單 */
+    val categories: String? = null,
     val count: Int = 10,
     /** 優先出沒做過 / 常錯的題目 */
     val preferNew: Boolean = true,

@@ -4,6 +4,9 @@ package io.github.zdyoyoyo.englishpractice.speech
 object DialogueScript {
     data class Line(val speaker: String?, val text: String, val pitch: Float)
 
+    const val MALE_PITCH = 0.85f
+    const val FEMALE_PITCH = 1.2f
+
     private val label = Regex("^\\s*(M|W|Man|Woman|A|B)\\s*[:：]\\s*", RegexOption.IGNORE_CASE)
 
     fun parse(script: String): List<Line> = script.lines()
@@ -14,8 +17,8 @@ object DialogueScript {
             val speaker = m?.groupValues?.get(1)?.uppercase()
             val text = if (m != null) raw.substring(m.range.last + 1).trim() else raw
             val pitch = when (speaker) {
-                "M", "MAN", "A" -> 0.85f
-                "W", "WOMAN", "B" -> 1.2f
+                "M", "MAN", "A" -> MALE_PITCH
+                "W", "WOMAN", "B" -> FEMALE_PITCH
                 else -> 1.0f
             }
             Line(speaker, text, pitch)
