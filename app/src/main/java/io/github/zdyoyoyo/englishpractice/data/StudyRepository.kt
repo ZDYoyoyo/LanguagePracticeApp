@@ -52,6 +52,7 @@ class StudyRepository(
     val activeWrongAnswers: Flow<List<WrongAnswerEntity>> = wrongDao.observeActive()
     val activeWrongCount: Flow<Int> = wrongDao.observeActiveCount()
     val totalAttempts: Flow<Int> = attemptDao.observeTotal()
+    val distinctAnswered: Flow<Int> = attemptDao.observeDistinctQuestions()
     val favorites: Flow<List<FavoriteEntity>> = favoriteDao.observeAll()
     val favoriteCount: Flow<Int> = favoriteDao.observeCount()
     val favoriteIds: Flow<List<String>> = favoriteDao.observeIds()

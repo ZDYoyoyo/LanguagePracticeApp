@@ -40,6 +40,7 @@ class FakeAttemptDao : AttemptDao {
         return id
     }
     override fun observeTotal(): Flow<Int> = items.map { it.size }
+    override fun observeDistinctQuestions(): Flow<Int> = items.map { list -> list.map { it.questionId }.distinct().size }
     override suspend fun getAll() = items.value
     override suspend fun insertAll(items: List<AttemptEntity>) { this.items.value = this.items.value + items }
     override suspend fun clear() { items.value = emptyList() }

@@ -66,7 +66,7 @@ fun StatsScreen(onBack: () -> Unit, vm: StatsViewModel = viewModel(factory = Sta
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                StatTile("累計作答", "${s.totalAttempts}", Modifier.weight(1f))
+                StatTile("累計作答次數", "${s.totalAttempts}", Modifier.weight(1f))
                 StatTile("正確率", percent(s.accuracy), Modifier.weight(1f))
                 StatTile("連續打卡", "${s.streak.current} 天", Modifier.weight(1f))
             }
@@ -75,6 +75,7 @@ fun StatsScreen(onBack: () -> Unit, vm: StatsViewModel = viewModel(factory = Sta
                 StatTile("已熟練", "${s.matureQuestions}", Modifier.weight(1f))
                 StatTile("學習天數", "${s.studyDays}", Modifier.weight(1f))
             }
+            Text("「累計作答次數」= 每回答一題算一次（同一題做兩次算兩次）；「做過的題目」不重複計算。", style = MaterialTheme.typography.bodySmall)
             Text("「已熟練」= 複習間隔已拉長到 ${StatsCalculator.MATURE_INTERVAL_DAYS} 天以上的題目", style = MaterialTheme.typography.bodySmall)
 
             Card(Modifier.fillMaxWidth()) {
