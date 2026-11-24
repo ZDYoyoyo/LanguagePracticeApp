@@ -27,6 +27,7 @@ enum class StudyMode(val key: String) {
     REVIEW("review"),
     FAVORITES("fav"),
     DAILY("daily"),
+    MOCK("mock"),
     PK("pk");
 
     companion object {

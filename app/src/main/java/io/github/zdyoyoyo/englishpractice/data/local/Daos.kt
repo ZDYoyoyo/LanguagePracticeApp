@@ -98,6 +98,9 @@ interface StudyDayDao {
     @Query("SELECT epochDay FROM study_days")
     fun observeDays(): Flow<List<Long>>
 
+    @Query("SELECT * FROM study_days WHERE epochDay = :epochDay")
+    fun observeDay(epochDay: Long): Flow<StudyDayEntity?>
+
     @Query("SELECT epochDay FROM study_days")
     suspend fun getDays(): List<Long>
 
@@ -138,5 +141,23 @@ interface FavoriteDao {
     suspend fun delete(questionId: String)
 
     @Query("DELETE FROM favorites")
+    suspend fun clear()
+}
+
+@Dao
+interface MockResultDao {
+    @Insert
+    suspend fun insert(result: MockResultEntity): Long
+
+    @Query("SELECT * FROM mock_results ORDER BY takenAt DESC LIMIT :limit")
+    fun observeRecent(limit: Int): Flow<List<MockResultEntity>>
+
+    @Query("SELECT * FROM mock_results ORDER BY takenAt")
+    suspend fun getAll(): List<MockResultEntity>
+
+    @Insert
+    suspend fun insertAll(items: List<MockResultEntity>)
+
+    @Query("DELETE FROM mock_results")
     suspend fun clear()
 }

@@ -6,6 +6,7 @@ import io.github.zdyoyoyo.englishpractice.fakes.DirectTx
 import io.github.zdyoyoyo.englishpractice.fakes.FakeAttemptDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeClock
 import io.github.zdyoyoyo.englishpractice.fakes.FakeFavoriteDao
+import io.github.zdyoyoyo.englishpractice.fakes.FakeMockResultDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeReviewCardDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeStudyDayDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeWrongAnswerDao
@@ -53,6 +54,7 @@ class SyncManagerTest {
         override var lastLocalChangeAt = 0L
         override var lastSyncedAt = 0L
         override var hintCredits = 0
+        override var streakFreezes = 0
     }
 
     private class MemStore(var content: String? = null) : RemoteBackupStore {
@@ -68,9 +70,10 @@ class SyncManagerTest {
         val cards = FakeReviewCardDao()
         val days = FakeStudyDayDao()
         val favs = FakeFavoriteDao()
+        val mocks = FakeMockResultDao()
         val state = FakeState()
         val study = StudyRepository(DirectTx, attempts, wrongs, cards, days, favs, clock, { state.lastLocalChangeAt = it })
-        val sync = SyncManager(BackupSerializer(DirectTx, attempts, wrongs, cards, days, favs), state, clock)
+        val sync = SyncManager(BackupSerializer(DirectTx, attempts, wrongs, cards, days, favs, mocks), state, clock)
     }
 
     private val clock = FakeClock()
@@ -81,6 +84,10 @@ class SyncManagerTest {
         a.study.recordAnswer(question("q1"), "b", false, 1000, StudyMode.PRACTICE)
         a.state.hintCredits = 3
         a.study.toggleFavorite("q7")
+        a.state.streakFreezes = 2
+        a.mocks.insert(io.github.zdyoyoyo.englishpractice.data.local.MockResultEntity(
+            takenAt = 1, totalQuestions = 20, listeningCorrect = 7, listeningTotal = 10,
+            readingCorrect = 6, readingTotal = 10, estimatedScore = 650, durationMs = 1000))
         assertEquals(SyncOutcome.Uploaded, a.sync.sync(cloud))
 
         val b = Phone()
@@ -90,6 +97,8 @@ class SyncManagerTest {
         assertTrue(b.cards.get("q1") != null)
         assertEquals(3, b.state.hintCredits)
         assertEquals(listOf("q7"), b.study.favoriteQuestionIds())
+        assertEquals(2, b.state.streakFreezes)
+        assertEquals(listOf(650), b.mocks.items.value.map { it.estimatedScore })
         assertEquals(a.state.lastLocalChangeAt, b.state.lastLocalChangeAt)
     }
 

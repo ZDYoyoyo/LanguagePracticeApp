@@ -12,6 +12,7 @@ import io.github.zdyoyoyo.englishpractice.MainActivity
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
 import io.github.zdyoyoyo.englishpractice.ui.favorites.FavoritesScreen
 import io.github.zdyoyoyo.englishpractice.ui.home.HomeScreen
+import io.github.zdyoyoyo.englishpractice.ui.mock.MockSetupScreen
 import io.github.zdyoyoyo.englishpractice.ui.pk.PkScreen
 import io.github.zdyoyoyo.englishpractice.ui.practice.PracticeSetupScreen
 import io.github.zdyoyoyo.englishpractice.ui.quiz.QuizScreen
@@ -45,6 +46,8 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onWrongBook = { nav.navigate(WrongBookRoute) },
                 onFavorites = { nav.navigate(FavoritesRoute) },
                 onStats = { nav.navigate(StatsRoute) },
+                onMock = { nav.navigate(MockSetupRoute) },
+                onWatchAdForFreeze = { onReward -> activity?.let { ads.showRewarded(it, onReward) } ?: false },
                 onWords = { nav.navigate(WordListRoute) },
                 onPk = { nav.navigate(PkRoute) },
                 onSettings = { nav.navigate(SettingsRoute) },
@@ -84,6 +87,12 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
             )
         }
         composable<PkRoute> { PkScreen(onBack = { nav.popBackStack() }, onMatchFinished = onSessionFinished) }
+        composable<MockSetupRoute> {
+            MockSetupScreen(
+                onBack = { nav.popBackStack() },
+                onStart = { n -> nav.navigate(QuizRoute(StudyMode.MOCK.key, count = n)) },
+            )
+        }
         composable<StatsRoute> { StatsScreen(onBack = { nav.popBackStack() }) }
         composable<WordListRoute> { WordListScreen(onBack = { nav.popBackStack() }) }
         composable<SettingsRoute> { SettingsScreen(onBack = { nav.popBackStack() }) }

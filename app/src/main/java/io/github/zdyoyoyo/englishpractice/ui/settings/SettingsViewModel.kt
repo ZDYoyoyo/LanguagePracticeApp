@@ -39,6 +39,15 @@ class SettingsViewModel(
     val rewardedReady: StateFlow<Boolean> = c.ads.rewardedReady
     val privacyOptionsRequired: StateFlow<Boolean> = c.ads.privacyOptionsRequired
     val adStatus: StateFlow<String> = c.ads.status
+    val dailyGoal: StateFlow<Int> = c.progress.dailyGoal
+    val freezes: StateFlow<Int> = c.progress.freezes
+
+    fun setDailyGoal(goal: Int) = c.progress.setDailyGoal(goal)
+
+    /** 先看廣告存一次連勝保護（最多 2 次），之後漏打卡時可用 */
+    fun watchAdForFreeze(activity: Activity) {
+        c.ads.showRewarded(activity) { c.progress.addFreeze() }
+    }
 
     fun retryAds() = c.ads.retryNow()
 

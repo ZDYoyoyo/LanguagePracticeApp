@@ -23,6 +23,15 @@ class AppPreferences(context: Context) : SyncState {
         get() = sp.getInt(KEY_HINTS, 0)
         set(value) = sp.edit { putInt(KEY_HINTS, value) }
 
+    override var streakFreezes: Int
+        get() = sp.getInt(KEY_FREEZES, 0)
+        set(value) = sp.edit { putInt(KEY_FREEZES, value) }
+
+    /** 每日目標題數 */
+    var dailyGoal: Int
+        get() = sp.getInt(KEY_DAILY_GOAL, 10)
+        set(value) = sp.edit { putInt(KEY_DAILY_GOAL, value) }
+
     var reminderEnabled: Boolean
         get() = sp.getBoolean(KEY_REMINDER_ON, false)
         set(value) = sp.edit { putBoolean(KEY_REMINDER_ON, value) }
@@ -41,6 +50,8 @@ class AppPreferences(context: Context) : SyncState {
         private const val KEY_LAST_CHANGE = "last_local_change_at"
         private const val KEY_LAST_SYNC = "last_synced_at"
         private const val KEY_HINTS = "hint_credits"
+        private const val KEY_FREEZES = "streak_freezes"
+        private const val KEY_DAILY_GOAL = "daily_goal"
         private const val KEY_REMINDER_ON = "reminder_enabled"
         private const val KEY_REMINDER_MIN = "reminder_minute_of_day"
         private const val KEY_EMAIL = "signed_in_email"

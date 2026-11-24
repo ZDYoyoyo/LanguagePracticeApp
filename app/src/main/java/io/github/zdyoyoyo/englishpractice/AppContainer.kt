@@ -4,6 +4,7 @@ import android.content.Context
 import io.github.zdyoyoyo.englishpractice.ads.AdsManager
 import io.github.zdyoyoyo.englishpractice.ads.HintWallet
 import io.github.zdyoyoyo.englishpractice.auth.GoogleAuthManager
+import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.FileBankStore
 import io.github.zdyoyoyo.englishpractice.data.bank.HttpRemoteBankSource
@@ -46,10 +47,21 @@ class AppContainer(context: Context) {
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
 
+    val progress = ProgressRepository(
+        prefs = prefs,
+        dayDao = database.studyDayDao(),
+        mockDao = database.mockResultDao(),
+        clock = clock,
+        onLocalDataChanged = { prefs.lastLocalChangeAt = it },
+    )
+
     val hints = HintWallet(prefs, clock::nowMillis)
     val ads = AdsManager(appContext, clock::nowMillis)
 
     val auth = GoogleAuthManager(appContext, BuildConfig.GOOGLE_WEB_CLIENT_ID)
     val syncManager = SyncManager(BackupSerializer(database, tx), prefs, clock)
-    val cloudSync = CloudSync(auth, syncManager, prefs, onLocalDataReplaced = hints::reload)
+    val cloudSync = CloudSync(auth, syncManager, prefs, onLocalDataReplaced = {
+        hints.reload()
+        progress.reload()
+    })
 }
