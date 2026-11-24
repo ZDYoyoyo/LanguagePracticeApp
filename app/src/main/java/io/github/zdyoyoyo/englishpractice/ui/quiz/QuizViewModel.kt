@@ -232,7 +232,7 @@ class QuizViewModel(
         StudyMode.MOCK -> MockTestBuilder.build(c.questionBank.questions, route.count, c.study.questionStats())
         else -> QuestionSelector.selectSmart(
             all = c.questionBank.questions,
-            filter = QuestionSelector.Filter.decode(route.tags, route.difficulties, route.categories),
+            filter = QuestionSelector.Filter.decode(route.tags, route.difficulties, route.categories, route.skills),
             limit = route.count,
             stats = c.study.questionStats(),
             preferNew = route.preferNew,

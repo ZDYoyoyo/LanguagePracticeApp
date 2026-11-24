@@ -13,22 +13,27 @@ object QuestionSelector {
         val tags: Set<String> = emptySet(),
         val difficulties: Set<Int> = emptySet(),
         val categories: Set<QuestionCategory> = emptySet(),
+        /** 考點（SkillLabels 的 key） */
+        val skills: Set<String> = emptySet(),
     ) {
         fun matches(q: Question) =
             (tags.isEmpty() || q.tags.any { it in tags }) &&
                 (difficulties.isEmpty() || q.difficulty in difficulties) &&
-                (categories.isEmpty() || q.category in categories)
+                (categories.isEmpty() || q.category in categories) &&
+                (skills.isEmpty() || q.skills.any { it in skills })
 
         /** 給導覽路由用：存成逗號分隔字串 */
         fun encodeTags() = tags.joinToString(",").ifEmpty { null }
         fun encodeDifficulties() = difficulties.joinToString(",").ifEmpty { null }
         fun encodeCategories() = categories.joinToString(",") { it.key }.ifEmpty { null }
+        fun encodeSkills() = skills.joinToString(",").ifEmpty { null }
 
         companion object {
-            fun decode(tags: String?, difficulties: String?, categories: String?) = Filter(
+            fun decode(tags: String?, difficulties: String?, categories: String?, skills: String? = null) = Filter(
                 tags = tags.splitList().toSet(),
                 difficulties = difficulties.splitList().mapNotNull { it.toIntOrNull() }.toSet(),
                 categories = categories.splitList().mapNotNull { QuestionCategory.fromKey(it) }.toSet(),
+                skills = skills.splitList().toSet(),
             )
             private fun String?.splitList() = this?.split(",")?.map { it.trim() }?.filter { it.isNotEmpty() }.orEmpty()
         }

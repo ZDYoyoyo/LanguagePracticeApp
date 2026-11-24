@@ -21,6 +21,14 @@ object StatsCalculator {
         val coverage: Double get() = if (totalQuestions == 0) 0.0 else answeredQuestions.toDouble() / totalQuestions
     }
 
+    /** 每個考點的表現（錯題分析） */
+    data class SkillStat(val skill: String, val questions: Int, val attempts: Int, val correct: Int) {
+        val accuracy: Double get() = if (attempts == 0) 0.0 else correct.toDouble() / attempts
+    }
+
+    /** 至少作答幾次才列入弱點分析（太少次沒有參考價值） */
+    const val MIN_ATTEMPTS_FOR_WEAKNESS = 3
+
     data class DayCount(val epochDay: Long, val count: Int)
 
     data class Summary(
@@ -33,7 +41,14 @@ object StatsCalculator {
         val streak: StreakCalculator.Streak,
         val byCategory: List<CategoryStat>,
         val last7Days: List<DayCount>,
+        val bySkill: List<SkillStat> = emptyList(),
     ) {
+        /** 弱點：作答夠多次、正確率由低到高，取前幾名 */
+        fun weakestSkills(limit: Int = 5): List<SkillStat> = bySkill
+            .filter { it.attempts >= MIN_ATTEMPTS_FOR_WEAKNESS && it.accuracy < 1.0 }
+            .sortedWith(compareBy({ it.accuracy }, { -it.attempts }))
+            .take(limit)
+
         val accuracy: Double get() = if (totalAttempts == 0) 0.0 else totalCorrect.toDouble() / totalAttempts
     }
 
@@ -58,6 +73,12 @@ object StatsCalculator {
             )
         }.filter { it.totalQuestions > 0 }
         val dayMap = days.associate { it.epochDay to it.answeredCount }
+        val bySkill = bank.flatMap { q -> q.skills.map { it to q } }
+            .groupBy({ it.first }, { it.second })
+            .map { (skill, qs) ->
+                val a = qs.flatMap { byQuestion[it.id].orEmpty() }
+                SkillStat(skill, qs.size, a.size, a.count { it.correct })
+            }
         return Summary(
             totalAttempts = attempts.size,
             totalCorrect = attempts.count { it.correct },
@@ -71,6 +92,7 @@ object StatsCalculator {
                 val d = todayEpochDay - back
                 DayCount(d, dayMap[d] ?: 0)
             },
+            bySkill = bySkill,
         )
     }
 }

@@ -42,6 +42,8 @@ data class Question(
     /** 1 = 初級, 2 = 中級, 3 = 進階 */
     val difficulty: Int = 1,
     val tags: List<String> = emptyList(),
+    /** 考點（例如 preposition、part3、inference），錯題分析用；中文名稱見 SkillLabels */
+    val skills: List<String> = emptyList(),
 ) {
     val isTypingQuestion: Boolean get() = options.isEmpty()
 

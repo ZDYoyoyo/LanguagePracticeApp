@@ -40,6 +40,12 @@ class QuestionBankParserTest {
         val missing = result.bank.questions.filter { it.passage != null && (it.glossary.isEmpty() || it.passageTranslation.isNullOrBlank()) }
         assertTrue("這些題目缺生字或翻譯：${missing.map { it.id }}", missing.isEmpty())
 
+        // 每題都要有考點，而且考點 key 必須是 App 認得的（SkillLabels）
+        val noSkill = result.bank.questions.filter { it.skills.isEmpty() }
+        assertTrue("這些題目沒有考點：${noSkill.map { it.id }}", noSkill.isEmpty())
+        val unknown = result.bank.questions.flatMap { q -> q.skills.filterNot { io.github.zdyoyoyo.englishpractice.domain.SkillLabels.isKnown(it) }.map { "${q.id}:$it" } }
+        assertTrue("未知的考點：$unknown", unknown.isEmpty())
+
         val manifestFile = File(file.parentFile, "version.json")
         val manifest = QuestionBankParser.parseManifest(manifestFile.readText())
         assertEquals("version.json 與 questions.json 的版本號要一致", manifest.version, result.bank.version)

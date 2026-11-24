@@ -29,6 +29,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import io.github.zdyoyoyo.englishpractice.domain.SkillLabels
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.material3.TextButton
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -44,7 +49,11 @@ import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun StatsScreen(onBack: () -> Unit, vm: StatsViewModel = viewModel(factory = StatsViewModel.Factory)) {
+fun StatsScreen(
+    onBack: () -> Unit,
+    onPracticeSkill: (String) -> Unit = {},
+    vm: StatsViewModel = viewModel(factory = StatsViewModel.Factory),
+) {
     val summary by vm.summary.collectAsStateWithLifecycle()
     LifecycleResumeEffect(Unit) {
         vm.refresh()
@@ -94,6 +103,8 @@ fun StatsScreen(onBack: () -> Unit, vm: StatsViewModel = viewModel(factory = Sta
                 }
             }
 
+            WeaknessCard(s, onPracticeSkill)
+
             Card(Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text("各題型表現", style = MaterialTheme.typography.titleMedium)
@@ -117,6 +128,55 @@ fun StatsScreen(onBack: () -> Unit, vm: StatsViewModel = viewModel(factory = Sta
                 }
             }
         }
+    }
+}
+
+/** 錯題分析：最弱的考點 + 「練這個」；也可以展開看全部考點 */
+@Composable
+private fun WeaknessCard(s: StatsCalculator.Summary, onPracticeSkill: (String) -> Unit) {
+    var showAll by remember { mutableStateOf(false) }
+    val weakest = s.weakestSkills()
+    Card(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Text("🎯 弱點分析", style = MaterialTheme.typography.titleMedium)
+            if (weakest.isEmpty()) {
+                Text(
+                    "每個考點至少作答 ${StatsCalculator.MIN_ATTEMPTS_FOR_WEAKNESS} 次才會開始分析。多做幾題再回來看看！",
+                    style = MaterialTheme.typography.bodySmall,
+                )
+            } else {
+                Text("你最常錯的考點（點「練這個」只出這類題目）：", style = MaterialTheme.typography.bodySmall)
+                weakest.forEach { st -> SkillRow(st, onPracticeSkill) }
+            }
+            TextButton(onClick = { showAll = !showAll }) { Text(if (showAll) "收起" else "看全部考點") }
+            if (showAll) {
+                SkillLabels.Group.entries.forEach { g ->
+                    val rows = s.bySkill.filter { st -> SkillLabels.inGroup(g).any { it.key == st.skill } }
+                    if (rows.isNotEmpty()) {
+                        Text(g.label, style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+                        rows.sortedBy { SkillLabels.ALL.indexOfFirst { k -> k.key == it.skill } }.forEach { st -> SkillRow(st, onPracticeSkill) }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SkillRow(st: StatsCalculator.SkillStat, onPracticeSkill: (String) -> Unit) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.weight(1f)) {
+            Text(SkillLabels.label(st.skill), style = MaterialTheme.typography.bodyMedium)
+            Text(
+                if (st.attempts == 0) "還沒做過（共 ${st.questions} 題）"
+                else "正確率 ${percent(st.accuracy)}・作答 ${st.attempts} 次・共 ${st.questions} 題",
+                style = MaterialTheme.typography.bodySmall,
+            )
+            if (st.attempts > 0) {
+                LinearProgressIndicator(progress = { st.accuracy.toFloat() }, modifier = Modifier.fillMaxWidth().padding(top = 2.dp))
+            }
+        }
+        TextButton(onClick = { onPracticeSkill(st.skill) }) { Text("練這個") }
     }
 }
 

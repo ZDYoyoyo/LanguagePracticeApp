@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": 8,
-  "updatedAt": "2026-11-24",
+  "version": 9,
+  "updatedAt": "2026-11-25",
   "questions": [
     {
       "id": "voc-0001",
@@ -25,6 +25,9 @@
       "tags": [
         "daily-life",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -48,6 +51,9 @@
       "difficulty": 2,
       "tags": [
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -71,6 +77,9 @@
       "difficulty": 1,
       "tags": [
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -94,6 +103,9 @@
       "difficulty": 2,
       "tags": [
         "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -117,6 +129,9 @@
       "difficulty": 1,
       "tags": [
         "food"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -140,6 +155,9 @@
       "difficulty": 3,
       "tags": [
         "tech"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -162,6 +180,9 @@
       "difficulty": 1,
       "tags": [
         "daily-life"
+      ],
+      "skills": [
+        "agreement"
       ]
     },
     {
@@ -184,6 +205,9 @@
       "difficulty": 2,
       "tags": [
         "travel"
+      ],
+      "skills": [
+        "subjunctive"
       ]
     },
     {
@@ -206,6 +230,10 @@
       "difficulty": 1,
       "tags": [
         "daily-life"
+      ],
+      "skills": [
+        "preposition",
+        "tense"
       ]
     },
     {
@@ -228,6 +256,10 @@
       "difficulty": 3,
       "tags": [
         "work"
+      ],
+      "skills": [
+        "passive",
+        "tense"
       ]
     },
     {
@@ -250,6 +282,9 @@
       "difficulty": 2,
       "tags": [
         "school"
+      ],
+      "skills": [
+        "agreement"
       ]
     },
     {
@@ -265,6 +300,9 @@
       "difficulty": 1,
       "tags": [
         "daily-life"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -280,6 +318,9 @@
       "difficulty": 2,
       "tags": [
         "work"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -296,6 +337,9 @@
       "tags": [
         "tech",
         "daily-life"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -318,6 +362,9 @@
       "difficulty": 2,
       "tags": [
         "travel"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -335,6 +382,9 @@
       "tags": [
         "food",
         "travel"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -357,6 +407,9 @@
       "difficulty": 1,
       "tags": [
         "daily-life"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -379,6 +432,9 @@
       "difficulty": 1,
       "tags": [
         "travel"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -401,6 +457,9 @@
       "difficulty": 2,
       "tags": [
         "work"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -423,6 +482,9 @@
       "difficulty": 2,
       "tags": [
         "school"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -447,6 +509,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -471,6 +536,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -495,6 +563,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -519,6 +590,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -543,6 +617,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -567,6 +644,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -591,6 +671,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -615,6 +698,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -639,6 +725,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -663,6 +752,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -687,6 +779,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -711,6 +806,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -735,6 +833,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -759,6 +860,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -783,6 +887,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -807,6 +914,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -831,6 +941,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -855,6 +968,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -879,6 +995,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -903,6 +1022,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -927,6 +1049,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -951,6 +1076,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -975,6 +1103,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -999,6 +1130,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1023,6 +1157,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1047,6 +1184,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1071,6 +1211,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1095,6 +1238,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1119,6 +1265,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1143,6 +1292,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1167,6 +1319,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1191,6 +1346,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1215,6 +1373,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1239,6 +1400,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1263,6 +1427,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1287,6 +1454,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1311,6 +1481,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1335,6 +1508,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1359,6 +1535,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1383,6 +1562,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1407,6 +1589,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1431,6 +1616,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1455,6 +1643,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1479,6 +1670,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1503,6 +1697,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1527,6 +1724,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1552,6 +1752,9 @@
         "toeic",
         "travel",
         "food"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1576,6 +1779,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1600,6 +1806,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1624,6 +1833,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1648,6 +1860,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1672,6 +1887,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1696,6 +1914,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1720,6 +1941,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1744,6 +1968,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1768,6 +1995,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1792,6 +2022,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1816,6 +2049,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1840,6 +2076,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1864,6 +2103,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1888,6 +2130,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -1912,6 +2157,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -1935,6 +2183,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -1958,6 +2209,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -1982,6 +2236,9 @@
         "toeic",
         "tech",
         "work"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -2005,6 +2262,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "quantifier"
       ]
     },
     {
@@ -2028,6 +2288,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "passive",
+        "tense"
       ]
     },
     {
@@ -2051,6 +2315,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -2074,6 +2341,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "preposition",
+        "tense"
       ]
     },
     {
@@ -2097,6 +2368,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "verb-form",
+        "passive"
       ]
     },
     {
@@ -2120,6 +2395,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part-of-speech",
+        "passive"
       ]
     },
     {
@@ -2143,6 +2422,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -2166,6 +2448,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -2189,6 +2474,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "tense"
       ]
     },
     {
@@ -2212,6 +2500,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -2235,6 +2526,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -2258,6 +2552,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -2281,6 +2578,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -2304,6 +2604,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -2327,6 +2630,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -2350,6 +2656,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "tense"
       ]
     },
     {
@@ -2373,6 +2682,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -2396,6 +2708,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "agreement"
       ]
     },
     {
@@ -2419,6 +2734,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "agreement"
       ]
     },
     {
@@ -2442,6 +2760,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -2465,6 +2786,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "inversion"
       ]
     },
     {
@@ -2488,6 +2812,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "subjunctive"
       ]
     },
     {
@@ -2511,6 +2838,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "quantifier"
       ]
     },
     {
@@ -2534,6 +2864,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "quantifier"
       ]
     },
     {
@@ -2557,6 +2890,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -2580,6 +2916,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -2603,6 +2942,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "tense"
       ]
     },
     {
@@ -2626,6 +2968,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -2649,6 +2994,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -2672,6 +3020,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -2695,6 +3046,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "inversion",
+        "subjunctive"
       ]
     },
     {
@@ -2718,6 +3073,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "verb-form",
+        "passive"
       ]
     },
     {
@@ -2741,6 +3100,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -2764,6 +3126,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "pronoun"
       ]
     },
     {
@@ -2787,6 +3152,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -2810,6 +3178,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -2833,6 +3204,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -2856,6 +3230,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -2879,6 +3256,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "subjunctive"
       ]
     },
     {
@@ -2902,6 +3282,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "passive"
       ]
     },
     {
@@ -2925,6 +3308,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "subjunctive"
       ]
     },
     {
@@ -2948,6 +3334,9 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -2965,6 +3354,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -2981,6 +3373,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -2998,6 +3393,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -3014,6 +3412,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -3030,6 +3431,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -3046,6 +3450,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -3062,6 +3469,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -3078,6 +3488,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -3094,6 +3507,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -3110,6 +3526,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -3126,6 +3545,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -3145,6 +3567,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -3161,6 +3586,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3177,6 +3605,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3194,6 +3625,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3217,6 +3651,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3240,6 +3677,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3263,6 +3703,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3286,6 +3729,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3309,6 +3755,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3332,6 +3781,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3355,6 +3807,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3378,6 +3833,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "response"
       ]
     },
     {
@@ -3401,6 +3859,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3424,6 +3885,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3447,6 +3911,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3470,6 +3937,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3493,6 +3963,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3516,6 +3989,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3539,6 +4015,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3562,6 +4041,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3585,6 +4067,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3608,6 +4093,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3631,6 +4119,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3654,6 +4145,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3677,6 +4171,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3700,6 +4197,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -3723,6 +4223,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3746,6 +4249,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3769,6 +4275,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "idiom"
       ]
     },
     {
@@ -3793,6 +4302,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -3817,6 +4329,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -3841,6 +4356,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -3865,6 +4383,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -3889,6 +4410,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -3913,6 +4437,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -3937,6 +4464,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -3961,6 +4491,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -3985,6 +4518,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4009,6 +4545,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4033,6 +4572,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4057,6 +4599,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4081,6 +4626,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4105,6 +4653,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4129,6 +4680,9 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4153,6 +4707,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4177,6 +4734,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4201,6 +4761,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4225,6 +4788,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4249,6 +4815,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4273,6 +4842,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4297,6 +4869,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -4321,6 +4896,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -4353,6 +4931,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "main-idea"
       ]
     },
     {
@@ -4385,6 +4967,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4417,6 +5003,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4450,6 +5040,10 @@
         "toeic",
         "food",
         "marketing"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4483,6 +5077,10 @@
         "toeic",
         "food",
         "marketing"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4516,6 +5114,10 @@
         "toeic",
         "food",
         "marketing"
+      ],
+      "skills": [
+        "part7",
+        "not-question"
       ]
     },
     {
@@ -4549,6 +5151,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4582,6 +5188,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4615,6 +5225,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4647,6 +5261,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4679,6 +5297,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part7",
+        "intent"
       ]
     },
     {
@@ -4711,6 +5333,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4744,6 +5370,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4777,6 +5407,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -4810,6 +5444,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "not-question"
       ]
     },
     {
@@ -4842,6 +5480,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -4874,6 +5516,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part6",
+        "conjunction"
       ]
     },
     {
@@ -4906,6 +5552,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -4938,6 +5588,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part6",
+        "verb-form"
       ]
     },
     {
@@ -4970,6 +5624,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part6",
+        "preposition"
       ]
     },
     {
@@ -5002,6 +5660,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part6",
+        "sentence-insertion"
       ]
     },
     {
@@ -5035,6 +5697,10 @@
         "toeic",
         "school",
         "daily-life"
+      ],
+      "skills": [
+        "part6",
+        "preposition"
       ]
     },
     {
@@ -5068,6 +5734,10 @@
         "toeic",
         "school",
         "daily-life"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -5102,6 +5772,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "main-idea"
       ]
     },
     {
@@ -5136,6 +5810,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5170,6 +5848,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5202,6 +5884,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5234,6 +5920,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5266,6 +5956,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5299,6 +5993,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5332,6 +6030,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -5365,6 +6067,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part3",
+        "inference"
       ]
     },
     {
@@ -5394,6 +6100,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -5423,6 +6133,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -5453,6 +6167,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -5483,6 +6201,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -5512,6 +6234,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -5542,6 +6268,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -5566,6 +6296,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5590,6 +6323,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5614,6 +6350,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5638,6 +6377,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5662,6 +6404,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5686,6 +6431,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5710,6 +6458,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5734,6 +6485,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5758,6 +6512,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5782,6 +6539,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5806,6 +6566,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5830,6 +6593,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5854,6 +6620,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5878,6 +6647,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5902,6 +6674,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5926,6 +6701,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5950,6 +6728,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -5974,6 +6755,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -5998,6 +6782,9 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -6022,6 +6809,9 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -6046,6 +6836,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -6070,6 +6863,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -6093,6 +6889,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -6116,6 +6915,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -6139,6 +6941,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "passive"
       ]
     },
     {
@@ -6162,6 +6967,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "pronoun"
       ]
     },
     {
@@ -6185,6 +6993,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -6208,6 +7019,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -6231,6 +7045,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "inversion",
+        "tense"
       ]
     },
     {
@@ -6254,6 +7072,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "agreement"
       ]
     },
     {
@@ -6277,6 +7098,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "passive"
       ]
     },
     {
@@ -6300,6 +7124,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -6329,6 +7156,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -6359,6 +7190,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -6389,6 +7224,10 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -6418,6 +7257,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -6448,6 +7291,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -6477,6 +7324,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -6510,6 +7361,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -6543,6 +7398,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -6576,6 +7435,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part3",
+        "inference"
       ]
     },
     {
@@ -6611,6 +7474,10 @@
         "toeic",
         "tech",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -6646,6 +7513,10 @@
         "toeic",
         "tech",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -6681,6 +7552,10 @@
         "toeic",
         "tech",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -6714,6 +7589,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "main-idea"
       ]
     },
     {
@@ -6747,6 +7626,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -6780,6 +7663,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -6814,6 +7701,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -6848,6 +7739,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part6",
+        "verb-form"
       ]
     },
     {
@@ -6882,6 +7777,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part6",
+        "sentence-insertion"
       ]
     },
     {
@@ -6906,6 +7805,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -6930,6 +7832,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -6954,6 +7859,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -6978,6 +7886,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -7002,6 +7913,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -7026,6 +7940,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -7050,6 +7967,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -7074,6 +7994,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -7098,6 +8021,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -7122,6 +8048,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -7146,6 +8075,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -7170,6 +8102,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -7195,6 +8130,9 @@
         "toeic",
         "school",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -7219,6 +8157,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -7244,6 +8185,9 @@
         "toeic",
         "food",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -7267,6 +8211,9 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -7290,6 +8237,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "subjunctive"
       ]
     },
     {
@@ -7313,6 +8263,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -7336,6 +8289,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "tense"
       ]
     },
     {
@@ -7359,6 +8315,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -7382,6 +8341,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -7405,6 +8367,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -7428,6 +8393,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "conjunction",
+        "verb-form"
       ]
     },
     {
@@ -7461,6 +8430,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7494,6 +8467,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7527,6 +8504,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "inference"
       ]
     },
     {
@@ -7561,6 +8542,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7595,6 +8580,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7629,6 +8618,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part3",
+        "inference"
       ]
     },
     {
@@ -7661,6 +8654,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7693,6 +8690,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7725,6 +8726,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "inference"
       ]
     },
     {
@@ -7758,6 +8763,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part3",
+        "main-idea"
       ]
     },
     {
@@ -7791,6 +8800,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7824,6 +8837,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7856,6 +8873,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part3",
+        "main-idea"
       ]
     },
     {
@@ -7888,6 +8909,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7920,6 +8945,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -7954,6 +8983,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part4",
+        "main-idea"
       ]
     },
     {
@@ -7988,6 +9021,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8022,6 +9059,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8057,6 +9098,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8092,6 +9137,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8127,6 +9176,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8162,6 +9215,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part4",
+        "main-idea"
       ]
     },
     {
@@ -8197,6 +9254,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8232,6 +9293,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -8262,6 +9327,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8292,6 +9361,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8322,6 +9395,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8351,6 +9428,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8381,6 +9462,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8411,6 +9496,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8440,6 +9529,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8470,6 +9563,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8500,6 +9597,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8529,6 +9630,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -8561,6 +9666,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8593,6 +9702,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8625,6 +9738,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8658,6 +9775,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8691,6 +9812,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8724,6 +9849,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8757,6 +9886,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8790,6 +9923,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8823,6 +9960,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8856,6 +9997,10 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "part7",
+        "main-idea"
       ]
     },
     {
@@ -8889,6 +10034,10 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8922,6 +10071,10 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -8955,6 +10108,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part6",
+        "passive"
       ]
     },
     {
@@ -8988,6 +10145,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part6",
+        "conjunction"
       ]
     },
     {
@@ -9021,6 +10182,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -9054,6 +10219,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part6",
+        "preposition"
       ]
     },
     {
@@ -9087,6 +10256,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part6",
+        "sentence-insertion"
       ]
     },
     {
@@ -9120,6 +10293,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part6",
+        "agreement"
       ]
     },
     {
@@ -9144,6 +10321,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9168,6 +10348,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9192,6 +10375,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9216,6 +10402,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9240,6 +10429,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9264,6 +10456,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9288,6 +10483,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9312,6 +10510,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9336,6 +10537,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9360,6 +10564,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9384,6 +10591,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9408,6 +10618,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9432,6 +10645,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9456,6 +10672,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9480,6 +10699,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9504,6 +10726,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9528,6 +10753,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9552,6 +10780,9 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9576,6 +10807,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9600,6 +10834,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9624,6 +10861,9 @@
       "tags": [
         "toeic",
         "school"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9648,6 +10888,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9672,6 +10915,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9696,6 +10942,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9720,6 +10969,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9744,6 +10996,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9768,6 +11023,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9792,6 +11050,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9816,6 +11077,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9840,6 +11104,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9864,6 +11131,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9888,6 +11158,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9912,6 +11185,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9936,6 +11212,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -9960,6 +11239,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -9984,6 +11266,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10008,6 +11293,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10032,6 +11320,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10056,6 +11347,9 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10080,6 +11374,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10104,6 +11401,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10128,6 +11428,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10152,6 +11455,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10176,6 +11482,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10200,6 +11509,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10224,6 +11536,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10248,6 +11563,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10272,6 +11590,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10296,6 +11617,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10320,6 +11644,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10344,6 +11671,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "vocab-zh"
       ]
     },
     {
@@ -10368,6 +11698,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "vocab-en"
       ]
     },
     {
@@ -10391,6 +11724,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -10414,6 +11750,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -10437,6 +11776,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -10460,6 +11802,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "preposition",
+        "tense"
       ]
     },
     {
@@ -10483,6 +11829,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -10506,6 +11855,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "pronoun"
       ]
     },
     {
@@ -10529,6 +11881,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -10552,6 +11907,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -10575,6 +11933,9 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "tense"
       ]
     },
     {
@@ -10598,6 +11959,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -10621,6 +11985,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "passive"
       ]
     },
     {
@@ -10644,6 +12011,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -10667,6 +12037,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -10690,6 +12063,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -10713,6 +12089,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "passive",
+        "tense"
       ]
     },
     {
@@ -10736,6 +12116,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -10759,6 +12142,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -10782,6 +12168,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "conjunction"
       ]
     },
     {
@@ -10805,6 +12194,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -10828,6 +12220,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "agreement"
       ]
     },
     {
@@ -10851,6 +12246,9 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -10874,6 +12272,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -10897,6 +12298,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "tense"
       ]
     },
     {
@@ -10920,6 +12324,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -10943,6 +12350,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "preposition"
       ]
     },
     {
@@ -10966,6 +12376,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part-of-speech"
       ]
     },
     {
@@ -10989,6 +12402,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "verb-form"
       ]
     },
     {
@@ -11012,6 +12428,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "comparison"
       ]
     },
     {
@@ -11035,6 +12454,9 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "relative"
       ]
     },
     {
@@ -11058,6 +12480,9 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "inversion"
       ]
     },
     {
@@ -11075,6 +12500,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -11091,6 +12519,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -11107,6 +12538,9 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -11123,6 +12557,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -11139,6 +12576,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -11155,6 +12595,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -11171,6 +12614,9 @@
       "tags": [
         "toeic",
         "finance"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -11187,6 +12633,9 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "word-form"
       ]
     },
     {
@@ -11204,6 +12653,9 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "phrasal-verb"
       ]
     },
     {
@@ -11220,6 +12672,9 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "usage"
       ]
     },
     {
@@ -11250,6 +12705,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11280,6 +12739,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11310,6 +12773,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11340,6 +12807,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11370,6 +12841,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11400,6 +12875,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11431,6 +12910,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11461,6 +12944,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11491,6 +12978,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11521,6 +13012,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11551,6 +13046,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11581,6 +13080,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11611,6 +13114,10 @@
       "tags": [
         "toeic",
         "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11640,6 +13147,10 @@
       "tags": [
         "toeic",
         "food"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11670,6 +13181,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
       ]
     },
     {
@@ -11702,6 +13217,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "main-idea"
       ]
     },
     {
@@ -11734,6 +13253,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -11766,6 +13289,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -11799,6 +13326,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -11832,6 +13363,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -11865,6 +13400,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part3",
+        "inference"
       ]
     },
     {
@@ -11899,6 +13438,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "main-idea"
       ]
     },
     {
@@ -11933,6 +13476,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -11967,6 +13514,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -12001,6 +13552,10 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -12035,6 +13590,10 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -12069,6 +13628,10 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -12102,6 +13665,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part3",
+        "main-idea"
       ]
     },
     {
@@ -12135,6 +13702,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -12168,6 +13739,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part3",
+        "detail"
       ]
     },
     {
@@ -12203,6 +13778,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "main-idea"
       ]
     },
     {
@@ -12238,6 +13817,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12273,6 +13856,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12307,6 +13894,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12341,6 +13932,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12375,6 +13970,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12408,6 +14007,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part4",
+        "main-idea"
       ]
     },
     {
@@ -12441,6 +14044,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12474,6 +14081,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part4",
+        "detail"
       ]
     },
     {
@@ -12507,6 +14118,10 @@
         "toeic",
         "food",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12540,6 +14155,10 @@
         "toeic",
         "food",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12573,6 +14192,10 @@
         "toeic",
         "food",
         "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12605,6 +14228,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part7",
+        "main-idea"
       ]
     },
     {
@@ -12637,6 +14264,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12669,6 +14300,10 @@
       "tags": [
         "toeic",
         "hr"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12702,6 +14337,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12735,6 +14374,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12768,6 +14411,10 @@
       "tags": [
         "toeic",
         "marketing"
+      ],
+      "skills": [
+        "part7",
+        "not-question"
       ]
     },
     {
@@ -12799,6 +14446,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12830,6 +14481,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part7",
+        "intent"
       ]
     },
     {
@@ -12861,6 +14516,10 @@
       "tags": [
         "toeic",
         "work"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12895,6 +14554,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12929,6 +14592,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12963,6 +14630,10 @@
       "tags": [
         "toeic",
         "office"
+      ],
+      "skills": [
+        "part7",
+        "detail"
       ]
     },
     {
@@ -12997,6 +14668,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part6",
+        "tense"
       ]
     },
     {
@@ -13031,6 +14706,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part6",
+        "conjunction"
       ]
     },
     {
@@ -13065,6 +14744,10 @@
       "tags": [
         "toeic",
         "travel"
+      ],
+      "skills": [
+        "part6",
+        "verb-form"
       ]
     },
     {
@@ -13098,6 +14781,10 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "part6",
+        "verb-form"
       ]
     },
     {
@@ -13131,6 +14818,10 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "part6",
+        "sentence-insertion"
       ]
     },
     {
@@ -13164,6 +14855,10 @@
       "tags": [
         "toeic",
         "tech"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -13197,6 +14892,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part6",
+        "preposition"
       ]
     },
     {
@@ -13230,6 +14929,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part6",
+        "part-of-speech"
       ]
     },
     {
@@ -13263,6 +14966,10 @@
       "tags": [
         "toeic",
         "daily-life"
+      ],
+      "skills": [
+        "part6",
+        "verb-form"
       ]
     }
   ]
