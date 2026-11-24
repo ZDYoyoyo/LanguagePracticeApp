@@ -60,6 +60,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
+import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementBanner
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
 import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
@@ -395,6 +396,7 @@ private fun ResultSummary(
             style = MaterialTheme.typography.headlineMedium,
         )
         Text("答對 ${s.correctCount} / $total（$percent%）", style = MaterialTheme.typography.titleLarge)
+        if (s.newAchievements.isNotEmpty()) AchievementBanner(s.newAchievements)
 
         if (canRetryWrong && s.wrongInSession.isNotEmpty()) {
             Button(onClick = onRetryWrong, modifier = Modifier.fillMaxWidth()) {
@@ -448,6 +450,7 @@ private fun MockResultSummary(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         if (s.mockTimedOut) Text("⏰ 時間到，已自動交卷", color = WrongRed)
+        if (s.newAchievements.isNotEmpty()) AchievementBanner(s.newAchievements)
         Text("預估多益分數", style = MaterialTheme.typography.titleMedium)
         Text("${score.estimatedTotal}", style = MaterialTheme.typography.displayLarge, color = MaterialTheme.colorScheme.primary)
         Text("可能落在 ${score.low}～${score.high} 分", style = MaterialTheme.typography.bodyMedium)

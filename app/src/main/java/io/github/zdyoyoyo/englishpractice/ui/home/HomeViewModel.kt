@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import io.github.zdyoyoyo.englishpractice.data.AchievementRepository
 import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
+import io.github.zdyoyoyo.englishpractice.domain.Achievement
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.BankHttpException
 import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository
@@ -58,6 +60,7 @@ class HomeViewModel(
     private val bank: QuestionBankRepository,
     study: StudyRepository,
     private val progressRepo: ProgressRepository,
+    private val achievementsRepo: AchievementRepository,
     private val clock: AppClock,
 ) : ViewModel() {
 
@@ -110,6 +113,10 @@ class HomeViewModel(
         }
     }
 
+    private val _newAchievements = MutableStateFlow<List<Achievement>>(emptyList())
+    val newAchievements: StateFlow<List<Achievement>> = _newAchievements
+    fun dismissAchievements() { _newAchievements.value = emptyList() }
+
     private val _freezeMessage = MutableStateFlow<String?>(null)
     val freezeMessage: StateFlow<String?> = _freezeMessage
 
@@ -132,6 +139,11 @@ class HomeViewModel(
 
     fun onResume() {
         today.value = clock.today().toEpochDay()
+        // 回到首頁時檢查成就（例如連續打卡天數類的）
+        viewModelScope.launch {
+            val fresh = achievementsRepo.checkAndUnlock()
+            if (fresh.isNotEmpty()) _newAchievements.value = _newAchievements.value + fresh
+        }
     }
 
     fun refreshBank() {
@@ -150,7 +162,7 @@ class HomeViewModel(
         val Factory = viewModelFactory {
             initializer {
                 val c = appContainer()
-                HomeViewModel(c.questionBank, c.study, c.progress, c.clock)
+                HomeViewModel(c.questionBank, c.study, c.progress, c.achievements, c.clock)
             }
         }
     }

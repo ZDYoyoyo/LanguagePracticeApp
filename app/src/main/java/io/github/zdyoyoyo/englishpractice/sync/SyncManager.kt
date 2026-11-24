@@ -12,6 +12,10 @@ interface SyncState {
     var hintCredits: Int
     /** 連勝保護（可補回漏掉的一天）剩餘次數 */
     var streakFreezes: Int
+    /** 已解鎖成就：id → 解鎖時間 */
+    var achievements: Map<String, Long>
+    /** 全對的輪數（成就用） */
+    var perfectRounds: Int
 }
 
 sealed interface SyncOutcome {
@@ -36,6 +40,7 @@ class SyncManager(
     suspend fun sync(store: RemoteBackupStore, force: SyncPolicy.Action? = null): SyncOutcome = mutex.withLock {
         try {
             val local = backup.export(clock.nowMillis(), state.lastLocalChangeAt, state.hintCredits, state.streakFreezes)
+                .copy(achievements = state.achievements, perfectRounds = state.perfectRounds)
             val remote = store.read()?.let { BackupSnapshot.fromJson(it) }
             val action = force ?: SyncPolicy.decide(
                 localChangedAt = state.lastLocalChangeAt,
@@ -55,6 +60,8 @@ class SyncManager(
                     backup.restore(remote)
                     state.hintCredits = remote.hintCredits
                     state.streakFreezes = remote.streakFreezes
+                    state.achievements = remote.achievements
+                    state.perfectRounds = remote.perfectRounds
                     state.lastLocalChangeAt = remote.lastLocalChangeAt
                     state.lastSyncedAt = clock.nowMillis()
                     SyncOutcome.Downloaded
@@ -85,5 +92,7 @@ class SyncManager(
         state.lastSyncedAt = 0L
         state.hintCredits = 0
         state.streakFreezes = 0
+        state.achievements = emptyMap()
+        state.perfectRounds = 0
     }
 }
