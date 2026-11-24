@@ -11,6 +11,7 @@ import io.github.zdyoyoyo.englishpractice.AppContainer
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
 import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
+import io.github.zdyoyoyo.englishpractice.domain.Achievement
 import io.github.zdyoyoyo.englishpractice.domain.AnswerChecker
 import io.github.zdyoyoyo.englishpractice.domain.HintLogic
 import io.github.zdyoyoyo.englishpractice.domain.MockScore
@@ -21,6 +22,7 @@ import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
 import io.github.zdyoyoyo.englishpractice.ui.navigation.QuizRoute
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -67,6 +69,8 @@ data class QuizUiState(
     val mockScore: MockScore? = null,
     val mockTimedOut: Boolean = false,
     val mockDurationMs: Long = 0,
+    /** 這輪結束後新解鎖的成就 */
+    val newAchievements: List<Achievement> = emptyList(),
 ) {
     val current: Question? get() = questions.getOrNull(index)
     val isLast: Boolean get() = index == questions.lastIndex
@@ -86,6 +90,8 @@ class QuizViewModel(
     val ui: StateFlow<QuizUiState> = _ui.asStateFlow()
 
     private var questionShownAt = 0L
+    /** 作答紀錄是非同步寫入的；結算檢查成就前要先等它們寫完 */
+    private val recordJobs = mutableListOf<Job>()
     private var roundStartedAt = 0L
     private var timerJob: Job? = null
     private val mockCorrectIds = mutableSetOf<String>()
@@ -177,9 +183,10 @@ class QuizViewModel(
         mockCorrectIds.clear()
         val answered = s.questions.mapNotNull { q -> s.answers[q.id]?.let { q to it } }
         answered.forEach { (q, a) -> if (AnswerChecker.isCorrect(q, a)) mockCorrectIds += q.id }
-        viewModelScope.launch {
+        val correctIds = mockCorrectIds.toSet()
+        recordJobs += viewModelScope.launch {
             answered.forEach { (q, a) ->
-                c.study.recordAnswer(q, a, q.id in mockCorrectIds, timeSpent[q.id] ?: 0L, mode)
+                c.study.recordAnswer(q, a, q.id in correctIds, timeSpent[q.id] ?: 0L, mode)
             }
         }
         val score = MockScore.from(s.questions, mockCorrectIds.toSet())
@@ -194,7 +201,20 @@ class QuizViewModel(
                 wrongInSession = it.questions.filter { q -> q.id !in mockCorrectIds },
             )
         }
-        viewModelScope.launch { c.progress.saveMockResult(score, duration) }
+        recordJobs += viewModelScope.launch { c.progress.saveMockResult(score, duration) }
+        onRoundFinished(s.questions.size, score.totalCorrect)
+    }
+
+    /** 一輪結束：等作答紀錄寫完 → 記錄全對 → 檢查新成就 */
+    private fun onRoundFinished(total: Int, correct: Int) {
+        val jobs = recordJobs.toList()
+        recordJobs.clear()
+        viewModelScope.launch {
+            jobs.joinAll()
+            if (total >= 5 && correct == total) c.achievements.recordPerfectRound()
+            val fresh = c.achievements.checkAndUnlock()
+            if (fresh.isNotEmpty()) _ui.update { it.copy(newAchievements = fresh) }
+        }
     }
 
     /** 模擬考：提前交卷 */
@@ -299,7 +319,7 @@ class QuizViewModel(
             )
         }
         val usedHint = _ui.value.usedHint
-        viewModelScope.launch { c.study.recordAnswer(q, answer, correct, elapsed, mode, usedHint) }
+        recordJobs += viewModelScope.launch { c.study.recordAnswer(q, answer, correct, elapsed, mode, usedHint) }
     }
 
     /** 按「提示」：有次數就直接用；沒有就「詢問」要不要看廣告換（不強迫） */
@@ -331,6 +351,7 @@ class QuizViewModel(
         val s = _ui.value
         if (s.isLast) {
             _ui.update { it.copy(finished = true) }
+            onRoundFinished(s.questions.size, s.correctCount)
         } else {
             _ui.update {
                 it.copy(

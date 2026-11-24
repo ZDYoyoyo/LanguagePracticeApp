@@ -37,6 +37,9 @@ data class BackupSnapshot(
     /** v3 新增 */
     val mockResults: List<MockResultEntity> = emptyList(),
     val streakFreezes: Int = 0,
+    /** v4 新增：成就 */
+    val achievements: Map<String, Long> = emptyMap(),
+    val perfectRounds: Int = 0,
 ) {
     val isEmpty: Boolean get() = attempts.isEmpty() && wrongAnswers.isEmpty() && reviewCards.isEmpty() &&
         studyDays.isEmpty() && favorites.isEmpty() && mockResults.isEmpty()

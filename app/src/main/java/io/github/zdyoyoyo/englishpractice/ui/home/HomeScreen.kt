@@ -19,6 +19,8 @@ import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Translate
+import androidx.compose.material.icons.filled.EmojiEvents
+import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementBanner
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Today
 import androidx.compose.material3.Card
@@ -58,6 +60,7 @@ fun HomeScreen(
     onStats: () -> Unit,
     onWords: () -> Unit,
     onMock: () -> Unit,
+    onAchievements: () -> Unit,
     /** 看獎勵廣告；回傳 false = 廣告還沒準備好 */
     onWatchAdForFreeze: (onReward: () -> Unit) -> Boolean,
     onPk: () -> Unit,
@@ -66,6 +69,7 @@ fun HomeScreen(
 ) {
     val state by vm.uiState.collectAsStateWithLifecycle()
     val freezeMessage by vm.freezeMessage.collectAsStateWithLifecycle()
+    val newAchievements by vm.newAchievements.collectAsStateWithLifecycle()
     LifecycleResumeEffect(Unit) {
         vm.onResume()
         onPauseOrDispose { }
@@ -84,6 +88,7 @@ fun HomeScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            if (newAchievements.isNotEmpty()) AchievementBanner(newAchievements, onDismiss = vm::dismissAchievements)
             StreakCard(
                 state,
                 freezeMessage = freezeMessage,
@@ -119,9 +124,10 @@ fun HomeScreen(
                 onFavorites,
             )
             HomeActionCard(Icons.Filled.SportsEsports, "PK 對戰", "和電腦對手比速度與正確率", onPk)
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 SmallActionCard(Icons.Filled.Translate, "單字庫", onWords, Modifier.weight(1f))
-                SmallActionCard(Icons.Filled.BarChart, "學習統計", onStats, Modifier.weight(1f))
+                SmallActionCard(Icons.Filled.BarChart, "統計", onStats, Modifier.weight(1f))
+                SmallActionCard(Icons.Filled.EmojiEvents, "成就", onAchievements, Modifier.weight(1f))
             }
 
             Text(
@@ -191,10 +197,10 @@ private fun StreakCard(
 @Composable
 private fun SmallActionCard(icon: ImageVector, title: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     ElevatedCard(onClick = onClick, modifier = modifier) {
-        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.padding(12.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Icon(icon, contentDescription = null)
-            Spacer(Modifier.size(12.dp))
-            Text(title, style = MaterialTheme.typography.titleMedium)
+            Spacer(Modifier.size(4.dp))
+            Text(title, style = MaterialTheme.typography.titleSmall)
         }
     }
 }

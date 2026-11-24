@@ -53,6 +53,7 @@ class FakeWrongAnswerDao : WrongAnswerDao {
     private fun active() = map.value.values.filter { !it.mastered }.sortedByDescending { it.lastWrongAt }
     override fun observeActive(): Flow<List<WrongAnswerEntity>> = map.map { active() }
     override fun observeActiveCount(): Flow<Int> = map.map { active().size }
+    override suspend fun masteredCount() = map.value.values.count { it.mastered }
     override suspend fun getActive() = active()
     override suspend fun get(questionId: String) = map.value[questionId]
     override suspend fun upsert(item: WrongAnswerEntity) { map.value = map.value + (item.questionId to item) }

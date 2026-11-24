@@ -4,6 +4,7 @@ import android.content.Context
 import io.github.zdyoyoyo.englishpractice.ads.AdsManager
 import io.github.zdyoyoyo.englishpractice.ads.HintWallet
 import io.github.zdyoyoyo.englishpractice.auth.GoogleAuthManager
+import io.github.zdyoyoyo.englishpractice.data.AchievementRepository
 import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.FileBankStore
@@ -55,6 +56,16 @@ class AppContainer(context: Context) {
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
 
+    val achievements = AchievementRepository(
+        prefs = prefs,
+        bank = questionBank,
+        study = study,
+        wrongDao = database.wrongAnswerDao(),
+        mockDao = database.mockResultDao(),
+        clock = clock,
+        onLocalDataChanged = { prefs.lastLocalChangeAt = it },
+    )
+
     val hints = HintWallet(prefs, clock::nowMillis)
     val ads = AdsManager(appContext, clock::nowMillis)
 
@@ -63,5 +74,6 @@ class AppContainer(context: Context) {
     val cloudSync = CloudSync(auth, syncManager, prefs, onLocalDataReplaced = {
         hints.reload()
         progress.reload()
+        achievements.reload()
     })
 }

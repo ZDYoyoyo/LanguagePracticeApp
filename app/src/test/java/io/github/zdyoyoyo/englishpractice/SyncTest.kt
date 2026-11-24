@@ -55,6 +55,8 @@ class SyncManagerTest {
         override var lastSyncedAt = 0L
         override var hintCredits = 0
         override var streakFreezes = 0
+        override var achievements: Map<String, Long> = emptyMap()
+        override var perfectRounds = 0
     }
 
     private class MemStore(var content: String? = null) : RemoteBackupStore {
@@ -85,6 +87,8 @@ class SyncManagerTest {
         a.state.hintCredits = 3
         a.study.toggleFavorite("q7")
         a.state.streakFreezes = 2
+        a.state.achievements = mapOf("first_step" to 123L)
+        a.state.perfectRounds = 4
         a.mocks.insert(io.github.zdyoyoyo.englishpractice.data.local.MockResultEntity(
             takenAt = 1, totalQuestions = 20, listeningCorrect = 7, listeningTotal = 10,
             readingCorrect = 6, readingTotal = 10, estimatedScore = 650, durationMs = 1000))
@@ -98,6 +102,8 @@ class SyncManagerTest {
         assertEquals(3, b.state.hintCredits)
         assertEquals(listOf("q7"), b.study.favoriteQuestionIds())
         assertEquals(2, b.state.streakFreezes)
+        assertEquals(mapOf("first_step" to 123L), b.state.achievements)
+        assertEquals(4, b.state.perfectRounds)
         assertEquals(listOf(650), b.mocks.items.value.map { it.estimatedScore })
         assertEquals(a.state.lastLocalChangeAt, b.state.lastLocalChangeAt)
     }

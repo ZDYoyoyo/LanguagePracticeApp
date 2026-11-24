@@ -38,6 +38,9 @@ interface WrongAnswerDao {
     @Query("SELECT COUNT(*) FROM wrong_answers WHERE mastered = 0")
     fun observeActiveCount(): Flow<Int>
 
+    @Query("SELECT COUNT(*) FROM wrong_answers WHERE mastered = 1")
+    suspend fun masteredCount(): Int
+
     @Query("SELECT * FROM wrong_answers WHERE mastered = 0 ORDER BY lastWrongAt DESC")
     suspend fun getActive(): List<WrongAnswerEntity>
 

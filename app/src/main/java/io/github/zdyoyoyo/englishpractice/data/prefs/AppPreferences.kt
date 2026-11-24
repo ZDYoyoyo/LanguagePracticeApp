@@ -3,6 +3,7 @@ package io.github.zdyoyoyo.englishpractice.data.prefs
 import android.content.Context
 import androidx.core.content.edit
 import io.github.zdyoyoyo.englishpractice.sync.SyncState
+import kotlinx.serialization.json.Json
 
 /** 簡單的鍵值設定（SharedPreferences）。只存非機密的小設定。 */
 class AppPreferences(context: Context) : SyncState {
@@ -26,6 +27,16 @@ class AppPreferences(context: Context) : SyncState {
     override var streakFreezes: Int
         get() = sp.getInt(KEY_FREEZES, 0)
         set(value) = sp.edit { putInt(KEY_FREEZES, value) }
+
+    override var achievements: Map<String, Long>
+        get() = sp.getString(KEY_ACHIEVEMENTS, null)?.let {
+            runCatching { Json.decodeFromString<Map<String, Long>>(it) }.getOrNull()
+        } ?: emptyMap()
+        set(value) = sp.edit { putString(KEY_ACHIEVEMENTS, Json.encodeToString(value)) }
+
+    override var perfectRounds: Int
+        get() = sp.getInt(KEY_PERFECT_ROUNDS, 0)
+        set(value) = sp.edit { putInt(KEY_PERFECT_ROUNDS, value) }
 
     /** 每日目標題數 */
     var dailyGoal: Int
@@ -51,6 +62,8 @@ class AppPreferences(context: Context) : SyncState {
         private const val KEY_LAST_SYNC = "last_synced_at"
         private const val KEY_HINTS = "hint_credits"
         private const val KEY_FREEZES = "streak_freezes"
+        private const val KEY_ACHIEVEMENTS = "achievements"
+        private const val KEY_PERFECT_ROUNDS = "perfect_rounds"
         private const val KEY_DAILY_GOAL = "daily_goal"
         private const val KEY_REMINDER_ON = "reminder_enabled"
         private const val KEY_REMINDER_MIN = "reminder_minute_of_day"
