@@ -36,6 +36,10 @@ class QuestionBankParserTest {
         assertTrue("題庫錯誤：${result.problems}", result.problems.isEmpty())
         assertTrue(result.bank.questions.size >= 20)
 
+        // 內容規範：有短文 / 對話的題目都要附「生字」和「中文翻譯」
+        val missing = result.bank.questions.filter { it.passage != null && (it.glossary.isEmpty() || it.passageTranslation.isNullOrBlank()) }
+        assertTrue("這些題目缺生字或翻譯：${missing.map { it.id }}", missing.isEmpty())
+
         val manifestFile = File(file.parentFile, "version.json")
         val manifest = QuestionBankParser.parseManifest(manifestFile.readText())
         assertEquals("version.json 與 questions.json 的版本號要一致", manifest.version, result.bank.version)

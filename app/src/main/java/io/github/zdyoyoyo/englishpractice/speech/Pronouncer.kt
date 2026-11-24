@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.speech.RecognizerIntent
 import android.speech.tts.TextToSpeech
+import android.speech.tts.Voice
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
@@ -18,10 +19,27 @@ class Pronouncer(context: Context) : TextToSpeech.OnInitListener {
     @Volatile var isReady = false
         private set
 
+    private var defaultVoice: Voice? = null
+    private var maleVoice: Voice? = null
+    private var femaleVoice: Voice? = null
+
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             val result = tts.setLanguage(Locale.US)
             isReady = result != TextToSpeech.LANG_MISSING_DATA && result != TextToSpeech.LANG_NOT_SUPPORTED
+            if (isReady) findVoices()
+        }
+    }
+
+    /** 找出手機上的英文男聲 / 女聲；找不到就只用音高區分 */
+    private fun findVoices() {
+        runCatching {
+            defaultVoice = tts.voice
+            val all = tts.voices.orEmpty().filter { !it.features.orEmpty().contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED) }
+            val candidates = all.map { VoicePicker.Candidate(it.name, it.locale.toLanguageTag(), it.isNetworkConnectionRequired) }
+            fun find(g: VoicePicker.Gender) = VoicePicker.pick(candidates, g)?.let { c -> all.first { it.name == c.name } }
+            maleVoice = find(VoicePicker.Gender.MALE)
+            femaleVoice = find(VoicePicker.Gender.FEMALE)
         }
     }
 
@@ -42,11 +60,26 @@ class Pronouncer(context: Context) : TextToSpeech.OnInitListener {
         tts.setSpeechRate(if (slow) 0.7f else 0.95f)
         tts.stop()
         DialogueScript.parse(script).forEachIndexed { i, line ->
-            tts.setPitch(line.pitch)
+            // 有找到真正的男聲 / 女聲就切換聲音（音高只微調）；找不到就用較大的音高差異
+            val voice = when (line.pitch) {
+                DialogueScript.MALE_PITCH -> maleVoice
+                DialogueScript.FEMALE_PITCH -> femaleVoice
+                else -> null
+            }
+            tts.voice = voice ?: defaultVoice ?: tts.voice
+            tts.setPitch(
+                when {
+                    voice != null && line.pitch == DialogueScript.MALE_PITCH -> 0.95f
+                    voice != null -> 1.05f
+                    line.pitch == DialogueScript.MALE_PITCH -> 0.7f   // 沒有男聲時：明顯壓低
+                    else -> line.pitch
+                }
+            )
             tts.speak(line.text, TextToSpeech.QUEUE_ADD, null, "line$i")
             tts.playSilentUtterance(350, TextToSpeech.QUEUE_ADD, "pause$i")
         }
         tts.setPitch(1.0f)
+        defaultVoice?.let { tts.voice = it }
         return true
     }
 

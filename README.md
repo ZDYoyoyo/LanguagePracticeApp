@@ -167,7 +167,9 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
       "answer": "簡短的",               // 有選項時必須是選項之一
       "acceptedAnswers": [],            // 選填：輸入題可接受的其他寫法（不分大小寫）
       "passage": "（選填）閱讀短文或聽力對話稿，多題可共用同一段",
-      "listening": false,               // 選填：true = passage 是聽力對話（M: / W: 開頭會用不同聲音朗讀），作答後才顯示原文
+      "listening": false,               // 選填：true = passage 是聽力對話（M: / W: 開頭會用男聲／女聲朗讀），作答後才顯示原文
+      "glossary": {"toner": "碳粉"},     // 有 passage 時必填：重點生字（英 → 中）
+      "passageTranslation": "中文翻譯",  // 有 passage 時必填：作答後可展開的中文翻譯
       "explanation": "brief（adj.）簡短的。",
       "optionNotes": {                  // 選填：錯誤選項的說明，答錯時顯示「你選的那個是什麼意思」
         "勇敢的": "勇敢的是 brave"

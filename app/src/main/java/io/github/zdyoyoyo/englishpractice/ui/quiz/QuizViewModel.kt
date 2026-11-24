@@ -14,7 +14,6 @@ import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.domain.AnswerChecker
 import io.github.zdyoyoyo.englishpractice.domain.HintLogic
 import io.github.zdyoyoyo.englishpractice.domain.OptionExplainer
-import io.github.zdyoyoyo.englishpractice.domain.QuestionCategory
 import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
 import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
@@ -128,7 +127,7 @@ class QuizViewModel(
         StudyMode.DAILY -> DailyPicker.dailySet(c.questionBank.questions, c.clock.today().toEpochDay())
         else -> QuestionSelector.selectSmart(
             all = c.questionBank.questions,
-            filter = QuestionSelector.Filter(route.tag, route.difficulty, QuestionCategory.fromKey(route.category)),
+            filter = QuestionSelector.Filter.decode(route.tags, route.difficulties, route.categories),
             limit = route.count,
             stats = c.study.questionStats(),
             preferNew = route.preferNew,

@@ -8,15 +8,30 @@ object QuestionSelector {
     const val DEFAULT_SESSION_SIZE = 10
     val SESSION_SIZES = listOf(10, 20, 30)
 
+    /** 篩選條件：每一項都可以複選，空集合 = 不限制。同一項內是「或」，不同項之間是「且」 */
     data class Filter(
-        val tag: String? = null,
-        val difficulty: Int? = null,
-        val category: QuestionCategory? = null,
+        val tags: Set<String> = emptySet(),
+        val difficulties: Set<Int> = emptySet(),
+        val categories: Set<QuestionCategory> = emptySet(),
     ) {
         fun matches(q: Question) =
-            (tag == null || tag in q.tags) &&
-                (difficulty == null || q.difficulty == difficulty) &&
-                (category == null || q.category == category)
+            (tags.isEmpty() || q.tags.any { it in tags }) &&
+                (difficulties.isEmpty() || q.difficulty in difficulties) &&
+                (categories.isEmpty() || q.category in categories)
+
+        /** 給導覽路由用：存成逗號分隔字串 */
+        fun encodeTags() = tags.joinToString(",").ifEmpty { null }
+        fun encodeDifficulties() = difficulties.joinToString(",").ifEmpty { null }
+        fun encodeCategories() = categories.joinToString(",") { it.key }.ifEmpty { null }
+
+        companion object {
+            fun decode(tags: String?, difficulties: String?, categories: String?) = Filter(
+                tags = tags.splitList().toSet(),
+                difficulties = difficulties.splitList().mapNotNull { it.toIntOrNull() }.toSet(),
+                categories = categories.splitList().mapNotNull { QuestionCategory.fromKey(it) }.toSet(),
+            )
+            private fun String?.splitList() = this?.split(",")?.map { it.trim() }?.filter { it.isNotEmpty() }.orEmpty()
+        }
     }
 
     fun filter(all: List<Question>, filter: Filter): List<Question> = all.filter(filter::matches)
@@ -28,7 +43,7 @@ object QuestionSelector {
         difficulty: Int? = null,
         limit: Int = DEFAULT_SESSION_SIZE,
         random: Random = Random.Default,
-    ): List<Question> = filter(all, Filter(tag, difficulty)).shuffled(random).take(limit)
+    ): List<Question> = filter(all, Filter(setOfNotNull(tag), setOfNotNull(difficulty))).shuffled(random).take(limit)
 
     /**
      * 聰明選題：

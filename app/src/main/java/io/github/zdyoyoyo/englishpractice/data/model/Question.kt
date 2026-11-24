@@ -25,6 +25,10 @@ data class Question(
     val passage: String? = null,
     /** true = passage 是聽力對話：先用語音播放、作答後才顯示原文 */
     val listening: Boolean = false,
+    /** 選填：短文 / 對話裡的重點生字（英文 → 中文） */
+    val glossary: Map<String, String> = emptyMap(),
+    /** 選填：短文 / 對話的中文翻譯（作答後才顯示） */
+    val passageTranslation: String? = null,
     /** 單字題的目標單字（每日單字會用到），其他題型可省略 */
     val word: String? = null,
     /** 選項；空陣列代表「自行輸入答案」的填空題 */

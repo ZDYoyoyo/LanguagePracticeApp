@@ -55,7 +55,11 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onBack = { nav.popBackStack() },
                 onStart = { o ->
                     nav.navigate(
-                        QuizRoute(StudyMode.PRACTICE.key, o.tag, o.difficulty, o.category?.key, o.count, o.preferNew)
+                        QuizRoute(
+                            StudyMode.PRACTICE.key,
+                            o.filter.encodeTags(), o.filter.encodeDifficulties(), o.filter.encodeCategories(),
+                            o.count, o.preferNew,
+                        )
                     )
                 },
             )
