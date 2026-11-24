@@ -61,6 +61,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementBanner
+import io.github.zdyoyoyo.englishpractice.share.ShareCardRenderer
+import io.github.zdyoyoyo.englishpractice.share.ShareCards
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
 import io.github.zdyoyoyo.englishpractice.data.model.Question
 import io.github.zdyoyoyo.englishpractice.feedback.ContactAuthor
@@ -475,6 +477,11 @@ private fun MockResultSummary(
         Button(onClick = { showReview = !showReview }, modifier = Modifier.fillMaxWidth()) {
             Text(if (showReview) "收起詳解" else "看每一題詳解（答錯 ${s.wrongInSession.size} 題）")
         }
+        val context = LocalContext.current
+        OutlinedButton(
+            onClick = { ShareCardRenderer.share(context, ShareCards.forMock(score, streakDays = 0)) },
+            modifier = Modifier.fillMaxWidth(),
+        ) { Text("📤 分享成績") }
         OutlinedButton(onClick = onPlayAgain, modifier = Modifier.fillMaxWidth()) { Text("再考一次") }
         OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth()) { Text("返回") }
 

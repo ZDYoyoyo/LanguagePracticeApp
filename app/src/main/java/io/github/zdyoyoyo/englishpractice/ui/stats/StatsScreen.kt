@@ -17,6 +17,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Share
+import io.github.zdyoyoyo.englishpractice.share.ShareCardRenderer
+import io.github.zdyoyoyo.englishpractice.share.ShareCards
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -55,6 +58,7 @@ fun StatsScreen(
     vm: StatsViewModel = viewModel(factory = StatsViewModel.Factory),
 ) {
     val summary by vm.summary.collectAsStateWithLifecycle()
+    val context = androidx.compose.ui.platform.LocalContext.current
     LifecycleResumeEffect(Unit) {
         vm.refresh()
         onPauseOrDispose { }
@@ -63,6 +67,13 @@ fun StatsScreen(
         TopAppBar(
             title = { Text("學習統計") },
             navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "返回") } },
+            actions = {
+                summary?.let { s ->
+                    IconButton(onClick = {
+                        ShareCardRenderer.share(context, ShareCards.forProgress(s, vm.bestMock, vm.achievementCount))
+                    }) { Icon(Icons.Filled.Share, contentDescription = "分享學習成果") }
+                }
+            },
         )
     }) { padding ->
         val s = summary

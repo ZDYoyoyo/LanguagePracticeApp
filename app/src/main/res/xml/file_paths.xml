@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 分享成績卡：只開放 App 暫存資料夾裡的 share/ 子資料夾給其他 App 讀取 -->
+<paths>
+    <cache-path name="share" path="share/" />
+</paths>

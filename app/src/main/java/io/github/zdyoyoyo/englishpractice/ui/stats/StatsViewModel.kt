@@ -13,6 +13,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class StatsViewModel(private val c: AppContainer) : ViewModel() {
+    /** 分享卡用：模擬考最佳分數與已解鎖成就數 */
+    var bestMock: Int? = null
+        private set
+    val achievementCount: Int get() = c.achievements.unlocked.value.size
+
     private val _summary = MutableStateFlow<StatsCalculator.Summary?>(null)
     val summary: StateFlow<StatsCalculator.Summary?> = _summary.asStateFlow()
 
@@ -21,6 +26,7 @@ class StatsViewModel(private val c: AppContainer) : ViewModel() {
         viewModelScope.launch {
             val bank = c.questionBank.ensureLoaded().questions
             val src = c.study.statsSource()
+            bestMock = c.database.mockResultDao().getAll().maxOfOrNull { it.estimatedScore }
             _summary.value = StatsCalculator.summarize(bank, src.attempts, src.cards, src.days, c.clock.today().toEpochDay())
         }
     }
