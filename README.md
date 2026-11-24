@@ -44,14 +44,14 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
     local/                   ← Room：Entity（資料表）、DAO（查詢）、Database
     prefs/AppPreferences.kt  ← 小設定（SharedPreferences）
     StudyRepository.kt       ← 作答紀錄、錯題收錄、SM-2 更新、打卡（核心規則）
-  domain/                    ← 純邏輯：Sm2Scheduler、StreakCalculator、DailyPicker、
-                               PkEngine、AnswerChecker、QuestionSelector、HintLogic
+  domain/                    ← 純邏輯：Sm2Scheduler、StreakCalculator、DailyPicker、PkEngine、
+                               AnswerChecker、QuestionSelector（聰明選題）、StatsCalculator、HintLogic
   notify/                    ← 每日提醒（AlarmManager 系統鬧鐘 + 開機重排）
   auth/GoogleAuthManager.kt  ← Google 登入 + Drive 授權
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
-  ui/                        ← 各畫面：home、practice、quiz、wrongbook、pk、settings
-app/src/test/                ← 單元測試（75 個）
+  ui/                        ← 各畫面：home、practice、quiz、wrongbook、favorites、pk、stats、words、settings
+app/src/test/                ← 單元測試（82 個）
 ```
 
 ---
@@ -78,6 +78,7 @@ cp local.properties.example local.properties   # 填入 sdk.dir（Android Studio
 | `WrongBookRecordingTest` | 答錯收錄、次數累加、錯題本答對才移出、再錯重新收錄 |
 | `QuestionBankParserTest` | 題庫格式驗證，**含 repo 裡真正的 questions.json** |
 | `QuestionBankRepositoryTest` | 版本比對、下載、快取、離線、壞檔不覆蓋 |
+| `SmartSelectionAndStatsTest` | 聰明選題（沒做過→常錯→已會）、同篇閱讀／聽力不拆開、題型篩選、學習統計 |
 | `SyncTest` | 兩支模擬手機的備份 / 還原、較新為準、首次同步詢問 |
 | `StreakCalculatorTest`、`DailyAndPkTest`、`AdsAndHintsTest` | 打卡、每日一題、PK 計分、廣告頻率 |
 

@@ -22,8 +22,7 @@ class PracticeSetupViewModel(private val bank: QuestionBankRepository) : ViewMod
         viewModelScope.launch { bank.ensureLoaded() }
     }
 
-    fun countMatching(tag: String?, difficulty: Int?): Int =
-        QuestionSelector.select(bank.questions, tag, difficulty, limit = Int.MAX_VALUE).size
+    fun countMatching(filter: QuestionSelector.Filter): Int = QuestionSelector.filter(bank.questions, filter).size
 
     companion object {
         val Factory = viewModelFactory { initializer { PracticeSetupViewModel(appContainer().questionBank) } }

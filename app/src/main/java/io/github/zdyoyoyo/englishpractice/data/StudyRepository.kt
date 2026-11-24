@@ -12,6 +12,8 @@ import io.github.zdyoyoyo.englishpractice.data.local.TransactionRunner
 import io.github.zdyoyoyo.englishpractice.data.local.WrongAnswerDao
 import io.github.zdyoyoyo.englishpractice.data.local.WrongAnswerEntity
 import io.github.zdyoyoyo.englishpractice.data.model.Question
+import io.github.zdyoyoyo.englishpractice.domain.QuestionStat
+import io.github.zdyoyoyo.englishpractice.domain.QuestionStats
 import io.github.zdyoyoyo.englishpractice.domain.Sm2Scheduler
 import io.github.zdyoyoyo.englishpractice.domain.StreakCalculator
 import io.github.zdyoyoyo.englishpractice.util.AppClock
@@ -106,6 +108,21 @@ class StudyRepository(
         StreakCalculator.compute(dayDao.getDays(), clock.today().toEpochDay())
 
     suspend fun dueCountNow(): Int = reviewDao.dueCount(clock.today().toEpochDay())
+
+    /** 每一題的作答統計（選題、統計頁用） */
+    suspend fun questionStats(): Map<String, QuestionStat> =
+        QuestionStats.from(attemptDao.getAll())
+
+    /** 統計頁需要的原始資料 */
+    suspend fun statsSource(): StatsSource = tx.run {
+        StatsSource(attemptDao.getAll(), reviewDao.getAll(), dayDao.getAll())
+    }
+
+    data class StatsSource(
+        val attempts: List<AttemptEntity>,
+        val cards: List<ReviewCardEntity>,
+        val days: List<StudyDayEntity>,
+    )
 
     suspend fun activeWrongQuestionIds(): List<String> = wrongDao.getActive().map { it.questionId }
 

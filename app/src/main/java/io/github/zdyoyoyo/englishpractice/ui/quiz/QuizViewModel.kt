@@ -14,6 +14,7 @@ import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.domain.AnswerChecker
 import io.github.zdyoyoyo.englishpractice.domain.HintLogic
 import io.github.zdyoyoyo.englishpractice.domain.OptionExplainer
+import io.github.zdyoyoyo.englishpractice.domain.QuestionCategory
 import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
 import io.github.zdyoyoyo.englishpractice.domain.QuestionSelector
 import io.github.zdyoyoyo.englishpractice.ui.appContainer
@@ -50,6 +51,9 @@ data class QuizUiState(
     val favoriteIds: Set<String> = emptySet(),
     val markedGuessed: Boolean = false,
     val rewardMessage: String? = null,
+    // ---- 結算 ----
+    /** 這一輪答錯（含放棄）的題目，結算畫面列出並可一鍵重做 */
+    val wrongInSession: List<Question> = emptyList(),
 ) {
     val current: Question? get() = questions.getOrNull(index)
     val isLast: Boolean get() = index == questions.lastIndex
@@ -78,16 +82,37 @@ class QuizViewModel(
 
     private suspend fun start() {
         c.questionBank.ensureLoaded()
-        val questions = loadQuestions()
+        beginRound(loadQuestions(), titleFor(mode))
+    }
+
+    /** 開始新的一輪（保留提示次數與收藏狀態） */
+    private fun beginRound(questions: List<Question>, title: String) {
         _ui.update {
-            it.copy(
+            QuizUiState(
                 loading = false,
+                title = title,
                 questions = questions,
                 emptyMessage = if (questions.isEmpty()) emptyMessageFor(mode) else null,
+                hintCredits = it.hintCredits,
+                favoriteIds = it.favoriteIds,
             )
         }
         questionShownAt = c.clock.nowMillis()
     }
+
+    /** 結算畫面：「重做這輪答錯的題目」 */
+    fun onRetryWrong() {
+        val wrong = _ui.value.wrongInSession
+        if (wrong.isNotEmpty()) beginRound(wrong, "重做本輪錯題")
+    }
+
+    /** 結算畫面：「再來一輪」（重新選題） */
+    fun onPlayAgain() {
+        viewModelScope.launch { beginRound(loadQuestions(), titleFor(mode)) }
+    }
+
+    /** 每日練習固定兩題，不提供「再來一輪」 */
+    val canPlayAgain: Boolean get() = mode != StudyMode.DAILY
 
     /** 依模式決定這一輪要做哪些題目 */
     private suspend fun loadQuestions(): List<Question> = when (mode) {
@@ -101,7 +126,13 @@ class QuizViewModel(
         StudyMode.REVIEW -> c.study.dueQuestionIds(limit = 20)
             .mapNotNull { c.questionBank.findById(it) }
         StudyMode.DAILY -> DailyPicker.dailySet(c.questionBank.questions, c.clock.today().toEpochDay())
-        else -> QuestionSelector.select(c.questionBank.questions, route.tag, route.difficulty)
+        else -> QuestionSelector.selectSmart(
+            all = c.questionBank.questions,
+            filter = QuestionSelector.Filter(route.tag, route.difficulty, QuestionCategory.fromKey(route.category)),
+            limit = route.count,
+            stats = c.study.questionStats(),
+            preferNew = route.preferNew,
+        )
     }
 
     fun onTypedChange(text: String) = _ui.update { it.copy(typed = text) }
@@ -156,6 +187,8 @@ class QuizViewModel(
                 lastCorrect = correct,
                 correctCount = it.correctCount + if (correct) 1 else 0,
                 wrongOptionNote = note,
+                wrongInSession = if (correct || it.wrongInSession.any { w -> w.id == q.id }) it.wrongInSession
+                else it.wrongInSession + q,
             )
         }
         val usedHint = _ui.value.usedHint

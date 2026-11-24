@@ -141,3 +141,8 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 }
+
+// 單元測試會讀 question-bank/ 驗證題庫，宣告成輸入：題庫一改就會重新跑測試（不會用到舊的快取結果）
+tasks.withType<Test>().configureEach {
+    inputs.dir(rootProject.file("question-bank")).withPropertyName("questionBank")
+}
