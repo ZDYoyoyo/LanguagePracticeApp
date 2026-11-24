@@ -62,8 +62,8 @@ data class QuizUiState(
     val isMock: Boolean = false,
     /** 剩餘時間（毫秒）；null = 不限時 */
     val remainingMs: Long? = null,
-    /** 題目 id → 使用者的答案（模擬考結束後檢討用） */
-    val mockAnswers: Map<String, String> = emptyMap(),
+    /** 題目 id → 使用者的答案（結算詳解用；模擬考交卷前可以改） */
+    val answers: Map<String, String> = emptyMap(),
     val mockScore: MockScore? = null,
     val mockTimedOut: Boolean = false,
     val mockDurationMs: Long = 0,
@@ -106,6 +106,7 @@ class QuizViewModel(
         val isMock = mode == StudyMode.MOCK
         timerJob?.cancel()
         mockCorrectIds.clear()
+        timeSpent.clear()
         _ui.update {
             QuizUiState(
                 loading = false,
@@ -138,22 +139,32 @@ class QuizViewModel(
         }
     }
 
-    /** 模擬考：作答後不顯示對錯，直接下一題 */
-    private fun answerMock(answer: String, skipped: Boolean) {
+    /** 每題實際花的時間（切換題目時累加），交卷時寫入作答紀錄 */
+    private val timeSpent = mutableMapOf<String, Long>()
+
+    private fun leaveCurrentQuestion() {
+        val q = _ui.value.current ?: return
+        timeSpent[q.id] = (timeSpent[q.id] ?: 0L) + (c.clock.nowMillis() - questionShownAt)
+    }
+
+    /** 模擬考：選答案只先記下來（交卷前都能改），選完自動到下一題 */
+    private fun answerMock(answer: String?) {
         val s = _ui.value
         if (s.finished) return
         val q = s.current ?: return
-        val correct = !skipped && AnswerChecker.isCorrect(q, answer)
-        if (correct) mockCorrectIds += q.id
-        val elapsed = c.clock.nowMillis() - questionShownAt
-        viewModelScope.launch { c.study.recordAnswer(q, answer, correct, elapsed, mode) }
-        _ui.update { it.copy(mockAnswers = it.mockAnswers + (q.id to answer)) }
-        if (s.isLast) {
-            finishMock(timedOut = false)
-        } else {
-            _ui.update { it.copy(index = it.index + 1, selected = null, typed = "") }
-            questionShownAt = c.clock.nowMillis()
+        _ui.update {
+            it.copy(answers = if (answer == null) it.answers - q.id else it.answers + (q.id to answer))
         }
+        if (!s.isLast) goToQuestion(s.index + 1)
+    }
+
+    /** 模擬考：跳到任一題（上一題、下一題、題號列） */
+    fun goToQuestion(index: Int) {
+        val s = _ui.value
+        if (!s.isMock || s.finished || index !in s.questions.indices || index == s.index) return
+        leaveCurrentQuestion()
+        _ui.update { it.copy(index = index, selected = null, typed = "") }
+        questionShownAt = c.clock.nowMillis()
     }
 
     /** 交卷：計算預估分數並存檔（沒作答的題目算錯，但不寫入作答紀錄） */
@@ -161,6 +172,16 @@ class QuizViewModel(
         val s = _ui.value
         if (s.finished) return
         timerJob?.cancel()
+        leaveCurrentQuestion()
+        // 交卷時才判斷對錯並寫入作答紀錄（錯題本、複習排程）；沒作答的題目算錯但不寫入
+        mockCorrectIds.clear()
+        val answered = s.questions.mapNotNull { q -> s.answers[q.id]?.let { q to it } }
+        answered.forEach { (q, a) -> if (AnswerChecker.isCorrect(q, a)) mockCorrectIds += q.id }
+        viewModelScope.launch {
+            answered.forEach { (q, a) ->
+                c.study.recordAnswer(q, a, q.id in mockCorrectIds, timeSpent[q.id] ?: 0L, mode)
+            }
+        }
         val score = MockScore.from(s.questions, mockCorrectIds.toSet())
         val duration = c.clock.nowMillis() - roundStartedAt
         _ui.update {
@@ -222,7 +243,7 @@ class QuizViewModel(
 
     /** 選擇題：點選項即作答 */
     fun onOptionSelected(option: String) {
-        if (_ui.value.isMock) return answerMock(option, skipped = false)
+        if (_ui.value.isMock) return answerMock(option)
         if (_ui.value.revealed) return
         _ui.update { it.copy(selected = option) }
         submit(option)
@@ -252,7 +273,7 @@ class QuizViewModel(
 
     /** 「不會，看答案」：直接揭曉，算答錯（收進錯題本、明天複習） */
     fun onGiveUp() {
-        if (_ui.value.isMock) return answerMock(SKIP_ANSWER, skipped = true)
+        if (_ui.value.isMock) return goToQuestion(_ui.value.index + 1) // 模擬考的「跳過」= 先不答，之後可以回來
         val s = _ui.value
         if (s.revealed) return
         _ui.update { it.copy(gaveUp = true, selected = null) }
@@ -274,6 +295,7 @@ class QuizViewModel(
                 wrongOptionNote = note,
                 wrongInSession = if (correct || it.wrongInSession.any { w -> w.id == q.id }) it.wrongInSession
                 else it.wrongInSession + q,
+                answers = it.answers + (q.id to answer),
             )
         }
         val usedHint = _ui.value.usedHint
