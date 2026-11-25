@@ -44,6 +44,11 @@ class SettingsViewModel(
 
     fun setDailyGoal(goal: Int) = c.progress.setDailyGoal(goal)
 
+    val themeMode = c.display.theme
+    val fontSize = c.display.font
+    fun setTheme(mode: io.github.zdyoyoyo.englishpractice.data.prefs.DisplaySettings.ThemeMode) = c.display.setTheme(mode)
+    fun setFont(size: io.github.zdyoyoyo.englishpractice.data.prefs.DisplaySettings.FontSize) = c.display.setFont(size)
+
     /** 先看廣告存一次連勝保護（最多 2 次），之後漏打卡時可用 */
     fun watchAdForFreeze(activity: Activity) {
         c.ads.showRewarded(activity) { c.progress.addFreeze() }

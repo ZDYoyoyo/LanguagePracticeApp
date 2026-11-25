@@ -35,6 +35,7 @@ import androidx.compose.material3.TimePicker
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
+import io.github.zdyoyoyo.englishpractice.data.prefs.DisplaySettings
 import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import androidx.compose.material3.FilterChip
 import androidx.compose.runtime.LaunchedEffect
@@ -67,6 +68,8 @@ fun SettingsScreen(
     val privacyRequired by vm.privacyOptionsRequired.collectAsStateWithLifecycle()
     val adStatus by vm.adStatus.collectAsStateWithLifecycle()
     val dailyGoal by vm.dailyGoal.collectAsStateWithLifecycle()
+    val themeMode by vm.themeMode.collectAsStateWithLifecycle()
+    val fontSize by vm.fontSize.collectAsStateWithLifecycle()
     val freezes by vm.freezes.collectAsStateWithLifecycle()
     var testResult by remember { mutableStateOf<String?>(null) }
     val activity = LocalActivity.current
@@ -100,6 +103,21 @@ fun SettingsScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             AccountSection(cloud, vm)
+            HorizontalDivider()
+
+            SectionTitle("外觀")
+            Text("主題")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                DisplaySettings.ThemeMode.entries.forEach { m ->
+                    FilterChip(selected = themeMode == m, onClick = { vm.setTheme(m) }, label = { Text(m.label) })
+                }
+            }
+            Text("字體大小")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                DisplaySettings.FontSize.entries.forEach { f ->
+                    FilterChip(selected = fontSize == f, onClick = { vm.setFont(f) }, label = { Text(f.label) })
+                }
+            }
             HorizontalDivider()
 
             SectionTitle("每日目標與連勝保護")
