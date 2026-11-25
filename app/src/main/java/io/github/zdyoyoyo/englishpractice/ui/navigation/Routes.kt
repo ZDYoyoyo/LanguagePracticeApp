@@ -15,6 +15,7 @@ import kotlinx.serialization.Serializable
 @Serializable object MockSetupRoute
 @Serializable object AchievementsRoute
 @Serializable object FlashcardsRoute
+@Serializable object DictationRoute
 
 @Serializable
 data class QuizRoute(

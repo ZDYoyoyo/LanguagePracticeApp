@@ -20,6 +20,7 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material.icons.filled.Style
+import androidx.compose.material.icons.filled.Hearing
 import androidx.compose.material.icons.filled.EmojiEvents
 import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementBanner
 import androidx.compose.material.icons.filled.BarChart
@@ -63,6 +64,7 @@ fun HomeScreen(
     onMock: () -> Unit,
     onAchievements: () -> Unit,
     onFlashcards: () -> Unit,
+    onDictation: () -> Unit,
     /** 看獎勵廣告；回傳 false = 廣告還沒準備好 */
     onWatchAdForFreeze: (onReward: () -> Unit) -> Boolean,
     onPk: () -> Unit,
@@ -116,6 +118,7 @@ fun HomeScreen(
             )
             HomeActionCard(Icons.Filled.EditNote, "開始做題", "依題型、考點或難度選題", onPractice)
             HomeActionCard(Icons.Filled.Style, "單字卡", "滑卡片快速背單字，適合零碎時間", onFlashcards)
+            HomeActionCard(Icons.Filled.Hearing, "聽寫練習", "聽一句、打一句，同時練聽力和拼字", onDictation)
             HomeActionCard(
                 Icons.AutoMirrored.Filled.MenuBook, "錯題本",
                 if (state.wrongCount == 0) "目前沒有錯題" else "還有 ${state.wrongCount} 題待訂正",

@@ -217,6 +217,14 @@ class StudyRepository(
         )
     }
 
+    /** 不屬於題庫作答的練習（例如聽寫）：只算進今天的打卡與每日目標 */
+    suspend fun recordActivity(count: Int = 1) {
+        val today = clock.today().toEpochDay()
+        val day = dayDao.get(today)
+        dayDao.upsert(StudyDayEntity(today, (day?.answeredCount ?: 0) + count))
+        onLocalDataChanged(clock.nowMillis())
+    }
+
     /** 使用者手動從錯題本移除 */
     suspend fun removeFromWrongBook(questionId: String) {
         wrongDao.delete(questionId)
