@@ -68,7 +68,12 @@ jobs:
           gh release view debug-latest >/dev/null 2>&1 || \
             gh release create debug-latest --prerelease --title "最新測試版（自動建置）" \
               --notes "每次 main 更新時自動建置的測試版 APK。下載 EnglishPractice-debug.apk 後直接安裝。"
-          gh release upload debug-latest EnglishPractice-debug.apk --clobber
+          # GitHub API 偶爾回 5xx：最多重試 4 次
+          for i in 1 2 3 4; do
+            gh release upload debug-latest EnglishPractice-debug.apk --clobber && break
+            [ "$i" = 4 ] && exit 1
+            echo "上傳失敗，$((i * 20)) 秒後重試…"; sleep $((i * 20))
+          done
 
       # ---- 上架用：main 更新時建置簽好名的 AAB（上傳到 Play Console 用）----
       - name: Restore release keystore from secret
@@ -113,4 +118,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cp app/build/outputs/apk/release/app-release.apk EnglishPractice-release-test.apk
-          gh release upload debug-latest EnglishPractice-release-test.apk --clobber
+          for i in 1 2 3 4; do
+            gh release upload debug-latest EnglishPractice-release-test.apk --clobber && break
+            [ "$i" = 4 ] && exit 1
+            sleep $((i * 20))
+          done
