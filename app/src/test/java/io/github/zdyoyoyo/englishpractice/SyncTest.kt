@@ -7,6 +7,7 @@ import io.github.zdyoyoyo.englishpractice.fakes.FakeAttemptDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeClock
 import io.github.zdyoyoyo.englishpractice.fakes.FakeFavoriteDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeMockResultDao
+import io.github.zdyoyoyo.englishpractice.fakes.FakeQuestionNoteDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeReviewCardDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeStudyDayDao
 import io.github.zdyoyoyo.englishpractice.fakes.FakeWrongAnswerDao
@@ -73,9 +74,10 @@ class SyncManagerTest {
         val days = FakeStudyDayDao()
         val favs = FakeFavoriteDao()
         val mocks = FakeMockResultDao()
+        val notes = FakeQuestionNoteDao()
         val state = FakeState()
         val study = StudyRepository(DirectTx, attempts, wrongs, cards, days, favs, clock, { state.lastLocalChangeAt = it })
-        val sync = SyncManager(BackupSerializer(DirectTx, attempts, wrongs, cards, days, favs, mocks), state, clock)
+        val sync = SyncManager(BackupSerializer(DirectTx, attempts, wrongs, cards, days, favs, mocks, notes), state, clock)
     }
 
     private val clock = FakeClock()
@@ -89,6 +91,7 @@ class SyncManagerTest {
         a.state.streakFreezes = 2
         a.state.achievements = mapOf("first_step" to 123L)
         a.state.perfectRounds = 4
+        io.github.zdyoyoyo.englishpractice.data.NoteRepository(a.notes, clock).save("q1", "by = 期限")
         a.mocks.insert(io.github.zdyoyoyo.englishpractice.data.local.MockResultEntity(
             takenAt = 1, totalQuestions = 20, listeningCorrect = 7, listeningTotal = 10,
             readingCorrect = 6, readingTotal = 10, estimatedScore = 650, durationMs = 1000))
@@ -104,6 +107,7 @@ class SyncManagerTest {
         assertEquals(2, b.state.streakFreezes)
         assertEquals(mapOf("first_step" to 123L), b.state.achievements)
         assertEquals(4, b.state.perfectRounds)
+        assertEquals(listOf("by = 期限"), b.notes.map.value.values.map { it.text })
         assertEquals(listOf(650), b.mocks.items.value.map { it.estimatedScore })
         assertEquals(a.state.lastLocalChangeAt, b.state.lastLocalChangeAt)
     }

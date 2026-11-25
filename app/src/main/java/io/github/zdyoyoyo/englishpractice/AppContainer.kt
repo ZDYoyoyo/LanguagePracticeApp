@@ -5,6 +5,7 @@ import io.github.zdyoyoyo.englishpractice.ads.AdsManager
 import io.github.zdyoyoyo.englishpractice.ads.HintWallet
 import io.github.zdyoyoyo.englishpractice.auth.GoogleAuthManager
 import io.github.zdyoyoyo.englishpractice.data.AchievementRepository
+import io.github.zdyoyoyo.englishpractice.data.NoteRepository
 import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.FileBankStore
@@ -57,6 +58,8 @@ class AppContainer(context: Context) {
         clock = clock,
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
+
+    val notes = NoteRepository(database.questionNoteDao(), clock, onLocalDataChanged = { prefs.lastLocalChangeAt = it })
 
     val achievements = AchievementRepository(
         prefs = prefs,

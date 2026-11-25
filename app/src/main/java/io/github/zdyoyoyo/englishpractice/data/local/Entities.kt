@@ -77,3 +77,12 @@ data class MockResultEntity(
     val estimatedScore: Int,
     val durationMs: Long,
 )
+
+/** 使用者對某一題寫的筆記 */
+@Serializable
+@Entity(tableName = "question_notes")
+data class QuestionNoteEntity(
+    @PrimaryKey val questionId: String,
+    val text: String,
+    val updatedAt: Long,
+)

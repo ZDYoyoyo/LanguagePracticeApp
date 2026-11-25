@@ -19,6 +19,7 @@ data class FavoriteItem(val questionId: String, val question: Question?)
 class FavoritesViewModel(
     private val bank: QuestionBankRepository,
     private val study: StudyRepository,
+    private val c: io.github.zdyoyoyo.englishpractice.AppContainer,
 ) : ViewModel() {
 
     val items: StateFlow<List<FavoriteItem>> = combine(study.favorites, bank.bank) { list, b ->
@@ -29,13 +30,16 @@ class FavoritesViewModel(
         viewModelScope.launch { bank.ensureLoaded() }
     }
 
+    val notes = c.notes.notes.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyMap())
+    fun saveNote(questionId: String, text: String) { viewModelScope.launch { c.notes.save(questionId, text) } }
+
     fun remove(questionId: String) {
         viewModelScope.launch { study.toggleFavorite(questionId) }
     }
 
     companion object {
         val Factory = viewModelFactory {
-            initializer { appContainer().let { FavoritesViewModel(it.questionBank, it.study) } }
+            initializer { appContainer().let { FavoritesViewModel(it.questionBank, it.study, it) } }
         }
     }
 }

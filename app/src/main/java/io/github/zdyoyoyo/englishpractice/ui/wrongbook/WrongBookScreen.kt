@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.speech.rememberPronouncer
+import io.github.zdyoyoyo.englishpractice.ui.notes.NoteSection
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
 import io.github.zdyoyoyo.englishpractice.ui.theme.WrongRed
 
@@ -40,6 +41,7 @@ fun WrongBookScreen(
     vm: WrongBookViewModel = viewModel(factory = WrongBookViewModel.Factory),
 ) {
     val items by vm.items.collectAsStateWithLifecycle()
+    val notes by vm.notes.collectAsStateWithLifecycle()
     val pronouncer = rememberPronouncer()
     Scaffold(topBar = {
         TopAppBar(
@@ -65,6 +67,7 @@ fun WrongBookScreen(
                                 item.question?.let { Text("正解：${it.answer}", color = CorrectGreen) }
                                 Text("你的答案：${item.record.lastWrongAnswer}", color = WrongRed)
                                 Text("答錯 ${item.record.wrongCount} 次", style = MaterialTheme.typography.bodySmall)
+                                NoteSection(notes[item.record.questionId]) { vm.saveNote(item.record.questionId, it) }
                             }
                             item.question?.speakableText?.let { text ->
                                 IconButton(onClick = { pronouncer.speak(text) }) {

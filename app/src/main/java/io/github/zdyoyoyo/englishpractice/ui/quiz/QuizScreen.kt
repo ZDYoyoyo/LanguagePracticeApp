@@ -61,6 +61,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.ads.AdPolicy
 import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementBanner
+import io.github.zdyoyoyo.englishpractice.ui.notes.NoteSection
 import io.github.zdyoyoyo.englishpractice.share.ShareCardRenderer
 import io.github.zdyoyoyo.englishpractice.share.ShareCards
 import io.github.zdyoyoyo.englishpractice.data.model.Difficulty
@@ -162,11 +163,11 @@ fun QuizScreen(
                 s.loading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
                 s.emptyMessage != null -> EmptyState(s.emptyMessage!!, onBack)
                 s.finished && s.mockScore != null -> MockResultSummary(
-                    s, onBack, onPlayAgain = vm::onPlayAgain,
+                    s, vm::saveNote, onBack, onPlayAgain = vm::onPlayAgain,
                     onFinishedShown = { onSessionFinished(s.questions.size) },
                 )
                 s.finished -> ResultSummary(
-                    s, vm.canPlayAgain, vm.canRetryWrong, onBack,
+                    s, vm.canPlayAgain, vm.canRetryWrong, vm::saveNote, onBack,
                     onRetryWrong = vm::onRetryWrong,
                     onPlayAgain = vm::onPlayAgain,
                     onFinishedShown = { onSessionFinished(s.questions.size) },
@@ -231,6 +232,7 @@ private fun QuestionContent(s: QuizUiState, vm: QuizViewModel) {
                     TextButton(onClick = vm::onMarkGuessed) { Text("🎲 其實是猜的（加入收藏，明天再複習）") }
                 }
             }
+            NoteSection(s.notes[q.id]) { vm.saveNote(q.id, it) }
             q.speakableText?.let { PronunciationPanel(it, pronouncer) }
             if (ContactAuthor.isConfigured) {
                 TextButton(onClick = { ContactAuthor.reportQuestion(context, q.id, q.prompt) }) {
@@ -375,6 +377,7 @@ private fun ResultSummary(
     s: QuizUiState,
     canPlayAgain: Boolean,
     canRetryWrong: Boolean,
+    onSaveNote: (String, String) -> Unit,
     onBack: () -> Unit,
     onRetryWrong: () -> Unit,
     onPlayAgain: () -> Unit,
@@ -416,7 +419,8 @@ private fun ResultSummary(
                 modifier = Modifier.fillMaxWidth())
             Text("點題目可以展開完整題目與詳解", style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth())
             s.wrongInSession.forEach { q ->
-                ReviewQuestionCard(number = s.questions.indexOfFirst { it.id == q.id } + 1, q = q, mine = s.answers[q.id], correct = false)
+                ReviewQuestionCard(number = s.questions.indexOfFirst { it.id == q.id } + 1, q = q, mine = s.answers[q.id], correct = false,
+                    note = s.notes[q.id], onSaveNote = { onSaveNote(q.id, it) })
             }
         }
     }
@@ -439,6 +443,7 @@ private fun EmptyState(message: String, onBack: () -> Unit) {
 @Composable
 private fun MockResultSummary(
     s: QuizUiState,
+    onSaveNote: (String, String) -> Unit,
     onBack: () -> Unit,
     onPlayAgain: () -> Unit,
     onFinishedShown: () -> Unit,
@@ -490,7 +495,8 @@ private fun MockResultSummary(
             Text("點題目可以展開完整題目與詳解", style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth())
             val wrongIds = s.wrongInSession.map { it.id }.toSet()
             s.questions.forEachIndexed { i, q ->
-                ReviewQuestionCard(number = i + 1, q = q, mine = s.answers[q.id], correct = q.id !in wrongIds)
+                ReviewQuestionCard(number = i + 1, q = q, mine = s.answers[q.id], correct = q.id !in wrongIds,
+                    note = s.notes[q.id], onSaveNote = { onSaveNote(q.id, it) })
             }
         }
     }
@@ -531,7 +537,10 @@ private fun QuestionPalette(s: QuizUiState, onPick: (Int) -> Unit) {
  * 所有選項（正解綠色、你選錯的紅色）、解析、選錯那個選項的說明、生字與中文翻譯。
  */
 @Composable
-fun ReviewQuestionCard(number: Int, q: Question, mine: String?, correct: Boolean) {
+fun ReviewQuestionCard(
+    number: Int, q: Question, mine: String?, correct: Boolean,
+    note: String? = null, onSaveNote: ((String) -> Unit)? = null,
+) {
     var expanded by remember(q.id) { mutableStateOf(false) }
     var showTranslation by remember(q.id) { mutableStateOf(false) }
     Card(onClick = { expanded = !expanded }, modifier = Modifier.fillMaxWidth()) {
@@ -589,6 +598,7 @@ fun ReviewQuestionCard(number: Int, q: Question, mine: String?, correct: Boolean
                     }
                     if (showTranslation) Text(q.passageTranslation, style = MaterialTheme.typography.bodySmall)
                 }
+                if (onSaveNote != null) NoteSection(note, onSaveNote)
             }
         }
     }

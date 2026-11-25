@@ -164,3 +164,24 @@ interface MockResultDao {
     @Query("DELETE FROM mock_results")
     suspend fun clear()
 }
+
+@Dao
+interface QuestionNoteDao {
+    @Query("SELECT * FROM question_notes")
+    fun observeAll(): Flow<List<QuestionNoteEntity>>
+
+    @Query("SELECT * FROM question_notes")
+    suspend fun getAll(): List<QuestionNoteEntity>
+
+    @Upsert
+    suspend fun upsert(note: QuestionNoteEntity)
+
+    @Upsert
+    suspend fun upsertAll(items: List<QuestionNoteEntity>)
+
+    @Query("DELETE FROM question_notes WHERE questionId = :questionId")
+    suspend fun delete(questionId: String)
+
+    @Query("DELETE FROM question_notes")
+    suspend fun clear()
+}

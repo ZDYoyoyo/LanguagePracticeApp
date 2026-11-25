@@ -68,6 +68,25 @@ class FavoritesTest {
         assertEquals(expected, AppDatabase.CREATE_FAVORITES_SQL)
     }
 
+    @Test fun `migration 3 to 4 SQL matches exported schema`() {
+        val schema = listOf(
+            File("schemas/io.github.zdyoyoyo.englishpractice.data.local.AppDatabase/4.json"),
+            File("app/schemas/io.github.zdyoyoyo.englishpractice.data.local.AppDatabase/4.json"),
+        ).first { it.exists() }.readText()
+        val expected = Regex("\"tableName\": \"question_notes\",\\s*\"createSql\": \"(.*?)\",").find(schema)!!
+            .groupValues[1].replace("\\u0060", "`").replace("\${TABLE_NAME}", "question_notes")
+        assertEquals(expected, AppDatabase.CREATE_NOTES_SQL)
+    }
+
+    @Test fun `note repository saves and deletes blank notes`() = runTest {
+        val dao = io.github.zdyoyoyo.englishpractice.fakes.FakeQuestionNoteDao()
+        val repo = io.github.zdyoyoyo.englishpractice.data.NoteRepository(dao, clock)
+        repo.save("q1", "  by 是期限  ")
+        assertEquals(mapOf("q1" to "by 是期限"), repo.notes.first())
+        repo.save("q1", "   ")
+        assertTrue(repo.notes.first().isEmpty())
+    }
+
     @Test fun `migration 2 to 3 SQL matches exported schema`() {
         val schema = listOf(
             File("schemas/io.github.zdyoyoyo.englishpractice.data.local.AppDatabase/3.json"),

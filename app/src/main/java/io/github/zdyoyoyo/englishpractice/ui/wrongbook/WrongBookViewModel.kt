@@ -20,6 +20,7 @@ data class WrongItem(val record: WrongAnswerEntity, val question: Question?)
 class WrongBookViewModel(
     private val bank: QuestionBankRepository,
     private val study: StudyRepository,
+    private val c: io.github.zdyoyoyo.englishpractice.AppContainer,
 ) : ViewModel() {
 
     val items: StateFlow<List<WrongItem>> = combine(study.activeWrongAnswers, bank.bank) { list, b ->
@@ -30,13 +31,16 @@ class WrongBookViewModel(
         viewModelScope.launch { bank.ensureLoaded() }
     }
 
+    val notes = c.notes.notes.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyMap())
+    fun saveNote(questionId: String, text: String) { viewModelScope.launch { c.notes.save(questionId, text) } }
+
     fun remove(questionId: String) {
         viewModelScope.launch { study.removeFromWrongBook(questionId) }
     }
 
     companion object {
         val Factory = viewModelFactory {
-            initializer { appContainer().let { WrongBookViewModel(it.questionBank, it.study) } }
+            initializer { appContainer().let { WrongBookViewModel(it.questionBank, it.study, it) } }
         }
     }
 }
