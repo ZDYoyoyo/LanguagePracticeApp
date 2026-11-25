@@ -7,6 +7,8 @@ import io.github.zdyoyoyo.englishpractice.data.local.FavoriteDao
 import io.github.zdyoyoyo.englishpractice.data.local.FavoriteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.MockResultDao
 import io.github.zdyoyoyo.englishpractice.data.local.MockResultEntity
+import io.github.zdyoyoyo.englishpractice.data.local.QuestionNoteDao
+import io.github.zdyoyoyo.englishpractice.data.local.QuestionNoteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
 import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
@@ -40,9 +42,11 @@ data class BackupSnapshot(
     /** v4 新增：成就 */
     val achievements: Map<String, Long> = emptyMap(),
     val perfectRounds: Int = 0,
+    /** v5 新增：題目筆記 */
+    val notes: List<QuestionNoteEntity> = emptyList(),
 ) {
     val isEmpty: Boolean get() = attempts.isEmpty() && wrongAnswers.isEmpty() && reviewCards.isEmpty() &&
-        studyDays.isEmpty() && favorites.isEmpty() && mockResults.isEmpty()
+        studyDays.isEmpty() && favorites.isEmpty() && mockResults.isEmpty() && notes.isEmpty()
 
     fun toJson(): String = json.encodeToString(serializer(), this)
 
@@ -61,9 +65,10 @@ class BackupSerializer(
     private val dayDao: StudyDayDao,
     private val favoriteDao: FavoriteDao,
     private val mockDao: MockResultDao,
+    private val noteDao: QuestionNoteDao,
 ) {
     constructor(db: AppDatabase, tx: TransactionRunner) :
-        this(tx, db.attemptDao(), db.wrongAnswerDao(), db.reviewCardDao(), db.studyDayDao(), db.favoriteDao(), db.mockResultDao())
+        this(tx, db.attemptDao(), db.wrongAnswerDao(), db.reviewCardDao(), db.studyDayDao(), db.favoriteDao(), db.mockResultDao(), db.questionNoteDao())
 
     suspend fun export(exportedAt: Long, lastLocalChangeAt: Long, hintCredits: Int, streakFreezes: Int = 0): BackupSnapshot = tx.run {
         BackupSnapshot(
@@ -76,6 +81,7 @@ class BackupSerializer(
             hintCredits = hintCredits,
             favorites = favoriteDao.getAll(),
             mockResults = mockDao.getAll(),
+            notes = noteDao.getAll(),
             streakFreezes = streakFreezes,
         )
     }
@@ -89,6 +95,7 @@ class BackupSerializer(
         dayDao.upsertAll(snapshot.studyDays)
         favoriteDao.upsertAll(snapshot.favorites)
         mockDao.insertAll(snapshot.mockResults)
+        noteDao.upsertAll(snapshot.notes)
     }
 
     suspend fun clearAll() = tx.run { clearInternal() }
@@ -100,5 +107,6 @@ class BackupSerializer(
         dayDao.clear()
         favoriteDao.clear()
         mockDao.clear()
+        noteDao.clear()
     }
 }

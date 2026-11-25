@@ -6,6 +6,8 @@ import io.github.zdyoyoyo.englishpractice.data.local.FavoriteDao
 import io.github.zdyoyoyo.englishpractice.data.local.FavoriteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.MockResultDao
 import io.github.zdyoyoyo.englishpractice.data.local.MockResultEntity
+import io.github.zdyoyoyo.englishpractice.data.local.QuestionNoteDao
+import io.github.zdyoyoyo.englishpractice.data.local.QuestionNoteEntity
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardDao
 import io.github.zdyoyoyo.englishpractice.data.local.ReviewCardEntity
 import io.github.zdyoyoyo.englishpractice.data.local.StudyDayDao
@@ -127,4 +129,14 @@ class FakeMockResultDao : MockResultDao {
     override suspend fun getAll() = items.value
     override suspend fun insertAll(items: List<MockResultEntity>) { this.items.value = this.items.value + items }
     override suspend fun clear() { items.value = emptyList() }
+}
+
+class FakeQuestionNoteDao : QuestionNoteDao {
+    val map = MutableStateFlow<Map<String, QuestionNoteEntity>>(emptyMap())
+    override fun observeAll(): Flow<List<QuestionNoteEntity>> = map.map { it.values.toList() }
+    override suspend fun getAll() = map.value.values.toList()
+    override suspend fun upsert(note: QuestionNoteEntity) { map.value = map.value + (note.questionId to note) }
+    override suspend fun upsertAll(items: List<QuestionNoteEntity>) { items.forEach { upsert(it) } }
+    override suspend fun delete(questionId: String) { map.value = map.value - questionId }
+    override suspend fun clear() { map.value = emptyMap() }
 }

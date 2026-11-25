@@ -5,6 +5,7 @@ import io.github.zdyoyoyo.englishpractice.ads.AdsManager
 import io.github.zdyoyoyo.englishpractice.ads.HintWallet
 import io.github.zdyoyoyo.englishpractice.auth.GoogleAuthManager
 import io.github.zdyoyoyo.englishpractice.data.AchievementRepository
+import io.github.zdyoyoyo.englishpractice.data.NoteRepository
 import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import io.github.zdyoyoyo.englishpractice.data.StudyRepository
 import io.github.zdyoyoyo.englishpractice.data.bank.FileBankStore
@@ -13,6 +14,7 @@ import io.github.zdyoyoyo.englishpractice.data.bank.QuestionBankRepository
 import io.github.zdyoyoyo.englishpractice.data.local.AppDatabase
 import io.github.zdyoyoyo.englishpractice.data.local.RoomTransactionRunner
 import io.github.zdyoyoyo.englishpractice.data.prefs.AppPreferences
+import io.github.zdyoyoyo.englishpractice.data.prefs.DisplaySettings
 import io.github.zdyoyoyo.englishpractice.sync.BackupSerializer
 import io.github.zdyoyoyo.englishpractice.sync.CloudSync
 import io.github.zdyoyoyo.englishpractice.sync.SyncManager
@@ -28,6 +30,7 @@ class AppContainer(context: Context) {
 
     val clock: AppClock = SystemClock
     val prefs = AppPreferences(appContext)
+    val display = DisplaySettings(appContext)
     val database = AppDatabase.create(appContext)
     private val tx = RoomTransactionRunner(database)
 
@@ -55,6 +58,8 @@ class AppContainer(context: Context) {
         clock = clock,
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
+
+    val notes = NoteRepository(database.questionNoteDao(), clock, onLocalDataChanged = { prefs.lastLocalChangeAt = it })
 
     val achievements = AchievementRepository(
         prefs = prefs,

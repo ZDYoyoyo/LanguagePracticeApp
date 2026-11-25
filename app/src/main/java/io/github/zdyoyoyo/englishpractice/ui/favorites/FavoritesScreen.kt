@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.zdyoyoyo.englishpractice.speech.rememberPronouncer
+import io.github.zdyoyoyo.englishpractice.ui.notes.NoteSection
 import io.github.zdyoyoyo.englishpractice.ui.theme.CorrectGreen
 import io.github.zdyoyoyo.englishpractice.ui.theme.FavoriteGold
 
@@ -41,6 +42,7 @@ fun FavoritesScreen(
     vm: FavoritesViewModel = viewModel(factory = FavoritesViewModel.Factory),
 ) {
     val items by vm.items.collectAsStateWithLifecycle()
+    val notes by vm.notes.collectAsStateWithLifecycle()
     val pronouncer = rememberPronouncer()
     Scaffold(topBar = {
         TopAppBar(
@@ -72,6 +74,7 @@ fun FavoritesScreen(
                                 item.question?.explanation?.takeIf { it.isNotBlank() }?.let {
                                     Text(it, style = MaterialTheme.typography.bodySmall)
                                 }
+                                NoteSection(notes[item.questionId]) { vm.saveNote(item.questionId, it) }
                             }
                             item.question?.speakableText?.let { text ->
                                 IconButton(onClick = { pronouncer.speak(text) }) {

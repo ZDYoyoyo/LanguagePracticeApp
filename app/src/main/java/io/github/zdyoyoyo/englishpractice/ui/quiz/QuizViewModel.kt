@@ -71,6 +71,8 @@ data class QuizUiState(
     val mockDurationMs: Long = 0,
     /** 這輪結束後新解鎖的成就 */
     val newAchievements: List<Achievement> = emptyList(),
+    /** 題目 id → 我的筆記 */
+    val notes: Map<String, String> = emptyMap(),
 ) {
     val current: Question? get() = questions.getOrNull(index)
     val isLast: Boolean get() = index == questions.lastIndex
@@ -100,6 +102,7 @@ class QuizViewModel(
         viewModelScope.launch { start() }
         viewModelScope.launch { c.hints.credits.collect { n -> _ui.update { it.copy(hintCredits = n) } } }
         viewModelScope.launch { c.study.favoriteIds.collect { ids -> _ui.update { it.copy(favoriteIds = ids.toSet()) } } }
+        viewModelScope.launch { c.notes.notes.collect { n -> _ui.update { it.copy(notes = n) } } }
     }
 
     private suspend fun start() {
@@ -121,6 +124,7 @@ class QuizViewModel(
                 emptyMessage = if (questions.isEmpty()) emptyMessageFor(mode) else null,
                 hintCredits = it.hintCredits,
                 favoriteIds = it.favoriteIds,
+                notes = it.notes,
                 isMock = isMock,
                 remainingMs = if (isMock) MockTestBuilder.timeLimitMs(questions.size) else null,
             )
@@ -274,6 +278,10 @@ class QuizViewModel(
         val s = _ui.value
         if (s.revealed || s.typed.isBlank()) return
         submit(s.typed)
+    }
+
+    fun saveNote(questionId: String, text: String) {
+        viewModelScope.launch { c.notes.save(questionId, text) }
     }
 
     /** ⭐ 收藏 / 取消收藏目前這題 */
