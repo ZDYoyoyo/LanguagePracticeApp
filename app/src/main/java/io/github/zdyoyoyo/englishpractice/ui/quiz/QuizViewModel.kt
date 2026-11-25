@@ -374,6 +374,7 @@ class QuizViewModel(
             StudyMode.FAVORITES -> "收藏練習"
             StudyMode.DAILY -> "每日練習"
             StudyMode.MOCK -> "模擬考"
+            StudyMode.FLASHCARD -> "單字卡"
             StudyMode.PK -> "PK 對戰"
             StudyMode.PRACTICE -> "做題"
         }

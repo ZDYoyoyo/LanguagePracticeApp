@@ -47,11 +47,13 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
   domain/                    ← 純邏輯：Sm2Scheduler、StreakCalculator、DailyPicker、PkEngine、
                                AnswerChecker、QuestionSelector（聰明選題）、StatsCalculator、HintLogic
   notify/                    ← 每日提醒（AlarmManager 系統鬧鐘 + 開機重排）
+  widget/                    ← 桌面小工具（連續打卡、今日目標、今日單字卡）
+  share/                     ← 分享成績卡（Canvas 畫圖 + FileProvider）
   auth/GoogleAuthManager.kt  ← Google 登入 + Drive 授權
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
   ui/                        ← 各畫面：home、practice、quiz、wrongbook、favorites、pk、stats、words、settings
-app/src/test/                ← 單元測試（91 個）
+app/src/test/                ← 單元測試（104 個）
 ```
 
 ---

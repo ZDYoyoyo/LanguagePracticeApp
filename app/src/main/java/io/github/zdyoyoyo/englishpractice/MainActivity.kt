@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import io.github.zdyoyoyo.englishpractice.ui.navigation.AppNavHost
 import io.github.zdyoyoyo.englishpractice.ui.theme.EnglishPracticeTheme
+import io.github.zdyoyoyo.englishpractice.widget.DailyWidgetProvider
 
 /** 單一 Activity，所有畫面都是 Compose 畫面，用 Navigation 切換 */
 class MainActivity : ComponentActivity() {
@@ -36,6 +37,12 @@ class MainActivity : ComponentActivity() {
                 )
             }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // 離開 App 時更新桌面小工具（打卡天數、今日進度）
+        DailyWidgetProvider.requestUpdate(this)
     }
 
     override fun onNewIntent(intent: Intent) {
