@@ -43,6 +43,11 @@ class AppPreferences(context: Context) : SyncState {
         get() = sp.getInt(KEY_DAILY_GOAL, 10)
         set(value) = sp.edit { putInt(KEY_DAILY_GOAL, value) }
 
+    /** 每週日晚上的學習報告通知 */
+    var weeklyReportEnabled: Boolean
+        get() = sp.getBoolean(KEY_WEEKLY, true)
+        set(value) = sp.edit { putBoolean(KEY_WEEKLY, value) }
+
     var reminderEnabled: Boolean
         get() = sp.getBoolean(KEY_REMINDER_ON, false)
         set(value) = sp.edit { putBoolean(KEY_REMINDER_ON, value) }
@@ -62,6 +67,7 @@ class AppPreferences(context: Context) : SyncState {
         private const val KEY_LAST_SYNC = "last_synced_at"
         private const val KEY_HINTS = "hint_credits"
         private const val KEY_FREEZES = "streak_freezes"
+        private const val KEY_WEEKLY = "weekly_report"
         private const val KEY_ACHIEVEMENTS = "achievements"
         private const val KEY_PERFECT_ROUNDS = "perfect_rounds"
         private const val KEY_DAILY_GOAL = "daily_goal"

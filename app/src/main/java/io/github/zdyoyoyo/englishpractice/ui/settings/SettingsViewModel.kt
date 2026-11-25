@@ -70,6 +70,14 @@ class SettingsViewModel(
         _ui.update { it.copy(reminderEnabled = enabled) }
     }
 
+    private val _weekly = MutableStateFlow(c.prefs.weeklyReportEnabled)
+    val weeklyReport: StateFlow<Boolean> = _weekly.asStateFlow()
+    fun setWeeklyReport(on: Boolean) {
+        c.prefs.weeklyReportEnabled = on
+        if (on) ReminderScheduler.scheduleWeekly(app) else ReminderScheduler.cancelWeekly(app)
+        _weekly.value = on
+    }
+
     fun setReminderTime(hour: Int, minute: Int) {
         val m = hour * 60 + minute
         c.prefs.reminderMinuteOfDay = m

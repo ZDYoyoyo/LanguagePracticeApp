@@ -27,11 +27,26 @@ class ReminderReceiver : BroadcastReceiver() {
                     }
                 }
             }
+            ACTION_WEEKLY -> {
+                val pending = goAsync()
+                CoroutineScope(Dispatchers.Default).launch {
+                    try {
+                        val prefs = (context.applicationContext as EnglishApp).container.prefs
+                        if (prefs.weeklyReportEnabled) {
+                            ReminderNotifier.showWeekly(context)
+                            ReminderScheduler.scheduleWeekly(context, java.time.LocalDateTime.now().plusMinutes(1))
+                        }
+                    } finally {
+                        pending.finish()
+                    }
+                }
+            }
             else -> ReminderScheduler.rescheduleFromPrefs(context)
         }
     }
 
     companion object {
         const val ACTION_FIRE = "io.github.zdyoyoyo.englishpractice.action.DAILY_REMINDER"
+        const val ACTION_WEEKLY = "io.github.zdyoyoyo.englishpractice.action.WEEKLY_REPORT"
     }
 }
