@@ -27,6 +27,7 @@ enum class StudyMode(val key: String) {
     REVIEW("review"),
     FAVORITES("fav"),
     DAILY("daily"),
+    FLASHCARD("card"),
     MOCK("mock"),
     PK("pk");
 
@@ -148,6 +149,8 @@ class StudyRepository(
         mode: StudyMode,
         usedHint: Boolean = false,
     ) {
+        // 單字卡的「不認識」只影響複習排程，不收進錯題本（避免錯題本被大量單字塞滿）
+        val trackWrongBook = mode != StudyMode.FLASHCARD
         val now = clock.nowMillis()
         val today = clock.today().toEpochDay()
         tx.run {
@@ -164,7 +167,7 @@ class StudyRepository(
             dayDao.upsert(StudyDayEntity(today, (day?.answeredCount ?: 0) + 1))
 
             val existing = wrongDao.get(question.id)
-            if (!correct) {
+            if (!correct && trackWrongBook) {
                 wrongDao.upsert(
                     WrongAnswerEntity(
                         questionId = question.id,

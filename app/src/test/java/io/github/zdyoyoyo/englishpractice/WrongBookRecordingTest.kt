@@ -72,6 +72,12 @@ class WrongBookRecordingTest {
         assertEquals(1, repo.activeWrongCount.first())
     }
 
+    @Test fun `flashcard unknown does not go into the wrong book`() = runTest {
+        repo.recordAnswer(q, "（不認識）", correct = false, elapsedMs = 1000, mode = StudyMode.FLASHCARD)
+        assertNull(wrongs.get("q1"))
+        assertEquals(1, attempts.items.value.size) // 但仍算作答（打卡、複習排程）
+    }
+
     @Test fun `manual removal`() = runTest {
         repo.recordAnswer(q, "b", false, 1000, StudyMode.PRACTICE)
         repo.removeFromWrongBook("q1")

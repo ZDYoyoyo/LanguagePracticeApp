@@ -17,6 +17,13 @@ object DailyPicker {
             .let { list -> list.getOrNull(index(epochDay, list.size)) }
     }
 
+    /** 桌面小工具的「今日單字卡」：直接秀出中文，所以刻意和每日練習的單字錯開，避免先看到答案 */
+    fun widgetWord(all: List<Question>, epochDay: Long): Question? {
+        val dailyId = dailyWord(all, epochDay)?.id
+        return all.filter { !it.word.isNullOrBlank() && it.id != dailyId }.sortedBy { it.id }
+            .let { list -> list.getOrNull(index(epochDay + 101, list.size)) }
+    }
+
     /** 每日練習的題目：先單字、再綜合題 */
     fun dailySet(all: List<Question>, epochDay: Long): List<Question> =
         listOfNotNull(dailyWord(all, epochDay), dailyQuestion(all, epochDay))

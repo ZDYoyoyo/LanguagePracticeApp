@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- updatePeriodMillis：系統最少 30 分鐘；這裡 3 小時更新一次，另外每次離開 App 也會主動更新 -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_description"
+    android:initialLayout="@layout/widget_daily"
+    android:minWidth="180dp"
+    android:minHeight="110dp"
+    android:previewLayout="@layout/widget_daily"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="3"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="10800000"
+    android:widgetCategory="home_screen" />
