@@ -53,7 +53,7 @@ app/src/main/java/io/github/zdyoyoyo/englishpractice/
   sync/                      ← 備份格式、同步規則、Drive REST client
   ads/                       ← AdMob、廣告頻率規則、提示次數
   ui/                        ← 各畫面：home、practice、quiz、wrongbook、favorites、pk、stats、words、settings
-app/src/test/                ← 單元測試（104 個）
+app/src/test/                ← 單元測試（114 個）
 ```
 
 ---

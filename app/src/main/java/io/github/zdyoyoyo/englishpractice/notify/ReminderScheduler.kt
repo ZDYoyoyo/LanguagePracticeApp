@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import io.github.zdyoyoyo.englishpractice.EnglishApp
+import io.github.zdyoyoyo.englishpractice.domain.WeeklyReport
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -45,7 +46,25 @@ object ReminderScheduler {
     fun rescheduleFromPrefs(context: Context) {
         val prefs = (context.applicationContext as EnglishApp).container.prefs
         if (prefs.reminderEnabled) schedule(context, prefs.reminderMinuteOfDay) else cancel(context)
+        if (prefs.weeklyReportEnabled) scheduleWeekly(context) else cancelWeekly(context)
     }
+
+    /** 每週日晚上 8 點的學習報告 */
+    fun scheduleWeekly(context: Context, now: LocalDateTime = LocalDateTime.now()) {
+        val at = WeeklyReport.nextReportTime(now).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        context.getSystemService(AlarmManager::class.java)
+            .setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, weeklyIntent(context))
+    }
+
+    fun cancelWeekly(context: Context) {
+        context.getSystemService(AlarmManager::class.java).cancel(weeklyIntent(context))
+    }
+
+    private fun weeklyIntent(context: Context): PendingIntent = PendingIntent.getBroadcast(
+        context, 1,
+        Intent(context, ReminderReceiver::class.java).setAction(ReminderReceiver.ACTION_WEEKLY),
+        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+    )
 
     private fun pendingIntent(context: Context): PendingIntent = PendingIntent.getBroadcast(
         context, 0,

@@ -13,10 +13,12 @@ import io.github.zdyoyoyo.englishpractice.EnglishApp
 import io.github.zdyoyoyo.englishpractice.MainActivity
 import io.github.zdyoyoyo.englishpractice.R
 import io.github.zdyoyoyo.englishpractice.domain.DailyPicker
+import io.github.zdyoyoyo.englishpractice.domain.WeeklyReport
 
 /** 組出提醒內容（全部在本機計算）並發通知 */
 object ReminderNotifier {
     private const val NOTIFICATION_ID = 1001
+    private const val WEEKLY_ID = 1002
 
     fun canNotify(context: Context): Boolean {
         val permitted = Build.VERSION.SDK_INT < 33 ||
@@ -42,16 +44,30 @@ object ReminderNotifier {
         return show(context, title, body)
     }
 
+    /** 每週學習報告 */
+    suspend fun showWeekly(context: Context): Boolean {
+        val c = (context.applicationContext as EnglishApp).container
+        val src = c.study.statsSource()
+        val report = WeeklyReport.compute(src.attempts, src.days, c.clock.today())
+        val title = if (report.thisWeek.answers > 0) "📊 你的本週學習報告" else "📊 這週還沒練習喔"
+        val body = if (report.thisWeek.answers > 0) report.summary() + "。下週繼續加油！"
+        else "花幾分鐘做幾題，下週一起進步吧！"
+        return show(context, title, body, id = WEEKLY_ID, open = null)
+    }
+
     /** 設定頁的「傳送測試通知」 */
     fun showTest(context: Context): Boolean =
         show(context, "測試通知 ✅", "看到這則通知，代表每日提醒可以正常顯示。點我開啟每日練習。")
 
-    private fun show(context: Context, title: String, body: String): Boolean {
+    private fun show(
+        context: Context, title: String, body: String,
+        id: Int = NOTIFICATION_ID, open: String? = MainActivity.OPEN_DAILY,
+    ): Boolean {
         if (!canNotify(context)) return false
         val intent = Intent(context, MainActivity::class.java)
-            .putExtra(MainActivity.EXTRA_OPEN, MainActivity.OPEN_DAILY)
+            .apply { open?.let { putExtra(MainActivity.EXTRA_OPEN, it) } }
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        val pending = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
+        val pending = PendingIntent.getActivity(context, id, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         val notification = NotificationCompat.Builder(context, ReminderScheduler.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
@@ -62,7 +78,7 @@ object ReminderNotifier {
             .setAutoCancel(true)
             .build()
         try {
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+            NotificationManagerCompat.from(context).notify(id, notification)
         } catch (e: SecurityException) {
             return false
         }

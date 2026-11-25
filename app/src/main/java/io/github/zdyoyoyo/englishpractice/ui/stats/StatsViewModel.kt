@@ -18,6 +18,9 @@ class StatsViewModel(private val c: AppContainer) : ViewModel() {
         private set
     val achievementCount: Int get() = c.achievements.unlocked.value.size
 
+    var weekly: io.github.zdyoyoyo.englishpractice.domain.WeeklyReport.Report? = null
+        private set
+
     private val _summary = MutableStateFlow<StatsCalculator.Summary?>(null)
     val summary: StateFlow<StatsCalculator.Summary?> = _summary.asStateFlow()
 
@@ -27,6 +30,7 @@ class StatsViewModel(private val c: AppContainer) : ViewModel() {
             val bank = c.questionBank.ensureLoaded().questions
             val src = c.study.statsSource()
             bestMock = c.database.mockResultDao().getAll().maxOfOrNull { it.estimatedScore }
+            weekly = io.github.zdyoyoyo.englishpractice.domain.WeeklyReport.compute(src.attempts, src.days, c.clock.today())
             _summary.value = StatsCalculator.summarize(bank, src.attempts, src.cards, src.days, c.clock.today().toEpochDay())
         }
     }

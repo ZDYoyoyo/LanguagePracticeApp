@@ -95,6 +95,28 @@ fun StatsScreen(
                 StatTile("已熟練", "${s.matureQuestions}", Modifier.weight(1f))
                 StatTile("學習天數", "${s.studyDays}", Modifier.weight(1f))
             }
+            vm.weekly?.let { w ->
+                Card(Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Text("📊 本週報告（週一到今天）", style = MaterialTheme.typography.titleMedium)
+                        Row {
+                            Text("作答", Modifier.weight(1f))
+                            Text("${w.thisWeek.answers} 題" + if (w.lastWeek.answers > 0) "（上週 ${w.lastWeek.answers}）" else "")
+                        }
+                        Row {
+                            Text("正確率", Modifier.weight(1f))
+                            Text(
+                                if (w.thisWeek.answers == 0) "—"
+                                else "${(w.thisWeek.accuracy * 100).toInt()}%" + (w.accuracyDiffPoints?.let { d -> "（${if (d >= 0) "+" else ""}$d%）" } ?: "")
+                            )
+                        }
+                        Row {
+                            Text("學習天數", Modifier.weight(1f))
+                            Text("${w.thisWeek.studyDays} 天（上週 ${w.lastWeek.studyDays} 天）")
+                        }
+                    }
+                }
+            }
             Text("「累計作答次數」= 每回答一題算一次（同一題做兩次算兩次）；「做過的題目」不重複計算。", style = MaterialTheme.typography.bodySmall)
             Text("「已熟練」= 複習間隔已拉長到 ${StatsCalculator.MATURE_INTERVAL_DAYS} 天以上的題目", style = MaterialTheme.typography.bodySmall)
 
