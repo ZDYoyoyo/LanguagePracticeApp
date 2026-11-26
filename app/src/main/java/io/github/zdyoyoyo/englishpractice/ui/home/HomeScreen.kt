@@ -101,9 +101,11 @@ fun HomeScreen(
             )
             state.bankMessage?.let { Text(it, color = MaterialTheme.colorScheme.secondary) }
 
+            // ---- 今天 ----
+            SectionHeader("今天")
             HomeActionCard(
                 Icons.Filled.EventRepeat, "今日複習",
-                if (state.dueCount == 0) "今天沒有到期的題目" else "今天該複習 ${state.dueCount} 題",
+                if (state.dueCount == 0) "今天沒有到期的題目 🎉" else "今天該複習 ${state.dueCount} 題",
                 onReview,
             )
             HomeActionCard(
@@ -111,26 +113,26 @@ fun HomeScreen(
                 if (state.dailyWord != null) "今日單字 + 每日一題，共 2 題" else "每天一題，養成習慣",
                 onDaily,
             )
-            HomeActionCard(
-                Icons.Filled.Quiz, "多益模擬考",
-                state.progress.latestMockScore?.let { "上次預估 $it 分・再考一次看看進步多少" } ?: "限時作答，算出你的預估多益分數",
-                onMock,
+
+            // ---- 練習（兩欄方格，減少捲動） ----
+            SectionHeader("練習")
+            TileGrid(
+                listOf(
+                    Tile(Icons.Filled.EditNote, "開始做題", "依題型、考點選題", onPractice),
+                    Tile(Icons.Filled.Quiz, "多益模擬考",
+                        state.progress.latestMockScore?.let { "上次 $it 分" } ?: "測出預估分數", onMock),
+                    Tile(Icons.Filled.Style, "單字卡", "滑卡片背單字", onFlashcards),
+                    Tile(Icons.Filled.Hearing, "聽寫練習", "聽一句打一句", onDictation),
+                    Tile(Icons.AutoMirrored.Filled.MenuBook, "錯題本",
+                        if (state.wrongCount == 0) "目前沒有錯題" else "${state.wrongCount} 題待訂正", onWrongBook),
+                    Tile(Icons.Filled.SportsEsports, "PK 對戰", "和電腦比速度", onPk),
+                ),
             )
-            HomeActionCard(Icons.Filled.EditNote, "開始做題", "依題型、考點或難度選題", onPractice)
-            HomeActionCard(Icons.Filled.Style, "單字卡", "滑卡片快速背單字，適合零碎時間", onFlashcards)
-            HomeActionCard(Icons.Filled.Hearing, "聽寫練習", "聽一句、打一句，同時練聽力和拼字", onDictation)
-            HomeActionCard(
-                Icons.AutoMirrored.Filled.MenuBook, "錯題本",
-                if (state.wrongCount == 0) "目前沒有錯題" else "還有 ${state.wrongCount} 題待訂正",
-                onWrongBook,
-            )
-            HomeActionCard(
-                Icons.Filled.Star, "我的收藏",
-                if (state.favoriteCount == 0) "作答時按 ☆ 收藏想再看的題目" else "已收藏 ${state.favoriteCount} 題",
-                onFavorites,
-            )
-            HomeActionCard(Icons.Filled.SportsEsports, "PK 對戰", "和電腦對手比速度與正確率", onPk)
+
+            // ---- 我的 ----
+            SectionHeader("我的")
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                SmallActionCard(Icons.Filled.Star, "收藏", onFavorites, Modifier.weight(1f))
                 SmallActionCard(Icons.Filled.Translate, "單字庫", onWords, Modifier.weight(1f))
                 SmallActionCard(Icons.Filled.BarChart, "統計", onStats, Modifier.weight(1f))
                 SmallActionCard(Icons.Filled.EmojiEvents, "成就", onAchievements, Modifier.weight(1f))
@@ -201,12 +203,44 @@ private fun StreakCard(
 }
 
 @Composable
+private fun SectionHeader(text: String) {
+    Text(text, style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary,
+        modifier = Modifier.padding(top = 4.dp))
+}
+
+private data class Tile(val icon: ImageVector, val title: String, val subtitle: String, val onClick: () -> Unit)
+
+/** 兩欄方格：每格固定高度，標題 + 一行小字 */
+@Composable
+private fun TileGrid(tiles: List<Tile>) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        tiles.chunked(2).forEach { row ->
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                row.forEach { t ->
+                    ElevatedCard(onClick = t.onClick, modifier = Modifier.weight(1f).height(96.dp)) {
+                        Column(Modifier.padding(12.dp).fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+                            Icon(t.icon, contentDescription = null)
+                            Column {
+                                Text(t.title, style = MaterialTheme.typography.titleSmall, maxLines = 1)
+                                Text(t.subtitle, style = MaterialTheme.typography.bodySmall, maxLines = 1,
+                                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+                            }
+                        }
+                    }
+                }
+                if (row.size == 1) Spacer(Modifier.weight(1f))
+            }
+        }
+    }
+}
+
+@Composable
 private fun SmallActionCard(icon: ImageVector, title: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     ElevatedCard(onClick = onClick, modifier = modifier) {
-        Column(Modifier.padding(12.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(Modifier.padding(vertical = 12.dp, horizontal = 4.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Icon(icon, contentDescription = null)
             Spacer(Modifier.size(4.dp))
-            Text(title, style = MaterialTheme.typography.titleSmall)
+            Text(title, style = MaterialTheme.typography.labelLarge, maxLines = 1)
         }
     }
 }

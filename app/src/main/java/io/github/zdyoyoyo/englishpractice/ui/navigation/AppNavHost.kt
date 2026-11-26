@@ -4,6 +4,8 @@ import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.remember
+import io.github.zdyoyoyo.englishpractice.ui.onboarding.OnboardingScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -40,7 +42,16 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
         }
     }
 
-    NavHost(navController = nav, startDestination = HomeRoute) {
+    val container = (LocalContext.current.applicationContext as EnglishApp).container
+    // 第一次打開先看新手引導
+    val start: Any = remember { if (container.prefs.onboardingDone) HomeRoute else OnboardingRoute }
+    NavHost(navController = nav, startDestination = start) {
+        composable<OnboardingRoute> {
+            OnboardingScreen(onDone = { startWithMock ->
+                nav.navigate(HomeRoute) { popUpTo(OnboardingRoute) { inclusive = true } }
+                if (startWithMock) nav.navigate(QuizRoute(StudyMode.MOCK.key, count = 20))
+            })
+        }
         composable<HomeRoute> {
             HomeScreen(
                 onPractice = { nav.navigate(PracticeSetupRoute) },
