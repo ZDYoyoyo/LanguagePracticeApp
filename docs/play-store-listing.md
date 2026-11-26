@@ -23,11 +23,11 @@
 ```
 專為多益與職場英文設計的練習 App，用零碎時間也能穩定進步。
 
-【多益題型完整】
+【多益題型完整，800+ 題】
 ・單字：多益高頻字，附例句與易混淆字比較
 ・文法：Part 5 句子填空，每個錯誤選項都告訴你錯在哪
-・閱讀：Part 6 段落填空、Part 7 email／廣告／公告閱讀
-・聽力：Part 2 應答、Part 3 對話，男女聲朗讀，作答後才顯示原文
+・閱讀：Part 6 段落填空、Part 7 單篇與雙篇閱讀（email、廣告、公告、訊息對話）
+・聽力：Part 2 應答、Part 3 對話（含圖表題）、Part 4 獨白，男女聲朗讀，作答後才顯示原文
 
 【記得更久】
 ・答錯自動收進錯題本，重做答對才移出
@@ -70,11 +70,11 @@ TOEIC vocabulary, grammar, reading & listening with spaced repetition. Works off
 ```
 Practice English for the TOEIC and the workplace in just a few minutes a day.
 
-TOEIC-STYLE QUESTIONS
+TOEIC-STYLE QUESTIONS (800+)
 • Vocabulary: high-frequency TOEIC words with examples and commonly confused words
 • Grammar: Part 5 sentence completion — every wrong option is explained
-• Reading: Part 6 text completion and Part 7 emails, ads and notices
-• Listening: Part 2 responses and Part 3 conversations read aloud with two voices; the script appears after you answer
+• Reading: Part 6 text completion and Part 7 single and double passages (emails, ads, notices, chats)
+• Listening: Part 2 responses, Part 3 conversations (including graphic questions) and Part 4 talks read aloud with two voices; the script appears after you answer
 
 REMEMBER MORE
 • Wrong answers go to your mistake notebook automatically

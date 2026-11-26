@@ -9,9 +9,23 @@ object DialogueScript {
 
     private val label = Regex("^\\s*(M|W|Man|Woman|A|B)\\s*[:：]\\s*", RegexOption.IGNORE_CASE)
 
+    /**
+     * 圖表題（Part 3 "Look at the graphic"）：對話稿最前面、第一個「M:/W:」之前的文字是圖表。
+     * 回傳 (圖表, 對話稿)；沒有圖表時圖表為 null。圖表要一直顯示，但不要念出來。
+     */
+    fun splitGraphic(passage: String): Pair<String?, String> {
+        val lines = passage.lines()
+        val first = lines.indexOfFirst { label.containsMatchIn(it) }
+        if (first <= 0) return null to passage
+        val graphic = lines.take(first).joinToString("\n").trim()
+        return graphic.ifEmpty { null } to lines.drop(first).joinToString("\n")
+    }
+
     fun parse(script: String): List<Line> = script.lines()
         .map { it.trim() }
         .filter { it.isNotEmpty() }
+        // 有標說話者的稿子，沒標的行（例如圖表）不念
+        .let { all -> if (all.any { label.containsMatchIn(it) }) all.filter { label.containsMatchIn(it) } else all }
         .map { raw ->
             val m = label.find(raw)
             val speaker = m?.groupValues?.get(1)?.uppercase()
