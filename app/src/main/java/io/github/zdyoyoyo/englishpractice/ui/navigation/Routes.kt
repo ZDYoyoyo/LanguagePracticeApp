@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 /* Navigation 的「型別安全路由」：每個畫面是一個 @Serializable 物件，參數就是欄位 */
 
 @Serializable object HomeRoute
+@Serializable object OnboardingRoute
 @Serializable object PracticeSetupRoute
 @Serializable object WrongBookRoute
 @Serializable object FavoritesRoute

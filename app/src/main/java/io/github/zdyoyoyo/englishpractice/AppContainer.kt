@@ -31,6 +31,11 @@ class AppContainer(context: Context) {
     val clock: AppClock = SystemClock
     val prefs = AppPreferences(appContext)
     val display = DisplaySettings(appContext)
+
+    init {
+        // 更新前就在用的人（已經有學習紀錄）不用再看新手引導
+        if (!prefs.onboardingDone && prefs.lastLocalChangeAt > 0) prefs.onboardingDone = true
+    }
     val database = AppDatabase.create(appContext)
     private val tx = RoomTransactionRunner(database)
 

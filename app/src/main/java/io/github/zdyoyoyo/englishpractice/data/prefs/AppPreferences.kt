@@ -48,6 +48,11 @@ class AppPreferences(context: Context) : SyncState {
         get() = sp.getBoolean(KEY_WEEKLY, true)
         set(value) = sp.edit { putBoolean(KEY_WEEKLY, value) }
 
+    /** 是否已看過新手引導 */
+    var onboardingDone: Boolean
+        get() = sp.getBoolean(KEY_ONBOARDING, false)
+        set(value) = sp.edit { putBoolean(KEY_ONBOARDING, value) }
+
     var reminderEnabled: Boolean
         get() = sp.getBoolean(KEY_REMINDER_ON, false)
         set(value) = sp.edit { putBoolean(KEY_REMINDER_ON, value) }
@@ -68,6 +73,7 @@ class AppPreferences(context: Context) : SyncState {
         private const val KEY_HINTS = "hint_credits"
         private const val KEY_FREEZES = "streak_freezes"
         private const val KEY_WEEKLY = "weekly_report"
+        private const val KEY_ONBOARDING = "onboarding_done"
         private const val KEY_ACHIEVEMENTS = "achievements"
         private const val KEY_PERFECT_ROUNDS = "perfect_rounds"
         private const val KEY_DAILY_GOAL = "daily_goal"
