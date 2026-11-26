@@ -22,7 +22,7 @@ import io.github.zdyoyoyo.englishpractice.notify.ReminderNotifier
 import java.util.concurrent.TimeUnit
 
 /**
- * 背景每 12 小時（有網路時）檢查一次公告，有新的就發通知。
+ * 背景大約每 1～3 小時（有網路時）檢查一次公告，有新的就發通知。
  * 這種「時間不用很準、需要網路」的工作適合 WorkManager（每日提醒則用鬧鐘，因為要準時）。
  */
 class AnnouncementWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
@@ -53,10 +53,12 @@ class AnnouncementWorker(context: Context, params: WorkerParameters) : Coroutine
                 wm.cancelUniqueWork(WORK_NAME)
                 return
             }
-            val request = PeriodicWorkRequestBuilder<AnnouncementWorker>(12, TimeUnit.HOURS)
+            // 每 3 小時一個週期，在週期的最後 2 小時內執行 → 間隔約 1～3 小時（手機待機省電時系統可能再延後）
+            val request = PeriodicWorkRequestBuilder<AnnouncementWorker>(3, TimeUnit.HOURS, 2, TimeUnit.HOURS)
                 .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
                 .build()
-            wm.enqueueUniquePeriodicWork(WORK_NAME, ExistingPeriodicWorkPolicy.KEEP, request)
+            // UPDATE：已安裝舊版（12 小時）的用戶更新後也會套用新間隔
+            wm.enqueueUniquePeriodicWork(WORK_NAME, ExistingPeriodicWorkPolicy.UPDATE, request)
         }
 
         fun show(context: Context, a: Announcement) {
