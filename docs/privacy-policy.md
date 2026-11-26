@@ -22,7 +22,7 @@
 - 每日打卡紀錄
 - 提示次數、提醒時間等設定
 - 若你登入 Google：你的 Google 帳號 email（僅用於在設定頁顯示「已登入：xxx」）
-- 從網路下載的公開題庫檔案（不含個人資料）
+- 從網路下載的公開題庫檔案與開發者公告（不含個人資料）
 
 本 App 已關閉 Android 系統的自動雲端備份；**移除 App 時，上述資料會一併從手機刪除。**
 
@@ -81,7 +81,7 @@ The following is stored only in the App's private storage on your device to prov
 - Daily streak records
 - Settings such as hint credits and reminder time
 - If you sign in with Google: your Google account email (only displayed in Settings as "Signed in as …")
-- The public question bank downloaded from the internet (contains no personal data)
+- The public question bank and developer announcements downloaded from the internet (contain no personal data)
 
 Android's automatic cloud backup is disabled for this App. **Uninstalling the App deletes all of the above from your device.**
 

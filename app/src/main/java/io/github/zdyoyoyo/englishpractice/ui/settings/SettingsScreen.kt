@@ -70,6 +70,7 @@ fun SettingsScreen(
     val dailyGoal by vm.dailyGoal.collectAsStateWithLifecycle()
     val themeMode by vm.themeMode.collectAsStateWithLifecycle()
     val weeklyReport by vm.weeklyReport.collectAsStateWithLifecycle()
+    val announceNotify by vm.announceNotify.collectAsStateWithLifecycle()
     val fontSize by vm.fontSize.collectAsStateWithLifecycle()
     val freezes by vm.freezes.collectAsStateWithLifecycle()
     var testResult by remember { mutableStateOf<String?>(null) }
@@ -164,6 +165,13 @@ fun SettingsScreen(
                     Text("每週日晚上 8 點，通知本週作答量與進步幅度", style = MaterialTheme.typography.bodySmall)
                 }
                 Switch(checked = weeklyReport, onCheckedChange = vm::setWeeklyReport)
+            }
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                Column(Modifier.weight(1f)) {
+                    Text("公告與活動通知")
+                    Text("新題庫、新功能上線時通知你（公告也會顯示在首頁）", style = MaterialTheme.typography.bodySmall)
+                }
+                Switch(checked = announceNotify, onCheckedChange = vm::setAnnounceNotify)
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 TextButton(onClick = { showTimePicker = true }) { Text("更改提醒時間") }

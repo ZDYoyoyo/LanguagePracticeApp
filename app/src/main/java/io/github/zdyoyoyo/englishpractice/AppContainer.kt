@@ -76,6 +76,11 @@ class AppContainer(context: Context) {
         onLocalDataChanged = { prefs.lastLocalChangeAt = it },
     )
 
+    /** 開發者公告：和題庫放在同一個地方 */
+    val announcements = io.github.zdyoyoyo.englishpractice.announce.AnnouncementRepository(
+        appContext, HttpRemoteBankSource(BuildConfig.QUESTION_BANK_BASE_URL), clock, BuildConfig.VERSION_CODE,
+    )
+
     val hints = HintWallet(prefs, clock::nowMillis)
     val ads = AdsManager(appContext, clock::nowMillis)
 

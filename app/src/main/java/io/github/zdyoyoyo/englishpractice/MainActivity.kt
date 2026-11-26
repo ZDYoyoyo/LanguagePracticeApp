@@ -73,6 +73,6 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_OPEN = "open"
-        const val OPEN_DAILY = "daily"
+        const val OPEN_DAILY = io.github.zdyoyoyo.englishpractice.announce.OpenTarget.DAILY
     }
 }

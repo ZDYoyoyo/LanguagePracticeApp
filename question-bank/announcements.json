@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "announcements": [
+    {
+      "id": "2026-11-bank-812",
+      "title": "題庫更新：800+ 題",
+      "body": "新增多益 Part 3 圖表題與 Part 7 雙篇閱讀，共 812 題。試試看新題型吧！",
+      "actionLabel": "去做題",
+      "action": "practice",
+      "start": "2026-11-26",
+      "end": "2026-12-31",
+      "notify": true
+    }
+  ]
+}

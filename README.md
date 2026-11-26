@@ -209,6 +209,26 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
   3. 部署後得到 `https://<專案名>.pages.dev/`，把 `questionBankBaseUrl` 改成它（結尾要有 `/`），重新發版即可。
   4. 之後 push 到 main 會自動重新部署題庫。
 
+### 發公告（「廣播」）
+不用後端：編輯 `question-bank/announcements.json` 並 push 到 main 就會生效（GitHub raw 約 5 分鐘快取）。
+- 用戶打開 App → 首頁最上方顯示公告卡片（一次一則，依檔案順序），按「知道了」後不再出現。
+- 背景每 12 小時（有網路時，WorkManager）檢查一次；`"notify": true` 且用戶還沒在 App 裡看過的公告會發一則通知（頻道「公告與活動」，設定頁可關閉）。
+- 不是即時推播：最慢約半天才會收到通知；要即時推播得另外接 Firebase Cloud Messaging。
+
+```json
+{
+  "id": "2026-12-xmas",              // 唯一 ID；想讓大家再看一次就換新 ID
+  "title": "聖誕挑戰賽",
+  "body": "12/20–12/31 每天完成目標就送連勝保護！",
+  "actionLabel": "去做題",            // 選填
+  "action": "practice",              // 選填：daily / review / practice / mock / flashcards / dictation / pk / achievements / stats / settings，或 https:// 網址
+  "start": "2026-12-20", "end": "2026-12-31",   // 選填，含當天
+  "minVersionCode": 0, "maxVersionCode": 40,     // 選填：只給某些版本看（例如提醒舊版更新）
+  "notify": true                     // 是否發背景通知
+}
+```
+單元測試 `AnnouncementsTest` 會檢查這個檔案（ID 不重複、日期格式、動作合法），push 前跑一次測試就不怕寫錯。
+
 ---
 
 ## 5. 權限說明
