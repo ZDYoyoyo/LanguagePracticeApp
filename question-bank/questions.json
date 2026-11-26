@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": 10,
-  "updatedAt": "2026-11-25",
+  "version": 11,
+  "updatedAt": "2026-11-26",
   "questions": [
     {
       "id": "voc-0001",
@@ -18144,6 +18144,3167 @@
       "skills": [
         "part6",
         "relative"
+      ]
+    },
+    {
+      "id": "toeic-voc-195",
+      "type": "vocabulary",
+      "prompt": "What does \"accessible\" mean?",
+      "word": "accessible",
+      "options": [
+        "配件",
+        "容易取得的；無障礙的",
+        "可接受的",
+        "過度的"
+      ],
+      "answer": "容易取得的；無障礙的",
+      "explanation": "accessible（adj.）容易取得的；無障礙的。例：The building is accessible to wheelchair users.",
+      "optionNotes": {
+        "配件": "「配件」的英文是 accessory",
+        "可接受的": "「可接受的」的英文是 acceptable",
+        "過度的": "「過度的」的英文是 excessive"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-196",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「足夠的；適當的」.",
+      "word": "adequate",
+      "options": [
+        "adjacent",
+        "adequate",
+        "accurate",
+        "adept"
+      ],
+      "answer": "adequate",
+      "explanation": "adequate（adj.）足夠的；適當的。例：Make sure there is adequate lighting in the room.",
+      "optionNotes": {
+        "adjacent": "adjacent：鄰近的",
+        "accurate": "accurate：準確的",
+        "adept": "adept：熟練的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-197",
+      "type": "vocabulary",
+      "prompt": "What does \"advocate\" mean?",
+      "word": "advocate",
+      "options": [
+        "刊登廣告",
+        "分配",
+        "退位",
+        "提倡；擁護"
+      ],
+      "answer": "提倡；擁護",
+      "explanation": "advocate（v.）提倡；擁護。例：She advocates flexible working hours.",
+      "optionNotes": {
+        "分配": "「分配」的英文是 allocate",
+        "刊登廣告": "「刊登廣告」的英文是 advertise",
+        "退位": "「退位」的英文是 abdicate"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-198",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「附屬機構；關係企業」.",
+      "word": "affiliate",
+      "options": [
+        "affection",
+        "affiliate",
+        "affinity",
+        "affair"
+      ],
+      "answer": "affiliate",
+      "explanation": "affiliate（n.）附屬機構；關係企業。例：The bank has affiliates in ten countries.",
+      "optionNotes": {
+        "affection": "affection：喜愛",
+        "affinity": "affinity：親和力",
+        "affair": "affair：事務"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-199",
+      "type": "vocabulary",
+      "prompt": "What does \"alternative\" mean?",
+      "word": "alternative",
+      "options": [
+        "最後通牒",
+        "替代方案",
+        "修改",
+        "發電機"
+      ],
+      "answer": "替代方案",
+      "explanation": "alternative（n.）替代方案。例：Is there an alternative to driving?",
+      "optionNotes": {
+        "修改": "「修改」的英文是 alteration",
+        "最後通牒": "「最後通牒」的英文是 ultimatum",
+        "發電機": "「發電機」的英文是 alternator"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-200",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「服飾」.",
+      "word": "apparel",
+      "options": [
+        "apparatus",
+        "appetite",
+        "apparel",
+        "appeal"
+      ],
+      "answer": "apparel",
+      "explanation": "apparel（n.）服飾。例：The store sells sports apparel.",
+      "optionNotes": {
+        "appeal": "appeal：吸引力；上訴",
+        "apparatus": "apparatus：器材",
+        "appetite": "appetite：胃口"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "marketing"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-201",
+      "type": "vocabulary",
+      "prompt": "What does \"assess\" mean?",
+      "word": "assess",
+      "options": [
+        "評估",
+        "協助",
+        "斷言",
+        "存取；進入"
+      ],
+      "answer": "評估",
+      "explanation": "assess（v.）評估。例：We need to assess the risks first.",
+      "optionNotes": {
+        "存取；進入": "「存取；進入」的英文是 access",
+        "協助": "「協助」的英文是 assist",
+        "斷言": "「斷言」的英文是 assert"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-202",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「雙語的」.",
+      "word": "bilingual",
+      "options": [
+        "bilateral",
+        "biannual",
+        "bilingual",
+        "biweekly"
+      ],
+      "answer": "bilingual",
+      "explanation": "bilingual（adj.）雙語的。例：We are looking for a bilingual receptionist.",
+      "optionNotes": {
+        "biannual": "biannual：一年兩次的",
+        "bilateral": "bilateral：雙邊的",
+        "biweekly": "biweekly：雙週的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-203",
+      "type": "vocabulary",
+      "prompt": "What does \"browse\" mean?",
+      "word": "browse",
+      "options": [
+        "瘀傷",
+        "微風",
+        "瀏覽",
+        "眉毛"
+      ],
+      "answer": "瀏覽",
+      "explanation": "browse（v.）瀏覽。例：Feel free to browse our online catalog.",
+      "optionNotes": {
+        "眉毛": "「眉毛」的英文是 brows",
+        "瘀傷": "「瘀傷」的英文是 bruise",
+        "微風": "「微風」的英文是 breeze"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "tech"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-204",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「取消」.",
+      "word": "cancellation",
+      "options": [
+        "constellation",
+        "circulation",
+        "calculation",
+        "cancellation"
+      ],
+      "answer": "cancellation",
+      "explanation": "cancellation（n.）取消。例：Please call us if you need to make a cancellation.",
+      "optionNotes": {
+        "calculation": "calculation：計算",
+        "circulation": "circulation：流通；發行量",
+        "constellation": "constellation：星座"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-205",
+      "type": "vocabulary",
+      "prompt": "What does \"certificate\" mean?",
+      "word": "certificate",
+      "options": [
+        "證書",
+        "企業聯合",
+        "證明",
+        "確定性"
+      ],
+      "answer": "證書",
+      "explanation": "certificate（n.）證書。例：You will receive a certificate after the course.",
+      "optionNotes": {
+        "確定性": "「確定性」的英文是 certainty",
+        "企業聯合": "「企業聯合」的英文是 syndicate",
+        "證明": "「證明」的英文是 certify"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "school"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-206",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「傳閱；流通」.",
+      "word": "circulate",
+      "options": [
+        "calculate",
+        "circulate",
+        "circle",
+        "cultivate"
+      ],
+      "answer": "circulate",
+      "explanation": "circulate（v.）傳閱；流通。例：Please circulate this memo to all staff.",
+      "optionNotes": {
+        "calculate": "calculate：計算",
+        "cultivate": "cultivate：培養",
+        "circle": "circle：圓圈"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-207",
+      "type": "vocabulary",
+      "prompt": "What does \"clarify\" mean?",
+      "word": "clarify",
+      "options": [
+        "澄清；說明清楚",
+        "使具資格",
+        "分類",
+        "讚美"
+      ],
+      "answer": "澄清；說明清楚",
+      "explanation": "clarify（v.）澄清；說明清楚。例：Could you clarify the second point?",
+      "optionNotes": {
+        "分類": "「分類」的英文是 classify",
+        "讚美": "「讚美」的英文是 glorify",
+        "使具資格": "「使具資格」的英文是 qualify"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-208",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「相容的」.",
+      "word": "compatible",
+      "options": [
+        "comparable",
+        "competent",
+        "compatible",
+        "complicated"
+      ],
+      "answer": "compatible",
+      "explanation": "compatible（adj.）相容的。例：This software is compatible with most phones.",
+      "optionNotes": {
+        "comparable": "comparable：可比較的",
+        "competent": "competent：能幹的",
+        "complicated": "complicated：複雜的"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "tech"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-209",
+      "type": "vocabulary",
+      "prompt": "What does \"complaint\" mean?",
+      "word": "complaint",
+      "options": [
+        "補充物",
+        "完成",
+        "抱怨；客訴",
+        "讚美"
+      ],
+      "answer": "抱怨；客訴",
+      "explanation": "complaint（n.）抱怨；客訴。例：We take every customer complaint seriously.",
+      "optionNotes": {
+        "讚美": "「讚美」的英文是 compliment",
+        "補充物": "「補充物」的英文是 complement",
+        "完成": "「完成」的英文是 completion"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-210",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「全面的；詳盡的」.",
+      "word": "comprehensive",
+      "options": [
+        "comprehensible",
+        "compulsory",
+        "competitive",
+        "comprehensive"
+      ],
+      "answer": "comprehensive",
+      "explanation": "comprehensive（adj.）全面的；詳盡的。例：The report gives a comprehensive overview of the market.",
+      "optionNotes": {
+        "comprehensible": "comprehensible：可理解的",
+        "competitive": "competitive：有競爭力的",
+        "compulsory": "compulsory：義務的"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-211",
+      "type": "vocabulary",
+      "prompt": "What does \"concise\" mean?",
+      "word": "concise",
+      "options": [
+        "簡潔的",
+        "凹的",
+        "音樂會",
+        "具體的"
+      ],
+      "answer": "簡潔的",
+      "explanation": "concise（adj.）簡潔的。例：Please keep your answers clear and concise.",
+      "optionNotes": {
+        "具體的": "「具體的」的英文是 concrete",
+        "凹的": "「凹的」的英文是 concave",
+        "音樂會": "「音樂會」的英文是 concert"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-212",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「電話會議」.",
+      "word": "conference call",
+      "options": [
+        "conference call",
+        "press conference",
+        "conference room",
+        "conference fee"
+      ],
+      "answer": "conference call",
+      "explanation": "conference call（n.）電話會議。例：We have a conference call with the client at nine.",
+      "optionNotes": {
+        "conference room": "conference room：會議室",
+        "press conference": "press conference：記者會",
+        "conference fee": "conference fee：研討會費用"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-213",
+      "type": "vocabulary",
+      "prompt": "What does \"deteriorate\" mean?",
+      "word": "deteriorate",
+      "options": [
+        "惡化",
+        "決定",
+        "裝飾",
+        "清潔劑"
+      ],
+      "answer": "惡化",
+      "explanation": "deteriorate（v.）惡化。例：The weather is expected to deteriorate tonight.",
+      "optionNotes": {
+        "決定": "「決定」的英文是 determine",
+        "清潔劑": "「清潔劑」的英文是 detergent",
+        "裝飾": "「裝飾」的英文是 decorate"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-214",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「多元的」.",
+      "word": "diverse",
+      "options": [
+        "diverge",
+        "diverse",
+        "adverse",
+        "divert"
+      ],
+      "answer": "diverse",
+      "explanation": "diverse（adj.）多元的。例：Our team has a diverse range of skills.",
+      "optionNotes": {
+        "divert": "divert：轉移",
+        "diverge": "diverge：分歧",
+        "adverse": "adverse：不利的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-215",
+      "type": "vocabulary",
+      "prompt": "What does \"duplicate\" mean?",
+      "word": "duplicate",
+      "options": [
+        "耗盡",
+        "複本",
+        "複式住宅",
+        "奉獻"
+      ],
+      "answer": "複本",
+      "explanation": "duplicate（n.）複本。例：Please keep a duplicate of the receipt.",
+      "optionNotes": {
+        "奉獻": "「奉獻」的英文是 dedicate",
+        "耗盡": "「耗盡」的英文是 deplete",
+        "複式住宅": "「複式住宅」的英文是 duplex"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-216",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「消除」.",
+      "word": "eliminate",
+      "options": [
+        "eliminate",
+        "illuminate",
+        "nominate",
+        "elaborate"
+      ],
+      "answer": "eliminate",
+      "explanation": "eliminate（v.）消除。例：The new system will eliminate paperwork.",
+      "optionNotes": {
+        "illuminate": "illuminate：照亮",
+        "nominate": "nominate：提名",
+        "elaborate": "elaborate：詳細說明"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-217",
+      "type": "vocabulary",
+      "prompt": "What does \"encounter\" mean?",
+      "word": "encounter",
+      "options": [
+        "執行",
+        "鼓勵",
+        "危及",
+        "遇到（困難等）"
+      ],
+      "answer": "遇到（困難等）",
+      "explanation": "encounter（v.）遇到（困難等）。例：Let me know if you encounter any problems.",
+      "optionNotes": {
+        "鼓勵": "「鼓勵」的英文是 encourage",
+        "執行": "「執行」的英文是 enforce",
+        "危及": "「危及」的英文是 endanger"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-218",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「熱情的；熱衷的」.",
+      "word": "enthusiastic",
+      "options": [
+        "authentic",
+        "enthusiastic",
+        "encyclopedic",
+        "empathetic"
+      ],
+      "answer": "enthusiastic",
+      "explanation": "enthusiastic（adj.）熱情的；熱衷的。例：The audience was very enthusiastic.",
+      "optionNotes": {
+        "authentic": "authentic：真正的",
+        "empathetic": "empathetic：有同理心的",
+        "encyclopedic": "encyclopedic：百科全書式的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-219",
+      "type": "vocabulary",
+      "prompt": "What does \"evident\" mean?",
+      "word": "evident",
+      "options": [
+        "證據",
+        "最終的",
+        "事件",
+        "明顯的"
+      ],
+      "answer": "明顯的",
+      "explanation": "evident（adj.）明顯的。例：It was evident that the plan had failed.",
+      "optionNotes": {
+        "證據": "「證據」的英文是 evidence",
+        "事件": "「事件」的英文是 event",
+        "最終的": "「最終的」的英文是 eventual"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-220",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「獨家的；專屬的」.",
+      "word": "exclusive",
+      "options": [
+        "exhaustive",
+        "excessive",
+        "exclusive",
+        "inclusive"
+      ],
+      "answer": "exclusive",
+      "explanation": "exclusive（adj.）獨家的；專屬的。例：Members get exclusive discounts.",
+      "optionNotes": {
+        "excessive": "excessive：過度的",
+        "exhaustive": "exhaustive：詳盡的",
+        "inclusive": "inclusive：包含在內的"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "marketing"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-221",
+      "type": "vocabulary",
+      "prompt": "What does \"extend\" mean?",
+      "word": "extend",
+      "options": [
+        "延長",
+        "打算",
+        "花費",
+        "程度"
+      ],
+      "answer": "延長",
+      "explanation": "extend（v.）延長。例：Can we extend the deadline by two days?",
+      "optionNotes": {
+        "花費": "「花費」的英文是 expend",
+        "程度": "「程度」的英文是 extent",
+        "打算": "「打算」的英文是 intend"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-222",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「有彈性的」.",
+      "word": "flexible",
+      "options": [
+        "fragile",
+        "edible",
+        "visible",
+        "flexible"
+      ],
+      "answer": "flexible",
+      "explanation": "flexible（adj.）有彈性的。例：We offer flexible working hours.",
+      "optionNotes": {
+        "fragile": "fragile：易碎的",
+        "visible": "visible：看得見的",
+        "edible": "edible：可食用的"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-voc-223",
+      "type": "vocabulary",
+      "prompt": "What does \"gratitude\" mean?",
+      "word": "gratitude",
+      "options": [
+        "緯度",
+        "小費",
+        "態度",
+        "感激"
+      ],
+      "answer": "感激",
+      "explanation": "gratitude（n.）感激。例：I'd like to express my gratitude to the team.",
+      "optionNotes": {
+        "小費": "「小費」的英文是 gratuity",
+        "緯度": "「緯度」的英文是 latitude",
+        "態度": "「態度」的英文是 attitude"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "vocab-zh"
+      ]
+    },
+    {
+      "id": "toeic-voc-224",
+      "type": "vocabulary",
+      "prompt": "Choose the word that means 「猶豫」.",
+      "word": "hesitate",
+      "options": [
+        "meditate",
+        "hesitate",
+        "irritate",
+        "imitate"
+      ],
+      "answer": "hesitate",
+      "explanation": "hesitate（v.）猶豫。例：Please don't hesitate to contact me.",
+      "optionNotes": {
+        "imitate": "imitate：模仿",
+        "irritate": "irritate：激怒",
+        "meditate": "meditate：冥想"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "vocab-en"
+      ]
+    },
+    {
+      "id": "toeic-gra-132",
+      "type": "grammar",
+      "prompt": "The meeting has been postponed ___ further notice.",
+      "options": [
+        "for",
+        "until",
+        "since",
+        "by"
+      ],
+      "answer": "until",
+      "explanation": "until further notice：直到另行通知（持續的狀態）。",
+      "optionNotes": {
+        "by": "by 表示期限前完成",
+        "since": "since 接過去起點",
+        "for": "for 接一段時間"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "toeic-gra-133",
+      "type": "grammar",
+      "prompt": "She is interested ___ applying for the manager position.",
+      "options": [
+        "at",
+        "in",
+        "on",
+        "for"
+      ],
+      "answer": "in",
+      "explanation": "be interested in + V-ing：對…有興趣。",
+      "optionNotes": {
+        "on": "不說 interested on",
+        "at": "不說 interested at",
+        "for": "不說 interested for"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "toeic-gra-134",
+      "type": "grammar",
+      "prompt": "The company is famous ___ its excellent customer service.",
+      "options": [
+        "of",
+        "for",
+        "to",
+        "with"
+      ],
+      "answer": "for",
+      "explanation": "be famous for：以…聞名。",
+      "optionNotes": {
+        "of": "不說 famous of",
+        "with": "不說 famous with",
+        "to": "famous to 是「對…有名」，語意不同且少用"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "toeic-gra-135",
+      "type": "grammar",
+      "prompt": "He has been working here ___ he graduated from college.",
+      "options": [
+        "during",
+        "for",
+        "since",
+        "while"
+      ],
+      "answer": "since",
+      "explanation": "現在完成（進行）式 + since + 過去的事件（子句）。",
+      "optionNotes": {
+        "for": "for 接一段時間",
+        "during": "during 接名詞",
+        "while": "while 表示同時，不搭配完成式表示起點"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "tense"
+      ]
+    },
+    {
+      "id": "toeic-gra-136",
+      "type": "grammar",
+      "prompt": "I'd rather ___ the train than drive in this traffic.",
+      "options": [
+        "took",
+        "taking",
+        "to take",
+        "take"
+      ],
+      "answer": "take",
+      "explanation": "would rather + 原形動詞 + than + 原形動詞。",
+      "optionNotes": {
+        "taking": "would rather 後面接原形",
+        "to take": "would rather 後面不加 to",
+        "took": "would rather 後面接原形"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "verb-form"
+      ]
+    },
+    {
+      "id": "toeic-gra-137",
+      "type": "grammar",
+      "prompt": "It's worth ___ the extra money for faster delivery.",
+      "options": [
+        "pay",
+        "paid",
+        "to pay",
+        "paying"
+      ],
+      "answer": "paying",
+      "explanation": "be worth + V-ing：值得做…",
+      "optionNotes": {
+        "to pay": "worth 後面接 V-ing",
+        "pay": "worth 後面接 V-ing",
+        "paid": "worth 後面接 V-ing"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "verb-form"
+      ]
+    },
+    {
+      "id": "toeic-gra-138",
+      "type": "grammar",
+      "prompt": "The manager made everyone ___ late to finish the project.",
+      "options": [
+        "stayed",
+        "staying",
+        "to stay",
+        "stay"
+      ],
+      "answer": "stay",
+      "explanation": "make + 人 + 原形動詞：叫某人做…（使役動詞）。",
+      "optionNotes": {
+        "to stay": "使役動詞 make 後面不加 to",
+        "staying": "使役動詞後接原形",
+        "stayed": "使役動詞後接原形"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "verb-form"
+      ]
+    },
+    {
+      "id": "toeic-gra-139",
+      "type": "grammar",
+      "prompt": "She stopped ___ coffee because it kept her awake at night.",
+      "options": [
+        "drink",
+        "to drink",
+        "drank",
+        "drinking"
+      ],
+      "answer": "drinking",
+      "explanation": "stop + V-ing = 停止做某事；stop to V = 停下來（去做另一件事）。",
+      "optionNotes": {
+        "to drink": "stop to drink 是「停下來去喝」，語意相反",
+        "drink": "stop 後面不接原形",
+        "drank": "stop 後面不接過去式"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "verb-form"
+      ]
+    },
+    {
+      "id": "toeic-gra-140",
+      "type": "grammar",
+      "prompt": "Mr. Lee is the only person ___ knows the password.",
+      "options": [
+        "which",
+        "whom",
+        "who",
+        "whose"
+      ],
+      "answer": "who",
+      "explanation": "先行詞是人，在子句中當主詞 → who。",
+      "optionNotes": {
+        "which": "which 指事物",
+        "whom": "whom 是受格",
+        "whose": "whose 後面要接名詞"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "relative"
+      ]
+    },
+    {
+      "id": "toeic-gra-141",
+      "type": "grammar",
+      "prompt": "The reason ___ he resigned is still unclear.",
+      "options": [
+        "which",
+        "what",
+        "why",
+        "where"
+      ],
+      "answer": "why",
+      "explanation": "the reason why + 子句：…的原因。",
+      "optionNotes": {
+        "which": "子句已經完整，不需要關係代名詞（the reason for which 才可以）",
+        "where": "where 指地點",
+        "what": "what 不接在先行詞後"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "relative"
+      ]
+    },
+    {
+      "id": "toeic-gra-142",
+      "type": "grammar",
+      "prompt": "I don't know ___ she will accept the job offer.",
+      "options": [
+        "that",
+        "what",
+        "which",
+        "whether"
+      ],
+      "answer": "whether",
+      "explanation": "不確定是否 → whether / if 引導間接問句。",
+      "optionNotes": {
+        "that": "that 表示確定的事實，和 don't know 搭配語意不通",
+        "what": "what 後面的子句要缺少名詞",
+        "which": "which 需要選擇對象"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "toeic-gra-143",
+      "type": "grammar",
+      "prompt": "___ hard he tried, he couldn't open the file.",
+      "options": [
+        "Although",
+        "Whatever",
+        "However",
+        "Despite"
+      ],
+      "answer": "However",
+      "explanation": "However + 形容詞／副詞 + 主詞 + 動詞：無論多麼…",
+      "optionNotes": {
+        "Whatever": "whatever 後面接名詞，不接 hard",
+        "Although": "Although hard he tried 語序錯誤",
+        "Despite": "despite 後面接名詞"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "tech"
+      ],
+      "skills": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "toeic-gra-144",
+      "type": "grammar",
+      "prompt": "The project will be finished on time ___ there are no more delays.",
+      "options": [
+        "in case",
+        "even if",
+        "provided that",
+        "unless"
+      ],
+      "answer": "provided that",
+      "explanation": "provided that = 只要；前提是…",
+      "optionNotes": {
+        "in case": "in case 是「以防萬一」",
+        "even if": "even if 是「即使」，語意相反",
+        "unless": "unless 是「除非」，語意相反"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "toeic-gra-145",
+      "type": "grammar",
+      "prompt": "Bring an umbrella ___ it rains this afternoon.",
+      "options": [
+        "unless",
+        "so that",
+        "in case",
+        "even though"
+      ],
+      "answer": "in case",
+      "explanation": "in case：以防萬一。",
+      "optionNotes": {
+        "unless": "unless 是「除非」",
+        "so that": "so that 表示目的「為了讓…」",
+        "even though": "even though 是「雖然」"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "toeic-gra-146",
+      "type": "grammar",
+      "prompt": "The sales figures were ___ worse than we had feared.",
+      "options": [
+        "even",
+        "so",
+        "very",
+        "too"
+      ],
+      "answer": "even",
+      "explanation": "修飾比較級用 even / much / far：even worse 更糟。",
+      "optionNotes": {
+        "very": "very 不能修飾比較級",
+        "too": "too 不能修飾比較級",
+        "so": "so 不能修飾比較級"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ],
+      "skills": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "toeic-gra-147",
+      "type": "grammar",
+      "prompt": "This laptop is not as ___ as the one I bought last year.",
+      "options": [
+        "lighter",
+        "more light",
+        "lightest",
+        "light"
+      ],
+      "answer": "light",
+      "explanation": "not as + 原級 + as：不如…",
+      "optionNotes": {
+        "lighter": "as … as 中間用原級",
+        "lightest": "as … as 中間用原級",
+        "more light": "as … as 中間用原級"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "tech"
+      ],
+      "skills": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "toeic-gra-148",
+      "type": "grammar",
+      "prompt": "The ___ you submit the form, the sooner you will get a reply.",
+      "options": [
+        "more early",
+        "earlier",
+        "early",
+        "earliest"
+      ],
+      "answer": "earlier",
+      "explanation": "the + 比較級…, the + 比較級…：越…就越…",
+      "optionNotes": {
+        "earliest": "這個句型用比較級",
+        "early": "這個句型用比較級",
+        "more early": "early 的比較級是 earlier"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "toeic-gra-149",
+      "type": "grammar",
+      "prompt": "Each of the rooms ___ a view of the ocean.",
+      "options": [
+        "has",
+        "are having",
+        "have",
+        "having"
+      ],
+      "answer": "has",
+      "explanation": "each of + 複數名詞 → 單數動詞。",
+      "optionNotes": {
+        "have": "主詞是 each（單數）",
+        "are having": "複數且語意不對",
+        "having": "缺少主要動詞"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "agreement"
+      ]
+    },
+    {
+      "id": "toeic-gra-150",
+      "type": "grammar",
+      "prompt": "A number of employees ___ asked for flexible hours.",
+      "options": [
+        "is",
+        "has",
+        "have",
+        "was"
+      ],
+      "answer": "have",
+      "explanation": "a number of = many（很多）→ 複數動詞；the number of 才用單數。",
+      "optionNotes": {
+        "has": "a number of 接複數動詞",
+        "is": "單數且語意不對",
+        "was": "單數且語意不對"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "agreement"
+      ]
+    },
+    {
+      "id": "toeic-gra-151",
+      "type": "grammar",
+      "prompt": "Mathematics ___ my favorite subject in school.",
+      "options": [
+        "have been",
+        "are",
+        "was",
+        "were"
+      ],
+      "answer": "was",
+      "explanation": "學科名稱 mathematics、economics 雖然字尾有 s，是單數。",
+      "optionNotes": {
+        "were": "mathematics 是單數",
+        "are": "mathematics 是單數",
+        "have been": "複數"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "school"
+      ],
+      "skills": [
+        "agreement"
+      ]
+    },
+    {
+      "id": "toeic-gra-152",
+      "type": "grammar",
+      "prompt": "The windows ___ every month by a cleaning company.",
+      "options": [
+        "cleaned",
+        "are cleaning",
+        "clean",
+        "are cleaned"
+      ],
+      "answer": "are cleaned",
+      "explanation": "窗戶「被」清潔（例行）→ 現在式被動。",
+      "optionNotes": {
+        "clean": "主動，窗戶不會自己清潔",
+        "are cleaning": "主動進行式",
+        "cleaned": "主動過去式"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "passive"
+      ]
+    },
+    {
+      "id": "toeic-gra-153",
+      "type": "grammar",
+      "prompt": "The proposal ___ by the board last Friday.",
+      "options": [
+        "approved",
+        "has approved",
+        "is approving",
+        "was approved"
+      ],
+      "answer": "was approved",
+      "explanation": "提案「被」核准 + last Friday → 過去式被動。",
+      "optionNotes": {
+        "approved": "主動，提案不會自己核准",
+        "has approved": "主動且不搭配 last Friday",
+        "is approving": "主動進行式"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "passive"
+      ]
+    },
+    {
+      "id": "toeic-gra-154",
+      "type": "grammar",
+      "prompt": "Not until the end of the meeting ___ the real problem.",
+      "options": [
+        "did we realize",
+        "realized we",
+        "we did realize",
+        "we realized"
+      ],
+      "answer": "did we realize",
+      "explanation": "Not until … 放句首 → 主要子句倒裝。",
+      "optionNotes": {
+        "we realized": "Not until 在句首要倒裝",
+        "we did realize": "助動詞要放在主詞前",
+        "realized we": "一般動詞不能直接倒裝"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "inversion"
+      ]
+    },
+    {
+      "id": "toeic-gra-155",
+      "type": "grammar",
+      "prompt": "So popular ___ the new product that it sold out in a day.",
+      "options": [
+        "were",
+        "is it",
+        "was",
+        "it was"
+      ],
+      "answer": "was",
+      "explanation": "So + 形容詞 放句首 → 倒裝：So popular was the product that…",
+      "optionNotes": {
+        "it was": "主詞 the new product 已經在後面，不需要 it",
+        "is it": "時態錯誤且多了 it",
+        "were": "主詞是單數"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "marketing"
+      ],
+      "skills": [
+        "inversion"
+      ]
+    },
+    {
+      "id": "toeic-gra-156",
+      "type": "grammar",
+      "prompt": "If you ___ any questions, please call me.",
+      "options": [
+        "will have",
+        "had",
+        "have",
+        "would have"
+      ],
+      "answer": "have",
+      "explanation": "真實條件句：if + 現在式，主要子句是祈使句。",
+      "optionNotes": {
+        "had": "這不是與事實相反的假設",
+        "will have": "if 子句不用 will",
+        "would have": "if 子句不用 would"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "tense"
+      ]
+    },
+    {
+      "id": "toeic-listen-126",
+      "type": "multiple_choice",
+      "passage": "W: How often do you update the website?",
+      "glossary": {
+        "update": "更新"
+      },
+      "passageTranslation": "女：你們多久更新一次網站？\n（正解：大約每週一次。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "It's a new website.",
+        "About once a week.",
+        "On the home page.",
+        "Yes, I updated it."
+      ],
+      "answer": "About once a week.",
+      "explanation": "How often 問頻率 → 回答頻率。",
+      "optionNotes": {
+        "On the home page.": "回答地點",
+        "It's a new website.": "website 的聲音陷阱",
+        "Yes, I updated it.": "How often 問句不能用 Yes 回答"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "tech"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-127",
+      "type": "multiple_choice",
+      "passage": "M: Whose turn is it to clean the kitchen?",
+      "glossary": {
+        "turn": "輪到（某人）"
+      },
+      "passageTranslation": "男：輪到誰打掃廚房了？\n（正解：我想是 Tom。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "In the kitchen.",
+        "Turn left at the corner.",
+        "I think it's Tom's.",
+        "It's very clean."
+      ],
+      "answer": "I think it's Tom's.",
+      "explanation": "Whose turn 問輪到誰 → 回答人。",
+      "optionNotes": {
+        "Turn left at the corner.": "turn 的聲音陷阱",
+        "It's very clean.": "clean 的聲音陷阱",
+        "In the kitchen.": "kitchen 的聲音陷阱、回答地點"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-128",
+      "type": "multiple_choice",
+      "passage": "W: Shouldn't we order more paper before it runs out?",
+      "glossary": {
+        "run out": "用完"
+      },
+      "passageTranslation": "女：我們不是應該在紙用完前多訂一些嗎？\n（正解：我昨天已經訂了。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "I already did that yesterday.",
+        "No, it's not paper.",
+        "It's on the top shelf.",
+        "The order number is 52."
+      ],
+      "answer": "I already did that yesterday.",
+      "explanation": "否定疑問句（Shouldn't we…?）其實是建議 → 回答「已經做了」很自然。",
+      "optionNotes": {
+        "It's on the top shelf.": "回答位置",
+        "No, it's not paper.": "paper 的聲音陷阱",
+        "The order number is 52.": "order 的聲音陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-129",
+      "type": "multiple_choice",
+      "passage": "M: Do you want to take a taxi or walk to the restaurant?",
+      "glossary": {
+        "take a taxi": "搭計程車"
+      },
+      "passageTranslation": "男：你想搭計程車還是走路去餐廳？\n（正解：天氣很好，走路吧。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "The food was great.",
+        "Yes, I want to.",
+        "It's twenty dollars.",
+        "Let's walk. It's a nice day."
+      ],
+      "answer": "Let's walk. It's a nice day.",
+      "explanation": "選擇疑問句 A or B → 選其中一個，不用 Yes/No。",
+      "optionNotes": {
+        "Yes, I want to.": "選擇疑問句不能用 Yes 回答",
+        "The food was great.": "restaurant 的聯想陷阱",
+        "It's twenty dollars.": "回答價錢"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-130",
+      "type": "multiple_choice",
+      "passage": "W: The printer on the third floor is out of order again.",
+      "glossary": {
+        "out of order": "故障"
+      },
+      "passageTranslation": "女：三樓的印表機又故障了。\n（正解：我來打電話給技術人員。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "I'll call the technician.",
+        "In alphabetical order.",
+        "I'd like to order some.",
+        "Third in line."
+      ],
+      "answer": "I'll call the technician.",
+      "explanation": "直述句（抱怨問題）→ 提出解決辦法。",
+      "optionNotes": {
+        "Third in line.": "third 的聲音陷阱",
+        "In alphabetical order.": "order 的聲音陷阱（字母順序）",
+        "I'd like to order some.": "order 的聲音陷阱（訂購）"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-131",
+      "type": "multiple_choice",
+      "passage": "M: How long will the renovation take?",
+      "glossary": {
+        "renovation": "整修"
+      },
+      "passageTranslation": "男：整修要花多久時間？\n（正解：至少兩個月。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "About ten meters long.",
+        "The workers arrived.",
+        "At least two months.",
+        "It's an old building."
+      ],
+      "answer": "At least two months.",
+      "explanation": "How long 問「多久時間」→ 回答一段時間。",
+      "optionNotes": {
+        "About ten meters long.": "long 的陷阱（長度）",
+        "It's an old building.": "renovation 的聯想陷阱",
+        "The workers arrived.": "沒有回答時間"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-132",
+      "type": "multiple_choice",
+      "passage": "W: Didn't you receive my e-mail about the budget?",
+      "glossary": {
+        "budget": "預算"
+      },
+      "passageTranslation": "女：你沒收到我關於預算的電子郵件嗎？\n（正解：抱歉，我還沒查看收件匣。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "At the post office.",
+        "The budget is too small.",
+        "Sorry, I haven't checked my inbox yet.",
+        "I'll mail it tomorrow."
+      ],
+      "answer": "Sorry, I haven't checked my inbox yet.",
+      "explanation": "否定疑問句：回答實際狀況（還沒看信）。",
+      "optionNotes": {
+        "The budget is too small.": "budget 的聲音陷阱",
+        "I'll mail it tomorrow.": "mail 的聲音陷阱",
+        "At the post office.": "e-mail 的聯想陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-133",
+      "type": "multiple_choice",
+      "passage": "M: Where can I find the user manual?",
+      "glossary": {
+        "user manual": "使用手冊"
+      },
+      "passageTranslation": "男：哪裡可以找到使用手冊？\n（正解：可以在我們的網站下載。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "You can download it from our website.",
+        "It's easy to use.",
+        "Manuel is my coworker.",
+        "Yes, I found it."
+      ],
+      "answer": "You can download it from our website.",
+      "explanation": "Where 問地點／來源 → 說明在哪裡取得。",
+      "optionNotes": {
+        "Yes, I found it.": "Where 問句不能用 Yes 回答",
+        "It's easy to use.": "use 的聲音陷阱",
+        "Manuel is my coworker.": "manual / Manuel 的發音陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "tech"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-134",
+      "type": "multiple_choice",
+      "passage": "W: Why don't we hold the party outdoors?",
+      "glossary": {
+        "hold": "舉辦",
+        "outdoors": "在戶外"
+      },
+      "passageTranslation": "女：我們何不在戶外辦派對？\n（正解：好主意，如果天氣好的話。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "Hold on a second.",
+        "Because it's too late.",
+        "The door is open.",
+        "Good idea, if the weather is nice."
+      ],
+      "answer": "Good idea, if the weather is nice.",
+      "explanation": "Why don't we…? 是提議，不是問原因 → 回應贊成或反對。",
+      "optionNotes": {
+        "Because it's too late.": "把 Why 當成問原因的陷阱",
+        "Hold on a second.": "hold 的聲音陷阱",
+        "The door is open.": "outdoors / door 的聲音陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-135",
+      "type": "multiple_choice",
+      "passage": "M: Which bus goes to the convention center?",
+      "glossary": {
+        "convention center": "會議展覽中心"
+      },
+      "passageTranslation": "男：哪一路公車到會展中心？\n（正解：搭 15 號。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "Take the number 15.",
+        "Every twenty minutes.",
+        "I went there by car.",
+        "It's a large center."
+      ],
+      "answer": "Take the number 15.",
+      "explanation": "Which bus 問哪一班 → 回答公車號碼。",
+      "optionNotes": {
+        "It's a large center.": "center 的聲音陷阱",
+        "Every twenty minutes.": "回答班次頻率",
+        "I went there by car.": "沒有回答哪一路公車"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-136",
+      "type": "multiple_choice",
+      "passage": "W: Can you show the new intern how to use the scanner?",
+      "glossary": {
+        "intern": "實習生",
+        "scanner": "掃描機"
+      },
+      "passageTranslation": "女：你可以教新來的實習生怎麼用掃描機嗎？\n（正解：當然，等我開完這個會。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "Sure, after this meeting.",
+        "It's a new scanner.",
+        "He's from Canada.",
+        "The show starts at seven."
+      ],
+      "answer": "Sure, after this meeting.",
+      "explanation": "Can you…? 是請求 → 答應並說明何時。",
+      "optionNotes": {
+        "It's a new scanner.": "scanner 的聲音陷阱",
+        "The show starts at seven.": "show 的聲音陷阱",
+        "He's from Canada.": "沒有回應請求"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-137",
+      "type": "multiple_choice",
+      "passage": "M: Has the client signed the contract yet?",
+      "glossary": {
+        "client": "客戶",
+        "contract": "合約"
+      },
+      "passageTranslation": "男：客戶簽合約了沒？\n（正解：他們還在審閱。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "A two-year contract.",
+        "Yes, the sign is new.",
+        "They're still reviewing it.",
+        "Sign here, please."
+      ],
+      "answer": "They're still reviewing it.",
+      "explanation": "問是否已完成 → 回答「還在進行中」是很常見的間接回答。",
+      "optionNotes": {
+        "Sign here, please.": "sign 的聲音陷阱",
+        "A two-year contract.": "contract 的聲音陷阱",
+        "Yes, the sign is new.": "sign（招牌）的聲音陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-138",
+      "type": "multiple_choice",
+      "passage": "W: I can't find my security badge anywhere.",
+      "glossary": {
+        "security badge": "識別證；門禁卡"
+      },
+      "passageTranslation": "女：我到處都找不到我的識別證。\n（正解：你可以去櫃台領臨時的。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "It's a nice bag.",
+        "The security is good.",
+        "You can get a temporary one at reception.",
+        "I'll find a seat."
+      ],
+      "answer": "You can get a temporary one at reception.",
+      "explanation": "直述句（說出問題）→ 提供解決辦法。",
+      "optionNotes": {
+        "The security is good.": "security 的聲音陷阱",
+        "It's a nice bag.": "badge / bag 的發音陷阱",
+        "I'll find a seat.": "find 的聲音陷阱"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-139",
+      "type": "multiple_choice",
+      "passage": "M: Would you rather meet on Tuesday or Wednesday?",
+      "glossary": {
+        "would rather": "寧願；比較想"
+      },
+      "passageTranslation": "男：你比較想週二還是週三見面？\n（正解：哪天都可以。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "It's in my calendar.",
+        "We met last week.",
+        "Yes, I'd like to.",
+        "Either day works for me."
+      ],
+      "answer": "Either day works for me.",
+      "explanation": "選擇疑問句 → 選一個，或回答「都可以」（Either…）。",
+      "optionNotes": {
+        "Yes, I'd like to.": "選擇疑問句不能用 Yes 回答",
+        "We met last week.": "meet 的時態陷阱",
+        "It's in my calendar.": "沒有選擇日期"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "work"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-140",
+      "type": "multiple_choice",
+      "passage": "W: Who's responsible for ordering office supplies?",
+      "glossary": {
+        "responsible for": "負責",
+        "office supplies": "辦公用品"
+      },
+      "passageTranslation": "女：誰負責訂辦公用品？\n（正解：總務部的 Linda。）",
+      "listening": true,
+      "prompt": "Choose the best response.",
+      "options": [
+        "They're in the cabinet.",
+        "Yes, I ordered them.",
+        "Linda in General Affairs.",
+        "Pens and paper."
+      ],
+      "answer": "Linda in General Affairs.",
+      "explanation": "Who 問人 → 回答人／部門。",
+      "optionNotes": {
+        "Pens and paper.": "回答買什麼",
+        "Yes, I ordered them.": "Who 問句不能用 Yes 回答",
+        "They're in the cabinet.": "回答地點"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part2",
+        "response"
+      ]
+    },
+    {
+      "id": "toeic-listen-141",
+      "type": "multiple_choice",
+      "passage": "Floor Directory\n1F  Reception / Cafeteria\n2F  Marketing\n3F  Accounting\n4F  Human Resources\n\nM: Excuse me, I have a job interview at two o'clock with Ms. Rivera. Could you tell me where to go?\nW: Sure. Ms. Rivera is the head of the department that handles hiring. Please take the elevator to that floor.\nM: Thank you. I'm a little early. Is there somewhere I can get a coffee while I wait?\nW: Yes, our cafeteria is right behind me. Just remember to sign in here first and pick up a visitor's pass.",
+      "glossary": {
+        "directory": "樓層指引",
+        "job interview": "工作面試",
+        "head of the department": "部門主管",
+        "handle": "處理；負責",
+        "hiring": "招聘",
+        "visitor's pass": "訪客證"
+      },
+      "passageTranslation": "【樓層指引】1F 接待處／員工餐廳；2F 行銷部；3F 會計部；4F 人資部\n\n男：不好意思，我兩點和 Rivera 小姐有一場工作面試。可以告訴我要去哪裡嗎？\n女：當然。Rivera 小姐是負責招聘的部門主管，請搭電梯到那一層。\n男：謝謝。我早到了一點，有地方可以買杯咖啡等嗎？\n女：有，我們的員工餐廳就在我後面。只是請記得先在這裡登記並領取訪客證。",
+      "listening": true,
+      "prompt": "Look at the graphic. Which floor will the man go to for his interview?",
+      "options": [
+        "The 1st floor",
+        "The 2nd floor",
+        "The 4th floor",
+        "The 3rd floor"
+      ],
+      "answer": "The 4th floor",
+      "explanation": "圖表題：對話說 Rivera 是「負責招聘（hiring）的部門」主管 → 招聘＝人資部（Human Resources）→ 對照圖表是 4F。",
+      "optionNotes": {
+        "The 2nd floor": "2F 是行銷部",
+        "The 3rd floor": "3F 是會計部",
+        "The 1st floor": "1F 是接待處和餐廳，是他等候的地方"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "part3",
+        "graphic"
+      ]
+    },
+    {
+      "id": "toeic-listen-142",
+      "type": "multiple_choice",
+      "passage": "Floor Directory\n1F  Reception / Cafeteria\n2F  Marketing\n3F  Accounting\n4F  Human Resources\n\nM: Excuse me, I have a job interview at two o'clock with Ms. Rivera. Could you tell me where to go?\nW: Sure. Ms. Rivera is the head of the department that handles hiring. Please take the elevator to that floor.\nM: Thank you. I'm a little early. Is there somewhere I can get a coffee while I wait?\nW: Yes, our cafeteria is right behind me. Just remember to sign in here first and pick up a visitor's pass.",
+      "glossary": {
+        "directory": "樓層指引",
+        "job interview": "工作面試",
+        "head of the department": "部門主管",
+        "handle": "處理；負責",
+        "hiring": "招聘",
+        "visitor's pass": "訪客證"
+      },
+      "passageTranslation": "【樓層指引】1F 接待處／員工餐廳；2F 行銷部；3F 會計部；4F 人資部\n\n男：不好意思，我兩點和 Rivera 小姐有一場工作面試。可以告訴我要去哪裡嗎？\n女：當然。Rivera 小姐是負責招聘的部門主管，請搭電梯到那一層。\n男：謝謝。我早到了一點，有地方可以買杯咖啡等嗎？\n女：有，我們的員工餐廳就在我後面。只是請記得先在這裡登記並領取訪客證。",
+      "listening": true,
+      "prompt": "Why is the man at the building?",
+      "options": [
+        "To repair the elevator",
+        "To meet a client",
+        "To attend a job interview",
+        "To deliver a package"
+      ],
+      "answer": "To attend a job interview",
+      "explanation": "I have a job interview at two o'clock → 來面試。",
+      "optionNotes": {
+        "To deliver a package": "沒有提到送貨",
+        "To repair the elevator": "elevator 的聲音陷阱",
+        "To meet a client": "他是去面試，不是見客戶"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "part3",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-143",
+      "type": "multiple_choice",
+      "passage": "Floor Directory\n1F  Reception / Cafeteria\n2F  Marketing\n3F  Accounting\n4F  Human Resources\n\nM: Excuse me, I have a job interview at two o'clock with Ms. Rivera. Could you tell me where to go?\nW: Sure. Ms. Rivera is the head of the department that handles hiring. Please take the elevator to that floor.\nM: Thank you. I'm a little early. Is there somewhere I can get a coffee while I wait?\nW: Yes, our cafeteria is right behind me. Just remember to sign in here first and pick up a visitor's pass.",
+      "glossary": {
+        "directory": "樓層指引",
+        "job interview": "工作面試",
+        "head of the department": "部門主管",
+        "handle": "處理；負責",
+        "hiring": "招聘",
+        "visitor's pass": "訪客證"
+      },
+      "passageTranslation": "【樓層指引】1F 接待處／員工餐廳；2F 行銷部；3F 會計部；4F 人資部\n\n男：不好意思，我兩點和 Rivera 小姐有一場工作面試。可以告訴我要去哪裡嗎？\n女：當然。Rivera 小姐是負責招聘的部門主管，請搭電梯到那一層。\n男：謝謝。我早到了一點，有地方可以買杯咖啡等嗎？\n女：有，我們的員工餐廳就在我後面。只是請記得先在這裡登記並領取訪客證。",
+      "listening": true,
+      "prompt": "What does the woman ask the man to do first?",
+      "options": [
+        "Buy a coffee",
+        "Fill out an application",
+        "Sign in and get a visitor's pass",
+        "Call Ms. Rivera"
+      ],
+      "answer": "Sign in and get a visitor's pass",
+      "explanation": "remember to sign in here first and pick up a visitor's pass → 先登記拿訪客證。",
+      "optionNotes": {
+        "Buy a coffee": "是男生想做的事",
+        "Call Ms. Rivera": "沒有提到打電話",
+        "Fill out an application": "沒有提到填申請表"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "hr"
+      ],
+      "skills": [
+        "part3",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-144",
+      "type": "multiple_choice",
+      "passage": "Shipping Options\nStandard     5-7 days   $8\nExpress      2-3 days   $15\nNext Day     1 day      $25\nInternational 10 days   $40\n\nW: Hi, I'd like to send these samples to a client in Chicago.\nM: Sure. When do they need to arrive?\nW: The client's meeting is on Thursday, and today is Monday, so they have to get there within three days. But I'd like to keep the cost as low as possible.\nM: Then I'd recommend this option. Would you like to add insurance? It's two dollars extra.\nW: No, thanks. The samples aren't very valuable.",
+      "glossary": {
+        "shipping": "運送",
+        "sample": "樣品",
+        "arrive": "送達",
+        "within": "在…之內",
+        "as low as possible": "盡可能低",
+        "insurance": "保險",
+        "valuable": "貴重的"
+      },
+      "passageTranslation": "【寄送方式】標準 5–7 天 $8；快遞 2–3 天 $15；隔日送達 1 天 $25；國際 10 天 $40\n\n女：你好，我想把這些樣品寄給芝加哥的一位客戶。\n男：好的，需要什麼時候送到？\n女：客戶週四開會，今天是週一，所以要在三天內送到。不過我希望費用越低越好。\n男：那我推薦這個選項。要加保險嗎？多收兩美元。\n女：不用了，謝謝。這些樣品不是很貴重。",
+      "listening": true,
+      "prompt": "Look at the graphic. How much will the woman most likely pay for shipping?",
+      "options": [
+        "$8",
+        "$40",
+        "$25",
+        "$15"
+      ],
+      "answer": "$15",
+      "explanation": "圖表題：三天內送到（2–3 天）＋越便宜越好 → Express $15；她也拒絕了保險，所以不加 $2。",
+      "optionNotes": {
+        "$8": "標準件要 5–7 天，來不及",
+        "$25": "隔日送達比較貴，不必要",
+        "$40": "國際運送，而且要 10 天"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part3",
+        "graphic"
+      ]
+    },
+    {
+      "id": "toeic-listen-145",
+      "type": "multiple_choice",
+      "passage": "Shipping Options\nStandard     5-7 days   $8\nExpress      2-3 days   $15\nNext Day     1 day      $25\nInternational 10 days   $40\n\nW: Hi, I'd like to send these samples to a client in Chicago.\nM: Sure. When do they need to arrive?\nW: The client's meeting is on Thursday, and today is Monday, so they have to get there within three days. But I'd like to keep the cost as low as possible.\nM: Then I'd recommend this option. Would you like to add insurance? It's two dollars extra.\nW: No, thanks. The samples aren't very valuable.",
+      "glossary": {
+        "shipping": "運送",
+        "sample": "樣品",
+        "arrive": "送達",
+        "within": "在…之內",
+        "as low as possible": "盡可能低",
+        "insurance": "保險",
+        "valuable": "貴重的"
+      },
+      "passageTranslation": "【寄送方式】標準 5–7 天 $8；快遞 2–3 天 $15；隔日送達 1 天 $25；國際 10 天 $40\n\n女：你好，我想把這些樣品寄給芝加哥的一位客戶。\n男：好的，需要什麼時候送到？\n女：客戶週四開會，今天是週一，所以要在三天內送到。不過我希望費用越低越好。\n男：那我推薦這個選項。要加保險嗎？多收兩美元。\n女：不用了，謝謝。這些樣品不是很貴重。",
+      "listening": true,
+      "prompt": "What is the woman sending?",
+      "options": [
+        "A gift",
+        "Product samples",
+        "Contracts",
+        "Office equipment"
+      ],
+      "answer": "Product samples",
+      "explanation": "I'd like to send these samples to a client.",
+      "optionNotes": {
+        "Contracts": "沒有提到合約",
+        "A gift": "沒有提到禮物",
+        "Office equipment": "沒有提到設備"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part3",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-146",
+      "type": "multiple_choice",
+      "passage": "Shipping Options\nStandard     5-7 days   $8\nExpress      2-3 days   $15\nNext Day     1 day      $25\nInternational 10 days   $40\n\nW: Hi, I'd like to send these samples to a client in Chicago.\nM: Sure. When do they need to arrive?\nW: The client's meeting is on Thursday, and today is Monday, so they have to get there within three days. But I'd like to keep the cost as low as possible.\nM: Then I'd recommend this option. Would you like to add insurance? It's two dollars extra.\nW: No, thanks. The samples aren't very valuable.",
+      "glossary": {
+        "shipping": "運送",
+        "sample": "樣品",
+        "arrive": "送達",
+        "within": "在…之內",
+        "as low as possible": "盡可能低",
+        "insurance": "保險",
+        "valuable": "貴重的"
+      },
+      "passageTranslation": "【寄送方式】標準 5–7 天 $8；快遞 2–3 天 $15；隔日送達 1 天 $25；國際 10 天 $40\n\n女：你好，我想把這些樣品寄給芝加哥的一位客戶。\n男：好的，需要什麼時候送到？\n女：客戶週四開會，今天是週一，所以要在三天內送到。不過我希望費用越低越好。\n男：那我推薦這個選項。要加保險嗎？多收兩美元。\n女：不用了，謝謝。這些樣品不是很貴重。",
+      "listening": true,
+      "prompt": "Why does the woman decline the insurance?",
+      "options": [
+        "The items are not very valuable.",
+        "The client will pay for it.",
+        "She already has insurance.",
+        "It is too expensive."
+      ],
+      "answer": "The items are not very valuable.",
+      "explanation": "The samples aren't very valuable. → 不貴重所以不保險。",
+      "optionNotes": {
+        "It is too expensive.": "只多兩美元，她沒說太貴",
+        "The client will pay for it.": "沒有提到",
+        "She already has insurance.": "沒有提到"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part3",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-147",
+      "type": "multiple_choice",
+      "passage": "Conference Schedule — Room B\n9:00   Opening Remarks\n10:00  Digital Marketing Trends\n11:00  Social Media Workshop\n1:00   Customer Data and Privacy\n\nM: Are you going to any of the sessions in Room B today?\nW: I was planning to go to the social media workshop, but I just got a call from the office. I have to join a conference call at eleven.\nM: That's too bad. Maybe you can catch the talk after lunch instead. It's about data and privacy, which is related to your project.\nW: Good idea. And I heard they'll post recordings of all the sessions online next week, so I can watch the workshop later.",
+      "glossary": {
+        "session": "場次；講座",
+        "workshop": "工作坊",
+        "conference call": "電話會議",
+        "catch": "趕上（看）",
+        "related to": "和…有關",
+        "post": "張貼；上傳",
+        "recording": "錄影"
+      },
+      "passageTranslation": "【會議議程 — B 廳】9:00 開幕致詞；10:00 數位行銷趨勢；11:00 社群媒體工作坊；1:00 客戶資料與隱私\n\n男：你今天會去 B 廳的講座嗎？\n女：我本來打算去社群媒體工作坊，但我剛接到辦公室的電話，十一點要參加一個電話會議。\n男：真可惜。也許你可以改聽午餐後的那場，主題是資料與隱私，跟你的專案有關。\n女：好主意。而且我聽說下週他們會把所有講座的錄影放上網，我可以之後再看工作坊。",
+      "listening": true,
+      "prompt": "Look at the graphic. Which session will the woman most likely attend?",
+      "options": [
+        "Opening Remarks",
+        "Customer Data and Privacy",
+        "Social Media Workshop",
+        "Digital Marketing Trends"
+      ],
+      "answer": "Customer Data and Privacy",
+      "explanation": "圖表題：男生建議「午餐後、關於資料與隱私」的講座，女生說 Good idea → 對照議程是 1:00 Customer Data and Privacy。",
+      "optionNotes": {
+        "Social Media Workshop": "11:00 她要開電話會議，去不了",
+        "Digital Marketing Trends": "對話沒提到這場",
+        "Opening Remarks": "對話沒提到這場"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "marketing"
+      ],
+      "skills": [
+        "part3",
+        "graphic"
+      ]
+    },
+    {
+      "id": "toeic-listen-148",
+      "type": "multiple_choice",
+      "passage": "Conference Schedule — Room B\n9:00   Opening Remarks\n10:00  Digital Marketing Trends\n11:00  Social Media Workshop\n1:00   Customer Data and Privacy\n\nM: Are you going to any of the sessions in Room B today?\nW: I was planning to go to the social media workshop, but I just got a call from the office. I have to join a conference call at eleven.\nM: That's too bad. Maybe you can catch the talk after lunch instead. It's about data and privacy, which is related to your project.\nW: Good idea. And I heard they'll post recordings of all the sessions online next week, so I can watch the workshop later.",
+      "glossary": {
+        "session": "場次；講座",
+        "workshop": "工作坊",
+        "conference call": "電話會議",
+        "catch": "趕上（看）",
+        "related to": "和…有關",
+        "post": "張貼；上傳",
+        "recording": "錄影"
+      },
+      "passageTranslation": "【會議議程 — B 廳】9:00 開幕致詞；10:00 數位行銷趨勢；11:00 社群媒體工作坊；1:00 客戶資料與隱私\n\n男：你今天會去 B 廳的講座嗎？\n女：我本來打算去社群媒體工作坊，但我剛接到辦公室的電話，十一點要參加一個電話會議。\n男：真可惜。也許你可以改聽午餐後的那場，主題是資料與隱私，跟你的專案有關。\n女：好主意。而且我聽說下週他們會把所有講座的錄影放上網，我可以之後再看工作坊。",
+      "listening": true,
+      "prompt": "Why can't the woman attend the workshop?",
+      "options": [
+        "She is feeling sick.",
+        "She has to give a presentation.",
+        "She has to join a conference call.",
+        "The workshop was canceled."
+      ],
+      "answer": "She has to join a conference call.",
+      "explanation": "I have to join a conference call at eleven. 和工作坊時間（11:00）衝突。",
+      "optionNotes": {
+        "She has to give a presentation.": "沒有提到簡報",
+        "The workshop was canceled.": "沒有取消",
+        "She is feeling sick.": "沒有提到生病"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "marketing"
+      ],
+      "skills": [
+        "part3",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-149",
+      "type": "multiple_choice",
+      "passage": "Conference Schedule — Room B\n9:00   Opening Remarks\n10:00  Digital Marketing Trends\n11:00  Social Media Workshop\n1:00   Customer Data and Privacy\n\nM: Are you going to any of the sessions in Room B today?\nW: I was planning to go to the social media workshop, but I just got a call from the office. I have to join a conference call at eleven.\nM: That's too bad. Maybe you can catch the talk after lunch instead. It's about data and privacy, which is related to your project.\nW: Good idea. And I heard they'll post recordings of all the sessions online next week, so I can watch the workshop later.",
+      "glossary": {
+        "session": "場次；講座",
+        "workshop": "工作坊",
+        "conference call": "電話會議",
+        "catch": "趕上（看）",
+        "related to": "和…有關",
+        "post": "張貼；上傳",
+        "recording": "錄影"
+      },
+      "passageTranslation": "【會議議程 — B 廳】9:00 開幕致詞；10:00 數位行銷趨勢；11:00 社群媒體工作坊；1:00 客戶資料與隱私\n\n男：你今天會去 B 廳的講座嗎？\n女：我本來打算去社群媒體工作坊，但我剛接到辦公室的電話，十一點要參加一個電話會議。\n男：真可惜。也許你可以改聽午餐後的那場，主題是資料與隱私，跟你的專案有關。\n女：好主意。而且我聽說下週他們會把所有講座的錄影放上網，我可以之後再看工作坊。",
+      "listening": true,
+      "prompt": "What does the woman say will happen next week?",
+      "options": [
+        "A new project will start.",
+        "Room B will be renovated.",
+        "Recordings will be posted online.",
+        "The conference will be held again."
+      ],
+      "answer": "Recordings will be posted online.",
+      "explanation": "they'll post recordings of all the sessions online next week。",
+      "optionNotes": {
+        "A new project will start.": "project 的聲音陷阱",
+        "The conference will be held again.": "沒有提到",
+        "Room B will be renovated.": "沒有提到"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "marketing"
+      ],
+      "skills": [
+        "part3",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-150",
+      "type": "multiple_choice",
+      "passage": "W: Good morning, everyone, and welcome to the Riverside Art Museum. My name is Grace, and I'll be your guide today. Our tour will last about ninety minutes and will cover the museum's modern art collection on the second floor. Please note that photography is allowed, but flash is not, because it can damage the paintings. At the end of the tour, you'll receive a coupon for ten percent off at our gift shop. Now, if everyone is ready, please follow me to the elevator.",
+      "glossary": {
+        "guide": "導覽員",
+        "tour": "導覽",
+        "last": "持續",
+        "cover": "涵蓋",
+        "collection": "收藏品",
+        "photography": "攝影",
+        "flash": "閃光燈",
+        "damage": "損害",
+        "coupon": "折價券"
+      },
+      "passageTranslation": "女：大家早安，歡迎來到 Riverside 美術館。我是 Grace，今天由我擔任導覽。導覽大約 90 分鐘，內容是二樓的現代藝術收藏。請注意，可以拍照，但不可以使用閃光燈，因為閃光可能會損壞畫作。導覽結束時，各位會拿到一張禮品店九折的折價券。好，如果大家準備好了，請跟我到電梯。",
+      "listening": true,
+      "prompt": "Who most likely is the speaker?",
+      "options": [
+        "A gift shop clerk",
+        "A painter",
+        "A security guard",
+        "A tour guide"
+      ],
+      "answer": "A tour guide",
+      "explanation": "I'll be your guide today. Our tour will last… → 導覽員。",
+      "optionNotes": {
+        "A painter": "paintings 的聯想陷阱",
+        "A gift shop clerk": "gift shop 的聲音陷阱",
+        "A security guard": "雖然提醒規定，但她是導覽員"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "part4",
+        "main-idea"
+      ]
+    },
+    {
+      "id": "toeic-listen-151",
+      "type": "multiple_choice",
+      "passage": "W: Good morning, everyone, and welcome to the Riverside Art Museum. My name is Grace, and I'll be your guide today. Our tour will last about ninety minutes and will cover the museum's modern art collection on the second floor. Please note that photography is allowed, but flash is not, because it can damage the paintings. At the end of the tour, you'll receive a coupon for ten percent off at our gift shop. Now, if everyone is ready, please follow me to the elevator.",
+      "glossary": {
+        "guide": "導覽員",
+        "tour": "導覽",
+        "last": "持續",
+        "cover": "涵蓋",
+        "collection": "收藏品",
+        "photography": "攝影",
+        "flash": "閃光燈",
+        "damage": "損害",
+        "coupon": "折價券"
+      },
+      "passageTranslation": "女：大家早安，歡迎來到 Riverside 美術館。我是 Grace，今天由我擔任導覽。導覽大約 90 分鐘，內容是二樓的現代藝術收藏。請注意，可以拍照，但不可以使用閃光燈，因為閃光可能會損壞畫作。導覽結束時，各位會拿到一張禮品店九折的折價券。好，如果大家準備好了，請跟我到電梯。",
+      "listening": true,
+      "prompt": "What are the listeners asked not to do?",
+      "options": [
+        "Take photographs",
+        "Use the elevator",
+        "Use a flash",
+        "Touch the gift items"
+      ],
+      "answer": "Use a flash",
+      "explanation": "photography is allowed, but flash is not → 不能用閃光燈。",
+      "optionNotes": {
+        "Take photographs": "拍照是允許的",
+        "Use the elevator": "她還請大家搭電梯",
+        "Touch the gift items": "沒有提到"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-152",
+      "type": "multiple_choice",
+      "passage": "W: Good morning, everyone, and welcome to the Riverside Art Museum. My name is Grace, and I'll be your guide today. Our tour will last about ninety minutes and will cover the museum's modern art collection on the second floor. Please note that photography is allowed, but flash is not, because it can damage the paintings. At the end of the tour, you'll receive a coupon for ten percent off at our gift shop. Now, if everyone is ready, please follow me to the elevator.",
+      "glossary": {
+        "guide": "導覽員",
+        "tour": "導覽",
+        "last": "持續",
+        "cover": "涵蓋",
+        "collection": "收藏品",
+        "photography": "攝影",
+        "flash": "閃光燈",
+        "damage": "損害",
+        "coupon": "折價券"
+      },
+      "passageTranslation": "女：大家早安，歡迎來到 Riverside 美術館。我是 Grace，今天由我擔任導覽。導覽大約 90 分鐘，內容是二樓的現代藝術收藏。請注意，可以拍照，但不可以使用閃光燈，因為閃光可能會損壞畫作。導覽結束時，各位會拿到一張禮品店九折的折價券。好，如果大家準備好了，請跟我到電梯。",
+      "listening": true,
+      "prompt": "What will the listeners receive at the end of the tour?",
+      "options": [
+        "A discount coupon",
+        "A free poster",
+        "A guidebook",
+        "A museum map"
+      ],
+      "answer": "A discount coupon",
+      "explanation": "a coupon for ten percent off at our gift shop。",
+      "optionNotes": {
+        "A free poster": "沒有提到",
+        "A museum map": "沒有提到",
+        "A guidebook": "guide 的聲音陷阱"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "travel"
+      ],
+      "skills": [
+        "part4",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-153",
+      "type": "multiple_choice",
+      "passage": "M: This is a message for all employees. As you know, our company is moving to a new parking system next month. Starting May first, you will no longer need a paper permit. Instead, your license plate will be registered in our system, and the gate will open automatically. To register, please fill out the online form on the company intranet by April twentieth. If you share a car with a coworker, both of you should register the same plate number. For questions, contact the facilities department at extension 305.",
+      "glossary": {
+        "parking system": "停車系統",
+        "permit": "許可證",
+        "license plate": "車牌",
+        "register": "登記",
+        "gate": "柵門",
+        "automatically": "自動地",
+        "intranet": "公司內部網路",
+        "facilities department": "總務／設施部門",
+        "extension": "分機"
+      },
+      "passageTranslation": "男：這是給全體員工的通知。如各位所知，公司下個月要改用新的停車系統。從 5 月 1 日起，大家不再需要紙本停車證，而是把車牌登記在系統裡，柵門會自動打開。登記方式：請在 4 月 20 日前填寫公司內網上的線上表單。如果你和同事共乘一台車，兩個人都要登記同一個車牌號碼。如有問題，請聯絡設施部，分機 305。",
+      "listening": true,
+      "prompt": "What is the announcement mainly about?",
+      "options": [
+        "A new parking system",
+        "A new office location",
+        "A security training",
+        "A car-sharing program"
+      ],
+      "answer": "A new parking system",
+      "explanation": "our company is moving to a new parking system next month → 主旨。",
+      "optionNotes": {
+        "A new office location": "moving 的陷阱，搬的是系統不是辦公室",
+        "A car-sharing program": "只是順帶提到共乘的人怎麼登記",
+        "A security training": "沒有提到"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part4",
+        "main-idea"
+      ]
+    },
+    {
+      "id": "toeic-listen-154",
+      "type": "multiple_choice",
+      "passage": "M: This is a message for all employees. As you know, our company is moving to a new parking system next month. Starting May first, you will no longer need a paper permit. Instead, your license plate will be registered in our system, and the gate will open automatically. To register, please fill out the online form on the company intranet by April twentieth. If you share a car with a coworker, both of you should register the same plate number. For questions, contact the facilities department at extension 305.",
+      "glossary": {
+        "parking system": "停車系統",
+        "permit": "許可證",
+        "license plate": "車牌",
+        "register": "登記",
+        "gate": "柵門",
+        "automatically": "自動地",
+        "intranet": "公司內部網路",
+        "facilities department": "總務／設施部門",
+        "extension": "分機"
+      },
+      "passageTranslation": "男：這是給全體員工的通知。如各位所知，公司下個月要改用新的停車系統。從 5 月 1 日起，大家不再需要紙本停車證，而是把車牌登記在系統裡，柵門會自動打開。登記方式：請在 4 月 20 日前填寫公司內網上的線上表單。如果你和同事共乘一台車，兩個人都要登記同一個車牌號碼。如有問題，請聯絡設施部，分機 305。",
+      "listening": true,
+      "prompt": "What should employees do by April 20?",
+      "options": [
+        "Complete an online form",
+        "Visit the facilities department",
+        "Return their paper permits",
+        "Pay a parking fee"
+      ],
+      "answer": "Complete an online form",
+      "explanation": "fill out the online form on the company intranet by April twentieth。",
+      "optionNotes": {
+        "Return their paper permits": "沒有說要歸還",
+        "Pay a parking fee": "沒有提到費用",
+        "Visit the facilities department": "只有有問題才聯絡"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part4",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-155",
+      "type": "multiple_choice",
+      "passage": "M: This is a message for all employees. As you know, our company is moving to a new parking system next month. Starting May first, you will no longer need a paper permit. Instead, your license plate will be registered in our system, and the gate will open automatically. To register, please fill out the online form on the company intranet by April twentieth. If you share a car with a coworker, both of you should register the same plate number. For questions, contact the facilities department at extension 305.",
+      "glossary": {
+        "parking system": "停車系統",
+        "permit": "許可證",
+        "license plate": "車牌",
+        "register": "登記",
+        "gate": "柵門",
+        "automatically": "自動地",
+        "intranet": "公司內部網路",
+        "facilities department": "總務／設施部門",
+        "extension": "分機"
+      },
+      "passageTranslation": "男：這是給全體員工的通知。如各位所知，公司下個月要改用新的停車系統。從 5 月 1 日起，大家不再需要紙本停車證，而是把車牌登記在系統裡，柵門會自動打開。登記方式：請在 4 月 20 日前填寫公司內網上的線上表單。如果你和同事共乘一台車，兩個人都要登記同一個車牌號碼。如有問題，請聯絡設施部，分機 305。",
+      "listening": true,
+      "prompt": "What are employees who share a car told to do?",
+      "options": [
+        "Register the same plate number",
+        "Use a paper permit",
+        "Contact their manager",
+        "Park in a different area"
+      ],
+      "answer": "Register the same plate number",
+      "explanation": "both of you should register the same plate number。",
+      "optionNotes": {
+        "Use a paper permit": "紙本停車證將不再使用",
+        "Park in a different area": "沒有提到",
+        "Contact their manager": "沒有提到主管"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "office"
+      ],
+      "skills": [
+        "part4",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-156",
+      "type": "multiple_choice",
+      "passage": "W: You're listening to Business Today on Radio 88. Our top story this morning: Greenleaf Foods, the country's largest organic grocery chain, announced yesterday that it will open twenty new stores over the next two years. Most of the new locations will be in smaller cities, where demand for organic products has grown quickly. The company also said it plans to hire about one thousand new workers. Later in the program, we'll talk with Greenleaf's CEO, Daniel Ortiz, about the company's plans. But first, here's a look at the weather.",
+      "glossary": {
+        "top story": "頭條新聞",
+        "organic": "有機的",
+        "grocery chain": "連鎖超市",
+        "location": "據點；分店",
+        "demand": "需求",
+        "hire": "雇用",
+        "program": "節目",
+        "CEO": "執行長"
+      },
+      "passageTranslation": "女：您正在收聽 88 電台的《今日商業》。今天早上的頭條：全國最大的有機連鎖超市 Greenleaf Foods 昨天宣布，未來兩年將開設 20 家新店。新店大多位於較小的城市，那裡對有機產品的需求成長得很快。公司也表示計劃雇用大約一千名新員工。節目稍後我們會訪問 Greenleaf 的執行長 Daniel Ortiz，談談公司的計畫。不過首先，來看看天氣。",
+      "listening": true,
+      "prompt": "What did Greenleaf Foods announce?",
+      "options": [
+        "It will open new stores.",
+        "It will close some stores.",
+        "It has a new CEO.",
+        "It will start selling online."
+      ],
+      "answer": "It will open new stores.",
+      "explanation": "announced yesterday that it will open twenty new stores。",
+      "optionNotes": {
+        "It will close some stores.": "相反",
+        "It has a new CEO.": "CEO 只是會接受訪問",
+        "It will start selling online.": "沒有提到"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part4",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-157",
+      "type": "multiple_choice",
+      "passage": "W: You're listening to Business Today on Radio 88. Our top story this morning: Greenleaf Foods, the country's largest organic grocery chain, announced yesterday that it will open twenty new stores over the next two years. Most of the new locations will be in smaller cities, where demand for organic products has grown quickly. The company also said it plans to hire about one thousand new workers. Later in the program, we'll talk with Greenleaf's CEO, Daniel Ortiz, about the company's plans. But first, here's a look at the weather.",
+      "glossary": {
+        "top story": "頭條新聞",
+        "organic": "有機的",
+        "grocery chain": "連鎖超市",
+        "location": "據點；分店",
+        "demand": "需求",
+        "hire": "雇用",
+        "program": "節目",
+        "CEO": "執行長"
+      },
+      "passageTranslation": "女：您正在收聽 88 電台的《今日商業》。今天早上的頭條：全國最大的有機連鎖超市 Greenleaf Foods 昨天宣布，未來兩年將開設 20 家新店。新店大多位於較小的城市，那裡對有機產品的需求成長得很快。公司也表示計劃雇用大約一千名新員工。節目稍後我們會訪問 Greenleaf 的執行長 Daniel Ortiz，談談公司的計畫。不過首先，來看看天氣。",
+      "listening": true,
+      "prompt": "According to the speaker, why will most new stores be in smaller cities?",
+      "options": [
+        "There are more workers there.",
+        "Demand for organic products has grown there.",
+        "The CEO lives there.",
+        "Rent is cheaper there."
+      ],
+      "answer": "Demand for organic products has grown there.",
+      "explanation": "where demand for organic products has grown quickly。",
+      "optionNotes": {
+        "Rent is cheaper there.": "沒有提到租金",
+        "The CEO lives there.": "沒有提到",
+        "There are more workers there.": "沒有提到"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part4",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-listen-158",
+      "type": "multiple_choice",
+      "passage": "W: You're listening to Business Today on Radio 88. Our top story this morning: Greenleaf Foods, the country's largest organic grocery chain, announced yesterday that it will open twenty new stores over the next two years. Most of the new locations will be in smaller cities, where demand for organic products has grown quickly. The company also said it plans to hire about one thousand new workers. Later in the program, we'll talk with Greenleaf's CEO, Daniel Ortiz, about the company's plans. But first, here's a look at the weather.",
+      "glossary": {
+        "top story": "頭條新聞",
+        "organic": "有機的",
+        "grocery chain": "連鎖超市",
+        "location": "據點；分店",
+        "demand": "需求",
+        "hire": "雇用",
+        "program": "節目",
+        "CEO": "執行長"
+      },
+      "passageTranslation": "女：您正在收聽 88 電台的《今日商業》。今天早上的頭條：全國最大的有機連鎖超市 Greenleaf Foods 昨天宣布，未來兩年將開設 20 家新店。新店大多位於較小的城市，那裡對有機產品的需求成長得很快。公司也表示計劃雇用大約一千名新員工。節目稍後我們會訪問 Greenleaf 的執行長 Daniel Ortiz，談談公司的計畫。不過首先，來看看天氣。",
+      "listening": true,
+      "prompt": "What will the listeners most likely hear next?",
+      "options": [
+        "An advertisement",
+        "A weather report",
+        "An interview with the CEO",
+        "Traffic news"
+      ],
+      "answer": "A weather report",
+      "explanation": "But first, here's a look at the weather. → 接下來是天氣。訪問執行長是「稍後」（Later）。",
+      "optionNotes": {
+        "An interview with the CEO": "那是節目稍後的內容（later）",
+        "An advertisement": "沒有提到",
+        "Traffic news": "沒有提到"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "business"
+      ],
+      "skills": [
+        "part4",
+        "inference"
+      ]
+    },
+    {
+      "id": "toeic-read-058",
+      "type": "multiple_choice",
+      "passage": "[Advertisement]\nSunrise Language School — Summer Courses\nBusiness English (Mon/Wed 7–9 p.m.) — $320\nConversational Japanese (Tue/Thu 7–9 p.m.) — $280\nTOEIC Preparation (Sat 9 a.m.–12 p.m.) — $350\nAll courses run for eight weeks starting July 1. Register before June 15 and receive 10% off.\n\n[E-mail]\nTo: info@sunriselang.com\nFrom: Kevin Huang\nDate: June 10\nSubject: Course registration\n\nHello,\nI'd like to sign up for the TOEIC course. I work late on weekdays, so a weekend class is perfect for me. I understand I can get the early registration discount. Could you also tell me whether the textbook is included in the price? If not, I'd like to buy it in advance.\nThank you,\nKevin Huang",
+      "glossary": {
+        "register": "報名",
+        "run": "（課程）進行",
+        "early registration": "早鳥報名",
+        "discount": "折扣",
+        "sign up for": "報名參加",
+        "textbook": "課本",
+        "included": "包含在內",
+        "in advance": "事先"
+      },
+      "passageTranslation": "【廣告】Sunrise 語言學校 — 暑期課程\n商用英文（週一／三 晚上 7–9 點）— $320\n日語會話（週二／四 晚上 7–9 點）— $280\n多益準備班（週六 早上 9 點–中午 12 點）— $350\n所有課程皆為期八週，7 月 1 日開始。6 月 15 日前報名享九折。\n\n【電子郵件】\n收件人：info@sunriselang.com\n寄件人：Kevin Huang\n日期：6 月 10 日\n主旨：課程報名\n\n您好：\n我想報名多益課程。我平日都工作到很晚，所以週末的課很適合我。我知道我可以享有早鳥優惠。也可以告訴我課本是否包含在費用裡嗎？如果沒有，我想事先購買。\n謝謝，\nKevin Huang",
+      "prompt": "Why did Kevin Huang write the e-mail?",
+      "options": [
+        "To register for a course",
+        "To apply for a teaching job",
+        "To cancel a class",
+        "To complain about a fee"
+      ],
+      "answer": "To register for a course",
+      "explanation": "I'd like to sign up for the TOEIC course. → 報名課程。",
+      "optionNotes": {
+        "To cancel a class": "相反",
+        "To apply for a teaching job": "他是學生不是老師",
+        "To complain about a fee": "沒有抱怨"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "school"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "main-idea"
+      ]
+    },
+    {
+      "id": "toeic-read-059",
+      "type": "multiple_choice",
+      "passage": "[Advertisement]\nSunrise Language School — Summer Courses\nBusiness English (Mon/Wed 7–9 p.m.) — $320\nConversational Japanese (Tue/Thu 7–9 p.m.) — $280\nTOEIC Preparation (Sat 9 a.m.–12 p.m.) — $350\nAll courses run for eight weeks starting July 1. Register before June 15 and receive 10% off.\n\n[E-mail]\nTo: info@sunriselang.com\nFrom: Kevin Huang\nDate: June 10\nSubject: Course registration\n\nHello,\nI'd like to sign up for the TOEIC course. I work late on weekdays, so a weekend class is perfect for me. I understand I can get the early registration discount. Could you also tell me whether the textbook is included in the price? If not, I'd like to buy it in advance.\nThank you,\nKevin Huang",
+      "glossary": {
+        "register": "報名",
+        "run": "（課程）進行",
+        "early registration": "早鳥報名",
+        "discount": "折扣",
+        "sign up for": "報名參加",
+        "textbook": "課本",
+        "included": "包含在內",
+        "in advance": "事先"
+      },
+      "passageTranslation": "【廣告】Sunrise 語言學校 — 暑期課程\n商用英文（週一／三 晚上 7–9 點）— $320\n日語會話（週二／四 晚上 7–9 點）— $280\n多益準備班（週六 早上 9 點–中午 12 點）— $350\n所有課程皆為期八週，7 月 1 日開始。6 月 15 日前報名享九折。\n\n【電子郵件】\n收件人：info@sunriselang.com\n寄件人：Kevin Huang\n日期：6 月 10 日\n主旨：課程報名\n\n您好：\n我想報名多益課程。我平日都工作到很晚，所以週末的課很適合我。我知道我可以享有早鳥優惠。也可以告訴我課本是否包含在費用裡嗎？如果沒有，我想事先購買。\n謝謝，\nKevin Huang",
+      "prompt": "How much will Kevin most likely pay for the course?",
+      "options": [
+        "$315",
+        "$280",
+        "$320",
+        "$350"
+      ],
+      "answer": "$315",
+      "explanation": "雙篇整合：多益課 $350（廣告）＋6/10 報名在 6/15 前，享 10% off（廣告＋信件日期）→ 350 × 0.9 = $315。",
+      "optionNotes": {
+        "$350": "沒有算進早鳥九折",
+        "$320": "這是商用英文的價格",
+        "$280": "這是日語會話的價格"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "school"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-read-060",
+      "type": "multiple_choice",
+      "passage": "[Advertisement]\nSunrise Language School — Summer Courses\nBusiness English (Mon/Wed 7–9 p.m.) — $320\nConversational Japanese (Tue/Thu 7–9 p.m.) — $280\nTOEIC Preparation (Sat 9 a.m.–12 p.m.) — $350\nAll courses run for eight weeks starting July 1. Register before June 15 and receive 10% off.\n\n[E-mail]\nTo: info@sunriselang.com\nFrom: Kevin Huang\nDate: June 10\nSubject: Course registration\n\nHello,\nI'd like to sign up for the TOEIC course. I work late on weekdays, so a weekend class is perfect for me. I understand I can get the early registration discount. Could you also tell me whether the textbook is included in the price? If not, I'd like to buy it in advance.\nThank you,\nKevin Huang",
+      "glossary": {
+        "register": "報名",
+        "run": "（課程）進行",
+        "early registration": "早鳥報名",
+        "discount": "折扣",
+        "sign up for": "報名參加",
+        "textbook": "課本",
+        "included": "包含在內",
+        "in advance": "事先"
+      },
+      "passageTranslation": "【廣告】Sunrise 語言學校 — 暑期課程\n商用英文（週一／三 晚上 7–9 點）— $320\n日語會話（週二／四 晚上 7–9 點）— $280\n多益準備班（週六 早上 9 點–中午 12 點）— $350\n所有課程皆為期八週，7 月 1 日開始。6 月 15 日前報名享九折。\n\n【電子郵件】\n收件人：info@sunriselang.com\n寄件人：Kevin Huang\n日期：6 月 10 日\n主旨：課程報名\n\n您好：\n我想報名多益課程。我平日都工作到很晚，所以週末的課很適合我。我知道我可以享有早鳥優惠。也可以告訴我課本是否包含在費用裡嗎？如果沒有，我想事先購買。\n謝謝，\nKevin Huang",
+      "prompt": "What does Kevin say about his schedule?",
+      "options": [
+        "He travels on weekends.",
+        "He is free every evening.",
+        "He works late on weekdays.",
+        "He starts work in July."
+      ],
+      "answer": "He works late on weekdays.",
+      "explanation": "I work late on weekdays, so a weekend class is perfect for me.",
+      "optionNotes": {
+        "He is free every evening.": "相反",
+        "He travels on weekends.": "他週末要上課",
+        "He starts work in July.": "July 是開課日期"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "school"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-read-061",
+      "type": "multiple_choice",
+      "passage": "[Advertisement]\nSunrise Language School — Summer Courses\nBusiness English (Mon/Wed 7–9 p.m.) — $320\nConversational Japanese (Tue/Thu 7–9 p.m.) — $280\nTOEIC Preparation (Sat 9 a.m.–12 p.m.) — $350\nAll courses run for eight weeks starting July 1. Register before June 15 and receive 10% off.\n\n[E-mail]\nTo: info@sunriselang.com\nFrom: Kevin Huang\nDate: June 10\nSubject: Course registration\n\nHello,\nI'd like to sign up for the TOEIC course. I work late on weekdays, so a weekend class is perfect for me. I understand I can get the early registration discount. Could you also tell me whether the textbook is included in the price? If not, I'd like to buy it in advance.\nThank you,\nKevin Huang",
+      "glossary": {
+        "register": "報名",
+        "run": "（課程）進行",
+        "early registration": "早鳥報名",
+        "discount": "折扣",
+        "sign up for": "報名參加",
+        "textbook": "課本",
+        "included": "包含在內",
+        "in advance": "事先"
+      },
+      "passageTranslation": "【廣告】Sunrise 語言學校 — 暑期課程\n商用英文（週一／三 晚上 7–9 點）— $320\n日語會話（週二／四 晚上 7–9 點）— $280\n多益準備班（週六 早上 9 點–中午 12 點）— $350\n所有課程皆為期八週，7 月 1 日開始。6 月 15 日前報名享九折。\n\n【電子郵件】\n收件人：info@sunriselang.com\n寄件人：Kevin Huang\n日期：6 月 10 日\n主旨：課程報名\n\n您好：\n我想報名多益課程。我平日都工作到很晚，所以週末的課很適合我。我知道我可以享有早鳥優惠。也可以告訴我課本是否包含在費用裡嗎？如果沒有，我想事先購買。\n謝謝，\nKevin Huang",
+      "prompt": "What does Kevin ask about?",
+      "options": [
+        "Who the teacher is",
+        "Whether a textbook is included",
+        "Where the school is located",
+        "How long each class lasts"
+      ],
+      "answer": "Whether a textbook is included",
+      "explanation": "Could you also tell me whether the textbook is included in the price?",
+      "optionNotes": {
+        "Where the school is located": "沒有問",
+        "Who the teacher is": "沒有問",
+        "How long each class lasts": "廣告已寫時間，他沒有問"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "school"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-read-062",
+      "type": "multiple_choice",
+      "passage": "[Notice]\nMaple Apartments — Water Shut-off\nThe water supply to Building C will be shut off on Tuesday, March 8, from 9 a.m. to 3 p.m. for pipe repairs. Residents are advised to store water in advance. We apologize for the inconvenience.\nBuilding Management\n\n[Text message]\nFrom: Lisa (Apt. C-504)\nTo: Building Management\nSent: March 7, 8:15 p.m.\n\nHi, I saw the notice about tomorrow's water shut-off. I run a small home bakery and need water in the morning to prepare orders. Is there any chance the repairs could start in the afternoon instead? If not, could I use the water in the management office during that time? Thanks.",
+      "glossary": {
+        "shut-off": "停止供應",
+        "water supply": "供水",
+        "pipe": "水管",
+        "resident": "住戶",
+        "be advised to": "建議",
+        "store": "儲存",
+        "inconvenience": "不便",
+        "run": "經營",
+        "bakery": "烘焙坊",
+        "prepare orders": "準備訂單"
+      },
+      "passageTranslation": "【公告】\nMaple 公寓 — 停水通知\nC 棟將於 3 月 8 日（週二）上午 9 點到下午 3 點停水，進行水管維修。建議住戶事先儲水。造成不便，敬請見諒。\n管理委員會\n\n【簡訊】\n寄件人：Lisa（C 棟 504 室）\n收件人：管理委員會\n傳送時間：3 月 7 日 晚上 8:15\n\n您好，我看到明天停水的公告。我在家經營一間小烘焙坊，早上需要用水準備訂單。維修有沒有可能改到下午開始？如果不行，那段時間我可以使用管理室的水嗎？謝謝。",
+      "prompt": "What is the purpose of the notice?",
+      "options": [
+        "To introduce a new building manager",
+        "To announce a temporary water shut-off",
+        "To announce a new bakery",
+        "To ask residents to pay a fee"
+      ],
+      "answer": "To announce a temporary water shut-off",
+      "explanation": "The water supply to Building C will be shut off… → 停水公告。",
+      "optionNotes": {
+        "To introduce a new building manager": "沒有提到",
+        "To ask residents to pay a fee": "沒有提到",
+        "To announce a new bakery": "bakery 出現在簡訊，不是公告的目的"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "main-idea"
+      ]
+    },
+    {
+      "id": "toeic-read-063",
+      "type": "multiple_choice",
+      "passage": "[Notice]\nMaple Apartments — Water Shut-off\nThe water supply to Building C will be shut off on Tuesday, March 8, from 9 a.m. to 3 p.m. for pipe repairs. Residents are advised to store water in advance. We apologize for the inconvenience.\nBuilding Management\n\n[Text message]\nFrom: Lisa (Apt. C-504)\nTo: Building Management\nSent: March 7, 8:15 p.m.\n\nHi, I saw the notice about tomorrow's water shut-off. I run a small home bakery and need water in the morning to prepare orders. Is there any chance the repairs could start in the afternoon instead? If not, could I use the water in the management office during that time? Thanks.",
+      "glossary": {
+        "shut-off": "停止供應",
+        "water supply": "供水",
+        "pipe": "水管",
+        "resident": "住戶",
+        "be advised to": "建議",
+        "store": "儲存",
+        "inconvenience": "不便",
+        "run": "經營",
+        "bakery": "烘焙坊",
+        "prepare orders": "準備訂單"
+      },
+      "passageTranslation": "【公告】\nMaple 公寓 — 停水通知\nC 棟將於 3 月 8 日（週二）上午 9 點到下午 3 點停水，進行水管維修。建議住戶事先儲水。造成不便，敬請見諒。\n管理委員會\n\n【簡訊】\n寄件人：Lisa（C 棟 504 室）\n收件人：管理委員會\n傳送時間：3 月 7 日 晚上 8:15\n\n您好，我看到明天停水的公告。我在家經營一間小烘焙坊，早上需要用水準備訂單。維修有沒有可能改到下午開始？如果不行，那段時間我可以使用管理室的水嗎？謝謝。",
+      "prompt": "When will the repairs take place?",
+      "options": [
+        "Tuesday evening",
+        "Monday evening",
+        "Wednesday morning",
+        "Tuesday morning to afternoon"
+      ],
+      "answer": "Tuesday morning to afternoon",
+      "explanation": "Tuesday, March 8, from 9 a.m. to 3 p.m.",
+      "optionNotes": {
+        "Monday evening": "Lisa 的簡訊是 3/7 晚上傳的，不是維修時間",
+        "Wednesday morning": "不對",
+        "Tuesday evening": "維修是 9 點到 3 點"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-read-064",
+      "type": "multiple_choice",
+      "passage": "[Notice]\nMaple Apartments — Water Shut-off\nThe water supply to Building C will be shut off on Tuesday, March 8, from 9 a.m. to 3 p.m. for pipe repairs. Residents are advised to store water in advance. We apologize for the inconvenience.\nBuilding Management\n\n[Text message]\nFrom: Lisa (Apt. C-504)\nTo: Building Management\nSent: March 7, 8:15 p.m.\n\nHi, I saw the notice about tomorrow's water shut-off. I run a small home bakery and need water in the morning to prepare orders. Is there any chance the repairs could start in the afternoon instead? If not, could I use the water in the management office during that time? Thanks.",
+      "glossary": {
+        "shut-off": "停止供應",
+        "water supply": "供水",
+        "pipe": "水管",
+        "resident": "住戶",
+        "be advised to": "建議",
+        "store": "儲存",
+        "inconvenience": "不便",
+        "run": "經營",
+        "bakery": "烘焙坊",
+        "prepare orders": "準備訂單"
+      },
+      "passageTranslation": "【公告】\nMaple 公寓 — 停水通知\nC 棟將於 3 月 8 日（週二）上午 9 點到下午 3 點停水，進行水管維修。建議住戶事先儲水。造成不便，敬請見諒。\n管理委員會\n\n【簡訊】\n寄件人：Lisa（C 棟 504 室）\n收件人：管理委員會\n傳送時間：3 月 7 日 晚上 8:15\n\n您好，我看到明天停水的公告。我在家經營一間小烘焙坊，早上需要用水準備訂單。維修有沒有可能改到下午開始？如果不行，那段時間我可以使用管理室的水嗎？謝謝。",
+      "prompt": "Why is Lisa concerned about the shut-off?",
+      "options": [
+        "Her apartment has a leak.",
+        "She did not receive the notice.",
+        "She will be away on Tuesday.",
+        "She needs water for her business in the morning."
+      ],
+      "answer": "She needs water for her business in the morning.",
+      "explanation": "I run a small home bakery and need water in the morning to prepare orders.",
+      "optionNotes": {
+        "She will be away on Tuesday.": "沒有提到",
+        "Her apartment has a leak.": "沒有提到漏水",
+        "She did not receive the notice.": "她說 I saw the notice"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "inference"
+      ]
+    },
+    {
+      "id": "toeic-read-065",
+      "type": "multiple_choice",
+      "passage": "[Notice]\nMaple Apartments — Water Shut-off\nThe water supply to Building C will be shut off on Tuesday, March 8, from 9 a.m. to 3 p.m. for pipe repairs. Residents are advised to store water in advance. We apologize for the inconvenience.\nBuilding Management\n\n[Text message]\nFrom: Lisa (Apt. C-504)\nTo: Building Management\nSent: March 7, 8:15 p.m.\n\nHi, I saw the notice about tomorrow's water shut-off. I run a small home bakery and need water in the morning to prepare orders. Is there any chance the repairs could start in the afternoon instead? If not, could I use the water in the management office during that time? Thanks.",
+      "glossary": {
+        "shut-off": "停止供應",
+        "water supply": "供水",
+        "pipe": "水管",
+        "resident": "住戶",
+        "be advised to": "建議",
+        "store": "儲存",
+        "inconvenience": "不便",
+        "run": "經營",
+        "bakery": "烘焙坊",
+        "prepare orders": "準備訂單"
+      },
+      "passageTranslation": "【公告】\nMaple 公寓 — 停水通知\nC 棟將於 3 月 8 日（週二）上午 9 點到下午 3 點停水，進行水管維修。建議住戶事先儲水。造成不便，敬請見諒。\n管理委員會\n\n【簡訊】\n寄件人：Lisa（C 棟 504 室）\n收件人：管理委員會\n傳送時間：3 月 7 日 晚上 8:15\n\n您好，我看到明天停水的公告。我在家經營一間小烘焙坊，早上需要用水準備訂單。維修有沒有可能改到下午開始？如果不行，那段時間我可以使用管理室的水嗎？謝謝。",
+      "prompt": "What is suggested about Lisa?",
+      "options": [
+        "She lives in Building C.",
+        "She works in the management office.",
+        "She sent her message on March 8.",
+        "She sells bread at a market."
+      ],
+      "answer": "She lives in Building C.",
+      "explanation": "雙篇整合：簡訊寄件人寫 Apt. C-504，而且她擔心「明天」的停水；公告說停水的是 Building C → 她住 C 棟。",
+      "optionNotes": {
+        "She works in the management office.": "她是住戶，想借用管理室的水",
+        "She sells bread at a market.": "她經營的是 home bakery（在家經營）",
+        "She sent her message on March 8.": "簡訊是 3 月 7 日傳的"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "daily-life"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "inference"
+      ]
+    },
+    {
+      "id": "toeic-read-066",
+      "type": "multiple_choice",
+      "passage": "[Invoice]\nBrightway Office Supply — Invoice #4471\nCustomer: Delta Design Co.\nDate: October 2\nItem                  Qty   Price\nPrinter paper (box)    10    $25 each\nBlack ink cartridges    6    $30 each\nDesk lamps              4    $45 each\nTotal: $610\nPayment due: October 30\n\n[E-mail]\nTo: billing@brightway.com\nFrom: Amy Lin, Delta Design Co.\nDate: October 5\nSubject: Invoice #4471\n\nHello,\nWe received our order yesterday, thank you. However, I noticed a problem with the invoice. We only ordered two desk lamps, not four, and only two were delivered. Could you please send a corrected invoice? We will pay the full amount once we receive it.\nBest regards,\nAmy Lin",
+      "glossary": {
+        "invoice": "發票；請款單",
+        "qty (quantity)": "數量",
+        "ink cartridge": "墨水匣",
+        "payment due": "付款期限",
+        "notice": "注意到",
+        "deliver": "送達",
+        "corrected": "更正過的",
+        "full amount": "全額"
+      },
+      "passageTranslation": "【請款單】\nBrightway 辦公用品 — 請款單 #4471\n客戶：Delta Design 公司\n日期：10 月 2 日\n品項｜數量｜單價\n影印紙（箱）｜10｜每箱 $25\n黑色墨水匣｜6｜每個 $30\n檯燈｜4｜每盞 $45\n總計：$610\n付款期限：10 月 30 日\n\n【電子郵件】\n收件人：billing@brightway.com\n寄件人：Amy Lin，Delta Design 公司\n日期：10 月 5 日\n主旨：請款單 #4471\n\n您好：\n我們昨天收到訂貨了，謝謝。不過我發現請款單有問題：我們只訂了兩盞檯燈，不是四盞，送來的也只有兩盞。可以請您寄一份更正後的請款單嗎？收到之後我們會付清全額。\n祝好，\nAmy Lin",
+      "prompt": "What problem does Amy Lin report?",
+      "options": [
+        "The number of lamps on the invoice is wrong.",
+        "Some ink cartridges were damaged.",
+        "The order arrived late.",
+        "The paper was the wrong size."
+      ],
+      "answer": "The number of lamps on the invoice is wrong.",
+      "explanation": "We only ordered two desk lamps, not four. → 請款單上的檯燈數量錯了。",
+      "optionNotes": {
+        "Some ink cartridges were damaged.": "沒有提到損壞",
+        "The order arrived late.": "沒有說遲到",
+        "The paper was the wrong size.": "沒有提到"
+      },
+      "difficulty": 1,
+      "tags": [
+        "toeic",
+        "finance"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "main-idea"
+      ]
+    },
+    {
+      "id": "toeic-read-067",
+      "type": "multiple_choice",
+      "passage": "[Invoice]\nBrightway Office Supply — Invoice #4471\nCustomer: Delta Design Co.\nDate: October 2\nItem                  Qty   Price\nPrinter paper (box)    10    $25 each\nBlack ink cartridges    6    $30 each\nDesk lamps              4    $45 each\nTotal: $610\nPayment due: October 30\n\n[E-mail]\nTo: billing@brightway.com\nFrom: Amy Lin, Delta Design Co.\nDate: October 5\nSubject: Invoice #4471\n\nHello,\nWe received our order yesterday, thank you. However, I noticed a problem with the invoice. We only ordered two desk lamps, not four, and only two were delivered. Could you please send a corrected invoice? We will pay the full amount once we receive it.\nBest regards,\nAmy Lin",
+      "glossary": {
+        "invoice": "發票；請款單",
+        "qty (quantity)": "數量",
+        "ink cartridge": "墨水匣",
+        "payment due": "付款期限",
+        "notice": "注意到",
+        "deliver": "送達",
+        "corrected": "更正過的",
+        "full amount": "全額"
+      },
+      "passageTranslation": "【請款單】\nBrightway 辦公用品 — 請款單 #4471\n客戶：Delta Design 公司\n日期：10 月 2 日\n品項｜數量｜單價\n影印紙（箱）｜10｜每箱 $25\n黑色墨水匣｜6｜每個 $30\n檯燈｜4｜每盞 $45\n總計：$610\n付款期限：10 月 30 日\n\n【電子郵件】\n收件人：billing@brightway.com\n寄件人：Amy Lin，Delta Design 公司\n日期：10 月 5 日\n主旨：請款單 #4471\n\n您好：\n我們昨天收到訂貨了，謝謝。不過我發現請款單有問題：我們只訂了兩盞檯燈，不是四盞，送來的也只有兩盞。可以請您寄一份更正後的請款單嗎？收到之後我們會付清全額。\n祝好，\nAmy Lin",
+      "prompt": "What should the corrected total be?",
+      "options": [
+        "$610",
+        "$565",
+        "$430",
+        "$520"
+      ],
+      "answer": "$520",
+      "explanation": "雙篇整合：原本 $610 包含 4 盞檯燈（4×45=180）；實際只有 2 盞 → 少 2×45=90 → 610−90 = $520。",
+      "optionNotes": {
+        "$610": "這是錯誤的原始金額",
+        "$430": "把四盞檯燈全部扣掉了（610−180）",
+        "$565": "只扣了一盞檯燈"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "finance"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "detail"
+      ]
+    },
+    {
+      "id": "toeic-read-068",
+      "type": "multiple_choice",
+      "passage": "[Invoice]\nBrightway Office Supply — Invoice #4471\nCustomer: Delta Design Co.\nDate: October 2\nItem                  Qty   Price\nPrinter paper (box)    10    $25 each\nBlack ink cartridges    6    $30 each\nDesk lamps              4    $45 each\nTotal: $610\nPayment due: October 30\n\n[E-mail]\nTo: billing@brightway.com\nFrom: Amy Lin, Delta Design Co.\nDate: October 5\nSubject: Invoice #4471\n\nHello,\nWe received our order yesterday, thank you. However, I noticed a problem with the invoice. We only ordered two desk lamps, not four, and only two were delivered. Could you please send a corrected invoice? We will pay the full amount once we receive it.\nBest regards,\nAmy Lin",
+      "glossary": {
+        "invoice": "發票；請款單",
+        "qty (quantity)": "數量",
+        "ink cartridge": "墨水匣",
+        "payment due": "付款期限",
+        "notice": "注意到",
+        "deliver": "送達",
+        "corrected": "更正過的",
+        "full amount": "全額"
+      },
+      "passageTranslation": "【請款單】\nBrightway 辦公用品 — 請款單 #4471\n客戶：Delta Design 公司\n日期：10 月 2 日\n品項｜數量｜單價\n影印紙（箱）｜10｜每箱 $25\n黑色墨水匣｜6｜每個 $30\n檯燈｜4｜每盞 $45\n總計：$610\n付款期限：10 月 30 日\n\n【電子郵件】\n收件人：billing@brightway.com\n寄件人：Amy Lin，Delta Design 公司\n日期：10 月 5 日\n主旨：請款單 #4471\n\n您好：\n我們昨天收到訂貨了，謝謝。不過我發現請款單有問題：我們只訂了兩盞檯燈，不是四盞，送來的也只有兩盞。可以請您寄一份更正後的請款單嗎？收到之後我們會付清全額。\n祝好，\nAmy Lin",
+      "prompt": "When did Delta Design receive the order?",
+      "options": [
+        "October 5",
+        "October 2",
+        "October 4",
+        "October 30"
+      ],
+      "answer": "October 4",
+      "explanation": "雙篇整合：e-mail 日期是 10/5，信中說 We received our order yesterday → 10/4。",
+      "optionNotes": {
+        "October 2": "這是請款單日期",
+        "October 5": "這是寫信的日期",
+        "October 30": "這是付款期限"
+      },
+      "difficulty": 3,
+      "tags": [
+        "toeic",
+        "finance"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "inference"
+      ]
+    },
+    {
+      "id": "toeic-read-069",
+      "type": "multiple_choice",
+      "passage": "[Invoice]\nBrightway Office Supply — Invoice #4471\nCustomer: Delta Design Co.\nDate: October 2\nItem                  Qty   Price\nPrinter paper (box)    10    $25 each\nBlack ink cartridges    6    $30 each\nDesk lamps              4    $45 each\nTotal: $610\nPayment due: October 30\n\n[E-mail]\nTo: billing@brightway.com\nFrom: Amy Lin, Delta Design Co.\nDate: October 5\nSubject: Invoice #4471\n\nHello,\nWe received our order yesterday, thank you. However, I noticed a problem with the invoice. We only ordered two desk lamps, not four, and only two were delivered. Could you please send a corrected invoice? We will pay the full amount once we receive it.\nBest regards,\nAmy Lin",
+      "glossary": {
+        "invoice": "發票；請款單",
+        "qty (quantity)": "數量",
+        "ink cartridge": "墨水匣",
+        "payment due": "付款期限",
+        "notice": "注意到",
+        "deliver": "送達",
+        "corrected": "更正過的",
+        "full amount": "全額"
+      },
+      "passageTranslation": "【請款單】\nBrightway 辦公用品 — 請款單 #4471\n客戶：Delta Design 公司\n日期：10 月 2 日\n品項｜數量｜單價\n影印紙（箱）｜10｜每箱 $25\n黑色墨水匣｜6｜每個 $30\n檯燈｜4｜每盞 $45\n總計：$610\n付款期限：10 月 30 日\n\n【電子郵件】\n收件人：billing@brightway.com\n寄件人：Amy Lin，Delta Design 公司\n日期：10 月 5 日\n主旨：請款單 #4471\n\n您好：\n我們昨天收到訂貨了，謝謝。不過我發現請款單有問題：我們只訂了兩盞檯燈，不是四盞，送來的也只有兩盞。可以請您寄一份更正後的請款單嗎？收到之後我們會付清全額。\n祝好，\nAmy Lin",
+      "prompt": "What does Amy say Delta Design will do?",
+      "options": [
+        "Pay by October 5",
+        "Return two lamps",
+        "Cancel the order",
+        "Pay after receiving a corrected invoice"
+      ],
+      "answer": "Pay after receiving a corrected invoice",
+      "explanation": "We will pay the full amount once we receive it.（it = corrected invoice）",
+      "optionNotes": {
+        "Return two lamps": "他們只收到兩盞，不需要退",
+        "Cancel the order": "沒有取消",
+        "Pay by October 5": "October 5 是寫信日期"
+      },
+      "difficulty": 2,
+      "tags": [
+        "toeic",
+        "finance"
+      ],
+      "skills": [
+        "part7",
+        "multi-passage",
+        "detail"
       ]
     }
   ]

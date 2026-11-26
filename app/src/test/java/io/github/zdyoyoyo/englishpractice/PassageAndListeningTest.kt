@@ -32,10 +32,23 @@ class PassageAndListeningTest {
     }
 
     @Test fun `dialogue script strips speaker labels and sets pitch`() {
-        val lines = DialogueScript.parse("W: Hello there.\n\nM：Hi!\nNo label line")
-        assertEquals(listOf("Hello there.", "Hi!", "No label line"), lines.map { it.text })
-        assertEquals(listOf("W", "M", null), lines.map { it.speaker })
+        val lines = DialogueScript.parse("W: Hello there.\n\nM：Hi!")
+        assertEquals(listOf("Hello there.", "Hi!"), lines.map { it.text })
+        assertEquals(listOf("W", "M"), lines.map { it.speaker })
         assertTrue(lines[0].pitch > lines[1].pitch)
-        assertEquals(1.0f, lines[2].pitch)
+        // 完全沒標說話者的稿子：整段照念，用一般音高
+        assertEquals(1.0f, DialogueScript.parse("No label line").single().pitch)
+    }
+
+    @Test fun `graphic block is split out and never spoken`() {
+        val passage = "Floor Directory\n1F Reception\n3F Accounting\n\nM: Where is Accounting?\nW: On the third floor."
+        val (graphic, script) = DialogueScript.splitGraphic(passage)
+        assertEquals("Floor Directory\n1F Reception\n3F Accounting", graphic)
+        assertTrue(script.trimStart().startsWith("M:"))
+        // 就算整段丟進去念，圖表行也會被略過
+        assertEquals(listOf("Where is Accounting?", "On the third floor."), DialogueScript.parse(passage).map { it.text })
+        // 沒有圖表的對話不受影響
+        assertNull(DialogueScript.splitGraphic("M: Hi.\nW: Hello.").first)
+        assertEquals(1, DialogueScript.parse("No label line").size)
     }
 }

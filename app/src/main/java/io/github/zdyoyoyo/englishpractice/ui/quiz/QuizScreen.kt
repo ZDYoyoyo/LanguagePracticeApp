@@ -47,6 +47,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.font.FontFamily
+import io.github.zdyoyoyo.englishpractice.speech.DialogueScript
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
@@ -256,20 +258,31 @@ private fun PassageCard(q: Question, passage: String, revealed: Boolean, pronoun
     var showGlossary by remember(q.id) { mutableStateOf(false) }
     var showTranslation by remember(q.id) { mutableStateOf(false) }
     val textVisible = !q.listening || revealed || showText
+    // 聽力圖表題：圖表一直顯示，對話稿照舊在作答後才顯示
+    val (graphic, script) = remember(passage) {
+        if (q.listening) DialogueScript.splitGraphic(passage) else (null to passage)
+    }
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            graphic?.let { g ->
+                Text("📊 圖表", style = MaterialTheme.typography.titleSmall)
+                Surface(color = MaterialTheme.colorScheme.surface, shape = MaterialTheme.shapes.small, modifier = Modifier.fillMaxWidth()) {
+                    Text(g, style = MaterialTheme.typography.bodyMedium.copy(fontFamily = FontFamily.Monospace),
+                        modifier = Modifier.padding(10.dp))
+                }
+            }
             if (q.listening) {
                 Text("🎧 聽力題：先聽對話再作答", style = MaterialTheme.typography.titleSmall)
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(passage) }) { Text("🔊 播放") }
-                    OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(passage, slow = true) }) { Text("🐢 慢速") }
+                    OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(script) }) { Text("🔊 播放") }
+                    OutlinedButton(onClick = { ttsMissing = !pronouncer.speakDialogue(script, slow = true) }) { Text("🐢 慢速") }
                     if (!textVisible && allowHelp) TextButton(onClick = { showText = true }) { Text("顯示原文") }
                 }
                 if (ttsMissing) Text("這支手機沒有英文語音，請到系統設定安裝「文字轉語音」英文語音資料", color = WrongRed)
             }
             if (textVisible) {
                 // SelectionContainer：長按可以選取文字 → 複製 / 用手機的「翻譯」查單字
-                SelectionContainer { Text(passage, style = MaterialTheme.typography.bodyMedium) }
+                SelectionContainer { Text(script, style = MaterialTheme.typography.bodyMedium) }
                 Text("💡 長按文字可選取，用手機的「翻譯」查任何單字", style = MaterialTheme.typography.labelSmall)
             }
             Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
