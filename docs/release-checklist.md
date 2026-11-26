@@ -32,6 +32,10 @@
 
 ## E. 封閉測試（個人帳號必須：≥12 人、連續 14 天）
 - [ ] 測試 → 封閉測試 → 建立測試群組（用 Email 名單或 Google 群組）
+      - 找不到測試者：用測試者互助社群（例如 p2p-closedtester），測試者改加入他們的 Google 群組 `test-soyokaze@googlegroups.com`（**必須用 Google 群組，不是 Email 名單**），
+        版本審核通過後在他們的 App 登錄：App 名稱、套件名稱、versionCode、每日測試人數（預設 14）。
+        你也要每天幫別人測（App 裡按「▶ 自動」，約 1 分鐘），否則點數用完你的 App 會被暫停
+      - 加完測試者後記得按「傳送審核／重新審查」
 - [ ] 建立版本：上傳 Actions 產生的 `app-release.aab`（Actions → 最新一次 main 的執行 → Artifacts）
       - 第一次上傳時選擇「使用 Google 產生的應用程式簽署金鑰」（Play App Signing）
 - [ ] **上傳後**：Play Console → 測試與發布 → 應用程式完整性 → 複製「**應用程式簽署金鑰**」的 SHA-1

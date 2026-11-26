@@ -212,8 +212,8 @@ keytool -genkeypair -v -keystore ~/keys/upload.jks -alias upload -keyalg RSA -ke
 ### 發公告（「廣播」）
 不用後端：編輯 `question-bank/announcements.json` 並 push 到 main 就會生效（GitHub raw 約 5 分鐘快取）。
 - 用戶打開 App → 首頁最上方顯示公告卡片（一次一則，依檔案順序），按「知道了」後不再出現。
-- 背景每 12 小時（有網路時，WorkManager）檢查一次；`"notify": true` 且用戶還沒在 App 裡看過的公告會發一則通知（頻道「公告與活動」，設定頁可關閉）。
-- 不是即時推播：最慢約半天才會收到通知；要即時推播得另外接 Firebase Cloud Messaging。
+- 背景大約每 1～3 小時（有網路時，WorkManager）檢查一次；`"notify": true` 且用戶還沒在 App 裡看過的公告會發一則通知（頻道「公告與活動」，設定頁可關閉）。
+- 不是即時推播：通常 1～3 小時內收到通知（手機待機時系統可能再延後）；要即時推播得另外接 Firebase Cloud Messaging。
 
 ```json
 {
