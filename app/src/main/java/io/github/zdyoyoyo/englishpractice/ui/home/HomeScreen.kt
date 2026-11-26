@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.Style
 import androidx.compose.material.icons.filled.Hearing
 import androidx.compose.material.icons.filled.EmojiEvents
 import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementBanner
+import io.github.zdyoyoyo.englishpractice.announce.AnnouncementBanner
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Today
 import androidx.compose.material3.Card
@@ -69,11 +70,14 @@ fun HomeScreen(
     onWatchAdForFreeze: (onReward: () -> Unit) -> Boolean,
     onPk: () -> Unit,
     onSettings: () -> Unit,
+    /** 公告按鈕：App 內畫面 */
+    onOpenTarget: (String) -> Unit = {},
     vm: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
 ) {
     val state by vm.uiState.collectAsStateWithLifecycle()
     val freezeMessage by vm.freezeMessage.collectAsStateWithLifecycle()
     val newAchievements by vm.newAchievements.collectAsStateWithLifecycle()
+    val announcement by vm.announcement.collectAsStateWithLifecycle()
     LifecycleResumeEffect(Unit) {
         vm.onResume()
         onPauseOrDispose { }
@@ -92,6 +96,14 @@ fun HomeScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            announcement?.let { a ->
+                AnnouncementBanner(
+                    a,
+                    onShown = { vm.onAnnouncementShown(a.id) },
+                    onAction = onOpenTarget,
+                    onDismiss = { vm.dismissAnnouncement(a.id) },
+                )
+            }
             if (newAchievements.isNotEmpty()) AchievementBanner(newAchievements, onDismiss = vm::dismissAchievements)
             StreakCard(
                 state,

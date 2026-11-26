@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import io.github.zdyoyoyo.englishpractice.announce.Announcement
+import io.github.zdyoyoyo.englishpractice.announce.AnnouncementRepository
 import io.github.zdyoyoyo.englishpractice.data.AchievementRepository
 import io.github.zdyoyoyo.englishpractice.data.ProgressRepository
 import io.github.zdyoyoyo.englishpractice.domain.Achievement
@@ -22,6 +24,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -62,7 +65,16 @@ class HomeViewModel(
     private val progressRepo: ProgressRepository,
     private val achievementsRepo: AchievementRepository,
     private val clock: AppClock,
+    private val announcementRepo: AnnouncementRepository,
 ) : ViewModel() {
+
+    /** 首頁最上面的公告橫幅（一次一則） */
+    val announcement: StateFlow<Announcement?> = announcementRepo.active
+        .map { it.firstOrNull() }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
+    fun onAnnouncementShown(id: String) = announcementRepo.markSeen(id)
+    fun dismissAnnouncement(id: String) = announcementRepo.dismiss(id)
 
     private val bankMessage = MutableStateFlow<String?>(null)
     /** 「今天」也是狀態：App 跨過午夜回到首頁時重新計算 */
@@ -110,6 +122,10 @@ class HomeViewModel(
         viewModelScope.launch {
             bank.ensureLoaded()
             refreshBank()
+        }
+        viewModelScope.launch {
+            announcementRepo.loadCached()
+            announcementRepo.refresh()
         }
     }
 
@@ -162,7 +178,7 @@ class HomeViewModel(
         val Factory = viewModelFactory {
             initializer {
                 val c = appContainer()
-                HomeViewModel(c.questionBank, c.study, c.progress, c.achievements, c.clock)
+                HomeViewModel(c.questionBank, c.study, c.progress, c.achievements, c.clock, c.announcements)
             }
         }
     }

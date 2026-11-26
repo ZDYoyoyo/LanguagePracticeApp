@@ -78,6 +78,14 @@ class SettingsViewModel(
         _weekly.value = on
     }
 
+    private val _announce = MutableStateFlow(c.announcements.notifyEnabled)
+    val announceNotify: StateFlow<Boolean> = _announce.asStateFlow()
+    fun setAnnounceNotify(on: Boolean) {
+        c.announcements.notifyEnabled = on
+        io.github.zdyoyoyo.englishpractice.announce.AnnouncementWorker.schedule(app, on)
+        _announce.value = on
+    }
+
     fun setReminderTime(hour: Int, minute: Int) {
         val m = hour * 60 + minute
         c.prefs.reminderMinuteOfDay = m

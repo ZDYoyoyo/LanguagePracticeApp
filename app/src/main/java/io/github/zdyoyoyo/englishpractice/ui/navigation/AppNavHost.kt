@@ -10,7 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.github.zdyoyoyo.englishpractice.EnglishApp
-import io.github.zdyoyoyo.englishpractice.MainActivity
+import io.github.zdyoyoyo.englishpractice.announce.OpenTarget
 import io.github.zdyoyoyo.englishpractice.data.StudyMode
 import io.github.zdyoyoyo.englishpractice.ui.favorites.FavoritesScreen
 import io.github.zdyoyoyo.englishpractice.ui.achievements.AchievementsScreen
@@ -34,10 +34,28 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
     // 完成一輪後「可能」顯示插頁廣告（頻率由 AdPolicy 控制）
     val onSessionFinished: (Int) -> Unit = { count -> activity?.let { ads.onSessionCompleted(it, count) } }
 
-    // 從通知點進來 → 直接開每日一題
+    /** 通知或公告按鈕要打開的畫面（OpenTarget）；不認得就留在首頁 */
+    val openTarget: (String) -> Unit = { target ->
+        val route: Any? = when (target) {
+            OpenTarget.DAILY -> QuizRoute(StudyMode.DAILY.key)
+            OpenTarget.REVIEW -> QuizRoute(StudyMode.REVIEW.key)
+            OpenTarget.PRACTICE -> PracticeSetupRoute
+            OpenTarget.MOCK -> MockSetupRoute
+            OpenTarget.FLASHCARDS -> FlashcardsRoute
+            OpenTarget.DICTATION -> DictationRoute
+            OpenTarget.PK -> PkRoute
+            OpenTarget.ACHIEVEMENTS -> AchievementsRoute
+            OpenTarget.STATS -> StatsRoute
+            OpenTarget.SETTINGS -> SettingsRoute
+            else -> null
+        }
+        route?.let { nav.navigate(it) { launchSingleTop = true } }
+    }
+
+    // 從通知點進來 → 直接開對應畫面（例如每日一題）
     LaunchedEffect(pendingOpen) {
-        if (pendingOpen == MainActivity.OPEN_DAILY) {
-            nav.navigate(QuizRoute(StudyMode.DAILY.key)) { launchSingleTop = true }
+        if (pendingOpen != null) {
+            openTarget(pendingOpen)
             onPendingOpenHandled()
         }
     }
@@ -68,6 +86,7 @@ fun AppNavHost(pendingOpen: String? = null, onPendingOpenHandled: () -> Unit = {
                 onWords = { nav.navigate(WordListRoute) },
                 onPk = { nav.navigate(PkRoute) },
                 onSettings = { nav.navigate(SettingsRoute) },
+                onOpenTarget = openTarget,
             )
         }
         composable<PracticeSetupRoute> {
